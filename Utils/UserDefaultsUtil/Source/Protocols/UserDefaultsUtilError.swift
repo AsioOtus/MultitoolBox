@@ -1,0 +1,1 @@
+protocol UserDefaultsUtilError: Error { }

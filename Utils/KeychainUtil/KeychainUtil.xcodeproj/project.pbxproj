@@ -1,0 +1,764 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A211E54257E38060017229F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A211E53257E38060017229F /* main.swift */; };
+		3A211E5A257E38340017229F /* OSStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B79245463C4007E7928 /* OSStatus.swift */; };
+		3A211E5B257E38340017229F /* KeychainUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B70245463C4007E7928 /* KeychainUtil.swift */; };
+		3A211E5C257E38340017229F /* Keychain.Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949C072454750C007E7928 /* Keychain.Class.swift */; };
+		3A211E5D257E38340017229F /* Keychain.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B71245463C4007E7928 /* Keychain.Error.swift */; };
+		3A211E5E257E38340017229F /* Keychain.Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6A245463C4007E7928 /* Keychain.Settings.swift */; };
+		3A211E5F257E38340017229F /* DefaultKeychainLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADD342247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift */; };
+		3A211E60257E38340017229F /* Logger.Record.Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A1247BFDDB00100BEB /* Logger.Record.Commit.swift */; };
+		3A211E61257E38340017229F /* Logger.Record.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABCFD2466DA54003F3B7D /* Logger.Record.Info.swift */; };
+		3A211E62257E38340017229F /* Logger.Record.Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A7247C026A00100BEB /* Logger.Record.Operation.swift */; };
+		3A211E63257E38340017229F /* Logger.Record.Resolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A9247C028A00100BEB /* Logger.Record.Resolution.swift */; };
+		3A211E64257E38340017229F /* Logger.Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABD002466F325003F3B7D /* Logger.Record.swift */; };
+		3A211E65257E38340017229F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B72245463C4007E7928 /* Logger.swift */; };
+		3A211E66257E38340017229F /* GenericPasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6C245463C4007E7928 /* GenericPasswordError.swift */; };
+		3A211E67257E38340017229F /* GenericPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6F245463C4007E7928 /* GenericPassword.swift */; };
+		3A211E68257E38340017229F /* ParametricGenericPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6E245463C4007E7928 /* ParametricGenericPassword.swift */; };
+		3A211E69257E38340017229F /* DefaultKeychainGenericPasswordsLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADD340247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift */; };
+		3A211E6A257E38340017229F /* GenericPassword.Logger.Record.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABCEB2465E057003F3B7D /* GenericPassword.Logger.Record.Info.swift */; };
+		3A211E6B257E38340017229F /* GenericPassword.Logger.Record.Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37019D247BFA5800100BEB /* GenericPassword.Logger.Record.Commit.swift */; };
+		3A211E6C257E38340017229F /* GenericPassword.Logger.Record.Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A3247C01ED00100BEB /* GenericPassword.Logger.Record.Operation.swift */; };
+		3A211E6D257E38340017229F /* GenericPassword.Logger.Record.Resolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A5247C020200100BEB /* GenericPassword.Logger.Record.Resolution.swift */; };
+		3A211E6E257E38340017229F /* GenericPassword.Logger.Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B4D9245DCA4600056493 /* GenericPassword.Logger.Record.swift */; };
+		3A211E6F257E38340017229F /* GenericPassword.Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6D245463C4007E7928 /* GenericPassword.Logger.swift */; };
+		3A211E70257E38340017229F /* KeychainDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B75245463C4007E7928 /* KeychainDescribable.swift */; };
+		3A211E71257E38340017229F /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B74245463C4007E7928 /* KeychainError.swift */; };
+		3A211E72257E38340017229F /* KeychainGenericPasswordsLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B506246054E400056493 /* KeychainGenericPasswordsLoggingProvider.swift */; };
+		3A211E73257E38340017229F /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B76245463C4007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift */; };
+		3A211E74257E38340017229F /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AACB043245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift */; };
+		3A211E75257E38340017229F /* KeychainLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABCFB2466AB18003F3B7D /* KeychainLoggingProvider.swift */; };
+		3A37019E247BFA5800100BEB /* GenericPassword.Logger.Record.Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37019D247BFA5800100BEB /* GenericPassword.Logger.Record.Commit.swift */; };
+		3A3701A2247BFDDB00100BEB /* Logger.Record.Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A1247BFDDB00100BEB /* Logger.Record.Commit.swift */; };
+		3A3701A4247C01ED00100BEB /* GenericPassword.Logger.Record.Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A3247C01ED00100BEB /* GenericPassword.Logger.Record.Operation.swift */; };
+		3A3701A6247C020200100BEB /* GenericPassword.Logger.Record.Resolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A5247C020200100BEB /* GenericPassword.Logger.Record.Resolution.swift */; };
+		3A3701A8247C026A00100BEB /* Logger.Record.Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A7247C026A00100BEB /* Logger.Record.Operation.swift */; };
+		3A3701AA247C028A00100BEB /* Logger.Record.Resolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A9247C028A00100BEB /* Logger.Record.Resolution.swift */; };
+		3A949BE1245467AE007E7928 /* Keychain_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A949BDF245467AE007E7928 /* Keychain_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A949BFB24546816007E7928 /* OSStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B79245463C4007E7928 /* OSStatus.swift */; };
+		3A949BFC24546816007E7928 /* Keychain.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B71245463C4007E7928 /* Keychain.Error.swift */; };
+		3A949BFD24546816007E7928 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B72245463C4007E7928 /* Logger.swift */; };
+		3A949BFE24546816007E7928 /* Keychain.Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6A245463C4007E7928 /* Keychain.Settings.swift */; };
+		3A949BFF24546816007E7928 /* KeychainUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B70245463C4007E7928 /* KeychainUtil.swift */; };
+		3A949C0024546816007E7928 /* GenericPasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6C245463C4007E7928 /* GenericPasswordError.swift */; };
+		3A949C0124546816007E7928 /* GenericPassword.Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6D245463C4007E7928 /* GenericPassword.Logger.swift */; };
+		3A949C0224546816007E7928 /* ParametricGenericPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6E245463C4007E7928 /* ParametricGenericPassword.swift */; };
+		3A949C0324546816007E7928 /* GenericPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B6F245463C4007E7928 /* GenericPassword.swift */; };
+		3A949C0424546816007E7928 /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B74245463C4007E7928 /* KeychainError.swift */; };
+		3A949C0524546816007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B76245463C4007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift */; };
+		3A949C0624546816007E7928 /* KeychainDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B75245463C4007E7928 /* KeychainDescribable.swift */; };
+		3A949C082454750C007E7928 /* Keychain.Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949C072454750C007E7928 /* Keychain.Class.swift */; };
+		3AACB044245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AACB043245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift */; };
+		3AADD341247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADD340247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift */; };
+		3AADD343247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADD342247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift */; };
+		3ACABCEC2465E057003F3B7D /* GenericPassword.Logger.Record.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABCEB2465E057003F3B7D /* GenericPassword.Logger.Record.Info.swift */; };
+		3ACABCFC2466AB18003F3B7D /* KeychainLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABCFB2466AB18003F3B7D /* KeychainLoggingProvider.swift */; };
+		3ACABCFE2466DA54003F3B7D /* Logger.Record.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABCFD2466DA54003F3B7D /* Logger.Record.Info.swift */; };
+		3ACABD012466F325003F3B7D /* Logger.Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABD002466F325003F3B7D /* Logger.Record.swift */; };
+		3AD3B4DA245DCA4600056493 /* GenericPassword.Logger.Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B4D9245DCA4600056493 /* GenericPassword.Logger.Record.swift */; };
+		3AD3B507246054E400056493 /* KeychainGenericPasswordsLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B506246054E400056493 /* KeychainGenericPasswordsLoggingProvider.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3A211E4F257E38060017229F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3A211E51257E38060017229F /* KeychainUtilTestground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = KeychainUtilTestground; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A211E53257E38060017229F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3A37019D247BFA5800100BEB /* GenericPassword.Logger.Record.Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPassword.Logger.Record.Commit.swift; sourceTree = "<group>"; };
+		3A3701A1247BFDDB00100BEB /* Logger.Record.Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.Record.Commit.swift; sourceTree = "<group>"; };
+		3A3701A3247C01ED00100BEB /* GenericPassword.Logger.Record.Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPassword.Logger.Record.Operation.swift; sourceTree = "<group>"; };
+		3A3701A5247C020200100BEB /* GenericPassword.Logger.Record.Resolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPassword.Logger.Record.Resolution.swift; sourceTree = "<group>"; };
+		3A3701A7247C026A00100BEB /* Logger.Record.Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.Record.Operation.swift; sourceTree = "<group>"; };
+		3A3701A9247C028A00100BEB /* Logger.Record.Resolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.Record.Resolution.swift; sourceTree = "<group>"; };
+		3A949B6A245463C4007E7928 /* Keychain.Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.Settings.swift; sourceTree = "<group>"; };
+		3A949B6C245463C4007E7928 /* GenericPasswordError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPasswordError.swift; sourceTree = "<group>"; };
+		3A949B6D245463C4007E7928 /* GenericPassword.Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPassword.Logger.swift; sourceTree = "<group>"; };
+		3A949B6E245463C4007E7928 /* ParametricGenericPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametricGenericPassword.swift; sourceTree = "<group>"; };
+		3A949B6F245463C4007E7928 /* GenericPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPassword.swift; sourceTree = "<group>"; };
+		3A949B70245463C4007E7928 /* KeychainUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainUtil.swift; sourceTree = "<group>"; };
+		3A949B71245463C4007E7928 /* Keychain.Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.Error.swift; sourceTree = "<group>"; };
+		3A949B72245463C4007E7928 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		3A949B74245463C4007E7928 /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		3A949B75245463C4007E7928 /* KeychainDescribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainDescribable.swift; sourceTree = "<group>"; };
+		3A949B76245463C4007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainGenericPasswordsItemIdentifierPostfixProvider.swift; sourceTree = "<group>"; };
+		3A949B79245463C4007E7928 /* OSStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSStatus.swift; sourceTree = "<group>"; };
+		3A949BDC245467AE007E7928 /* KeychainUtil_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainUtil_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A949BDF245467AE007E7928 /* Keychain_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keychain_macOS.h; sourceTree = "<group>"; };
+		3A949BE0245467AE007E7928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A949C072454750C007E7928 /* Keychain.Class.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.Class.swift; sourceTree = "<group>"; };
+		3AACB043245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainGenericPasswordsItemIdentifierPrefixProvider.swift; sourceTree = "<group>"; };
+		3AADD340247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeychainGenericPasswordsLoggingProvider.swift; sourceTree = "<group>"; };
+		3AADD342247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeychainLoggingProvider.swift; sourceTree = "<group>"; };
+		3ACABCEB2465E057003F3B7D /* GenericPassword.Logger.Record.Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPassword.Logger.Record.Info.swift; sourceTree = "<group>"; };
+		3ACABCFB2466AB18003F3B7D /* KeychainLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainLoggingProvider.swift; sourceTree = "<group>"; };
+		3ACABCFD2466DA54003F3B7D /* Logger.Record.Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.Record.Info.swift; sourceTree = "<group>"; };
+		3ACABD002466F325003F3B7D /* Logger.Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.Record.swift; sourceTree = "<group>"; };
+		3AD3B4D9245DCA4600056493 /* GenericPassword.Logger.Record.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPassword.Logger.Record.swift; sourceTree = "<group>"; };
+		3AD3B506246054E400056493 /* KeychainGenericPasswordsLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainGenericPasswordsLoggingProvider.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A211E4E257E38060017229F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A949BD9245467AE007E7928 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A211E52257E38060017229F /* KeychainUtilTestground */ = {
+			isa = PBXGroup;
+			children = (
+				3A211E53257E38060017229F /* main.swift */,
+			);
+			path = KeychainUtilTestground;
+			sourceTree = "<group>";
+		};
+		3A949AE42454622F007E7928 = {
+			isa = PBXGroup;
+			children = (
+				3A949B68245463C4007E7928 /* Source */,
+				3A949BDE245467AE007E7928 /* KeychainUtil-macOS */,
+				3A211E52257E38060017229F /* KeychainUtilTestground */,
+				3A949BDD245467AE007E7928 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A949B68245463C4007E7928 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3A949B77245463C4007E7928 /* Helpers */,
+				3A949B69245463C4007E7928 /* KeychainUtil */,
+				3A949B73245463C4007E7928 /* Protocols */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3A949B69245463C4007E7928 /* KeychainUtil */ = {
+			isa = PBXGroup;
+			children = (
+				3ACABCFF2466F317003F3B7D /* Logger */,
+				3A949B6B245463C4007E7928 /* GenericPasswords */,
+				3A949B70245463C4007E7928 /* KeychainUtil.swift */,
+				3A949C072454750C007E7928 /* Keychain.Class.swift */,
+				3A949B71245463C4007E7928 /* Keychain.Error.swift */,
+				3A949B6A245463C4007E7928 /* Keychain.Settings.swift */,
+			);
+			path = KeychainUtil;
+			sourceTree = "<group>";
+		};
+		3A949B6B245463C4007E7928 /* GenericPasswords */ = {
+			isa = PBXGroup;
+			children = (
+				3A949B6C245463C4007E7928 /* GenericPasswordError.swift */,
+				3A949B6F245463C4007E7928 /* GenericPassword.swift */,
+				3A949B6E245463C4007E7928 /* ParametricGenericPassword.swift */,
+				3AD3B4D8245DCA0300056493 /* Logger */,
+			);
+			path = GenericPasswords;
+			sourceTree = "<group>";
+		};
+		3A949B73245463C4007E7928 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3A949B75245463C4007E7928 /* KeychainDescribable.swift */,
+				3A949B74245463C4007E7928 /* KeychainError.swift */,
+				3AD3B506246054E400056493 /* KeychainGenericPasswordsLoggingProvider.swift */,
+				3A949B76245463C4007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift */,
+				3AACB043245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift */,
+				3ACABCFB2466AB18003F3B7D /* KeychainLoggingProvider.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3A949B77245463C4007E7928 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3A949B78245463C4007E7928 /* Extensions */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		3A949B78245463C4007E7928 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A949B79245463C4007E7928 /* OSStatus.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		3A949BDD245467AE007E7928 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A949BDC245467AE007E7928 /* KeychainUtil_macOS.framework */,
+				3A211E51257E38060017229F /* KeychainUtilTestground */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A949BDE245467AE007E7928 /* KeychainUtil-macOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A949BDF245467AE007E7928 /* Keychain_macOS.h */,
+				3A949BE0245467AE007E7928 /* Info.plist */,
+			);
+			path = "KeychainUtil-macOS";
+			sourceTree = "<group>";
+		};
+		3ACABCFF2466F317003F3B7D /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				3AADD342247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift */,
+				3A3701A1247BFDDB00100BEB /* Logger.Record.Commit.swift */,
+				3ACABCFD2466DA54003F3B7D /* Logger.Record.Info.swift */,
+				3A3701A7247C026A00100BEB /* Logger.Record.Operation.swift */,
+				3A3701A9247C028A00100BEB /* Logger.Record.Resolution.swift */,
+				3ACABD002466F325003F3B7D /* Logger.Record.swift */,
+				3A949B72245463C4007E7928 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		3AD3B4D8245DCA0300056493 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				3AADD340247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift */,
+				3ACABCEB2465E057003F3B7D /* GenericPassword.Logger.Record.Info.swift */,
+				3A37019D247BFA5800100BEB /* GenericPassword.Logger.Record.Commit.swift */,
+				3A3701A3247C01ED00100BEB /* GenericPassword.Logger.Record.Operation.swift */,
+				3A3701A5247C020200100BEB /* GenericPassword.Logger.Record.Resolution.swift */,
+				3AD3B4D9245DCA4600056493 /* GenericPassword.Logger.Record.swift */,
+				3A949B6D245463C4007E7928 /* GenericPassword.Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3A949BD7245467AE007E7928 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A949BE1245467AE007E7928 /* Keychain_macOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3A211E50257E38060017229F /* KeychainUtilTestground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A211E55257E38060017229F /* Build configuration list for PBXNativeTarget "KeychainUtilTestground" */;
+			buildPhases = (
+				3A211E4D257E38060017229F /* Sources */,
+				3A211E4E257E38060017229F /* Frameworks */,
+				3A211E4F257E38060017229F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KeychainUtilTestground;
+			productName = KeychainUtilTestground;
+			productReference = 3A211E51257E38060017229F /* KeychainUtilTestground */;
+			productType = "com.apple.product-type.tool";
+		};
+		3A949BDB245467AE007E7928 /* KeychainUtil-macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A949BE2245467AE007E7928 /* Build configuration list for PBXNativeTarget "KeychainUtil-macOS" */;
+			buildPhases = (
+				3A949BD7245467AE007E7928 /* Headers */,
+				3A949BD8245467AE007E7928 /* Sources */,
+				3A949BD9245467AE007E7928 /* Frameworks */,
+				3A949BDA245467AE007E7928 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KeychainUtil-macOS";
+			productName = "Keychain-macOS";
+			productReference = 3A949BDC245467AE007E7928 /* KeychainUtil_macOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A949AE52454622F007E7928 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					3A211E50257E38060017229F = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					3A949BDB245467AE007E7928 = {
+						CreatedOnToolsVersion = 11.4;
+					};
+				};
+			};
+			buildConfigurationList = 3A949AE82454622F007E7928 /* Build configuration list for PBXProject "KeychainUtil" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A949AE42454622F007E7928;
+			productRefGroup = 3A949BDD245467AE007E7928 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A949BDB245467AE007E7928 /* KeychainUtil-macOS */,
+				3A211E50257E38060017229F /* KeychainUtilTestground */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A949BDA245467AE007E7928 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A211E4D257E38060017229F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A211E5A257E38340017229F /* OSStatus.swift in Sources */,
+				3A211E5B257E38340017229F /* KeychainUtil.swift in Sources */,
+				3A211E5C257E38340017229F /* Keychain.Class.swift in Sources */,
+				3A211E5D257E38340017229F /* Keychain.Error.swift in Sources */,
+				3A211E5E257E38340017229F /* Keychain.Settings.swift in Sources */,
+				3A211E5F257E38340017229F /* DefaultKeychainLoggingProvider.swift in Sources */,
+				3A211E60257E38340017229F /* Logger.Record.Commit.swift in Sources */,
+				3A211E61257E38340017229F /* Logger.Record.Info.swift in Sources */,
+				3A211E62257E38340017229F /* Logger.Record.Operation.swift in Sources */,
+				3A211E63257E38340017229F /* Logger.Record.Resolution.swift in Sources */,
+				3A211E64257E38340017229F /* Logger.Record.swift in Sources */,
+				3A211E65257E38340017229F /* Logger.swift in Sources */,
+				3A211E66257E38340017229F /* GenericPasswordError.swift in Sources */,
+				3A211E67257E38340017229F /* GenericPassword.swift in Sources */,
+				3A211E68257E38340017229F /* ParametricGenericPassword.swift in Sources */,
+				3A211E69257E38340017229F /* DefaultKeychainGenericPasswordsLoggingProvider.swift in Sources */,
+				3A211E6A257E38340017229F /* GenericPassword.Logger.Record.Info.swift in Sources */,
+				3A211E6B257E38340017229F /* GenericPassword.Logger.Record.Commit.swift in Sources */,
+				3A211E6C257E38340017229F /* GenericPassword.Logger.Record.Operation.swift in Sources */,
+				3A211E6D257E38340017229F /* GenericPassword.Logger.Record.Resolution.swift in Sources */,
+				3A211E6E257E38340017229F /* GenericPassword.Logger.Record.swift in Sources */,
+				3A211E6F257E38340017229F /* GenericPassword.Logger.swift in Sources */,
+				3A211E70257E38340017229F /* KeychainDescribable.swift in Sources */,
+				3A211E71257E38340017229F /* KeychainError.swift in Sources */,
+				3A211E72257E38340017229F /* KeychainGenericPasswordsLoggingProvider.swift in Sources */,
+				3A211E73257E38340017229F /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift in Sources */,
+				3A211E74257E38340017229F /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift in Sources */,
+				3A211E75257E38340017229F /* KeychainLoggingProvider.swift in Sources */,
+				3A211E54257E38060017229F /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A949BD8245467AE007E7928 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A3701A4247C01ED00100BEB /* GenericPassword.Logger.Record.Operation.swift in Sources */,
+				3AADD343247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift in Sources */,
+				3A3701A8247C026A00100BEB /* Logger.Record.Operation.swift in Sources */,
+				3A949BFB24546816007E7928 /* OSStatus.swift in Sources */,
+				3A949C0524546816007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift in Sources */,
+				3A949C0124546816007E7928 /* GenericPassword.Logger.swift in Sources */,
+				3A949BFE24546816007E7928 /* Keychain.Settings.swift in Sources */,
+				3AD3B4DA245DCA4600056493 /* GenericPassword.Logger.Record.swift in Sources */,
+				3A949BFD24546816007E7928 /* Logger.swift in Sources */,
+				3ACABCEC2465E057003F3B7D /* GenericPassword.Logger.Record.Info.swift in Sources */,
+				3A949BFC24546816007E7928 /* Keychain.Error.swift in Sources */,
+				3A949C0624546816007E7928 /* KeychainDescribable.swift in Sources */,
+				3A3701A6247C020200100BEB /* GenericPassword.Logger.Record.Resolution.swift in Sources */,
+				3A949C0224546816007E7928 /* ParametricGenericPassword.swift in Sources */,
+				3A949C0424546816007E7928 /* KeychainError.swift in Sources */,
+				3A949C082454750C007E7928 /* Keychain.Class.swift in Sources */,
+				3A949BFF24546816007E7928 /* KeychainUtil.swift in Sources */,
+				3A949C0324546816007E7928 /* GenericPassword.swift in Sources */,
+				3AADD341247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift in Sources */,
+				3A3701AA247C028A00100BEB /* Logger.Record.Resolution.swift in Sources */,
+				3ACABCFE2466DA54003F3B7D /* Logger.Record.Info.swift in Sources */,
+				3AD3B507246054E400056493 /* KeychainGenericPasswordsLoggingProvider.swift in Sources */,
+				3A949C0024546816007E7928 /* GenericPasswordError.swift in Sources */,
+				3A37019E247BFA5800100BEB /* GenericPassword.Logger.Record.Commit.swift in Sources */,
+				3A3701A2247BFDDB00100BEB /* Logger.Record.Commit.swift in Sources */,
+				3ACABCFC2466AB18003F3B7D /* KeychainLoggingProvider.swift in Sources */,
+				3ACABD012466F325003F3B7D /* Logger.Record.swift in Sources */,
+				3AACB044245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3A211E56257E38060017229F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3A211E57257E38060017229F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3A949AE92454622F007E7928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		3A949AEA2454622F007E7928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+			};
+			name = Release;
+		};
+		3A949BE3245467AE007E7928 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "KeychainUtil-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "AO.Keychain-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3A949BE4245467AE007E7928 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "KeychainUtil-macOS/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "AO.Keychain-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A211E55257E38060017229F /* Build configuration list for PBXNativeTarget "KeychainUtilTestground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A211E56257E38060017229F /* Debug */,
+				3A211E57257E38060017229F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A949AE82454622F007E7928 /* Build configuration list for PBXProject "KeychainUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A949AE92454622F007E7928 /* Debug */,
+				3A949AEA2454622F007E7928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A949BE2245467AE007E7928 /* Build configuration list for PBXNativeTarget "KeychainUtil-macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A949BE3245467AE007E7928 /* Debug */,
+				3A949BE4245467AE007E7928 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A949AE52454622F007E7928 /* Project object */;
+}
