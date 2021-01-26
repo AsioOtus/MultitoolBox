@@ -10,8 +10,8 @@ let package = Package(
 	],
 	products: [
 		.library(
-			name: "MultitoolCore",
-			targets: ["MultitoolCore"]
+			name: "MultitoolBase",
+			targets: ["MultitoolBaseCore"]
 		),
 		.library(
 			name: "KeychainUtil",
@@ -32,7 +32,7 @@ let package = Package(
 	],
 	targets: [
 		.target(
-			name: "MultitoolCore",
+			name: "MultitoolBaseCore",
 			dependencies: [],
 			path: "Base/Source/Core"
 		),
