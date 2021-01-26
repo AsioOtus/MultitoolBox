@@ -100,6 +100,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1B847F25C01A7A0042A2DC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3A396EA125BDA25900B110C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +240,10 @@
 				{
 					ProductGroup = 3A949AE22454621D007E7928 /* Products */;
 					ProjectRef = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
+				},
+				{
+					ProductGroup = 3A1B847F25C01A7A0042A2DC /* Products */;
+					ProjectRef = 3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A396EA125BDA25900B110C7 /* Products */;
