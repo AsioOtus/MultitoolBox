@@ -26,8 +26,8 @@ let package = Package(
 			targets: ["UserDefaultsUtil"]
 		),
 		.library(
-			name: "UIKitExtension",
-			targets: ["UIKitExtension"]
+			name: "UIKitExtensions",
+			targets: ["UIKitExtensions"]
 		)
 	],
 	targets: [
