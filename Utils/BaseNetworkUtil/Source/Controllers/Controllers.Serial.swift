@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 
 extension Controllers {
 	struct Serial {
