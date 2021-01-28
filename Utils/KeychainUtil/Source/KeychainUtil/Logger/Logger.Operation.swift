@@ -2,14 +2,14 @@ import Foundation
 
 
 
-extension KeychainUtil.Logger.Record {
+extension Logger {
 	enum Operation {
 		case saving(Data)
 		case loading
 		case deletion
 		case existance
 		
-		case clearingClass(KeychainUtil.Class)
+		case clearingClass(KeychainClass)
 		case clearing
 		
 		var name: String {

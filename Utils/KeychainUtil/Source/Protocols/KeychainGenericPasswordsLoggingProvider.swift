@@ -1,3 +1,3 @@
 public protocol KeychainGenericPasswordsLoggingProvider {
-	func log <T> (_: KeychainUtil.GenericPassword<T>.Logger.Record.Info) 
+	func log <Value> (_: GenericPassword<Value>.Logger.Info) 
 }

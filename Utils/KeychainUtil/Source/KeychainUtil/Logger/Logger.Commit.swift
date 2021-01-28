@@ -1,6 +1,6 @@
-extension KeychainUtil.Logger.Record {
+extension Logger {
 	struct Commit {
-		let record: KeychainUtil.Logger.Record
+		let record: Record
 		let resolution: Resolution
 		
 		var value: AnyObject? {
@@ -19,13 +19,13 @@ extension KeychainUtil.Logger.Record {
 		
 		func info (keychainIdentifier: String) -> Info? {
 			guard
-				KeychainUtil.settings.logging.enable &&
-				resolution.level.rawValue >= KeychainUtil.settings.logging.level.rawValue
+				settings.logging.enable &&
+				resolution.level.rawValue >= settings.logging.level.rawValue
 			else { return nil }
 			
-			let isExists = KeychainUtil.settings.logging.enableValuesLogging ? resolution.isExists : nil
-			let value = KeychainUtil.settings.logging.enableValuesLogging ? self.value : nil
-			let query = KeychainUtil.settings.logging.enableQueryLogging ? record.query : nil
+			let isExists = settings.logging.enableValuesLogging ? resolution.isExists : nil
+			let value = settings.logging.enableValuesLogging ? self.value : nil
+			let query = settings.logging.enableQueryLogging ? record.query : nil
 			
 			let info = Info(
 				operation: record.operation.name,

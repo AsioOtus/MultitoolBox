@@ -2,7 +2,7 @@ import Foundation
 
 
 
-public extension KeychainUtil.Logger {
+public extension Logger {
 	struct Record {
 		let operation: Operation
 		let query: [CFString: Any]

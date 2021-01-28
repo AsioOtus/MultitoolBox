@@ -2,30 +2,28 @@ import os
 
 
 
-extension KeychainUtil {
-	public final class Settings {
-		public var logging: Logging
-		public let genericPasswords: GenericPasswords
-		
-		public init (
-			logging: Logging = .default,
-			genericPasswords: GenericPasswords
-		) {
-			self.logging = logging
-			self.genericPasswords = genericPasswords
-		}
-		
-		internal static let `default` = Settings()
-		private init () {
-			self.logging = .default
-			self.genericPasswords = .default
-		}
+public final class Settings {
+	public var logging: Logging
+	public let genericPasswords: GenericPasswords
+	
+	public init (
+		logging: Logging = .default,
+		genericPasswords: GenericPasswords
+	) {
+		self.logging = logging
+		self.genericPasswords = genericPasswords
+	}
+	
+	internal static let `default` = Settings()
+	private init () {
+		self.logging = .default
+		self.genericPasswords = .default
 	}
 }
 
 
 
-extension KeychainUtil.Settings {
+extension Settings {
 	public final class Logging {
 		public var enable: Bool
 		public var level: OSLogType
@@ -58,7 +56,7 @@ extension KeychainUtil.Settings {
 
 
 	
-extension KeychainUtil.Settings {
+extension Settings {
 	public final class GenericPasswords {
 		public var logging: Logging
 		
@@ -82,7 +80,7 @@ extension KeychainUtil.Settings {
 
 
 
-extension KeychainUtil.Settings.GenericPasswords {
+extension Settings.GenericPasswords {
 	public final class Logging {
 		public var enable: Bool
 		public var level: OSLogType

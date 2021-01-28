@@ -1,36 +1,34 @@
-extension KeychainUtil {
-	public struct GenericPasswordError: KeychainError {
-		public let category: Category
-		public let identifier: String
+public struct GenericPasswordError: KeychainError {
+	public let category: Category
+	public let identifier: String
+	
+	internal init (_ identifier: String, _ category: Category) {
+		self.identifier = identifier
+		self.category = category
+	}
+	
+	public enum Category {
+		case codingError(Coding)
+		case keychainError(CommonError)
+		case error(Swift.Error)
 		
-		internal init (_ identifier: String, _ category: Category) {
-			self.identifier = identifier
-			self.category = category
-		}
-		
-		public enum Category {
-			case codingError(Coding)
-			case keychainError(KeychainUtil.Error)
-			case error(Swift.Error)
-			
-			public enum Coding: KeychainError {
-				case itemIsNotData
-				case encodingFailed(Swift.Error)
-				case decodingFailed(Swift.Error)
-			}
+		public enum Coding: KeychainError {
+			case valueIsNotData
+			case encodingFailed(Swift.Error)
+			case decodingFailed(Swift.Error)
 		}
 	}
 }
 
 
 
-extension KeychainUtil.GenericPasswordError: CustomStringConvertible {
+extension GenericPasswordError: CustomStringConvertible {
 	public var description: String { "\(identifier) – \(category.description)" }
 }
 
 
 
-extension KeychainUtil.GenericPasswordError.Category: CustomStringConvertible {
+extension GenericPasswordError.Category: CustomStringConvertible {
 	public var description: String {
 		let description: String
 		
@@ -49,12 +47,12 @@ extension KeychainUtil.GenericPasswordError.Category: CustomStringConvertible {
 
 
 
-extension KeychainUtil.GenericPasswordError.Category.Coding: CustomStringConvertible {
+extension GenericPasswordError.Category.Coding: CustomStringConvertible {
 	public var description: String {
 		let description: String
 		
 		switch self {
-		case .itemIsNotData:
+		case .valueIsNotData:
 			description = "Item cannot be interpreted as Data"
 		case .encodingFailed(let error):
 			description = "Encoding failed: \(error)"

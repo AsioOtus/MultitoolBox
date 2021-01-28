@@ -2,7 +2,7 @@ import Foundation
 
 
 
-public extension KeychainUtil.GenericPassword.Logger {
+public extension GenericPassword.Logger {
 	struct Record {
 		let identifier: String
 		let query: [CFString: Any]

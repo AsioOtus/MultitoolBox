@@ -1,12 +1,12 @@
 import Foundation
 import os.log
 
-public extension KeychainUtil.GenericPassword.Logger.Record {
+public extension GenericPassword.Logger {
 	struct Info {
 		public let identifier: String
 		public let operation: String
 		public let existance: Bool?
-		public let value: Item?
+		public let value: Value?
 		public let errorType: String?
 		public let error: Error?
 		public let query: [CFString: Any]?
@@ -18,23 +18,23 @@ public extension KeychainUtil.GenericPassword.Logger.Record {
 			var message = "\(identifier) – \(operation)"
 			
 			if let existance = existance {
-				message += " – \(existance)"
+				message += " | \(existance)"
 			}
 			
 			if let value = value {
-				message += " – \(value)"
+				message += " | \(value)"
 			}
 			
 			if let errorType = errorType {
-				message += " – \(errorType)"
+				message += " – ERROR: \(errorType)"
 			}
 			
 			if let error = error {
-				message += " – \(error)"
+				message += " | \(error)"
 			}
 			
 			if let query = query {
-				message += " – \(query)"
+				message += " – QUERY: \(query)"
 			}
 			
 			return message

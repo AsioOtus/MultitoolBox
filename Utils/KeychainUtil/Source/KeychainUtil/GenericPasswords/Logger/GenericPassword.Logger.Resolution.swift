@@ -1,22 +1,22 @@
 import os.log
 
-extension KeychainUtil.GenericPassword.Logger.Record {
+extension GenericPassword.Logger {
 	enum Resolution {
 		case overwriting
 		case saving
-		case loading(Item)
-		case loadingOptional(Item?)
+		case loading(Value)
+		case loadingOptional(Value?)
 		case deletion
-		case existance(Bool, Item? = nil)
+		case existance(Bool, Value? = nil)
 		
-		case codingError(KeychainUtil.GenericPasswordError.Category.Coding)
-		case keychainError(KeychainUtil.Error)
+		case codingError(GenericPasswordError.Category.Coding)
+		case keychainError(Error)
 		case genericError(Error)
 		
 		
 		
-		var value: Item? {
-			let value: Item?
+		var value: Value? {
+			let value: Value?
 			
 			switch self {
 			case .loading(let item):

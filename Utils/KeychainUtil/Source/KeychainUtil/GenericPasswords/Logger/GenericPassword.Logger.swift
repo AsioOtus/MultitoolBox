@@ -1,6 +1,6 @@
 import Foundation
 
-extension KeychainUtil.GenericPassword {
+extension GenericPassword {
 	public class Logger {
 		private let keychainIdentifier: String
 		private let enableValueLogging: Bool
@@ -10,12 +10,12 @@ extension KeychainUtil.GenericPassword {
 			self.enableValueLogging = enableValueLogging
 		}
 		
-		func log (_ commit: Record.Commit) {
+		func log (_ commit: Commit) {
 			let commitInfo = commit.info(keychainIdentifier: keychainIdentifier, enableValueLogging: enableValueLogging)
 			
 			if
 				let commitInfo = commitInfo,
-				let loggingProvider = KeychainUtil.settings.genericPasswords.logging.loggingProvider
+				let loggingProvider = settings.genericPasswords.logging.loggingProvider
 			{
 				loggingProvider.log(commitInfo)
 			}

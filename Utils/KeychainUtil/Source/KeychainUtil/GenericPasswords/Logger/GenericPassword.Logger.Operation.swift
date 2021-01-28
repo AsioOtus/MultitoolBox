@@ -1,7 +1,7 @@
-extension KeychainUtil.GenericPassword.Logger.Record {
+extension GenericPassword.Logger {
 	enum Operation {
-		case overwriting(Item)
-		case saving(Item)
+		case overwriting(Value)
+		case saving(Value)
 		case loading
 		case loadingOptional
 		case deletion
@@ -28,8 +28,8 @@ extension KeychainUtil.GenericPassword.Logger.Record {
 			return name
 		}
 		
-		var value: Item? {
-			let value: Item?
+		var value: Value? {
+			let value: Value?
 			
 			if case .overwriting(let item) = self {
 				value = item

@@ -1,10 +1,10 @@
-extension KeychainUtil.GenericPassword.Logger.Record {
+extension GenericPassword.Logger {
 	struct Commit {
-		let record: KeychainUtil.GenericPassword<Item>.Logger.Record
+		let record: GenericPassword<Value>.Logger.Record
 		let resolution: Resolution
 		
-		var value: Item? {
-			let value: Item?
+		var value: Value? {
+			let value: Value?
 			
 			if let operationValue = record.operation.value {
 				value = operationValue
@@ -19,13 +19,13 @@ extension KeychainUtil.GenericPassword.Logger.Record {
 		
 		func info (keychainIdentifier: String, enableValueLogging: Bool) -> Info? {
 			guard
-				KeychainUtil.settings.genericPasswords.logging.enable &&
-				self.resolution.level.rawValue >= KeychainUtil.settings.genericPasswords.logging.level.rawValue
+				settings.genericPasswords.logging.enable &&
+				self.resolution.level.rawValue >= settings.genericPasswords.logging.level.rawValue
 			else { return nil }
 			
-			let isExists = KeychainUtil.settings.genericPasswords.logging.enableValuesLogging && enableValueLogging ? resolution.isExists : nil
-			let value = KeychainUtil.settings.genericPasswords.logging.enableValuesLogging && enableValueLogging ? self.value : nil
-			let query = KeychainUtil.settings.genericPasswords.logging.enableQueryLogging ? record.query : nil
+			let isExists = settings.genericPasswords.logging.enableValuesLogging && enableValueLogging ? resolution.isExists : nil
+			let value = settings.genericPasswords.logging.enableValuesLogging && enableValueLogging ? self.value : nil
+			let query = settings.genericPasswords.logging.enableQueryLogging ? record.query : nil
 			
 			let info = Info(
 				identifier: record.identifier,

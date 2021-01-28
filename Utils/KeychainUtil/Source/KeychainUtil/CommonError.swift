@@ -1,22 +1,18 @@
 import Foundation
 
-extension KeychainUtil {
-	public enum Error: KeychainError {
-		case itemNotFound
-		case nilItem
-		case itemIsNotData
-		case savingFailed(OSStatus)
-		case existingItemFound
-		case loadingFailed(OSStatus)
-		case deletingFailed(OSStatus)
-		case existanceCheckFailed(OSStatus)
-		case classCLearingFailed(Class, OSStatus)
-	}
+public enum CommonError: KeychainError {
+	case itemNotFound
+	case nilItem
+	case itemIsNotData
+	case savingFailed(OSStatus)
+	case existingItemFound
+	case loadingFailed(OSStatus)
+	case deletingFailed(OSStatus)
+	case existanceCheckFailed(OSStatus)
+	case classClearingFailed(KeychainClass, OSStatus)
 }
 
-
-
-extension KeychainUtil.Error: CustomStringConvertible {
+extension CommonError: CustomStringConvertible {
 	public var description: String {
 		let log: String
 		
@@ -37,7 +33,7 @@ extension KeychainUtil.Error: CustomStringConvertible {
 			log = "Deletion failed: \(status.keychainDescription)"
 		case .existanceCheckFailed(let status):
 			log = "Existance check failed: \(status.keychainDescription)"
-		case .classCLearingFailed(let keychainClass, let status):
+		case .classClearingFailed(let keychainClass, let status):
 			log = "Class clearing failed: \(keychainClass.name) – \(status.keychainDescription)"
 		}
 		

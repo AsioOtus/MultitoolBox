@@ -1,7 +1,7 @@
 import Foundation
 import os
 
-public extension KeychainUtil.Logger.Record {
+public extension Logger {
 	struct Info {
 		public let operation: String
 		public let existance: Bool?
@@ -21,15 +21,15 @@ public extension KeychainUtil.Logger.Record {
 			}
 			
 			if let value = value {
-				message += " – \(value)"
+				message += " | \(value)"
 			}
 			
 			if let errorType = errorType {
-				message += " – \(errorType)"
+				message += " – ERROR: \(errorType)"
 			}
 			
 			if let error = error {
-				message += " – \(error)"
+				message += " | \(error)"
 			}
 			
 			if let query = query {
