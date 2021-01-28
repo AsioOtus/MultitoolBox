@@ -1,7 +1,7 @@
 import Foundation
 
 public protocol Request {
-	associatedtype Response: NetworkUtil_macOS.Response
+	associatedtype Response: BaseNetworkUtil.Response
 	
 	func session () throws -> URLSession
 	func urlRequest () throws -> URLRequest

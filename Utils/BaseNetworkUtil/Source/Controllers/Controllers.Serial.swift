@@ -5,7 +5,7 @@ extension Controllers {
 		public let baseController = Controllers.Base()
 		private let semaphore = DispatchSemaphore(value: 1)
 		
-		public func send <RequestDelegate: NetworkUtil_macOS.RequestDelegate> (_ requestDelegate: RequestDelegate)
+		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)
 		-> AnyPublisher<RequestDelegate.Content, NetworkError>
 		{
 			semaphore.wait()

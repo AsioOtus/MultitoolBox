@@ -1,5 +1,5 @@
 public protocol RequestDelegate {
-	associatedtype Request: NetworkUtil_macOS.Request
+	associatedtype Request: BaseNetworkUtil.Request
 	associatedtype Content
 	
 	func request () throws -> Request
