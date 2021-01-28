@@ -1,1 +1,1 @@
-typealias Completion = (() -> ())?
+typealias Block = () -> Void

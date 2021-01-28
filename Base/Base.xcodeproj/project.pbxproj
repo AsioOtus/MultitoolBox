@@ -192,7 +192,7 @@
 			path = Declarations;
 			sourceTree = "<group>";
 		};
-		3A1B845D25C012780042A2DC /* Additional */ = {
+		3A1B845D25C012780042A2DC /* Extra */ = {
 			isa = PBXGroup;
 			children = (
 				3A949AF92454629C007E7928 /* Classes */,
@@ -203,7 +203,7 @@
 				3A949B1E2454629C007E7928 /* ProtocolsConforming */,
 				3A949B112454629C007E7928 /* Structs */,
 			);
-			path = Additional;
+			path = Extra;
 			sourceTree = "<group>";
 		};
 		3A1B845E25C012B10042A2DC /* Extensions */ = {
@@ -269,8 +269,8 @@
 		3A949AF82454629C007E7928 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3A1B845D25C012780042A2DC /* Additional */,
 				3A1B845A25C0123F0042A2DC /* Core */,
+				3A1B845D25C012780042A2DC /* Extra */,
 			);
 			path = Source;
 			sourceTree = "<group>";

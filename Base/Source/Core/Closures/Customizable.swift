@@ -16,11 +16,6 @@ extension Customizable {
 }
 
 extension Customizable {
-	mutating func set (in block: (Self) throws -> Self) rethrows -> Self {
-		let result = try block(self)
-		return result
-	}
-	
 	func setCopy (in block: (inout Self) throws -> Void) rethrows -> Self {
 		var selfCopy = self
 		try block(&selfCopy)
@@ -30,6 +25,11 @@ extension Customizable {
 	mutating func set (in block: (inout Self) throws -> Void) rethrows -> Self {
 		try block(&self)
 		return self
+	}
+	
+	mutating func set (in block: (Self) throws -> Self) rethrows -> Self {
+		let result = try block(self)
+		return result
 	}
 }
 
