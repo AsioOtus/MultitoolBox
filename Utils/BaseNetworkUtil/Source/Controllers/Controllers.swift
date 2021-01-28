@@ -1,1 +1,1 @@
-struct Controllers { }
+public struct Controllers { }

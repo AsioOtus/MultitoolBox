@@ -1,7 +1,7 @@
 import Combine
 
 extension Controllers {
-	struct Base {
+	public struct Base {
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)
 		-> AnyPublisher<RequestDelegate.Content, NetworkError>
 		{

@@ -2,7 +2,7 @@ import Combine
 import Foundation
 
 extension Controllers {
-	struct Serial {
+	public struct Serial {
 		public let baseController = Controllers.Base()
 		private let semaphore = DispatchSemaphore(value: 1)
 		

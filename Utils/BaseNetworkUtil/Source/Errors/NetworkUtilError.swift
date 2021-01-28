@@ -1,1 +1,1 @@
-protocol NetworkUtilError: Error { }
+public protocol NetworkUtilError: Error { }
