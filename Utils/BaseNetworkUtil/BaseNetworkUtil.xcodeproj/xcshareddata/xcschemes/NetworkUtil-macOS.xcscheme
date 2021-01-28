@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A5BD56825BC335B00481A2B"
-               BuildableName = "NetworkUtil_macOS.framework"
-               BlueprintName = "NetworkUtil-macOS"
-               ReferencedContainer = "container:NetworkUtil.xcodeproj">
+               BuildableName = "BaseNetworkUtil_macOS.framework"
+               BlueprintName = "BaseNetworkUtil-macOS"
+               ReferencedContainer = "container:BaseNetworkUtil.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A5BD56825BC335B00481A2B"
-            BuildableName = "NetworkUtil_macOS.framework"
-            BlueprintName = "NetworkUtil-macOS"
-            ReferencedContainer = "container:NetworkUtil.xcodeproj">
+            BuildableName = "BaseNetworkUtil_macOS.framework"
+            BlueprintName = "BaseNetworkUtil-macOS"
+            ReferencedContainer = "container:BaseNetworkUtil.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

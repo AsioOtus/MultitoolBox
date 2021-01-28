@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		3A19CED925BC821A00D097D7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A5BD55E25BC334900481A2B /* NetworkUtil.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A5BD56925BC335B00481A2B;
-			remoteInfo = "NetworkUtil-macOS";
-		};
 		3A396EB625BDA29100B110C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */;
@@ -35,6 +28,13 @@
 			remoteGlobalIDString = 3A5BD53125BC1E4000481A2B;
 			remoteInfo = "LoggingUtil-macOS";
 		};
+		3A7AE21D25C30C2F00CABE2F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7AE21925C30C2F00CABE2F /* BaseNetworkUtil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A5BD56925BC335B00481A2B;
+			remoteInfo = "BaseNetworkUtil-macOS";
+		};
 		3A81C33025627F590048D103 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */;
@@ -54,15 +54,15 @@
 /* Begin PBXFileReference section */
 		3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainUtil.xcodeproj; path = KeychainUtil/KeychainUtil.xcodeproj; sourceTree = "<group>"; };
 		3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LoggingUtil.xcodeproj; path = LoggingUtil/LoggingUtil.xcodeproj; sourceTree = "<group>"; };
-		3A5BD55E25BC334900481A2B /* NetworkUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkUtil.xcodeproj; path = NetworkUtil/NetworkUtil.xcodeproj; sourceTree = "<group>"; };
 		3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserDefaultsUtil.xcodeproj; path = UserDefaultsUtil/UserDefaultsUtil.xcodeproj; sourceTree = "<group>"; };
+		3A7AE21925C30C2F00CABE2F /* BaseNetworkUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BaseNetworkUtil.xcodeproj; path = BaseNetworkUtil/BaseNetworkUtil.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		3A396EB225BDA29100B110C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A396EB725BDA29100B110C7 /* KeychainUtil_macOS.framework */,
+				3A396EB725BDA29100B110C7 /* KeychainUtil.framework */,
 				3A396EB925BDA29100B110C7 /* KeychainUtilTestground */,
 			);
 			name = Products;
@@ -76,10 +76,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3A5BD55F25BC334900481A2B /* Products */ = {
+		3A7AE21A25C30C2F00CABE2F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A19CEDA25BC821A00D097D7 /* NetworkUtil_macOS.framework */,
+				3A7AE21E25C30C2F00CABE2F /* BaseNetworkUtil_macOS.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,9 +96,9 @@
 		3A949AD024546211007E7928 = {
 			isa = PBXGroup;
 			children = (
+				3A7AE21925C30C2F00CABE2F /* BaseNetworkUtil.xcodeproj */,
 				3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */,
 				3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */,
-				3A5BD55E25BC334900481A2B /* NetworkUtil.xcodeproj */,
 				3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -123,16 +123,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 3A7AE21A25C30C2F00CABE2F /* Products */;
+					ProjectRef = 3A7AE21925C30C2F00CABE2F /* BaseNetworkUtil.xcodeproj */;
+				},
+				{
 					ProductGroup = 3A396EB225BDA29100B110C7 /* Products */;
 					ProjectRef = 3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A5BD52525BC1E1500481A2B /* Products */;
 					ProjectRef = 3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */;
-				},
-				{
-					ProductGroup = 3A5BD55F25BC334900481A2B /* Products */;
-					ProjectRef = 3A5BD55E25BC334900481A2B /* NetworkUtil.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A81C32B25627F590048D103 /* Products */;
@@ -146,17 +146,10 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3A19CEDA25BC821A00D097D7 /* NetworkUtil_macOS.framework */ = {
+		3A396EB725BDA29100B110C7 /* KeychainUtil.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = NetworkUtil_macOS.framework;
-			remoteRef = 3A19CED925BC821A00D097D7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A396EB725BDA29100B110C7 /* KeychainUtil_macOS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = KeychainUtil_macOS.framework;
+			path = KeychainUtil.framework;
 			remoteRef = 3A396EB625BDA29100B110C7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
@@ -172,6 +165,13 @@
 			fileType = wrapper.framework;
 			path = LoggingUtil_macOS.framework;
 			remoteRef = 3A5BD56225BC334A00481A2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A7AE21E25C30C2F00CABE2F /* BaseNetworkUtil_macOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BaseNetworkUtil_macOS.framework;
+			remoteRef = 3A7AE21D25C30C2F00CABE2F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3A81C33125627F590048D103 /* UserDefaultsUtil_macOS.framework */ = {

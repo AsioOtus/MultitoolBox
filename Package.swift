@@ -14,6 +14,10 @@ let package = Package(
 			targets: ["MultitoolBaseCore"]
 		),
 		.library(
+			name: "BaseNetworkUtil",
+			targets: ["BaseNetworkUtil"]
+		),
+		.library(
 			name: "KeychainUtil",
 			targets: ["KeychainUtil"]
 		),
@@ -35,6 +39,11 @@ let package = Package(
 			name: "MultitoolBaseCore",
 			dependencies: [],
 			path: "Base/Source/Core"
+		),
+		.target(
+			name: "BaseNetworkUtil",
+			dependencies: [],
+			path: "Utils/BaseNetworkUtil/Source"
 		),
 		.target(
 			name: "KeychainUtil",
