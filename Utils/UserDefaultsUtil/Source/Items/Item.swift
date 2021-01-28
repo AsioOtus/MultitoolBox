@@ -33,7 +33,7 @@ open class Item<Value: Codable> {
 		return "\(key).\(postfix)"
 	}
 	
-	public static func key (_ baseKey: String) -> String {
+	private static func key (_ baseKey: String) -> String {
 		var key = baseKey
 		
 		if let keyPrefix = settings.items.itemKeyPrefixProvider?.userDefaultsUtilItemPrefix {
