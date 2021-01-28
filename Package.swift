@@ -9,17 +9,17 @@ let package = Package(
 		.macOS(.v10_15)
 	],
 	products: [
-		.library(name: "MultitoolBase", targets: ["MultitoolBaseCore"]),
+		//.library(name: "MultitoolBase", targets: ["MultitoolBaseCore"]),
 		.library(name: "MultitoolBase", type: .dynamic, targets: ["MultitoolBaseCore"]),
-		.library(name: "BaseNetworkUtil", targets: ["BaseNetworkUtil"]),
+		//.library(name: "BaseNetworkUtil", targets: ["BaseNetworkUtil"]),
 		.library(name: "BaseNetworkUtil", type: .dynamic, targets: ["BaseNetworkUtil"]),
-		.library(name: "KeychainUtil", targets: ["KeychainUtil"]),
+		//.library(name: "KeychainUtil", targets: ["KeychainUtil"]),
 		.library(name: "KeychainUtil", type: .dynamic, targets: ["KeychainUtil"]),
-		.library(name: "LoggingUtil", targets: ["LoggingUtil"]),
+		//.library(name: "LoggingUtil", targets: ["LoggingUtil"]),
 		.library(name: "LoggingUtil", type: .dynamic, targets: ["LoggingUtil"]),
-		.library(name: "UserDefaultsUtil", targets: ["UserDefaultsUtil"]),
+		//.library(name: "UserDefaultsUtil", targets: ["UserDefaultsUtil"]),
 		.library(name: "UserDefaultsUtil", type: .dynamic, targets: ["UserDefaultsUtil"]),
-		.library(name: "UIKitExtensions", targets: ["UIKitExtensions"]),
+		//.library(name: "UIKitExtensions", targets: ["UIKitExtensions"]),
 		.library(name: "UIKitExtensions", type: .dynamic, targets: ["UIKitExtensions"])
 	],
 	targets: [
