@@ -6,6 +6,8 @@ extension Controllers {
 		public let baseController = Controllers.Base()
 		private let semaphore = DispatchSemaphore(value: 1)
 		
+		public init () { }
+		
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)
 		-> AnyPublisher<RequestDelegate.Content, NetworkError>
 		{

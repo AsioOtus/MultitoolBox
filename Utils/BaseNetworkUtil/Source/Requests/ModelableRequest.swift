@@ -6,6 +6,4 @@ public protocol ModelableRequest: Request {
 	init (_ model: Model)
 }
 
-public protocol RequestModel: Encodable {
-	
-}
+public protocol RequestModel: Encodable { }
