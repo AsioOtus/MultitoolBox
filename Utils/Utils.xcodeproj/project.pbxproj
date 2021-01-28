@@ -28,13 +28,6 @@
 			remoteGlobalIDString = 3A5BD53125BC1E4000481A2B;
 			remoteInfo = "LoggingUtil-macOS";
 		};
-		3A7AE21D25C30C2F00CABE2F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A7AE21925C30C2F00CABE2F /* BaseNetworkUtil.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A5BD56925BC335B00481A2B;
-			remoteInfo = "BaseNetworkUtil-macOS";
-		};
 		3A81C33025627F590048D103 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */;
@@ -49,13 +42,27 @@
 			remoteGlobalIDString = 3AFBE50F2507D0A2000C089B;
 			remoteInfo = UserDefaultsUtil_macOSTests;
 		};
+		3AE8177425C31F7A00243202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A0DB1BB25C3182600C5824B;
+			remoteInfo = "BaseNetworkUtil-macOS";
+		};
+		3AE8177625C31F7A00243202 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A0DB1C825C3183C00C5824B;
+			remoteInfo = "BaseNetworkUtil-iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainUtil.xcodeproj; path = KeychainUtil/KeychainUtil.xcodeproj; sourceTree = "<group>"; };
 		3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LoggingUtil.xcodeproj; path = LoggingUtil/LoggingUtil.xcodeproj; sourceTree = "<group>"; };
 		3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserDefaultsUtil.xcodeproj; path = UserDefaultsUtil/UserDefaultsUtil.xcodeproj; sourceTree = "<group>"; };
-		3A7AE21925C30C2F00CABE2F /* BaseNetworkUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BaseNetworkUtil.xcodeproj; path = BaseNetworkUtil/BaseNetworkUtil.xcodeproj; sourceTree = "<group>"; };
+		3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BaseNetworkUtil.xcodeproj; path = BaseNetworkUtil/BaseNetworkUtil.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -76,14 +83,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3A7AE21A25C30C2F00CABE2F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A7AE21E25C30C2F00CABE2F /* BaseNetworkUtil_macOS.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3A81C32B25627F590048D103 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,11 +95,20 @@
 		3A949AD024546211007E7928 = {
 			isa = PBXGroup;
 			children = (
-				3A7AE21925C30C2F00CABE2F /* BaseNetworkUtil.xcodeproj */,
+				3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */,
 				3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */,
 				3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */,
 				3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */,
 			);
+			sourceTree = "<group>";
+		};
+		3AE8177025C31F7A00243202 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AE8177525C31F7A00243202 /* BaseNetworkUtil_macOS.framework */,
+				3AE8177725C31F7A00243202 /* BaseNetworkUtil_iOS.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +131,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3A7AE21A25C30C2F00CABE2F /* Products */;
-					ProjectRef = 3A7AE21925C30C2F00CABE2F /* BaseNetworkUtil.xcodeproj */;
+					ProductGroup = 3AE8177025C31F7A00243202 /* Products */;
+					ProjectRef = 3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A396EB225BDA29100B110C7 /* Products */;
@@ -167,13 +175,6 @@
 			remoteRef = 3A5BD56225BC334A00481A2B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3A7AE21E25C30C2F00CABE2F /* BaseNetworkUtil_macOS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BaseNetworkUtil_macOS.framework;
-			remoteRef = 3A7AE21D25C30C2F00CABE2F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		3A81C33125627F590048D103 /* UserDefaultsUtil_macOS.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -186,6 +187,20 @@
 			fileType = wrapper.cfbundle;
 			path = UserDefaultsUtil_macOSTests.xctest;
 			remoteRef = 3A81C33225627F590048D103 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AE8177525C31F7A00243202 /* BaseNetworkUtil_macOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BaseNetworkUtil_macOS.framework;
+			remoteRef = 3AE8177425C31F7A00243202 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AE8177725C31F7A00243202 /* BaseNetworkUtil_iOS.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BaseNetworkUtil_iOS.framework;
+			remoteRef = 3AE8177625C31F7A00243202 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */

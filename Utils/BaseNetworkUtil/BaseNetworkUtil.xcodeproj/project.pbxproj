@@ -1,0 +1,131 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXFileReference section */
+		3A5BD57425BC336700481A2B /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		3A5BD57525BC336800481A2B /* RequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDelegate.swift; sourceTree = "<group>"; };
+		3A5BD57625BC336800481A2B /* Controllers.Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controllers.Base.swift; sourceTree = "<group>"; };
+		3A5BD57725BC336800481A2B /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		3A5BD57F25BC338D00481A2B /* Controllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.swift; sourceTree = "<group>"; };
+		3A5BD58525BC33B000481A2B /* Controllers.Serial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.Serial.swift; sourceTree = "<group>"; };
+		3A5BD59025BC348C00481A2B /* NetworkUtilError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtilError.swift; sourceTree = "<group>"; };
+		3A5BD59425BC34F800481A2B /* ModelableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelableRequest.swift; sourceTree = "<group>"; };
+		3A5BD59725BC350200481A2B /* ModelableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelableResponse.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3A5BD55725BC334900481A2B = {
+			isa = PBXGroup;
+			children = (
+				3A5BD57325BC335D00481A2B /* Source */,
+				3A5BD56A25BC335B00481A2B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A5BD56A25BC335B00481A2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A5BD57325BC335D00481A2B /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BD58825BC33B300481A2B /* Controllers */,
+				3A5BD58F25BC348500481A2B /* Errors */,
+				3A5BD58B25BC341500481A2B /* Requests */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		3A5BD58825BC33B300481A2B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BD57625BC336800481A2B /* Controllers.Base.swift */,
+				3A5BD58525BC33B000481A2B /* Controllers.Serial.swift */,
+				3A5BD57F25BC338D00481A2B /* Controllers.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A5BD58B25BC341500481A2B /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BD59425BC34F800481A2B /* ModelableRequest.swift */,
+				3A5BD59725BC350200481A2B /* ModelableResponse.swift */,
+				3A5BD57725BC336800481A2B /* Request.swift */,
+				3A5BD57525BC336800481A2B /* RequestDelegate.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		3A5BD58F25BC348500481A2B /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BD57425BC336700481A2B /* NetworkError.swift */,
+				3A5BD59025BC348C00481A2B /* NetworkUtilError.swift */,
+			);
+			path = Errors;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		3A5BD55825BC334900481A2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+			};
+			buildConfigurationList = 3A5BD55B25BC334900481A2B /* Build configuration list for PBXProject "BaseNetworkUtil" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A5BD55725BC334900481A2B;
+			productRefGroup = 3A5BD56A25BC335B00481A2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin XCBuildConfiguration section */
+		3A5BD55C25BC334900481A2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3A5BD55D25BC334900481A2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A5BD55B25BC334900481A2B /* Build configuration list for PBXProject "BaseNetworkUtil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A5BD55C25BC334900481A2B /* Debug */,
+				3A5BD55D25BC334900481A2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A5BD55825BC334900481A2B /* Project object */;
+}
