@@ -1,4 +1,4 @@
-public enum Edge {
+public enum Edge: CaseIterable {
 	case start
 	case end
 }

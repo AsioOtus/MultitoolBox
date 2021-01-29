@@ -1,5 +1,12 @@
 import Foundation
 
+extension String {
+	public enum Side {
+		case start
+		case end
+	}
+}
+
 public extension String {
 	static let controlCharacters = [
 		"\n",
@@ -48,15 +55,15 @@ public extension String {
 public extension String {
 	static let defaultPaddingFillString: String = " "
 
-	func padded (atStartTo length: Int, with fillString: String = String.defaultPaddingFillString, cutPadFrom paddingCutEdge: Edge = .start) -> String {
-		return createPadString(length, fillString, paddingCutEdge) + self
+	func padded (atStartTo length: Int, with fillString: String = String.defaultPaddingFillString, cutPadFrom paddingCutSide: Side = .start) -> String {
+		return createPadString(length, fillString, paddingCutSide) + self
 	}
 
-	func padded (atEndTo length: Int, with fillString: String = String.defaultPaddingFillString, cutPadFrom paddingCutEdge: Edge = .end) -> String {
-		return self + createPadString(length, fillString, paddingCutEdge)
+	func padded (atEndTo length: Int, with fillString: String = String.defaultPaddingFillString, cutPadFrom paddingCutSide: Side = .end) -> String {
+		return self + createPadString(length, fillString, paddingCutSide)
 	}
 
-	private func createPadString (_ length: Int, _ fillString: String, _ paddingCutEdge: Edge) -> String {
+	private func createPadString (_ length: Int, _ fillString: String, _ paddingCutSide: Side) -> String {
 		var resultPadString = ""
 
 		guard count < length else { return resultPadString }
@@ -64,7 +71,7 @@ public extension String {
 		let padLength = length - count
 		let padString = createPadString(length, fillString)
 
-		resultPadString = paddingCutEdge == .start
+		resultPadString = paddingCutSide == .start
 			? String(padString.suffix(padLength))
 			: String(padString.prefix(padLength))
 
@@ -119,7 +126,7 @@ public extension String {
 		
 		for character in self {
 			if i == groupSize {
-				resultArray += groupString
+				resultArray += [groupString]
 				
 				groupString = ""
 				i = 0
@@ -130,7 +137,7 @@ public extension String {
 		}
 		
 		if groupString != "" {
-			resultArray += groupString
+			resultArray += [groupString]
 		}
 		
 		return resultArray

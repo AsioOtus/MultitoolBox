@@ -16,10 +16,8 @@
 		3A1B845125C0120E0042A2DC /* Customizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B844B25C0120E0042A2DC /* Customizable.swift */; };
 		3A1B846625C015850042A2DC /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B846525C015850042A2DC /* DispatchQueue.swift */; };
 		3A1B846A25C015B50042A2DC /* OSStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B846925C015B50042A2DC /* OSStatus.swift */; };
+		3A4E23DD25C4236A003B620F /* BitwiseShiftOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4E23DC25C4236A003B620F /* BitwiseShiftOperators.swift */; };
 		3A51DA1B25B1D7CB0066E836 /* LocalizationObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51DA1A25B1D7CB0066E836 /* LocalizationObject.swift */; };
-		3A51DA1F25B1D8110066E836 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51DA1E25B1D8110066E836 /* Localizable.swift */; };
-		3A51DA2925B1D8990066E836 /* LocalizableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51DA2825B1D8990066E836 /* LocalizableObject.swift */; };
-		3A85DAE825AF0196006E76AF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAE725AF0196006E76AF /* Validation.swift */; };
 		3A85DAF625AF3382006E76AF /* DispatchSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAF525AF3382006E76AF /* DispatchSingle.swift */; };
 		3A85DAF925AF33B1006E76AF /* DispatchOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAF825AF33B1006E76AF /* DispatchOnce.swift */; };
 		3A85DAFC25AF33C6006E76AF /* DispatchSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAFB25AF33C6006E76AF /* DispatchSerial.swift */; };
@@ -28,40 +26,14 @@
 		3A85DB1125AF376D006E76AF /* DispatchSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAF525AF3382006E76AF /* DispatchSingle.swift */; };
 		3A85DB1425AF37FE006E76AF /* DispatchSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAFB25AF33C6006E76AF /* DispatchSerial.swift */; };
 		3A85DB1825AF3CCA006E76AF /* DispatchSerialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DB1725AF3CCA006E76AF /* DispatchSerialTests.swift */; };
-		3A8BD856256FABC700E4C225 /* DelegatedCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949AFE2454629C007E7928 /* DelegatedCall.swift */; };
-		3A8BD857256FABC700E4C225 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949AFB2454629C007E7928 /* Event.swift */; };
-		3A8BD858256FABC700E4C225 /* Kit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949AFA2454629C007E7928 /* Kit.swift */; };
-		3A8BD859256FABC700E4C225 /* MTTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9A2A4F2508D653000ABDC2 /* MTTimer.swift */; };
-		3A8BD85B256FABC700E4C225 /* Seal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949AFC2454629C007E7928 /* Seal.swift */; };
 		3A8BD85D256FABC700E4C225 /* Unowned.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949AFD2454629C007E7928 /* Unowned.swift */; };
 		3A8BD85E256FABC700E4C225 /* Weak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949AFF2454629C007E7928 /* Weak.swift */; };
-		3A8BD85F256FABC700E4C225 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B062454629C007E7928 /* Operators.swift */; };
 		3A8BD860256FABC700E4C225 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B072454629C007E7928 /* Typealiases.swift */; };
-		3A8BD861256FABC700E4C225 /* Directions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B012454629C007E7928 /* Directions.swift */; };
-		3A8BD862256FABC700E4C225 /* Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B022454629C007E7928 /* Edge.swift */; };
-		3A8BD863256FABC700E4C225 /* KeyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B042454629C007E7928 /* KeyCode.swift */; };
-		3A8BD864256FABC700E4C225 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B032454629C007E7928 /* Result.swift */; };
-		3A8BD865256FABC700E4C225 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B092454629C007E7928 /* Array.swift */; };
-		3A8BD866256FABC700E4C225 /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0F2454629C007E7928 /* Bool.swift */; };
-		3A8BD867256FABC700E4C225 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0A2454629C007E7928 /* Collection.swift */; };
 		3A8BD868256FABC700E4C225 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0B2454629C007E7928 /* Data.swift */; };
 		3A8BD869256FABC700E4C225 /* FixedWidthInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0C2454629C007E7928 /* FixedWidthInteger.swift */; };
 		3A8BD86A256FABC700E4C225 /* Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0E2454629C007E7928 /* Numeric.swift */; };
-		3A8BD86B256FABC700E4C225 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1166E424DD9E7A007E0CD6 /* Optional.swift */; };
-		3A8BD86C256FABC700E4C225 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B102454629C007E7928 /* Set.swift */; };
 		3A8BD86D256FABC700E4C225 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0D2454629C007E7928 /* String.swift */; };
-		3A8BD86E256FABC700E4C225 /* CreatableByInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B1B2454629C007E7928 /* CreatableByInt.swift */; };
-		3A8BD86F256FABC700E4C225 /* DataStringRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B162454629C007E7928 /* DataStringRepresentable.swift */; };
-		3A8BD870256FABC700E4C225 /* HashableByIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B1D2454629C007E7928 /* HashableByIdentifier.swift */; };
-		3A8BD871256FABC700E4C225 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B1C2454629C007E7928 /* Identifiable.swift */; };
-		3A8BD872256FABC700E4C225 /* InfoContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B182454629C007E7928 /* InfoContaining.swift */; };
-		3A8BD873256FABC700E4C225 /* Randomable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B192454629C007E7928 /* Randomable.swift */; };
-		3A8BD874256FABC700E4C225 /* RandomableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B172454629C007E7928 /* RandomableElement.swift */; };
-		3A8BD875256FABC700E4C225 /* TypeIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B1A2454629C007E7928 /* TypeIdentifiable.swift */; };
-		3A8BD876256FABC700E4C225 /* RandomableElementConforming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B1F2454629C007E7928 /* RandomableElementConforming.swift */; };
-		3A8BD877256FABC700E4C225 /* EnumDictionarySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B122454629C007E7928 /* EnumDictionarySet.swift */; };
 		3A8BD878256FABC700E4C225 /* KeyValuePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B132454629C007E7928 /* KeyValuePair.swift */; };
-		3A8BD879256FABC700E4C225 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B142454629C007E7928 /* Coordinates.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +54,7 @@
 		3A1B844B25C0120E0042A2DC /* Customizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customizable.swift; sourceTree = "<group>"; };
 		3A1B846525C015850042A2DC /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
 		3A1B846925C015B50042A2DC /* OSStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSStatus.swift; sourceTree = "<group>"; };
+		3A4E23DC25C4236A003B620F /* BitwiseShiftOperators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitwiseShiftOperators.swift; sourceTree = "<group>"; };
 		3A51DA1A25B1D7CB0066E836 /* LocalizationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationObject.swift; sourceTree = "<group>"; };
 		3A51DA1E25B1D8110066E836 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		3A51DA2825B1D8990066E836 /* LocalizableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableObject.swift; sourceTree = "<group>"; };
@@ -167,6 +140,7 @@
 				3A1B844825C012020042A2DC /* Closures */,
 				3A1B845C25C012710042A2DC /* Declarations */,
 				3A1B845E25C012B10042A2DC /* Extensions */,
+				3AD4C9B825C4207600568CB7 /* Protocols */,
 				3A1B846125C013750042A2DC /* Structs */,
 			);
 			path = Core;
@@ -188,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				3A949B072454629C007E7928 /* Typealiases.swift */,
+				3A4E23DC25C4236A003B620F /* BitwiseShiftOperators.swift */,
 			);
 			path = Declarations;
 			sourceTree = "<group>";
@@ -333,7 +308,6 @@
 			children = (
 				3A949B1B2454629C007E7928 /* CreatableByInt.swift */,
 				3A949B162454629C007E7928 /* DataStringRepresentable.swift */,
-				3A1B844325C011980042A2DC /* EmptyInitializable.swift */,
 				3A949B1D2454629C007E7928 /* HashableByIdentifier.swift */,
 				3A949B1C2454629C007E7928 /* Identifiable.swift */,
 				3A949B182454629C007E7928 /* InfoContaining.swift */,
@@ -352,6 +326,14 @@
 				3A949B1F2454629C007E7928 /* RandomableElementConforming.swift */,
 			);
 			path = ProtocolsConforming;
+			sourceTree = "<group>";
+		};
+		3AD4C9B825C4207600568CB7 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B844325C011980042A2DC /* EmptyInitializable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,51 +457,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A8BD856256FABC700E4C225 /* DelegatedCall.swift in Sources */,
 				3A1B846625C015850042A2DC /* DispatchQueue.swift in Sources */,
 				3A85DAF625AF3382006E76AF /* DispatchSingle.swift in Sources */,
-				3A8BD857256FABC700E4C225 /* Event.swift in Sources */,
-				3A8BD858256FABC700E4C225 /* Kit.swift in Sources */,
-				3A8BD859256FABC700E4C225 /* MTTimer.swift in Sources */,
-				3A8BD85B256FABC700E4C225 /* Seal.swift in Sources */,
 				3A8BD85D256FABC700E4C225 /* Unowned.swift in Sources */,
 				3A8BD85E256FABC700E4C225 /* Weak.swift in Sources */,
-				3A8BD85F256FABC700E4C225 /* Operators.swift in Sources */,
 				3A8BD860256FABC700E4C225 /* Typealiases.swift in Sources */,
-				3A8BD861256FABC700E4C225 /* Directions.swift in Sources */,
-				3A8BD862256FABC700E4C225 /* Edge.swift in Sources */,
-				3A8BD863256FABC700E4C225 /* KeyCode.swift in Sources */,
-				3A85DAE825AF0196006E76AF /* Validation.swift in Sources */,
 				3A1B844C25C0120E0042A2DC /* Block.swift in Sources */,
-				3A8BD864256FABC700E4C225 /* Result.swift in Sources */,
 				3A85DAF925AF33B1006E76AF /* DispatchOnce.swift in Sources */,
+				3A4E23DD25C4236A003B620F /* BitwiseShiftOperators.swift in Sources */,
 				3A51DA1B25B1D7CB0066E836 /* LocalizationObject.swift in Sources */,
-				3A8BD865256FABC700E4C225 /* Array.swift in Sources */,
-				3A8BD866256FABC700E4C225 /* Bool.swift in Sources */,
-				3A8BD867256FABC700E4C225 /* Collection.swift in Sources */,
 				3A8BD868256FABC700E4C225 /* Data.swift in Sources */,
 				3A8BD869256FABC700E4C225 /* FixedWidthInteger.swift in Sources */,
 				3A85DAFC25AF33C6006E76AF /* DispatchSerial.swift in Sources */,
 				3A8BD86A256FABC700E4C225 /* Numeric.swift in Sources */,
-				3A8BD86B256FABC700E4C225 /* Optional.swift in Sources */,
-				3A8BD86C256FABC700E4C225 /* Set.swift in Sources */,
 				3A8BD86D256FABC700E4C225 /* String.swift in Sources */,
-				3A8BD86E256FABC700E4C225 /* CreatableByInt.swift in Sources */,
 				3A1B845025C0120E0042A2DC /* Customizable.swift in Sources */,
-				3A8BD86F256FABC700E4C225 /* DataStringRepresentable.swift in Sources */,
-				3A8BD870256FABC700E4C225 /* HashableByIdentifier.swift in Sources */,
-				3A51DA1F25B1D8110066E836 /* Localizable.swift in Sources */,
-				3A51DA2925B1D8990066E836 /* LocalizableObject.swift in Sources */,
-				3A8BD871256FABC700E4C225 /* Identifiable.swift in Sources */,
-				3A8BD872256FABC700E4C225 /* InfoContaining.swift in Sources */,
-				3A8BD873256FABC700E4C225 /* Randomable.swift in Sources */,
-				3A8BD874256FABC700E4C225 /* RandomableElement.swift in Sources */,
-				3A8BD875256FABC700E4C225 /* TypeIdentifiable.swift in Sources */,
-				3A8BD876256FABC700E4C225 /* RandomableElementConforming.swift in Sources */,
-				3A8BD877256FABC700E4C225 /* EnumDictionarySet.swift in Sources */,
 				3A1B844425C011980042A2DC /* EmptyInitializable.swift in Sources */,
 				3A8BD878256FABC700E4C225 /* KeyValuePair.swift in Sources */,
-				3A8BD879256FABC700E4C225 /* Coordinates.swift in Sources */,
 				3A1B844E25C0120E0042A2DC /* ClosureInitializable.swift in Sources */,
 				3A1B846A25C015B50042A2DC /* OSStatus.swift in Sources */,
 			);
