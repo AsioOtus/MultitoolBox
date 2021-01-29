@@ -10,7 +10,7 @@ let package = Package(
 	],
 	products: [
 		//.library(name: "MultitoolBase", targets: ["MultitoolBaseCore"]),
-		.library(name: "MultitoolBase", type: .dynamic, targets: ["MultitoolBaseCore"]),
+		.library(name: "MultitoolBase", type: .dynamic, targets: ["MultitoolBase"]),
 		//.library(name: "BaseNetworkUtil", targets: ["BaseNetworkUtil"]),
 		.library(name: "BaseNetworkUtil", type: .dynamic, targets: ["BaseNetworkUtil"]),
 		//.library(name: "KeychainUtil", targets: ["KeychainUtil"]),
@@ -24,7 +24,7 @@ let package = Package(
 	],
 	targets: [
 		.target(
-			name: "MultitoolBaseCore",
+			name: "MultitoolBase",
 			dependencies: [],
 			path: "Base/Source/Core"
 		),
