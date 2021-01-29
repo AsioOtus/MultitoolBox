@@ -1,8 +1,6 @@
 import os.log
 
-public class OsLogLoggingProvider: LoggingProvider {
-	private let logger = os.Logger()
-	
+public class OsLogLoggingProvider: LoggingProvider {	
 	public func log (_ level: LogLevel, _ message: String) {
 		let osLogType = logLevelToOsLogType(level)
 		os_log(osLogType, "%@", message)
