@@ -1,6 +1,6 @@
-protocol Customizable { }
+public protocol Customizable { }
 
-extension Customizable {
+public extension Customizable {
 	func use (in block: (Self) throws -> Void) rethrows {
 		try block(self)
 	}
@@ -15,7 +15,7 @@ extension Customizable {
 	}
 }
 
-extension Customizable {
+public extension Customizable {
 	func setCopy (in block: (inout Self) throws -> Void) rethrows -> Self {
 		var selfCopy = self
 		try block(&selfCopy)
@@ -33,7 +33,7 @@ extension Customizable {
 	}
 }
 
-extension Customizable {
+public extension Customizable {
 	func transform <T> (in block: (Self) throws -> T) rethrows -> T {
 		let result = try block(self)
 		return result
