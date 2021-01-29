@@ -1,6 +1,6 @@
 import os.log
 
-@available(iOS 14.0, *)
+@available(iOS 14.0, macOS 11.0, *)
 class LoggerFrameworkLoggindProvider: LoggingProvider {
 	private let logger = os.Logger()
 	

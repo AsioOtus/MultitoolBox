@@ -1,4 +1,5 @@
 import os.log
+import Foundation
 
 @available(iOS 12.0, *)
 public class OsLogLoggingProvider: LoggingProvider {
