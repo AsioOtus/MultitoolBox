@@ -1,9 +1,10 @@
 import os.log
 
-public class OsLogLoggingProvider: LoggingProvider {	
+@available(iOS 12.0, *)
+public class OsLogLoggingProvider: LoggingProvider {
 	public func log (_ level: LogLevel, _ message: String) {
 		let osLogType = logLevelToOsLogType(level)
-		os_log(osLogType, "%@", message)
+		os_log(osLogType, "%@", message as NSString)
 	}
 	
 	private func logLevelToOsLogType (_ level: LogLevel) -> OSLogType {
