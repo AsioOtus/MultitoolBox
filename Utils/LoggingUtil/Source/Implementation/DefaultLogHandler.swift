@@ -1,11 +1,17 @@
-import os
-
 public extension DefaultLogHandler {
 	struct Settings {
+		public let prefix: String
+		public let source: String
+		public let loggingProvider: LoggingProvider
+		
 		public var level = LogLevel.info
 		public var enableSourceCodeInfo = false
 		
-		public init (level: LogLevel = .info, enableSourceCodeInfo: Bool = false) {
+		public init (prefix: String, source: String = "", loggingProvider: LoggingProvider, level: LogLevel = .info, enableSourceCodeInfo: Bool = false) {
+			self.prefix = prefix
+			self.source = source
+			self.loggingProvider = loggingProvider
+			
 			self.level = level
 			self.enableSourceCodeInfo = enableSourceCodeInfo
 		}
@@ -13,16 +19,9 @@ public extension DefaultLogHandler {
 }
 
 public class DefaultLogHandler: LogHandler {
-	private let logger = os.Logger()
+	public var settings: Settings
 	
-	public let prefix: String
-	public let source: String
-	
-	public var settings = Settings()
-	
-	public init (prefix: String, source: String = "", settings: Settings = .init()) {
-		self.prefix = prefix
-		self.source = source
+	public init (settings: Settings) {
 		self.settings = settings
 	}
 	
@@ -31,12 +30,12 @@ public class DefaultLogHandler: LogHandler {
 		
 		var finalMessage = "\(level) – ".uppercased()
 		
-		if !prefix.isEmpty {
-			finalMessage += prefix
+		if !settings.prefix.isEmpty {
+			finalMessage += settings.prefix
 		}
 		
-		if !self.source.isEmpty {
-			finalMessage += delimiter(finalMessage, ".") + self.source
+		if !settings.source.isEmpty {
+			finalMessage += delimiter(finalMessage, ".") + settings.source
 		}
 		
 		if !source.isEmpty {
@@ -51,25 +50,10 @@ public class DefaultLogHandler: LogHandler {
 	}
 	
 	public func log (_ level: LogLevel, _ source: String, _ message: String, _ file: String, _ function: String, _ line: UInt) {
+		guard level >= settings.level else { return }
+		
 		let finalMessage = self.message(level, source: source, message: message)
 		
-		switch level {
-		case .trace:
-			logger.trace("\(finalMessage)")
-		case .debug:
-			logger.debug("\(finalMessage)")
-		case .info:
-			logger.info("\(finalMessage)")
-		case .notice:
-			logger.notice("\(finalMessage)")
-		case .warning:
-			logger.warning("\(finalMessage)")
-		case .error:
-			logger.error("\(finalMessage)")
-		case .critical:
-			logger.critical("\(finalMessage)")
-		case .fault:
-			logger.fault("\(finalMessage)")
-		}
+		settings.loggingProvider.log(level, finalMessage)
 	}
 }

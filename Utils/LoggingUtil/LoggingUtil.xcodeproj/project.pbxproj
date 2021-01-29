@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3A24821F25BEF65F00D5CF41 /* LogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24821E25BEF65F00D5CF41 /* LogHandler.swift */; };
 		3A24822725BEF6FC00D5CF41 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24822625BEF6FC00D5CF41 /* Logger.swift */; };
+		3A59891225C48EC300373FFA /* LoggerFrameworkLoggindProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891125C48EC300373FFA /* LoggerFrameworkLoggindProvider.swift */; };
+		3A59891525C48EF300373FFA /* LoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891425C48EF300373FFA /* LoggingProvider.swift */; };
+		3A59891C25C4911A00373FFA /* OsLogLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891B25C4911A00373FFA /* OsLogLoggingProvider.swift */; };
 		3A5BD53625BC1E4000481A2B /* LoggingUtil_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A5BD53425BC1E4000481A2B /* LoggingUtil_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A5BD53C25BC1E5000481A2B /* DefaultLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BD53B25BC1E5000481A2B /* DefaultLogger.swift */; };
 		3A5BD53F25BC1E5600481A2B /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BD53E25BC1E5600481A2B /* LogLevel.swift */; };
@@ -18,6 +21,9 @@
 /* Begin PBXFileReference section */
 		3A24821E25BEF65F00D5CF41 /* LogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHandler.swift; sourceTree = "<group>"; };
 		3A24822625BEF6FC00D5CF41 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		3A59891125C48EC300373FFA /* LoggerFrameworkLoggindProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerFrameworkLoggindProvider.swift; sourceTree = "<group>"; };
+		3A59891425C48EF300373FFA /* LoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingProvider.swift; sourceTree = "<group>"; };
+		3A59891B25C4911A00373FFA /* OsLogLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsLogLoggingProvider.swift; sourceTree = "<group>"; };
 		3A5BD53125BC1E4000481A2B /* LoggingUtil_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggingUtil_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5BD53425BC1E4000481A2B /* LoggingUtil_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoggingUtil_macOS.h; sourceTree = "<group>"; };
 		3A5BD53525BC1E4000481A2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,10 +46,22 @@
 		3A24821D25BEF65200D5CF41 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				3A24821E25BEF65F00D5CF41 /* LogHandler.swift */,
 				3A24822625BEF6FC00D5CF41 /* Logger.swift */,
+				3A59891425C48EF300373FFA /* LoggingProvider.swift */,
+				3A24821E25BEF65F00D5CF41 /* LogHandler.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3A59891825C48F3700373FFA /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BD53B25BC1E5000481A2B /* DefaultLogger.swift */,
+				3A59891125C48EC300373FFA /* LoggerFrameworkLoggindProvider.swift */,
+				3A5BD54125BC1E9600481A2B /* DefaultLogHandler.swift */,
+				3A59891B25C4911A00373FFA /* OsLogLoggingProvider.swift */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		3A5BD51D25BC1E1500481A2B = {
@@ -58,9 +76,8 @@
 		3A5BD52B25BC1E1E00481A2B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3A59891825C48F3700373FFA /* Implementation */,
 				3A24821D25BEF65200D5CF41 /* Protocols */,
-				3A5BD53B25BC1E5000481A2B /* DefaultLogger.swift */,
-				3A5BD54125BC1E9600481A2B /* DefaultLogHandler.swift */,
 				3A5BD53E25BC1E5600481A2B /* LogLevel.swift */,
 			);
 			path = Source;
@@ -161,10 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A59891225C48EC300373FFA /* LoggerFrameworkLoggindProvider.swift in Sources */,
 				3A24822725BEF6FC00D5CF41 /* Logger.swift in Sources */,
 				3A5BD54225BC1E9600481A2B /* DefaultLogHandler.swift in Sources */,
+				3A59891C25C4911A00373FFA /* OsLogLoggingProvider.swift in Sources */,
 				3A5BD53C25BC1E5000481A2B /* DefaultLogger.swift in Sources */,
 				3A5BD53F25BC1E5600481A2B /* LogLevel.swift in Sources */,
+				3A59891525C48EF300373FFA /* LoggingProvider.swift in Sources */,
 				3A24821F25BEF65F00D5CF41 /* LogHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
