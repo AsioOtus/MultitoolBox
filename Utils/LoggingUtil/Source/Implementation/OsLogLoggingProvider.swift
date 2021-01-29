@@ -3,6 +3,8 @@ import Foundation
 
 @available(iOS 12.0, *)
 public class OsLogLoggingProvider: LoggingProvider {
+	public init () { }
+	
 	public func log (_ level: LogLevel, _ message: String) {
 		let osLogType = logLevelToOsLogType(level)
 		os_log(osLogType, "%@", message as NSString)
