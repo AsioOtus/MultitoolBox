@@ -16,20 +16,22 @@ public extension Customizable {
 }
 
 public extension Customizable {
-	func setCopy (in block: (inout Self) throws -> Void) rethrows -> Self {
+	func set (in block: (inout Self) throws -> Void) rethrows -> Self {
 		var selfCopy = self
 		try block(&selfCopy)
 		return selfCopy
 	}
 	
-	mutating func set (in block: (inout Self) throws -> Void) rethrows -> Self {
+	mutating func setSelf (in block: (inout Self) throws -> Void) rethrows -> Self {
 		try block(&self)
 		return self
 	}
-	
-	mutating func set (in block: (Self) throws -> Self) rethrows -> Self {
-		let result = try block(self)
-		return result
+}
+
+public extension Customizable where Self: AnyObject {
+	func set (in block: (Self) throws -> Void) rethrows -> Self {
+		try block(self)
+		return self
 	}
 }
 
