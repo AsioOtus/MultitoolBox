@@ -4,7 +4,7 @@ import os.log
 public class LoggerFrameworkLoggindProvider: LoggingProvider {
 	private let logger = os.Logger()
 	
-	func log (_ level: LogLevel, _ message: String) {
+	public func log (_ level: LogLevel, _ message: String) {
 		switch level {
 		case .trace:
 			logger.trace("\(message)")
