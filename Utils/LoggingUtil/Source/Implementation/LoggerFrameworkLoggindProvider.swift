@@ -1,7 +1,7 @@
 import os.log
 
 @available(iOS 14.0, macOS 11.0, *)
-class LoggerFrameworkLoggindProvider: LoggingProvider {
+public class LoggerFrameworkLoggindProvider: LoggingProvider {
 	private let logger = os.Logger()
 	
 	func log (_ level: LogLevel, _ message: String) {
