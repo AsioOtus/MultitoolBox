@@ -5,12 +5,12 @@ import Foundation
 public class OsLogLoggingProvider: LoggingProvider {
 	public init () { }
 	
-	public func log (_ level: LogLevel, _ message: String) {
+	public func log (_ level: LoggingLevel, _ message: String) {
 		let osLogType = logLevelToOsLogType(level)
 		os_log(osLogType, "%@", message as NSString)
 	}
 	
-	private func logLevelToOsLogType (_ level: LogLevel) -> OSLogType {
+	private func logLevelToOsLogType (_ level: LoggingLevel) -> OSLogType {
 		let osLogType: OSLogType
 		
 		switch level {

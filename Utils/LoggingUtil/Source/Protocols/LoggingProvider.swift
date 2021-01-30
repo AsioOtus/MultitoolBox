@@ -1,3 +1,3 @@
 public protocol LoggingProvider {
-	func log (_ level: LogLevel, _ message: String)
+	func log (_ level: LoggingLevel, _ message: String)
 }

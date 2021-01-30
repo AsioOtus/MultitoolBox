@@ -1,6 +1,6 @@
-protocol Logger {	
+public protocol Logger {	
 	func log (
-		level: LogLevel,
+		level: LoggingLevel,
 		message: @autoclosure () -> String,
 		source: @autoclosure () -> String?,
 		file: String, function: String, line: UInt

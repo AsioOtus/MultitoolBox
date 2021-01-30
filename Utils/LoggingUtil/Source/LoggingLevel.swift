@@ -1,4 +1,4 @@
-public enum LogLevel: String, Codable, CaseIterable {
+public enum LoggingLevel: String, Codable, CaseIterable {
 	case trace
 	case debug
 	case info
@@ -33,7 +33,7 @@ public enum LogLevel: String, Codable, CaseIterable {
 		return order
 	}
 	
-	public static func >= (lhs: LogLevel, rhs: LogLevel) -> Bool {
+	public static func >= (lhs: LoggingLevel, rhs: LoggingLevel) -> Bool {
 		return lhs.order >= rhs.order
 	}
 }

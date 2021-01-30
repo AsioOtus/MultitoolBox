@@ -1,17 +1,16 @@
 public struct DefaultLogger: Logger {
+	public var level = LoggingLevel.info
 	public let source: String
 	public let logHandler: LogHandler
 	
-	public var level = LogLevel.info
-	
-	public init (level: LogLevel = .info, source: String, logHandler: LogHandler) {
+	public init (level: LoggingLevel = .info, source: String, logHandler: LogHandler) {
 		self.source = source
 		self.level = level
 		self.logHandler = logHandler
 	}
 	
 	public func log (
-		level: LogLevel,
+		level: LoggingLevel,
 		message: @autoclosure () -> String,
 		source: @autoclosure () -> String? = nil,
 		file: String = #file, function: String = #function, line: UInt = #line
