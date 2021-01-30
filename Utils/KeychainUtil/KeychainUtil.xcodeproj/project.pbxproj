@@ -34,7 +34,6 @@
 		3A211E71257E38340017229F /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B74245463C4007E7928 /* KeychainError.swift */; };
 		3A211E72257E38340017229F /* KeychainGenericPasswordsLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B506246054E400056493 /* KeychainGenericPasswordsLoggingProvider.swift */; };
 		3A211E73257E38340017229F /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B76245463C4007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift */; };
-		3A211E74257E38340017229F /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AACB043245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift */; };
 		3A211E75257E38340017229F /* KeychainLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABCFB2466AB18003F3B7D /* KeychainLoggingProvider.swift */; };
 		3A37019E247BFA5800100BEB /* GenericPassword.Logger.Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37019D247BFA5800100BEB /* GenericPassword.Logger.Commit.swift */; };
 		3A3701A2247BFDDB00100BEB /* Logger.Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701A1247BFDDB00100BEB /* Logger.Commit.swift */; };
@@ -58,7 +57,6 @@
 		3A949C0524546816007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B76245463C4007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift */; };
 		3A949C0624546816007E7928 /* KeychainDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B75245463C4007E7928 /* KeychainDescribable.swift */; };
 		3A949C082454750C007E7928 /* KeychainClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949C072454750C007E7928 /* KeychainClass.swift */; };
-		3AACB044245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AACB043245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift */; };
 		3AADD341247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADD340247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift */; };
 		3AADD343247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AADD342247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift */; };
 		3ACABCEC2465E057003F3B7D /* GenericPassword.Logger.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACABCEB2465E057003F3B7D /* GenericPassword.Logger.Info.swift */; };
@@ -107,7 +105,6 @@
 		3A949BDF245467AE007E7928 /* Keychain_macOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Keychain_macOS.h; sourceTree = "<group>"; };
 		3A949BE0245467AE007E7928 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A949C072454750C007E7928 /* KeychainClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainClass.swift; sourceTree = "<group>"; };
-		3AACB043245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainGenericPasswordsItemIdentifierPrefixProvider.swift; sourceTree = "<group>"; };
 		3AADD340247A9A64008096B9 /* DefaultKeychainGenericPasswordsLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeychainGenericPasswordsLoggingProvider.swift; sourceTree = "<group>"; };
 		3AADD342247A9EC0008096B9 /* DefaultKeychainLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultKeychainLoggingProvider.swift; sourceTree = "<group>"; };
 		3ACABCEB2465E057003F3B7D /* GenericPassword.Logger.Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericPassword.Logger.Info.swift; sourceTree = "<group>"; };
@@ -196,7 +193,6 @@
 				3A949B74245463C4007E7928 /* KeychainError.swift */,
 				3AD3B506246054E400056493 /* KeychainGenericPasswordsLoggingProvider.swift */,
 				3A949B76245463C4007E7928 /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift */,
-				3AACB043245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift */,
 				3ACABCFB2466AB18003F3B7D /* KeychainLoggingProvider.swift */,
 			);
 			path = Protocols;
@@ -391,7 +387,6 @@
 				3A211E72257E38340017229F /* KeychainGenericPasswordsLoggingProvider.swift in Sources */,
 				3A7AE1E925C20FDB00CABE2F /* GenericPassword.Coder.swift in Sources */,
 				3A211E73257E38340017229F /* KeychainGenericPasswordsItemIdentifierPostfixProvider.swift in Sources */,
-				3A211E74257E38340017229F /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift in Sources */,
 				3A211E75257E38340017229F /* KeychainLoggingProvider.swift in Sources */,
 				3A211E54257E38060017229F /* main.swift in Sources */,
 			);
@@ -429,7 +424,6 @@
 				3ACABCFC2466AB18003F3B7D /* KeychainLoggingProvider.swift in Sources */,
 				3ACABD012466F325003F3B7D /* Logger.Record.swift in Sources */,
 				3A7AE1E825C20FDB00CABE2F /* GenericPassword.Coder.swift in Sources */,
-				3AACB044245864EA00FB3795 /* KeychainGenericPasswordsItemIdentifierPrefixProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

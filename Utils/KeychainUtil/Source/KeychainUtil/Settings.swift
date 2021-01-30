@@ -60,21 +60,34 @@ extension Settings {
 	public final class GenericPasswords {
 		public var logging: Logging
 		
-		public let itemIdentifierPrefixProvider: KeychainGenericPasswordsItemIdentifierPrefixProvider?
+		public let prefix: String?
 		
 		public init (
-			itemIdentifierPrefixProvider: KeychainGenericPasswordsItemIdentifierPrefixProvider,
+			prefix: String,
 			logging: Logging = .default
 		) {
-			self.itemIdentifierPrefixProvider = itemIdentifierPrefixProvider
+			self.prefix = prefix
 			self.logging = logging
 		}
 		
 		internal static let `default` = GenericPasswords()
 		private init () {
-			self.itemIdentifierPrefixProvider = nil
+			self.prefix = nil
 			self.logging = .default
 		}
+	}
+}
+
+
+
+extension Settings.GenericPasswords {
+	public func createIdentifier (_ baseIdentifier: String) -> String {
+		guard let prefix = settings.genericPasswords.prefix else { fatalError("KeychainUtil – prefix is nil") }
+		guard !prefix.isEmpty else { fatalError("KeychainUtil – prefix is empty") }
+		guard !baseIdentifier.isEmpty else { fatalError("KeychainUtil – baseIdentifier is empty") }
+		
+		let identifier = "\(prefix).\(baseIdentifier)"
+		return identifier
 	}
 }
 

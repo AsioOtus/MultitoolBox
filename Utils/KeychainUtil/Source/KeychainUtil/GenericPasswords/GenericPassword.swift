@@ -5,70 +5,54 @@ open class GenericPassword<Value: Codable> {
 	
 	public let accessQueue: DispatchQueue
 	
-	public final let shortIdentifier: String
+	public final let baseIdentifier: String
 	public final let identifier: String
+	
+	public let savingQuery: [CFString: Any]
+	public let loadingQuery: [CFString: Any]
+	public let accessability: CFString
 	
 	private static var commonAtributes: [CFString: Any] {
 		[kSecClass: kSecClassGenericPassword]
 	}
 	
-	private let baseSavingQuery: [CFString: Any]
-	private let baseLoadingQuery: [CFString: Any]
-	private let accessability: CFString
-	
-	
-	
-	public var savingQuery: [CFString: Any] {
-		let savingQuery = self.baseSavingQuery.merging([kSecAttrAccessible: accessability]){ (current, _) in current }
-		let fullSavingQuery = savingQuery.merging(Self.commonAtributes){ (current, _) in current }
-		return fullSavingQuery
-	}
-	
-	public var loadingQuery: [CFString: Any] {
-		let fullLoadingQuery = baseLoadingQuery.merging(Self.commonAtributes){ (current, _) in current }
-		return fullLoadingQuery
-	}
-	
 
 	
 	public init (
-		_ shortIdentifier: String,
+		_ baseIdentifier: String,
 		savingQuery: [CFString: Any]? = nil,
 		loadingQuery: [CFString: Any]? = nil,
 		accessability: CFString = kSecAttrAccessibleWhenUnlockedThisDeviceOnly,
 		queue: DispatchQueue? = nil,
 		enableValueLogging: Bool = false
 	) {
-		let identifier = Self.identifier(shortIdentifier)
+		let baseIdentifier = baseIdentifier.trimmingCharacters(in: .whitespacesAndNewlines)
+		let identifier = settings.genericPasswords.createIdentifier(baseIdentifier)
 		
-		self.shortIdentifier = shortIdentifier
+		self.baseIdentifier = baseIdentifier
 		self.identifier = identifier
 		
-		self.baseSavingQuery = savingQuery ?? [:]
-		self.baseLoadingQuery = loadingQuery ?? [:]
+		self.savingQuery = (savingQuery ?? [:])
+			.merging([kSecAttrAccessible: accessability]) { (current, _) in current }
+			.merging(Self.commonAtributes) { (current, _) in current }
+		
+		self.loadingQuery =	(loadingQuery ?? [:])
+			.merging(Self.commonAtributes) { (current, _) in current }
 		self.accessability = accessability
 					
-		self.logger = Logger(String(describing: Self.self), enableValueLogging)
+		self.logger = Logger("\(Self.self)", enableValueLogging)
 		self.accessQueue = queue ?? DispatchQueue(label: "\(Self.self).\(identifier).accessQueue")
 	}
 	
 	
 	
 	public final func postfixedIdentifier (_ postfixProvider: KeychainGenericPasswordsItemIdentifierPostfixProvider?) -> String {
-		guard let postfixProvider = postfixProvider else { return identifier }
-		
-		let postfix = postfixProvider.keychainGenericPasswordsPostfix.trimmingCharacters(in: .whitespacesAndNewlines)
-		
-		guard !postfix.isEmpty else { return identifier }
+		guard
+			let postfix = postfixProvider?.keychainGenericPasswordsPostfix.trimmingCharacters(in: .whitespacesAndNewlines),
+			!postfix.isEmpty
+		else { return identifier }
 		
 		return "\(self.identifier).\(postfix)"
-	}
-	
-	private static func identifier (_ shortIdentifier: String) -> String {
-		guard let prefix = settings.genericPasswords.itemIdentifierPrefixProvider?.keychainGenericPasswordsPrefix else { fatalError("KeychainUtil – Settings.current.genericPasswords.prefixProvider is nil") }
-		
-		let identifier = "\(prefix).\(shortIdentifier)"
-		return identifier
 	}
 }
 
