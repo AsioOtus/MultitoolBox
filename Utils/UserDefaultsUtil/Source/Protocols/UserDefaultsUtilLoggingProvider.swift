@@ -1,3 +1,3 @@
 public protocol UserDefaultsUtilLoggingProvider {
-	func userDefaultsUtilLog <ValueType> (_: Logger.Info<ValueType>)
+	func userDefaultsUtilLog <Value> (_: Logger.Info<Value>)
 }
