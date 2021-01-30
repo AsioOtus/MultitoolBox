@@ -30,40 +30,53 @@ public struct Settings {
 
 extension Settings {
 	public struct Items {
-		public let itemKeyPrefixProvider: UserDefaultsUtilItemKeyPrefixProvider?
+		public let prefix: String?
 		
-		public init (itemKeyPrefixProvider: UserDefaultsUtilItemKeyPrefixProvider) {
-			self.itemKeyPrefixProvider = itemKeyPrefixProvider
+		public init (prefix: String) {
+			self.prefix = prefix
 		}
 		
 		internal static let `default` = Items()
 		private init () {
-			self.itemKeyPrefixProvider = nil
+			self.prefix = nil
 		}
 	}
 }
 
 
 
+extension Settings.Items {
+	public func createKey (_ baseKey: String) -> String {
+		guard !baseKey.isEmpty else { fatalError("UserDefaultsUtil – baseKey is empty") }
+		
+		var key = prefix ?? ""
+		key += (key.isEmpty ? "" : ".") + baseKey
+		
+		return key
+	}
+}
+
+
+
+
 extension Settings {
 	public struct Logging {
 		public var enable: Bool
-		public var level: OSLogType
 		public var enableValuesLogging: Bool
+		public var level: OSLogType
 				
 		public var loggingProvider: UserDefaultsUtilLoggingProvider?
 		
 		public static let `default` = Logging()
 		public init (
 			enable: Bool = true,
-			level: OSLogType = .default,
 			enableValuesLogging: Bool = false,
-			
+			level: OSLogType = .default,
 			loggingProvider: UserDefaultsUtilLoggingProvider? = nil
 		) {
 			self.enable = enable
-			self.level = level
 			self.enableValuesLogging = enableValuesLogging
+			self.level = level
 			
 			self.loggingProvider = loggingProvider
 		}

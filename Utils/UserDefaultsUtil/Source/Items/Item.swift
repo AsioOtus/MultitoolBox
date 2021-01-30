@@ -12,7 +12,8 @@ open class Item<Value: Codable> {
 	public final let key: String
 	
 	public init (_ baseKey: String, _ userDefaultsInstance: UserDefaults = .standard, queue: DispatchQueue? = nil) {
-		let key = Self.key(baseKey)
+		let baseKey = baseKey.trimmingCharacters(in: .whitespacesAndNewlines)
+		let key = settings.items.createKey(baseKey)
 		
 		self.logger = Logger(String(describing: Self.self))
 		
@@ -24,23 +25,12 @@ open class Item<Value: Codable> {
 	}
 
 	public final func postfixedKey (_ postfixProvider: UserDefaultsUtilItemKeyPostfixProvider?) -> String {
-		guard let postfixProvider = postfixProvider else { return key }
-		
-		let postfix = postfixProvider.userDefaultsUtilItemPostfix.trimmingCharacters(in: .whitespacesAndNewlines)
-		
-		guard !postfix.isEmpty else { return key }
+		guard
+			let postfix = postfixProvider?.userDefaultsUtilItemPostfix.trimmingCharacters(in: .whitespacesAndNewlines),
+			!postfix.isEmpty
+		else { return key }
 		
 		return "\(key).\(postfix)"
-	}
-	
-	private static func key (_ baseKey: String) -> String {
-		var key = baseKey
-		
-		if let keyPrefix = settings.items.itemKeyPrefixProvider?.userDefaultsUtilItemPrefix {
-			key = "\(keyPrefix).\(baseKey)"
-		}
-		
-		return key
 	}
 }
 
