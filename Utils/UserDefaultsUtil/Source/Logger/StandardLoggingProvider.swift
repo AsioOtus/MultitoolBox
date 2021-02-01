@@ -7,7 +7,7 @@ public struct StandardLoggingProvider: UserDefaultsUtilLoggingProvider {
 		self.prefix = prefix
 	}
 	
-	public func userDefaultsUtilLog <ValueType> (_ info: Logger.Info<ValueType>) {
+	public func userDefaultsUtilLog <Value> (_ info: Logger.Info<Value>) {
 		let log = OSLog(subsystem: info.userDefaultsItemTypeName, category: "UserDefaultsUtil")
 		
 		let prefix = self.prefix ?? ""
