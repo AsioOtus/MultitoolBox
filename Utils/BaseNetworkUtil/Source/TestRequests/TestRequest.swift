@@ -1,3 +1,5 @@
+import Foundation
+
 public protocol TestRequest: Request where Response: TestResponse { }
 public protocol TestResponse: Response { }
 

@@ -1,3 +1,5 @@
+import Foundation
+
 extension Controllers {
 	public struct Logger {
 		private let loggingProvider: BaseNetworkUtilControllersLoggingProvider?
