@@ -1,4 +1,4 @@
-public enum NetworkError: NetworkUtilError {
+public enum BaseNetworkError: BaseNetworkUtilError {
 	case connectionFailure(Error)
 	case processingFailure(ProcessingError)
 	
