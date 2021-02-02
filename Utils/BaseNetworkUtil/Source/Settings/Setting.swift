@@ -54,7 +54,10 @@ public struct InheritedSetting<Value> {
 		}
 	}
 	
-	public var projectedValue: Self { self }
+	public var projectedValue: Setting<Value>.Inherited {
+		get { value }
+		set { value = newValue }
+	}
 	
 	init (_ value: Setting<Value>.Inherited) {
 		self.value = value

@@ -5,10 +5,15 @@ extension Controllers {
 	public struct Base {
 		public var settings = Settings()
 		
-		public init () { }
+		private let logger: Logger
+		
+		public init () {
+			self.logger = .init(settings.controllers.loggingProvider)
+		}
 		
 		public init (settings: Settings) {
 			self.settings = settings
+			self.logger = .init(settings.controllers.loggingProvider)
 		}
 		
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)
@@ -19,13 +24,13 @@ extension Controllers {
 				.tryMap { (try $0.urlSession(), try $0.urlRequest()) }
 				.mapError { BaseNetworkError($0 as? BaseNetworkError, or: .processingFailure(.pre($0))) }
 				.handleEvents(
-					receiveOutput: { (urlSession, urlRequest) in settings.controllers.logger.log(urlSession, urlRequest) }
+					receiveOutput: { (urlSession, urlRequest) in logger.log(urlSession, urlRequest) }
 				)
 				
 				.flatMap { (urlSession: URLSession, urlRequest: URLRequest) in
 					urlSession.dataTaskPublisher(for: urlRequest)
 						.handleEvents(
-							receiveOutput: { (data, urlResponse) in settings.controllers.logger.log(data, urlResponse) }
+							receiveOutput: { (data, urlResponse) in logger.log(data, urlResponse) }
 						)
 						.mapError { error in BaseNetworkError.connectionFailure(error)
 					}
@@ -37,7 +42,7 @@ extension Controllers {
 				.handleEvents(
 					receiveCompletion: { completion in
 						if case .failure(let error) = completion {
-							settings.controllers.logger.log(error)
+							logger.log(error)
 						}
 					}
 				)

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A7CF1CF25C7F87800C2411E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1CE25C7F87800C2411E /* Setting.swift */; };
-		3A7CF1D525C7F8A900C2411E /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1D425C7F8A900C2411E /* DefaultSettings.swift */; };
+		3A7CF1D525C7F8A900C2411E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1D425C7F8A900C2411E /* Settings.swift */; };
 		3A7CF1DA25C7F94100C2411E /* Controllers.Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1D925C7F94100C2411E /* Controllers.Logger.swift */; };
 		3A7CF1E325C7FAE900C2411E /* BaseNetworkUtilControllersLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1E225C7FAE900C2411E /* BaseNetworkUtilControllersLoggingProvider.swift */; };
 		3A7CF1E925C7FB0100C2411E /* StandardLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1E825C7FB0100C2411E /* StandardLoggingProvider.swift */; };
@@ -58,7 +58,7 @@
 		3A5BD59425BC34F800481A2B /* ModelableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelableRequest.swift; sourceTree = "<group>"; };
 		3A5BD59725BC350200481A2B /* ModelableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelableResponse.swift; sourceTree = "<group>"; };
 		3A7CF1CE25C7F87800C2411E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
-		3A7CF1D425C7F8A900C2411E /* DefaultSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
+		3A7CF1D425C7F8A900C2411E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		3A7CF1D925C7F94100C2411E /* Controllers.Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.Logger.swift; sourceTree = "<group>"; };
 		3A7CF1E225C7FAE900C2411E /* BaseNetworkUtilControllersLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkUtilControllersLoggingProvider.swift; sourceTree = "<group>"; };
 		3A7CF1E825C7FB0100C2411E /* StandardLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardLoggingProvider.swift; sourceTree = "<group>"; };
@@ -163,7 +163,7 @@
 		3A7CF1EC25C7FB4100C2411E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				3A7CF1D425C7F8A900C2411E /* DefaultSettings.swift */,
+				3A7CF1D425C7F8A900C2411E /* Settings.swift */,
 				3A7CF1CE25C7F87800C2411E /* Setting.swift */,
 			);
 			path = Settings;
@@ -314,7 +314,7 @@
 				3A7CF1E925C7FB0100C2411E /* StandardLoggingProvider.swift in Sources */,
 				3AE8178925C3204F00243202 /* Request.swift in Sources */,
 				3AE8178F25C3204F00243202 /* BaseNetworkUtilError.swift in Sources */,
-				3A7CF1D525C7F8A900C2411E /* DefaultSettings.swift in Sources */,
+				3A7CF1D525C7F8A900C2411E /* Settings.swift in Sources */,
 				3AE8178B25C3204F00243202 /* RequestDelegate.swift in Sources */,
 				3AE8178A25C3204F00243202 /* Controllers.Base.swift in Sources */,
 				3AE8178E25C3204F00243202 /* BaseNetworkError.swift in Sources */,
