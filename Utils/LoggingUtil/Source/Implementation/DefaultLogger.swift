@@ -1,4 +1,4 @@
-public struct DefaultLogger: Logger {
+public struct DefaultLogger: Logger, LogHandler {
 	public var level = LoggingLevel.info
 	public let source: String
 	public let logHandler: LogHandler
@@ -24,7 +24,7 @@ public struct DefaultLogger: Logger {
 			finalSource = self.source
 		}
 		
-		logHandler.log(level, finalSource, message(), file, function, line)
+		logHandler.log(level: level, message: message(), source: finalSource, file: file, function: function, line: line)
 	}
 	
 	public func trace (

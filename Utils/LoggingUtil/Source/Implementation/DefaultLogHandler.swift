@@ -49,10 +49,10 @@ public class DefaultLogHandler: LogHandler {
 		return finalMessage
 	}
 	
-	public func log (_ level: LoggingLevel, _ source: String, _ message: String, _ file: String, _ function: String, _ line: UInt) {
+	public func log(level: LoggingLevel, message: @autoclosure () -> String, source: @autoclosure () -> String?, file: String, function: String, line: UInt) {
 		guard level >= settings.level else { return }
 		
-		let finalMessage = self.message(level, source: source, message: message)
+		let finalMessage = self.message(level, source: source() ?? "", message: message())
 		
 		settings.loggingProvider.log(level, finalMessage)
 	}

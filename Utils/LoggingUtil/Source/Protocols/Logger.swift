@@ -1,11 +1,4 @@
 public protocol Logger {	
-	func log (
-		level: LoggingLevel,
-		message: @autoclosure () -> String,
-		source: @autoclosure () -> String?,
-		file: String, function: String, line: UInt
-	)
-	
 	func trace (
 		_ message: @autoclosure () -> String,
 		source: @autoclosure () -> String?,
