@@ -82,7 +82,7 @@ extension Settings {
 
 extension Settings.GenericPasswords {
 	public func createIdentifier (_ baseIdentifier: String) -> String {
-		guard let prefix = settings.genericPasswords.prefix else { fatalError("KeychainUtil – prefix is nil") }
+		guard let prefix = prefix else { fatalError("KeychainUtil – prefix is nil") }
 		guard !prefix.isEmpty else { fatalError("KeychainUtil – prefix is empty") }
 		guard !baseIdentifier.isEmpty else { fatalError("KeychainUtil – baseIdentifier is empty") }
 		

@@ -1,9 +1,11 @@
 import Foundation
 
-public var settings: Settings = .default
-
-struct KeychainAccessFunctions {
-	public static func save (_ query: [CFString: Any], _ value: Data) throws {
+public struct KeychainAccessor {
+	public static let `default` = Self()
+	
+	public var settings: Settings = .default
+	
+	public func save (_ query: [CFString: Any], _ value: Data) throws {
 		let logRecord = Logger.Record(.saving(value), query)
 		
 		do {
@@ -20,7 +22,7 @@ struct KeychainAccessFunctions {
 		}
 	}
 	
-	public static func load (_ query: [CFString: Any]) throws -> AnyObject {
+	public func load (_ query: [CFString: Any]) throws -> AnyObject {
 		let logRecord = Logger.Record(.loading, query)
 		
 		do {
@@ -44,7 +46,7 @@ struct KeychainAccessFunctions {
 		}
 	}
 	
-	public static func delete (_ query: [CFString: Any]) throws {
+	public func delete (_ query: [CFString: Any]) throws {
 		let logRecord = Logger.Record(.deletion, query)
 		
 		do {
@@ -59,7 +61,7 @@ struct KeychainAccessFunctions {
 		}
 	}
 	
-	public static func isExists (_ query: [CFString: Any]) throws -> Bool {
+	public func isExists (_ query: [CFString: Any]) throws -> Bool {
 		let logRecord = Logger.Record(.existance, query)
 		let isExists: Bool
 		
@@ -96,7 +98,7 @@ struct KeychainAccessFunctions {
 	
 	
 	@discardableResult
-	public static func clear () -> [KeychainClass: OSStatus] {
+	public func clear () -> [KeychainClass: OSStatus] {
 		let logRecord = Logger.Record(.clearing, [:])
 		
 		var deleteResults = [KeychainClass: OSStatus]()
@@ -117,7 +119,7 @@ struct KeychainAccessFunctions {
 		return deleteResults
 	}
 	
-	public static func clear (_ keychainClass: KeychainClass) throws {
+	public func clear (_ keychainClass: KeychainClass) throws {
 		let logRecord = Logger.Record(.clearingClass(keychainClass), [:])
 		
 		do {

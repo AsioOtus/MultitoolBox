@@ -19,13 +19,13 @@ extension Logger {
 		
 		func info (keychainIdentifier: String) -> Info? {
 			guard
-				settings.logging.enable &&
-				resolution.level.rawValue >= settings.logging.level.rawValue
+				KeychainAccessor.default.settings.logging.enable &&
+					resolution.level.rawValue >= KeychainAccessor.default.settings.logging.level.rawValue
 			else { return nil }
 			
-			let isExists = settings.logging.enableValuesLogging ? resolution.isExists : nil
-			let value = settings.logging.enableValuesLogging ? self.value : nil
-			let query = settings.logging.enableQueryLogging ? record.query : nil
+			let isExists = KeychainAccessor.default.settings.logging.enableValuesLogging ? resolution.isExists : nil
+			let value = KeychainAccessor.default.settings.logging.enableValuesLogging ? self.value : nil
+			let query = KeychainAccessor.default.settings.logging.enableQueryLogging ? record.query : nil
 			
 			let info = Info(
 				operation: record.operation.name,

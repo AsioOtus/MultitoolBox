@@ -12,6 +12,8 @@ open class GenericPassword<Value: Codable> {
 	public let loadingQuery: [CFString: Any]
 	public let accessability: CFString
 	
+	public let keychainAccessor: KeychainAccessor
+	
 	private static var commonAtributes: [CFString: Any] {
 		[kSecClass: kSecClassGenericPassword]
 	}
@@ -24,10 +26,11 @@ open class GenericPassword<Value: Codable> {
 		loadingQuery: [CFString: Any]? = nil,
 		accessability: CFString = kSecAttrAccessibleWhenUnlockedThisDeviceOnly,
 		queue: DispatchQueue? = nil,
-		enableValueLogging: Bool = false
+		enableValueLogging: Bool = false,
+		keychainAccessor: KeychainAccessor = .default
 	) {
 		let baseIdentifier = baseIdentifier.trimmingCharacters(in: .whitespacesAndNewlines)
-		let identifier = settings.genericPasswords.createIdentifier(baseIdentifier)
+		let identifier = keychainAccessor.settings.genericPasswords.createIdentifier(baseIdentifier)
 		
 		self.baseIdentifier = baseIdentifier
 		self.identifier = identifier
@@ -42,6 +45,8 @@ open class GenericPassword<Value: Codable> {
 					
 		self.logger = Logger("\(Self.self)", enableValueLogging)
 		self.accessQueue = queue ?? DispatchQueue(label: "\(Self.self).\(identifier).accessQueue")
+		
+		self.keychainAccessor = keychainAccessor
 	}
 	
 	
@@ -108,7 +113,7 @@ internal extension GenericPassword {
 		
 		do {
 			let deletingQuery = Self.commonAtributes.merging([kSecAttrService: identifier]){ (current, _) in current }
-			try KeychainAccessFunctions.delete(deletingQuery)
+			try keychainAccessor.delete(deletingQuery)
 		}
 		catch CommonError.itemNotFound { }
 		catch {
@@ -118,7 +123,7 @@ internal extension GenericPassword {
 		
 		do {
 			let data = try Coder.encode(value)
-			try KeychainAccessFunctions.save(savingQuery, data)
+			try keychainAccessor.save(savingQuery, data)
 			
 			logger.log(logRecord.commit(.overwriting))
 		} catch {
@@ -137,7 +142,7 @@ internal extension GenericPassword {
 		
 		do {
 			let data = try Coder.encode(value)
-			try KeychainAccessFunctions.save(savingQuery, data)
+			try keychainAccessor.save(savingQuery, data)
 			
 			logger.log(logRecord.commit(.saving))
 		} catch {
@@ -155,7 +160,7 @@ internal extension GenericPassword {
 		let logRecord = Logger.Record(.loading, identifier, loadingQuery)
 		
 		do {
-			let anyItem = try KeychainAccessFunctions.load(loadingQuery)
+			let anyItem = try keychainAccessor.load(loadingQuery)
 			guard let data = anyItem as? Data else { throw GenericPasswordError.Category.Coding.valueIsNotData }
 			let item = try Coder.decode(data, Value.self)
 			
@@ -178,7 +183,7 @@ internal extension GenericPassword {
 		
 		do {
 			do {
-				let encodedValue = try KeychainAccessFunctions.load(loadingQuery)
+				let encodedValue = try keychainAccessor.load(loadingQuery)
 				guard let data = encodedValue as? Data else { throw GenericPasswordError.Category.Coding.valueIsNotData }
 				let value = try Coder.decode(data, Value.self)
 				
@@ -207,7 +212,7 @@ internal extension GenericPassword {
 		let logRecord = Logger.Record(.deletion, identifier, deletingQuery)
 		
 		do {
-			try KeychainAccessFunctions.delete(deletingQuery)
+			try keychainAccessor.delete(deletingQuery)
 			
 			logger.log(logRecord.commit(.deletion))
 		} catch {
@@ -225,12 +230,12 @@ internal extension GenericPassword {
 		let logRecord = Logger.Record(.existance, identifier, loadingQuery)
 		
 		do {
-			guard try KeychainAccessFunctions.isExists(loadingQuery) else {
+			guard try keychainAccessor.isExists(loadingQuery) else {
 				logger.log(logRecord.commit(.existance(false)))
 				return false
 			}
 			
-			let anyItem = try KeychainAccessFunctions.load(loadingQuery)
+			let anyItem = try keychainAccessor.load(loadingQuery)
 			guard let data = anyItem as? Data else { throw GenericPasswordError.Category.Coding.valueIsNotData }
 			let value = try Coder.decode(data, Value.self)
 			

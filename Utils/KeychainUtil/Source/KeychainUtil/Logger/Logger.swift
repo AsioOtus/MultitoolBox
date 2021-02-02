@@ -6,7 +6,7 @@ public struct Logger {
 		
 		if
 			let commitInfo = commitInfo,
-			let loggingProvider = settings.logging.loggingProvider
+			let loggingProvider = KeychainAccessor.default.settings.logging.loggingProvider
 		{
 			loggingProvider.log(commitInfo)
 		}

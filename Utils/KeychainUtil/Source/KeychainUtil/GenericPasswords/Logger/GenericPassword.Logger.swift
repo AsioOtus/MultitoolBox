@@ -15,7 +15,7 @@ extension GenericPassword {
 			
 			if
 				let commitInfo = commitInfo,
-				let loggingProvider = settings.genericPasswords.logging.loggingProvider
+				let loggingProvider = KeychainAccessor.default.settings.genericPasswords.logging.loggingProvider
 			{
 				loggingProvider.log(commitInfo)
 			}
