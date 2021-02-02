@@ -1,6 +1,9 @@
 extension Logger {
 	struct Moderator {
-		static func info<Value> (_ commit: Logger.Commit<Value>, _ userDefaultsItemTypeName: String, _ settings: Settings.Logging) -> Logger.Info<Value>? {
+		let userDefaultsItemTypeName: String
+		let settings: Settings.Logging
+		
+		func info<Value> (_ commit: Logger.Commit<Value>) -> Logger.Info<Value>? {
 			guard settings.enable && commit.level.rawValue >= settings.level.rawValue else { return nil }
 			
 			let oldValue = settings.enableValuesLogging ? commit.oldValue : nil

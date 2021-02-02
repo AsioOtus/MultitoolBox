@@ -2,14 +2,22 @@ import Foundation
 
 
 
-open class DefaultableItem <Value: Codable, DefaultValueProvider: UserDefaultsUtilDefaultValueProvider>: Item<Value> where DefaultValueProvider.Value == Value {
+protocol UserDefaultsDefaultableItem: UserDefaultsItem {	
+	func loadOrDefault () -> Value
+	func saveDefault () -> Bool
+	func saveDefaultIfNotExists () -> Bool
+}
+
+
+
+open class DefaultableItem <Value: Codable, DefaultValueProvider: UserDefaultsUtilDefaultValueProvider>: Item<Value>, UserDefaultsDefaultableItem where DefaultValueProvider.Value == Value {
 	public let defaultValueProvider: DefaultValueProvider
 	
 	public var defaultValue: Value { defaultValueProvider.userDefaultsUtilDefaultValue }
 	
-	public init (_ baseKey: String, _ defaultValueProvider: DefaultValueProvider, _ userDefaultsInstance: UserDefaults = .standard) {
+	public init (_ baseKey: String, _ defaultValueProvider: DefaultValueProvider, _ userDefaultsInstance: UserDefaults = .standard, settings: Settings) {
 		self.defaultValueProvider = defaultValueProvider
-		super.init(baseKey, userDefaultsInstance)
+		super.init(baseKey, userDefaultsInstance, settings: settings)
 	}
 }
 

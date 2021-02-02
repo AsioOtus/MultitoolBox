@@ -2,8 +2,19 @@ import Foundation
 
 
 
-open class ParametricItem<Value: Codable, KeyPostfixProviderType: UserDefaultsUtilItemKeyPostfixProvider>: Item<Value> {
-	func postfixedKey (_ keyPostfixProvider: KeyPostfixProviderType?) -> String {
+protocol UserDefaultsParametricItem: UserDefaultsItem {
+	associatedtype KeyPostfixProvider
+	
+	func save (_ object: Value, _ keyPostfixProvider: KeyPostfixProvider) -> Bool
+	func load (_ keyPostfixProvider: KeyPostfixProvider) -> Value?
+	func delete (_ keyPostfixProvider: KeyPostfixProvider)
+	func isExists (_ keyPostfixProvider: KeyPostfixProvider) -> Bool
+}
+
+
+
+open class ParametricItem<Value: Codable, KeyPostfixProvider: UserDefaultsUtilItemKeyPostfixProvider>: Item<Value>, UserDefaultsParametricItem {
+	func postfixedKey (_ keyPostfixProvider: KeyPostfixProvider?) -> String {
 		let postfixedKey = super.postfixedKey(keyPostfixProvider)
 		return postfixedKey
 	}
@@ -11,9 +22,9 @@ open class ParametricItem<Value: Codable, KeyPostfixProviderType: UserDefaultsUt
 
 
 
-extension ParametricItem {
+public extension ParametricItem {
 	@discardableResult
-	public func save (_ object: Value, _ keyPostfixProvider: KeyPostfixProviderType) -> Bool {
+	func save (_ object: Value, _ keyPostfixProvider: KeyPostfixProvider) -> Bool {
 		accessQueue.sync {
 			let (isSavingSucceeded, logCommit) = super.save(object, keyPostfixProvider)
 			logger.log(logCommit)
@@ -21,7 +32,7 @@ extension ParametricItem {
 		}
 	}
 	
-	public func load (_ keyPostfixProvider: KeyPostfixProviderType) -> Value? {
+	func load (_ keyPostfixProvider: KeyPostfixProvider) -> Value? {
 		accessQueue.sync {
 			let (value, logCommit) = super.load(keyPostfixProvider)
 			logger.log(logCommit)
@@ -29,14 +40,14 @@ extension ParametricItem {
 		}
 	}
 	
-	public func delete (_ keyPostfixProvider: KeyPostfixProviderType) {
+	func delete (_ keyPostfixProvider: KeyPostfixProvider) {
 		accessQueue.sync {
 			let logCommit = super.delete(keyPostfixProvider)
 			logger.log(logCommit)
 		}
 	}
 	
-	public func isExists (_ keyPostfixProvider: KeyPostfixProviderType) -> Bool {
+	func isExists (_ keyPostfixProvider: KeyPostfixProvider) -> Bool {
 		accessQueue.sync {
 			let (isItemExists, logCommit) = super.isExists(keyPostfixProvider)
 			logger.log(logCommit)

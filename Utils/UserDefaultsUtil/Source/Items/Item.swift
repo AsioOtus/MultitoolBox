@@ -2,8 +2,21 @@ import Foundation
 
 
 
-open class Item<Value: Codable> {
+protocol UserDefaultsItem {
+	associatedtype Value
+	
+	func save (_ object: Value) -> Bool
+	func load () -> Value?
+	func delete ()
+	func isExists () -> Bool
+}
+
+
+
+open class Item<Value: Codable>: UserDefaultsItem {
 	let logger: Logger
+	
+	public var settings: Settings
 	
 	public let userDefaultsInstance: UserDefaults
 	public let accessQueue: DispatchQueue
@@ -11,11 +24,14 @@ open class Item<Value: Codable> {
 	public final let baseKey: String
 	public final let key: String
 	
-	public init (_ baseKey: String, _ userDefaultsInstance: UserDefaults = .standard, queue: DispatchQueue? = nil) {
+	public init (_ baseKey: String, _ userDefaultsInstance: UserDefaults = .standard, queue: DispatchQueue? = nil, settings: Settings = .init()) {
 		let baseKey = baseKey.trimmingCharacters(in: .whitespacesAndNewlines)
-		let key = settings.items.createKey(baseKey)
+		guard !baseKey.isEmpty else { fatalError("UserDefaultsUtil – base key is empty") }
 		
-		self.logger = Logger(String(describing: Self.self))
+		let key = Self.createKey(baseKey: baseKey, prefix: settings.items.value.prefix.value)
+		
+		self.settings = settings
+		self.logger = Logger(String(describing: Self.self), settings.logging)
 		
 		self.baseKey = baseKey
 		self.key = key
@@ -32,15 +48,21 @@ open class Item<Value: Codable> {
 		
 		return "\(key).\(postfix)"
 	}
+	
+	public static func createKey (baseKey: String, prefix: String?) -> String {
+		var key = prefix ?? ""
+		key += (key.isEmpty ? "" : ".") + baseKey
+		return key
+	}
 }
 
 
 
 public extension Item {
 	@discardableResult
-	func save (_ object: Value) -> Bool {
+	func save (_ value: Value) -> Bool {
 		accessQueue.sync {
-			let (isSuccess, logCommit) = save(object, nil)
+			let (isSuccess, logCommit) = save(value, nil)
 			logger.log(logCommit)
 			return isSuccess
 		}

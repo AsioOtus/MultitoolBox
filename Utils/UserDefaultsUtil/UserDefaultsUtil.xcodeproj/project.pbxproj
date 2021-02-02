@@ -12,6 +12,8 @@
 		3A19CEED25BD891200D097D7 /* UserDefaultsUtilItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19CEEB25BD891200D097D7 /* UserDefaultsUtilItem.swift */; };
 		3A19CEF325BD8B3000D097D7 /* UserDefaultsUtilDefaultableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19CEF225BD8B3000D097D7 /* UserDefaultsUtilDefaultableItem.swift */; };
 		3A19CEF425BD8B3000D097D7 /* UserDefaultsUtilDefaultableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19CEF225BD8B3000D097D7 /* UserDefaultsUtilDefaultableItem.swift */; };
+		3A282D8A25C9E91000C24C14 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A282D8925C9E91000C24C14 /* Setting.swift */; };
+		3A282D8B25C9E91000C24C14 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A282D8925C9E91000C24C14 /* Setting.swift */; };
 		3A3701AC247C036D00100BEB /* Logger.Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701AB247C036D00100BEB /* Logger.Commit.swift */; };
 		3A3701B0247C04D000100BEB /* Logger.Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701AF247C04D000100BEB /* Logger.Operation.swift */; };
 		3A3701B2247C05C800100BEB /* Logger.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701B1247C05C800100BEB /* Logger.Info.swift */; };
@@ -70,6 +72,7 @@
 		3A16FEC824F43A0F00CBA263 /* DynamicDefaultValueProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicDefaultValueProvider.swift; sourceTree = "<group>"; };
 		3A19CEEB25BD891200D097D7 /* UserDefaultsUtilItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtilItem.swift; sourceTree = "<group>"; };
 		3A19CEF225BD8B3000D097D7 /* UserDefaultsUtilDefaultableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtilDefaultableItem.swift; sourceTree = "<group>"; };
+		3A282D8925C9E91000C24C14 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		3A3701AB247C036D00100BEB /* Logger.Commit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.Commit.swift; sourceTree = "<group>"; };
 		3A3701AF247C04D000100BEB /* Logger.Operation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.Operation.swift; sourceTree = "<group>"; };
 		3A3701B1247C05C800100BEB /* Logger.Info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.Info.swift; sourceTree = "<group>"; };
@@ -145,6 +148,15 @@
 			path = PropertyWrappers;
 			sourceTree = "<group>";
 		};
+		3A282D8825C9E90500C24C14 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3AD3B51E2460945100056493 /* Settings.swift */,
+				3A282D8925C9E91000C24C14 /* Setting.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		3A949B7A2454647B007E7928 = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +176,7 @@
 				3AD3B5222460989800056493 /* Logger */,
 				3A19CEEA25BD88D300D097D7 /* PropertyWrappers */,
 				3AD3B50A2460936700056493 /* Protocols */,
-				3AD3B51E2460945100056493 /* Settings.swift */,
+				3A282D8825C9E90500C24C14 /* Settings */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -345,6 +357,7 @@
 				3AD3B52A2460A0CC00056493 /* UserDefaultsUtilLoggingProvider.swift in Sources */,
 				3AFB9DCC2563135600939519 /* Logger.Moderator.swift in Sources */,
 				3AD3B5192460942600056493 /* Item.Error.swift in Sources */,
+				3A282D8A25C9E91000C24C14 /* Setting.swift in Sources */,
 				3AD3B51D2460942600056493 /* UserDefaultsUtilItemKeyPostfixProvider.swift in Sources */,
 				3AD3B52624609B9500056493 /* ParametricDefaultableItem.swift in Sources */,
 				3AD3B51F2460945100056493 /* Settings.swift in Sources */,
@@ -382,6 +395,7 @@
 				3AFBE54D2507D2F7000C089B /* ParametricItem.swift in Sources */,
 				3AFBE51B2507D134000C089B /* Item_macOSTests.swift in Sources */,
 				3A634C80255FEF5F00758139 /* Item.Coder.swift in Sources */,
+				3A282D8B25C9E91000C24C14 /* Setting.swift in Sources */,
 				3AFBE5592507D2F7000C089B /* UserDefaultsUtilItemKeyPostfixProvider.swift in Sources */,
 				3AFBE54E2507D2F7000C089B /* StaticDefaultValueProvider.swift in Sources */,
 				3AFBE5512507D2F7000C089B /* Logger.Info.swift in Sources */,

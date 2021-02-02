@@ -2,15 +2,30 @@ import Foundation
 
 
 
-open class ParametricDefaultableItem <
+protocol UserDefaultsParametricDefaultableItem: UserDefaultsDefaultableItem {
+	associatedtype KeyPostfixProvider
+	
+	func save (_ object: Value, _ keyPostfixProvider: KeyPostfixProvider) -> Bool
+	func load (_ keyPostfixProvider: KeyPostfixProvider) -> Value?
+	func delete (_ keyPostfixProvider: KeyPostfixProvider)
+	func isExists (_ keyPostfixProvider: KeyPostfixProvider) -> Bool
+	func loadOrDefault (_ keyPostfixProvider: KeyPostfixProvider) -> Value
+	func saveDefault (_ keyPostfixProvider: KeyPostfixProvider) -> Bool
+	func saveDefaultIfNotExists (_ keyPostfixProvider: KeyPostfixProvider) -> Bool
+}
+
+
+
+open class ParametricDefaultableItem
+<
 	Value: Codable,
 	DefaultValueProvider: UserDefaultsUtilDefaultValueProvider,
-	KeyPostfixProviderType: UserDefaultsUtilItemKeyPostfixProvider
+	KeyPostfixProvider: UserDefaultsUtilItemKeyPostfixProvider
 >
-	: DefaultableItem<Value, DefaultValueProvider>
+	: DefaultableItem<Value, DefaultValueProvider>, UserDefaultsParametricDefaultableItem
 	where DefaultValueProvider.Value == Value
 {	
-	public func postfixedKey (_ keyPostfixProvider: KeyPostfixProviderType?) -> String {
+	public func postfixedKey (_ keyPostfixProvider: KeyPostfixProvider?) -> String {
 		let postfixedKey = super.postfixedKey(keyPostfixProvider)
 		return postfixedKey
 	}
@@ -18,9 +33,9 @@ open class ParametricDefaultableItem <
 
 
 
-extension ParametricDefaultableItem {
+public extension ParametricDefaultableItem {
 	@discardableResult
-	public func save (_ object: Value, _ keyPostfixProvider: KeyPostfixProviderType) -> Bool {
+	func save (_ object: Value, _ keyPostfixProvider: KeyPostfixProvider) -> Bool {
 		accessQueue.sync {
 			let (isSavingSucceeded, logCommit) = super.save(object, keyPostfixProvider)
 			logger.log(logCommit)
@@ -28,7 +43,7 @@ extension ParametricDefaultableItem {
 		}
 	}
 	
-	public func load (_ keyPostfixProvider: KeyPostfixProviderType) -> Value? {
+	func load (_ keyPostfixProvider: KeyPostfixProvider) -> Value? {
 		accessQueue.sync {
 			let (value, logCommit) = super.load(keyPostfixProvider)
 			logger.log(logCommit)
@@ -36,14 +51,14 @@ extension ParametricDefaultableItem {
 		}
 	}
 	
-	public func delete (_ keyPostfixProvider: KeyPostfixProviderType) {
+	func delete (_ keyPostfixProvider: KeyPostfixProvider) {
 		accessQueue.sync {
 			let logCommit = super.delete(keyPostfixProvider)
 			logger.log(logCommit)
 		}
 	}
 	
-	public func isExists (_ keyPostfixProvider: KeyPostfixProviderType) -> Bool {
+	func isExists (_ keyPostfixProvider: KeyPostfixProvider) -> Bool {
 		accessQueue.sync {
 			let (isExists, logCommit) = super.isExists(keyPostfixProvider)
 			logger.log(logCommit)
@@ -51,7 +66,7 @@ extension ParametricDefaultableItem {
 		}
 	}
 	
-	public func loadOrDefault (_ keyPostfixProvider: KeyPostfixProviderType) -> Value {
+	func loadOrDefault (_ keyPostfixProvider: KeyPostfixProvider) -> Value {
 		accessQueue.sync {
 			let (value, logCommit) = super.loadOrDefault(keyPostfixProvider)
 			logger.log(logCommit)
@@ -60,7 +75,7 @@ extension ParametricDefaultableItem {
 	}
 	
 	@discardableResult
-	public func saveDefault (_ keyPostfixProvider: KeyPostfixProviderType) -> Bool {
+	func saveDefault (_ keyPostfixProvider: KeyPostfixProvider) -> Bool {
 		accessQueue.sync {
 			let (isSavingSucceeded, logCommit) = super.saveDefault(keyPostfixProvider)
 			logger.log(logCommit)
@@ -69,7 +84,7 @@ extension ParametricDefaultableItem {
 	}
 	
 	@discardableResult
-	public func saveDefaultIfNotExists (_ keyPostfixProvider: KeyPostfixProviderType) -> Bool {
+	func saveDefaultIfNotExists (_ keyPostfixProvider: KeyPostfixProvider) -> Bool {
 		accessQueue.sync {
 			let (isSavingSucceeded, logCommit) = super.saveDefaultIfNotExists(keyPostfixProvider)
 			logger.log(logCommit)

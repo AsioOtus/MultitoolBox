@@ -11,7 +11,7 @@ public struct UserDefaultsUtilDefaultableItem<Value: Codable, DefaultValueProvid
 	
 	public var projectedValue: DefaultableItem<Value, DefaultValueProvider> { item }
 	
-	public init (wrappedValue: Value, key: String, defaultValue defaultValueProvider: DefaultValueProvider, instance: UserDefaults = .standard) {
-		item = .init(key, defaultValueProvider, instance)
+	public init (wrappedValue: Value, key: String, defaultValue defaultValueProvider: DefaultValueProvider, instance: UserDefaults = .standard, settings: Settings) {
+		item = .init(key, defaultValueProvider, instance, settings: settings)
 	}
 }
