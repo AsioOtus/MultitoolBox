@@ -76,6 +76,20 @@
                ReferencedContainer = "container:Base/Base.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3AE8177F25C31FFF00243202"
+               BuildableName = "BaseNetworkUtil.framework"
+               BlueprintName = "BaseNetworkUtil"
+               ReferencedContainer = "container:Utils/BaseNetworkUtil/BaseNetworkUtil.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
