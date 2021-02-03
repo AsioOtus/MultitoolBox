@@ -10,11 +10,11 @@ public struct StandardLoggingProvider: BaseNetworkUtilControllersLoggingProvider
 	public func baseNetworkUtilControllersLog (_ info: Controllers.Logger.Info) {
 		
 		let prefix = self.prefix ?? ""
-		let preparedPrefix = !info.defaultMessage.isEmpty && !prefix.isEmpty
+		let preparedPrefix = !info.category.defaultMessage.isEmpty && !prefix.isEmpty
 			? "\(prefix)."
 			: ""
 		
-		let message = "\(preparedPrefix) – \(info.defaultMessage)"
+		let message = "\(preparedPrefix) – \(info.category.defaultMessage)"
 		
 		os_log("%{public}@", message)
 	}
