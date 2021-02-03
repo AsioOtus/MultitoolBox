@@ -8,7 +8,7 @@ public enum LoggingLevel: String, Codable, CaseIterable {
 	case critical
 	case fault
 	
-	var padded: String { "\(self)".uppercased().padding(toLength: "\(Self.critical)".count, withPad: " ", startingAt: 0) }
+	var description: String { "\(self)".uppercased() }
 	
 	public var order: Int {
 		let order: Int

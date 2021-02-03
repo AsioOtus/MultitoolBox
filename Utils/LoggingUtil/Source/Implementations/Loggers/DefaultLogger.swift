@@ -1,25 +1,13 @@
 public class DefaultLogger: Logger, LogHandler {
-	public var level: LoggingLevel
-	public var source: [String]
-	public var tags: Set<String>
-	public var details: [String: Any]
-	public var comment: String
 	public var logHandler: LogHandler
+	public var loggerInfo: LoggerInfo
 	
 	public init (
-		level: LoggingLevel = .info,
-		source: [String] = [],
-		tags: Set<String> = [],
-		details: [String: Any] = [:],
-		comment: String = "",
-		logHandler: LogHandler
+		logHandler: LogHandler,
+		loggerInfo: LoggerInfo = .init()
 	) {
-		self.source = source
-		self.level = level
-		self.tags = tags
-		self.details = details
-		self.comment = comment
 		self.logHandler = logHandler
+		self.loggerInfo = loggerInfo
 	}
 	
 	
@@ -33,12 +21,12 @@ public class DefaultLogger: Logger, LogHandler {
 		comment: @autoclosure () -> String = "",
 		file: String = #file, function: String = #function, line: UInt = #line
 	) {
-		guard level >= self.level else { return }
+		guard level >= loggerInfo.level else { return }
 		
-		let source = (self.source + source()).combine()
-		let tags = self.tags.union(tags())
-		let details = self.details.merging(details(), uniquingKeysWith: { _, detail in detail })
-		let comment = !comment().isEmpty ? comment() : self.comment
+		let source = (loggerInfo.source + source()).combine()
+		let tags = loggerInfo.tags.union(tags())
+		let details = loggerInfo.details.merging(details(), uniquingKeysWith: { _, detail in detail })
+		let comment = !comment().isEmpty ? comment() : loggerInfo.comment
 		
 		logHandler.log(level: level, message: message(), source: [source], tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
