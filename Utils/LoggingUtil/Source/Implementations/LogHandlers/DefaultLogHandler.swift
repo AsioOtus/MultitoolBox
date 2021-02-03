@@ -7,10 +7,10 @@ public extension DefaultLogHandler {
 		public var level = LoggingLevel.info
 		public var enableSourceCodeInfo = false
 		
-		public init (prefix: String, source: String = "", level: LoggingLevel = .info, enableSourceCodeInfo: Bool = false, loggingProvider: LogExporter) {
+		public init (prefix: String, source: String = "", level: LoggingLevel = .info, enableSourceCodeInfo: Bool = false, logExporter: LogExporter) {
 			self.prefix = prefix
 			self.source = source
-			self.logExporter = loggingProvider
+			self.logExporter = logExporter
 			
 			self.level = level
 			self.enableSourceCodeInfo = enableSourceCodeInfo
