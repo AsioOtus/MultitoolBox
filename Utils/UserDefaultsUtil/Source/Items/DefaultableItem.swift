@@ -15,7 +15,7 @@ open class DefaultableItem <Value: Codable, DefaultValueProvider: UserDefaultsUt
 	
 	public var defaultValue: Value { defaultValueProvider.userDefaultsUtilDefaultValue }
 	
-	public init (_ baseKey: String, _ defaultValueProvider: DefaultValueProvider, _ userDefaultsInstance: UserDefaults = .standard, settings: Settings) {
+	public init (_ baseKey: String, _ defaultValueProvider: DefaultValueProvider, _ userDefaultsInstance: UserDefaults = .standard, settings: Settings = .init()) {
 		self.defaultValueProvider = defaultValueProvider
 		super.init(baseKey, userDefaultsInstance, settings: settings)
 	}
