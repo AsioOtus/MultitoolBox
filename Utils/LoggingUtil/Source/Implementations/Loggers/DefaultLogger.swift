@@ -1,5 +1,5 @@
 public struct DefaultLogger: Logger, LogHandler {
-	public var level = LoggingLevel.info
+	public var level: LoggingLevel
 	public let source: String
 	public let logHandler: LogHandler
 	

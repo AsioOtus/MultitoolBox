@@ -2,15 +2,15 @@ public extension DefaultLogHandler {
 	struct Settings {
 		public let prefix: String
 		public let source: String
-		public let loggingProvider: LoggingProvider
+		public let logExporter: LogExporter
 		
 		public var level = LoggingLevel.info
 		public var enableSourceCodeInfo = false
 		
-		public init (prefix: String, source: String = "", level: LoggingLevel = .info, enableSourceCodeInfo: Bool = false, loggingProvider: LoggingProvider) {
+		public init (prefix: String, source: String = "", level: LoggingLevel = .info, enableSourceCodeInfo: Bool = false, loggingProvider: LogExporter) {
 			self.prefix = prefix
 			self.source = source
-			self.loggingProvider = loggingProvider
+			self.logExporter = loggingProvider
 			
 			self.level = level
 			self.enableSourceCodeInfo = enableSourceCodeInfo
@@ -54,6 +54,6 @@ public class DefaultLogHandler: LogHandler {
 		
 		let finalMessage = self.message(level, source: source() ?? "", message: message())
 		
-		settings.loggingProvider.log(level, finalMessage)
+		settings.logExporter.log(level, finalMessage)
 	}
 }
