@@ -1,5 +1,3 @@
-#if os(iOS)
-
 import UIKit
 
 
@@ -18,5 +16,3 @@ extension UIStoryboard {
 		instantiateViewController(type)
 	}
 }
-
-#endif

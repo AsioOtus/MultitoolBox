@@ -1,5 +1,3 @@
-#if os(iOS)
-
 import UIKit
 
 
@@ -156,5 +154,3 @@ extension OverlappingViewController {
 		}
 	}
 }
-
-#endif
