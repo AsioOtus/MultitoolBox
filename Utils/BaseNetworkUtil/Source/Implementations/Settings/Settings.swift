@@ -28,14 +28,14 @@ extension Settings {
 		
 		public let parent: (() -> Controllers)?
 		
-		@InheritedSetting public var loggingProvider: StandardLoggingProvider
+		@InheritedSetting public var loggingProvider: BaseNetworkUtilControllersLoggingProvider
 		
-		public init (parent: @escaping @autoclosure () -> Controllers = .global, loggingProvider: Setting<StandardLoggingProvider>) {
+		public init (parent: @escaping @autoclosure () -> Controllers = .global, loggingProvider: Setting<BaseNetworkUtilControllersLoggingProvider>) {
 			self.parent = parent
 			self._loggingProvider = .init(loggingProvider.inherited(from: parent().loggingProvider))
 		}
 		
-		public init (loggingProvider: StandardLoggingProvider = StandardLoggingProvider()) {
+		public init (loggingProvider: BaseNetworkUtilControllersLoggingProvider = StandardLoggingProvider()) {
 			self.parent = nil
 			self._loggingProvider = .init(.value(loggingProvider))
 		}

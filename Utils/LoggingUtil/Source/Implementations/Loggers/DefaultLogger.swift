@@ -3,7 +3,7 @@ public struct DefaultLogger: Logger, LogHandler {
 	public let source: String
 	public let logHandler: LogHandler
 	
-	public init (level: LoggingLevel = .info, source: String, logHandler: LogHandler) {
+	public init (level: LoggingLevel = .info, source: String = "", logHandler: LogHandler) {
 		self.source = source
 		self.level = level
 		self.logHandler = logHandler
@@ -21,9 +21,7 @@ public struct DefaultLogger: Logger, LogHandler {
 		file: String = #file, function: String = #function, line: UInt = #line
 	) {
 		guard level >= self.level else { return }
-		
 		let source = Self.combine(sources: [self.source, source()])
-		
 		logHandler.log(level: level, message: message(), source: source, file: file, function: function, line: line)
 	}
 	
