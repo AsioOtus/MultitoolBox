@@ -1,6 +1,6 @@
-public extension Array where Element == String? {
+public extension Array where Element == String {
 	func combine (with separator: String = ".") -> String {
-		let preparedSources = self.compactMap{ $0 }.map{ $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
+		let preparedSources = self.compactMap{ $0 }.filter { !$0.isEmpty }
 		return preparedSources.joined(separator: separator)
 	}
 }

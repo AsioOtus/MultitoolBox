@@ -1,6 +1,6 @@
 public class DefaultLogger: Logger, LogHandler {
 	public var level: LoggingLevel
-	public var source: String
+	public var source: [String]
 	public var tags: Set<String>
 	public var details: [String: Any]
 	public var comment: String
@@ -8,7 +8,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public init (
 		level: LoggingLevel = .info,
-		source: String = "",
+		source: [String] = [],
 		tags: Set<String> = [],
 		details: [String: Any] = [:],
 		comment: String = "",
@@ -27,7 +27,7 @@ public class DefaultLogger: Logger, LogHandler {
 	public func log (
 		level: LoggingLevel,
 		message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",
@@ -35,19 +35,19 @@ public class DefaultLogger: Logger, LogHandler {
 	) {
 		guard level >= self.level else { return }
 		
-		let source = [self.source, source()].combine()
+		let source = (self.source + source()).combine()
 		let tags = self.tags.union(tags())
 		let details = self.details.merging(details(), uniquingKeysWith: { _, detail in detail })
 		let comment = !comment().isEmpty ? comment() : self.comment
 		
-		logHandler.log(level: level, message: message(), source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		logHandler.log(level: level, message: message(), source: [source], tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 	
 	
 	
 	public func trace (
 		_ message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",
@@ -58,7 +58,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public func debug (
 		_ message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",
@@ -69,7 +69,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public func info (
 		_ message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",
@@ -80,7 +80,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public func notice (
 		_ message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",
@@ -91,7 +91,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public func warning (
 		_ message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",
@@ -102,7 +102,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public func fault (
 		_ message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",
@@ -113,7 +113,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public func error (
 		_ message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",
@@ -124,7 +124,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public func critical (
 		_ message: @autoclosure () -> String,
-		source: @autoclosure () -> String? = nil,
+		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
 		comment: @autoclosure () -> String = "",

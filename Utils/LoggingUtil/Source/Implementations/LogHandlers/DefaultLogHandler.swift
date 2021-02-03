@@ -1,7 +1,7 @@
 public class DefaultLogHandler: LogHandler {
 	public var level: LoggingLevel
 	public let prefix: String
-	public let source: String
+	public let source: [String]
 	public var tags: Set<String>
 	public var details: [String: Any]
 	public var comment: String
@@ -11,7 +11,7 @@ public class DefaultLogHandler: LogHandler {
 	public init (
 		level: LoggingLevel = .info,
 		prefix: String,
-		source: String = "",
+		source: [String] = [],
 		tags: Set<String> = [],
 		details: [String : Any] = [:],
 		comment: String = "",
@@ -28,8 +28,8 @@ public class DefaultLogHandler: LogHandler {
 		self.componentsSeparator = componentsSeparator
 	}
 	
-	private func message (_ level: LoggingLevel, source: String?, message: String) -> String {
-		let source = [prefix, self.source, source].combine()
+	private func message (_ level: LoggingLevel, source: [String], message: String) -> String {
+		let source = ([prefix] + self.source + source).combine()
 		let finalMessage = [level.padded, source, message].combine(with: componentsSeparator)
 		return finalMessage
 	}
@@ -37,7 +37,7 @@ public class DefaultLogHandler: LogHandler {
 	public func log (
 		level: LoggingLevel,
 		message: @autoclosure () -> String,
-		source: @autoclosure () -> String?,
+		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
 		comment: @autoclosure () -> String,
