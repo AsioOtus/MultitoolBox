@@ -71,12 +71,12 @@ extension Controllers.Logger {
 					defaultMessage = response.defaultMessage
 				case .error(let error as BaseNetworkError):
 					switch error {
-					case .connectionFailure(let error):
-						defaultMessage = "CONNECTION ERROR – " + error.localizedDescription
-					case .processingFailure(.pre(let error)):
-						defaultMessage = "PREPROCESSING ERROR – " + error.localizedDescription
-					case .processingFailure(.post(let error)):
-						defaultMessage = "POSTPROCESSING ERROR – " + error.localizedDescription
+					case .preprocessingFailure(let error):
+						defaultMessage = "PREPROCESSING ERROR – \(error)"
+					case .responseFailure(_, let urlRequest, let error):
+						defaultMessage = "RESPONSE – \(urlRequest.url!.absoluteString) – ERROR – \(error)"
+					case .postprocessingError(_, let urlResponse, let error):
+						defaultMessage = "RESPONSE – \(urlResponse.url!.absoluteString) – POSTPROCESSING ERROR – \(error)"
 					}
 				case .error(let error):
 					defaultMessage = "ERROR – " + error.localizedDescription
