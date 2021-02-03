@@ -9,11 +9,6 @@ public struct DefaultLogger: Logger, LogHandler {
 		self.logHandler = logHandler
 	}
 	
-	public static func combine (sources: [String?], with separator: String = ".") -> String {
-		let preparedSources = sources.compactMap{ $0 }.map{ $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
-		return preparedSources.joined(separator: separator)
-	}
-	
 	public func log (
 		level: LoggingLevel,
 		message: @autoclosure () -> String,
@@ -21,7 +16,7 @@ public struct DefaultLogger: Logger, LogHandler {
 		file: String = #file, function: String = #function, line: UInt = #line
 	) {
 		guard level >= self.level else { return }
-		let source = Self.combine(sources: [self.source, source()])
+		let source = [self.source, source()].combine()
 		logHandler.log(level: level, message: message(), source: source, file: file, function: function, line: line)
 	}
 	

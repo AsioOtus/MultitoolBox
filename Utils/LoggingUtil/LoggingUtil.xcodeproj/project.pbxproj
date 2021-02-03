@@ -16,6 +16,7 @@
 		3A0ADF7825CA91D1001EEC70 /* LogExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891425C48EF300373FFA /* LogExporter.swift */; };
 		3A0ADF7925CA91D1001EEC70 /* OsLogLoggingExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891B25C4911A00373FFA /* OsLogLoggingExporter.swift */; };
 		3A282DB225CA914800C24C14 /* LoggingUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A282DB025CA914800C24C14 /* LoggingUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AA7599325CAFA110007F25D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7599225CAFA110007F25D /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3A5BD53B25BC1E5000481A2B /* DefaultLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLogger.swift; sourceTree = "<group>"; };
 		3A5BD53E25BC1E5600481A2B /* LoggingLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingLevel.swift; sourceTree = "<group>"; };
 		3A5BD54125BC1E9600481A2B /* DefaultLogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLogHandler.swift; sourceTree = "<group>"; };
+		3AA7599225CAFA110007F25D /* Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		3A5BD52B25BC1E1E00481A2B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3AA7599125CAFA080007F25D /* Helpers */,
 				3A59891825C48F3700373FFA /* Implementations */,
 				3A24821D25BEF65200D5CF41 /* Protocols */,
 				3A5BD53E25BC1E5600481A2B /* LoggingLevel.swift */,
@@ -113,6 +116,14 @@
 				3A282DAE25CA914800C24C14 /* LoggingUtil.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3AA7599125CAFA080007F25D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				3AA7599225CAFA110007F25D /* Array.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3AE0084125C8AC0700ED7A11 /* LogExporters */ = {
@@ -205,6 +216,7 @@
 				3A0ADF7725CA91D1001EEC70 /* LoggingLevel.swift in Sources */,
 				3A0ADF7425CA91D1001EEC70 /* LoggerFrameworkLoggindExporter.swift in Sources */,
 				3A0ADF7825CA91D1001EEC70 /* LogExporter.swift in Sources */,
+				3AA7599325CAFA110007F25D /* Array.swift in Sources */,
 				3A0ADF7925CA91D1001EEC70 /* OsLogLoggingExporter.swift in Sources */,
 				3A0ADF7625CA91D1001EEC70 /* LogHandler.swift in Sources */,
 				3A0ADF7225CA91D1001EEC70 /* DefaultLogHandler.swift in Sources */,

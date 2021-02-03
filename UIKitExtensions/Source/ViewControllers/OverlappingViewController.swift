@@ -33,47 +33,58 @@ extension OverlappingViewController {
 
 
 
-class OverlappingViewController: UIViewController {
-	typealias Completion = () -> ()
-	
-	private var _minOverlapSeconds: Double = 0
+class OverlapViewController: UIViewController {
+	private(set) var _minOverlapSeconds: Double = 0
 	var minOverlapSeconds: Double? {
 		get { _minOverlapSeconds }
 		set { _minOverlapSeconds = newValue ?? 0 }
 	}
 	
-	var overlapDisplayAnimation = Animation()
-	var overlapHideAnimation = Animation()
+	var overlapDisplayAnimation = Animation(duration: 0.5)
+	var overlapHideAnimation = Animation(duration: 0.5)
 	
-	var mainViewController: UIViewController? {
+	weak var overlappedVC: OverlappedViewController? {
 		willSet {
-			guard let mainVC = mainViewController else { return }
+			guard let overlappedVC = overlappedVC else { return }
 			
-			mainVC.willMove(toParent: nil)
-			mainVC.view.removeFromSuperview()
-			mainVC.removeFromParent()
+			DispatchQueue.main.async {
+				overlappedVC.willMove(toParent: nil)
+				overlappedVC.view.removeFromSuperview()
+				overlappedVC.removeFromParent()
+			}
+			
+			overlappedVC.overlapVC = nil
 		}
 		didSet {
-			guard let mainVC = mainViewController else { return }
+			guard let overlappedVC = overlappedVC else { return }
 			
-			addChild(mainVC)
-			view.insertSubview(mainVC.view, at: 0)
-			view.pinToBounds(mainVC.view)
-			mainVC.didMove(toParent: self)
+			self.insertFullframeChild(overlappedVC, index: 0)
+			
+			overlappedVC.overlapVC = self
 		}
 	}
 	
-	var overlapViewController: UIViewController?
+	var overlappingVC: OverlappingViewController?
+	
+	var isOverlapping: Bool {
+		guard let overlappingVC = overlappingVC else { return false }
+		return children.contains(overlappingVC)
+	}
 }
 
 
 
-extension OverlappingViewController {
-	static func create (mainViewController: UIViewController? = nil, overlapViewController: UIViewController? = nil, minOverlapSeconds: Double? = nil, animation: Animation = Animation()) -> OverlappingViewController {
+extension OverlapViewController {
+	static func create (
+		overlappedVC: OverlappedViewController? = nil,
+		overlappingVC: OverlappingViewController? = nil,
+		minOverlapSeconds: Double? = nil,
+		animation: Animation = .init(duration: 0.5)
+	) -> Self {
 		let overlapVC = Self()
 		
-		overlapVC.mainViewController = mainViewController
-		overlapVC.overlapViewController = overlapViewController
+		overlapVC.overlappedVC = overlappedVC
+		overlapVC.overlappingVC = overlappingVC
 		
 		overlapVC.minOverlapSeconds = minOverlapSeconds
 		
@@ -86,53 +97,60 @@ extension OverlappingViewController {
 
 
 
-extension OverlappingViewController {
+extension OverlapViewController {
 	func displayOverlap (_ completion: Completion? = nil) {
-		guard let overlapVC = overlapViewController else { return }
+		guard let overlapVC = overlappingVC else { return }
 		
-		addChild(overlapVC)
-		view.addSubview(overlapVC.view)
-		view.pinToBounds(overlapVC.view)
-		
-		UIView.transition(
-			with: view,
-			duration: overlapDisplayAnimation.duration,
-			options: overlapDisplayAnimation.options,
-			animations: overlapDisplayAnimation.animation,
-			completion: { _ in
-				overlapVC.didMove(toParent: self)
-				completion?()
-			}
-		)
-	}
-	
-	func hideOverlap (_ completion: Completion? = nil) {
-		guard let overlapVC = overlapViewController else { return }
-		
-		DispatchQueue.main.asyncAfter(deadline: .now() + _minOverlapSeconds) {
+		DispatchQueue.main.async {
+			self.addChild(overlapVC)
+			self.view.addSubview(overlapVC.view)
+			overlapVC.view.pinToBounds(self.view)
+			
 			UIView.transition(
 				with: self.view,
-				duration: self.overlapHideAnimation.duration,
-				options: self.overlapHideAnimation.options,
-				animations: {
-					overlapVC.willMove(toParent: nil)
-					overlapVC.view.removeFromSuperview()
-					overlapVC.removeFromParent()
-					
-					self.overlapHideAnimation.animation()
-				},
+				duration: self.overlapDisplayAnimation.duration,
+				options: self.overlapDisplayAnimation.options,
+				animations: self.overlapDisplayAnimation.animation,
 				completion: { _ in
+					overlapVC.didMove(toParent: self)
 					completion?()
 				}
 			)
+		}
+	}
+	
+	func hideOverlap (_ completion: Completion? = nil) {
+		guard let overlappingVC = overlappingVC else { return }
+		
+		DispatchQueue.main.asyncAfter(deadline: .now() + _minOverlapSeconds) {
+			overlappingVC.prepareForHiding { [weak overlappingVC, weak self] in
+				guard let self = self else { return }
+				
+				UIView.transition(
+					with: self.view,
+					duration: self.overlapHideAnimation.duration,
+					options: self.overlapHideAnimation.options,
+					animations: {
+						overlappingVC?.willMove(toParent: nil)
+						
+						self.overlapHideAnimation.animation()
+						
+						overlappingVC?.view.removeFromSuperview()
+						overlappingVC?.removeFromParent()
+					},
+					completion: { _ in
+						completion?()
+					}
+				)
+			}
 		}
 	}
 }
 
 
 
-extension OverlappingViewController {
-	func action (action: @escaping (@escaping Completion) -> (), completion: Completion? = nil) {
+extension OverlapViewController {
+	func action (_ action: @escaping (@escaping Completion) -> Void, _ completion: Completion? = nil) {
 		displayOverlap {
 			action {
 				self.hideOverlap(completion)
@@ -140,16 +158,16 @@ extension OverlappingViewController {
 		}
 	}
 	
-	func actionImmediately (action: @escaping (Completion) -> (), completion: Completion? = nil) {
+	func actionImmediately (_ action: @escaping (Completion) -> Void, _ completion: Completion? = nil) {
 		displayOverlap()
 		action {
 			self.hideOverlap(completion)
 		}
 	}
 	
-	func replaceMain (_ vc: UIViewController, _ completion: Completion? = nil) {
+	func replaceOverlapped (_ vc: OverlappedViewController, _ completion: Completion? = nil) {
 		displayOverlap {
-			self.mainViewController = vc
+			self.overlappedVC = vc
 			self.hideOverlap(completion)
 		}
 	}

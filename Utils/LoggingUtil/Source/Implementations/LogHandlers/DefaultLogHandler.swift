@@ -6,6 +6,7 @@ public extension DefaultLogHandler {
 		
 		public var level = LoggingLevel.info
 		public var enableSourceCodeInfo = false
+		public var componentsSeparator = " | "
 		
 		public init (prefix: String, source: String = "", level: LoggingLevel = .info, enableSourceCodeInfo: Bool = false, logExporter: LogExporter) {
 			self.prefix = prefix
@@ -26,26 +27,9 @@ public class DefaultLogHandler: LogHandler {
 	}
 	
 	private func message (_ level: LoggingLevel, source: String = "", message: String) -> String {
-		func delimiter (_ message: String, _ delimiter: String) -> String { !message.isEmpty ? delimiter : "" }
-		
-		var finalMessage = "\(level) – ".uppercased()
-		
-		if !settings.prefix.isEmpty {
-			finalMessage += settings.prefix
-		}
-		
-		if !settings.source.isEmpty {
-			finalMessage += delimiter(finalMessage, ".") + settings.source
-		}
-		
-		if !source.isEmpty {
-			finalMessage += delimiter(finalMessage, ".") + source
-		}
-		
-		if !message.isEmpty {
-			finalMessage += delimiter(finalMessage, " – ") + message
-		}
-		
+		let message1 = [String(describing: level).uppercased(), settings.prefix].combine(with: settings.componentsSeparator)
+		let message2 = [message1, settings.source, source].combine()
+		let finalMessage = [message2, message].combine(with: settings.componentsSeparator)
 		return finalMessage
 	}
 	
