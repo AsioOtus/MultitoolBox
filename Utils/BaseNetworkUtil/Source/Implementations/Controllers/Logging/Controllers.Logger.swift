@@ -11,15 +11,15 @@ extension Controllers {
 		}
 		
 		func log (_ urlSession: URLSession, _ urlRequest: URLRequest) {
-			loggingProvider?.baseNetworkUtilControllersLog(.init(source, .request(.init(urlSession: urlSession, urlRequest: urlRequest))))
+			loggingProvider?.baseNetworkUtilControllersLog(.init(.request(.init(urlSession: urlSession, urlRequest: urlRequest)), "BaseNetworkUtil", source))
 		}
 		
 		func log (_ data: Data, _ urlResponse: URLResponse) {
-			loggingProvider?.baseNetworkUtilControllersLog(.init(source, .response(.init(data: data, urlResponse: urlResponse))))
+			loggingProvider?.baseNetworkUtilControllersLog(.init(.response(.init(data: data, urlResponse: urlResponse)), "BaseNetworkUtil", source))
 		}
 		
 		func log (_ error: BaseNetworkUtilError) {
-			loggingProvider?.baseNetworkUtilControllersLog(.init(source, .error(error)))
+			loggingProvider?.baseNetworkUtilControllersLog(.init(.error(error), "BaseNetworkUtil", source))
 		}
 	}
 }
@@ -28,12 +28,14 @@ extension Controllers {
 
 extension Controllers.Logger {
 	public struct Info {
-		public let source: String
 		public let category: Category
+		public let module: String
+		public let source: String
 		
-		init (_ source: String, _ category: Category) {
-			self.source = source
+		init (_ category: Category, _ module: String, _ source: String) {
 			self.category = category
+			self.module = module
+			self.source = source
 		}
 		
 		public enum Category {

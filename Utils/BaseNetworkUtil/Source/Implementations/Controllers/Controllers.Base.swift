@@ -16,6 +16,15 @@ extension Controllers {
 			self.logger = .init("Base", settings.controllers.loggingProvider)
 		}
 		
+		init (source: String) {
+			self.logger = .init(source, settings.controllers.loggingProvider)
+		}
+		
+		init (settings: Settings, source: String) {
+			self.settings = settings
+			self.logger = .init(source, settings.controllers.loggingProvider)
+		}
+		
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)
 		-> AnyPublisher<RequestDelegate.Content, BaseNetworkError>
 		{

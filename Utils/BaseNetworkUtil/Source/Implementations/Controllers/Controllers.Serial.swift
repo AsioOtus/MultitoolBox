@@ -7,11 +7,11 @@ extension Controllers {
 		private let semaphore = DispatchSemaphore(value: 1)
 		
 		public init () {
-			baseController = Controllers.Base()
+			baseController = Controllers.Base(source: "Serial")
 		}
 		
 		public init (settings: Settings) {
-			baseController = Controllers.Base(settings: settings)
+			baseController = Controllers.Base(settings: settings, source: "Serial")
 		}
 		
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)

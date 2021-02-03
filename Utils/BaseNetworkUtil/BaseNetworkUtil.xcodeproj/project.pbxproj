@@ -110,11 +110,8 @@
 		3A5BD57325BC335D00481A2B /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				3A5BD58825BC33B300481A2B /* Controllers */,
-				3A5BD58F25BC348500481A2B /* Errors */,
-				3A5BD58B25BC341500481A2B /* Requests */,
-				3A7CF1EC25C7FB4100C2411E /* Settings */,
-				3AE30F2725C5FBD5009B22FB /* TestRequests */,
+				3AA7597B25CAC1D10007F25D /* Implementations */,
+				3A5BD58B25BC341500481A2B /* RequestsProtocols */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -130,7 +127,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		3A5BD58B25BC341500481A2B /* Requests */ = {
+		3A5BD58B25BC341500481A2B /* RequestsProtocols */ = {
 			isa = PBXGroup;
 			children = (
 				3A5BD59425BC34F800481A2B /* ModelableRequest.swift */,
@@ -138,7 +135,7 @@
 				3A5BD57725BC336800481A2B /* Request.swift */,
 				3A5BD57525BC336800481A2B /* RequestDelegate.swift */,
 			);
-			path = Requests;
+			path = RequestsProtocols;
 			sourceTree = "<group>";
 		};
 		3A5BD58F25BC348500481A2B /* Errors */ = {
@@ -167,6 +164,17 @@
 				3A7CF1CE25C7F87800C2411E /* Setting.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		3AA7597B25CAC1D10007F25D /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BD58825BC33B300481A2B /* Controllers */,
+				3A5BD58F25BC348500481A2B /* Errors */,
+				3A7CF1EC25C7FB4100C2411E /* Settings */,
+				3AE30F2725C5FBD5009B22FB /* TestRequests */,
+			);
+			path = Implementations;
 			sourceTree = "<group>";
 		};
 		3AE30F2725C5FBD5009B22FB /* TestRequests */ = {
