@@ -1,43 +1,52 @@
-public extension DefaultLogHandler {
-	struct Settings {
-		public let prefix: String
-		public let source: String
-		public let logExporter: LogExporter
-		
-		public var level = LoggingLevel.info
-		public var enableSourceCodeInfo = false
-		public var componentsSeparator = " | "
-		
-		public init (prefix: String, source: String = "", level: LoggingLevel = .info, enableSourceCodeInfo: Bool = false, logExporter: LogExporter) {
-			self.prefix = prefix
-			self.source = source
-			self.logExporter = logExporter
-			
-			self.level = level
-			self.enableSourceCodeInfo = enableSourceCodeInfo
-		}
-	}
-}
-
 public class DefaultLogHandler: LogHandler {
-	public var settings: Settings
+	public var level: LoggingLevel
+	public let prefix: String
+	public let source: String
+	public var tags: Set<String>
+	public var details: [String: Any]
+	public var comment: String
+	public let logExporter: LogExporter
+	public var componentsSeparator: String
 	
-	public init (settings: Settings) {
-		self.settings = settings
+	public init (
+		level: LoggingLevel = .info,
+		prefix: String,
+		source: String = "",
+		tags: Set<String> = [],
+		details: [String : Any] = [:],
+		comment: String = "",
+		logExporter: LogExporter,
+		componentsSeparator: String = " | "
+	) {
+		self.level = level
+		self.prefix = prefix
+		self.source = source
+		self.tags = tags
+		self.details = details
+		self.comment = comment
+		self.logExporter = logExporter
+		self.componentsSeparator = componentsSeparator
 	}
 	
-	private func message (_ level: LoggingLevel, source: String = "", message: String) -> String {
-		let message1 = [level.padded, settings.prefix].combine(with: settings.componentsSeparator)
-		let message2 = [message1, settings.source, source].combine()
-		let finalMessage = [message2, message].combine(with: settings.componentsSeparator)
+	private func message (_ level: LoggingLevel, source: String?, message: String) -> String {
+		let source = [prefix, self.source, source].combine()
+		let finalMessage = [level.padded, source, message].combine(with: componentsSeparator)
 		return finalMessage
 	}
 	
-	public func log(level: LoggingLevel, message: @autoclosure () -> String, source: @autoclosure () -> String?, file: String, function: String, line: UInt) {
-		guard level >= settings.level else { return }
+	public func log (
+		level: LoggingLevel,
+		message: @autoclosure () -> String,
+		source: @autoclosure () -> String?,
+		tags: @autoclosure () -> Set<String>,
+		details: @autoclosure () -> [String: Any],
+		comment: @autoclosure () -> String,
+		file: String, function: String, line: UInt
+	) {
+		guard level >= self.level else { return }
 		
-		let finalMessage = self.message(level, source: source() ?? "", message: message())
+		let finalMessage = self.message(level, source: source(), message: message())
 		
-		settings.logExporter.log(level, finalMessage)
+		logExporter.log(level, finalMessage)
 	}
 }
