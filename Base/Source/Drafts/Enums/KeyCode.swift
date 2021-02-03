@@ -118,5 +118,3 @@ public enum KeyCode: UInt16 {
 	case keypad8        = 0x5B
 	case keypad9        = 0x5C
 }
-
-extension KeyCode: CaseIterable, CreatableByInt, Randomable { }

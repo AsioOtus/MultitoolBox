@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A0DB1BA25C3182600C5824B"
-               BuildableName = "BaseNetworkUtil_macOS.framework"
-               BlueprintName = "BaseNetworkUtil-macOS"
-               ReferencedContainer = "container:BaseNetworkUtil.xcodeproj">
+               BlueprintIdentifier = "3A211E50257E38060017229F"
+               BuildableName = "KeychainUtilTestground"
+               BlueprintName = "KeychainUtilTestground"
+               ReferencedContainer = "container:KeychainUtil.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -40,6 +40,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3A211E50257E38060017229F"
+            BuildableName = "KeychainUtilTestground"
+            BlueprintName = "KeychainUtilTestground"
+            ReferencedContainer = "container:KeychainUtil.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -47,15 +57,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3A0DB1BA25C3182600C5824B"
-            BuildableName = "BaseNetworkUtil_macOS.framework"
-            BlueprintName = "BaseNetworkUtil-macOS"
-            ReferencedContainer = "container:BaseNetworkUtil.xcodeproj">
+            BlueprintIdentifier = "3A211E50257E38060017229F"
+            BuildableName = "KeychainUtilTestground"
+            BlueprintName = "KeychainUtilTestground"
+            ReferencedContainer = "container:KeychainUtil.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

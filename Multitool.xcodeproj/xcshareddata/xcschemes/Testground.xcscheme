@@ -14,20 +14,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A5BD53025BC1E4000481A2B"
-               BuildableName = "LoggingUtil_macOS.framework"
-               BlueprintName = "LoggingUtil-macOS"
-               ReferencedContainer = "container:Components/LoggingUtil/LoggingUtil.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A949B23245462BD007E7928"
                BuildableName = "Testground"
                BlueprintName = "Testground"
@@ -42,37 +28,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A949BDB245467AE007E7928"
-               BuildableName = "KeychainUtil_macOS.framework"
-               BlueprintName = "KeychainUtil-macOS"
-               ReferencedContainer = "container:Components/Keychain/KeychainUtil.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A949BE9245467D1007E7928"
-               BuildableName = "UserDefaultsUtil_macOS.framework"
-               BlueprintName = "UserDefaultsUtil-macOS"
-               ReferencedContainer = "container:Components/UserDefaultsUtil/UserDefaultsUtil.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A8BD84B256FAB2600E4C225"
-               BuildableName = "MultitoolBase_macOS.framework"
-               BlueprintName = "MultitoolBase-macOS"
+               BlueprintIdentifier = "3A0ADF9825CAA50C001EEC70"
+               BuildableName = "MultitoolBase.framework"
+               BlueprintName = "MultitoolBase"
                ReferencedContainer = "container:Base/Base.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -88,6 +46,48 @@
                BuildableName = "BaseNetworkUtil.framework"
                BlueprintName = "BaseNetworkUtil"
                ReferencedContainer = "container:Utils/BaseNetworkUtil/BaseNetworkUtil.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A0ADFAA25CAA52A001EEC70"
+               BuildableName = "KeychainUtil.framework"
+               BlueprintName = "KeychainUtil"
+               ReferencedContainer = "container:Utils/KeychainUtil/KeychainUtil.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A282DAD25CA914800C24C14"
+               BuildableName = "LoggingUtil.framework"
+               BlueprintName = "LoggingUtil"
+               ReferencedContainer = "container:Utils/LoggingUtil/LoggingUtil.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A0ADFC225CAA588001EEC70"
+               BuildableName = "UserDefaultsUtil.framework"
+               BlueprintName = "UserDefaultsUtil"
+               ReferencedContainer = "container:Utils/UserDefaultsUtil/UserDefaultsUtil.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
