@@ -2,7 +2,7 @@ import Foundation
 import Combine
 
 extension Controllers {
-	public struct Base {
+	public struct Base: BaseNetworkUtilController {
 		public var settings = Settings()
 		
 		private let logger: Logger

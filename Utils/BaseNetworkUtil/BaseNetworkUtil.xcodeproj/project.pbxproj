@@ -12,6 +12,8 @@
 		3A7CF1DA25C7F94100C2411E /* Controllers.Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1D925C7F94100C2411E /* Controllers.Logger.swift */; };
 		3A7CF1E325C7FAE900C2411E /* BaseNetworkUtilControllersLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1E225C7FAE900C2411E /* BaseNetworkUtilControllersLoggingProvider.swift */; };
 		3A7CF1E925C7FB0100C2411E /* StandardLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1E825C7FB0100C2411E /* StandardLoggingProvider.swift */; };
+		3AA7598B25CAD4B00007F25D /* BaseNetworkUtilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7598A25CAD4B00007F25D /* BaseNetworkUtilController.swift */; };
+		3AA7598C25CAD4B00007F25D /* BaseNetworkUtilController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7598A25CAD4B00007F25D /* BaseNetworkUtilController.swift */; };
 		3AE30F2925C5FBE4009B22FB /* TestRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE30F2825C5FBE4009B22FB /* TestRequest.swift */; };
 		3AE30F3225C5FF58009B22FB /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE30F3125C5FF58009B22FB /* main.swift */; };
 		3AE30F3825C5FF78009B22FB /* Controllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BD57F25BC338D00481A2B /* Controllers.swift */; };
@@ -62,6 +64,7 @@
 		3A7CF1D925C7F94100C2411E /* Controllers.Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllers.Logger.swift; sourceTree = "<group>"; };
 		3A7CF1E225C7FAE900C2411E /* BaseNetworkUtilControllersLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkUtilControllersLoggingProvider.swift; sourceTree = "<group>"; };
 		3A7CF1E825C7FB0100C2411E /* StandardLoggingProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardLoggingProvider.swift; sourceTree = "<group>"; };
+		3AA7598A25CAD4B00007F25D /* BaseNetworkUtilController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkUtilController.swift; sourceTree = "<group>"; };
 		3AE30F2825C5FBE4009B22FB /* TestRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRequest.swift; sourceTree = "<group>"; };
 		3AE30F2F25C5FF58009B22FB /* BaseNetworkUtilTestground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BaseNetworkUtilTestground; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AE30F3125C5FF58009B22FB /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -123,6 +126,7 @@
 				3A5BD57625BC336800481A2B /* Controllers.Base.swift */,
 				3A5BD58525BC33B000481A2B /* Controllers.Serial.swift */,
 				3A5BD57F25BC338D00481A2B /* Controllers.swift */,
+				3AA7598A25CAD4B00007F25D /* BaseNetworkUtilController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -304,6 +308,7 @@
 			files = (
 				3AE30F3225C5FF58009B22FB /* main.swift in Sources */,
 				3AE30F3E25C5FF78009B22FB /* Request.swift in Sources */,
+				3AA7598C25CAD4B00007F25D /* BaseNetworkUtilController.swift in Sources */,
 				3AE30F3D25C5FF78009B22FB /* RequestDelegate.swift in Sources */,
 				3AE30F3A25C5FF78009B22FB /* Controllers.Base.swift in Sources */,
 				3AE30F3C25C5FF78009B22FB /* ModelableResponse.swift in Sources */,
@@ -334,6 +339,7 @@
 				3A7CF1CF25C7F87800C2411E /* Setting.swift in Sources */,
 				3A7CF1E325C7FAE900C2411E /* BaseNetworkUtilControllersLoggingProvider.swift in Sources */,
 				3AE30F2925C5FBE4009B22FB /* TestRequest.swift in Sources */,
+				3AA7598B25CAD4B00007F25D /* BaseNetworkUtilController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

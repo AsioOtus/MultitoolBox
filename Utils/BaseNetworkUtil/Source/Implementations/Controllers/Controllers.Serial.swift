@@ -2,7 +2,7 @@ import Combine
 import Foundation
 
 extension Controllers {
-	public struct Serial {
+	public struct Serial: BaseNetworkUtilController {
 		public let baseController: Controllers.Base
 		private let semaphore = DispatchSemaphore(value: 1)
 		
@@ -24,6 +24,10 @@ extension Controllers {
 				.map { content -> RequestDelegate.Content in
 					DispatchQueue.global().sync { _ = semaphore.signal() }
 					return content
+				}
+				.mapError { error -> BaseNetworkError in
+					DispatchQueue.global().sync { _ = semaphore.signal() }
+					return error
 				}
 				
 			
