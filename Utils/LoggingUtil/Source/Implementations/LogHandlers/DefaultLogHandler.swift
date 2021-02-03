@@ -27,7 +27,7 @@ public class DefaultLogHandler: LogHandler {
 	}
 	
 	private func message (_ level: LoggingLevel, source: String = "", message: String) -> String {
-		let message1 = [String(describing: level).uppercased(), settings.prefix].combine(with: settings.componentsSeparator)
+		let message1 = [level.padded, settings.prefix].combine(with: settings.componentsSeparator)
 		let message2 = [message1, settings.source, source].combine()
 		let finalMessage = [message2, message].combine(with: settings.componentsSeparator)
 		return finalMessage
