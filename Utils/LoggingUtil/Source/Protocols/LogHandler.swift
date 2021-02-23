@@ -1,7 +1,9 @@
 public protocol LogHandler {
+	associatedtype Message
+	
 	func log (
 		level: LoggingLevel,
-		message: @autoclosure () -> String,
+		message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],

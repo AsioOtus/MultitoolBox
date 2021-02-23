@@ -1,6 +1,8 @@
-public protocol Logger {	
+public protocol Logger {
+	associatedtype Message
+	
 	func trace (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
@@ -9,7 +11,7 @@ public protocol Logger {
 	)
 	
 	func debug (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
@@ -18,7 +20,7 @@ public protocol Logger {
 	)
 	
 	func info (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
@@ -27,7 +29,7 @@ public protocol Logger {
 	)
 	
 	func notice (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
@@ -36,7 +38,7 @@ public protocol Logger {
 	)
 	
 	func warning (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
@@ -45,7 +47,7 @@ public protocol Logger {
 	)
 	
 	func fault (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
@@ -54,7 +56,7 @@ public protocol Logger {
 	)
 	
 	func error (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
@@ -63,7 +65,7 @@ public protocol Logger {
 	)
 	
 	func critical (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],

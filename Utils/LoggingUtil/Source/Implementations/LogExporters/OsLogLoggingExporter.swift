@@ -2,7 +2,7 @@ import os.log
 import Foundation
 
 @available(iOS 12.0, *)
-public class OsLogLogExporter: LogExporter {
+public class OsLogLogExporter: StringLogExporter {
 	public init () { }
 	
 	public func log (_ level: LoggingLevel, _ message: String) {

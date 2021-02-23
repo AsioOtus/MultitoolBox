@@ -1,20 +1,8 @@
-struct LogRecord {
-	let level: LoggingLevel?
-	let message: String
-	let source: [String]?
-	let tags: Set<String>?
-	let details: [String: Any]?
-	let comment: String?
-	let file: String?
-	let function: String?
-	let line: UInt?
-}
-
 public class DefaultLogHandler: LogHandler {
 	public var sourcePrefix: String
 	public var levelPadding: Bool
 	public var componentsSeparator: String
-	public var logExporter: LogExporter
+	public var stringLogExporter: StringLogExporter
 	public var loggerInfo: LoggerInfo
 	public var enabling: EnablingConfiguration
 	
@@ -22,12 +10,12 @@ public class DefaultLogHandler: LogHandler {
 		sourcePrefix: String,
 		levelPadding: Bool = false,
 		componentsSeparator: String = " | ",
-		logExporter: LogExporter,
+		stringLogExporter: StringLogExporter,
 		loggerInfo: LoggerInfo = .init(),
 		enabling: EnablingConfiguration = .init()
 	) {
 		self.sourcePrefix = sourcePrefix
-		self.logExporter = logExporter
+		self.stringLogExporter = stringLogExporter
 		self.componentsSeparator = componentsSeparator
 		self.levelPadding = levelPadding
 		self.loggerInfo = loggerInfo
@@ -108,6 +96,6 @@ public class DefaultLogHandler: LogHandler {
 		
 		let finalMessage = self.message(from: logRecord)
 		
-		logExporter.log(level, finalMessage)
+		stringLogExporter.log(level, finalMessage)
 	}
 }

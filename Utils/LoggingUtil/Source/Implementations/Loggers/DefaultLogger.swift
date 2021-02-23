@@ -1,9 +1,11 @@
-public class DefaultLogger: Logger, LogHandler {
-	public var logHandler: LogHandler
+public class DefaultLogger <LogHandlerType: LoggingUtil.LogHandler>: Logger, LogHandler {
+	public var logHandler: LogHandlerType
 	public var loggerInfo: LoggerInfo
 	
+	
+	
 	public init (
-		logHandler: LogHandler,
+		logHandler: LogHandlerType,
 		loggerInfo: LoggerInfo = .init()
 	) {
 		self.logHandler = logHandler
@@ -14,7 +16,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	public func log (
 		level: LoggingLevel,
-		message: @autoclosure () -> String,
+		message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
@@ -34,7 +36,7 @@ public class DefaultLogger: Logger, LogHandler {
 	
 	
 	public func trace (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
@@ -45,7 +47,7 @@ public class DefaultLogger: Logger, LogHandler {
 	}
 	
 	public func debug (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
@@ -56,7 +58,7 @@ public class DefaultLogger: Logger, LogHandler {
 	}
 	
 	public func info (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
@@ -67,7 +69,7 @@ public class DefaultLogger: Logger, LogHandler {
 	}
 	
 	public func notice (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
@@ -78,7 +80,7 @@ public class DefaultLogger: Logger, LogHandler {
 	}
 	
 	public func warning (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
@@ -89,7 +91,7 @@ public class DefaultLogger: Logger, LogHandler {
 	}
 	
 	public func fault (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
@@ -100,7 +102,7 @@ public class DefaultLogger: Logger, LogHandler {
 	}
 	
 	public func error (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],
@@ -111,7 +113,7 @@ public class DefaultLogger: Logger, LogHandler {
 	}
 	
 	public func critical (
-		_ message: @autoclosure () -> String,
+		_ message: @autoclosure () -> LogHandlerType.Message,
 		source: @autoclosure () -> [String] = [],
 		tags: @autoclosure () -> Set<String> = [],
 		details: @autoclosure () -> [String: Any] = [:],

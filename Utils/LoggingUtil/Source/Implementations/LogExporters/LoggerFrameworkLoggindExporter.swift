@@ -1,7 +1,7 @@
 import os.log
 
 @available(iOS 14.0, macOS 11.0, *)
-public class LoggerFrameworkLogExporter: LogExporter {
+public class LoggerFrameworkLogExporter: StringLogExporter {
 	public init () { }
 	
 	private let logger = os.Logger()
