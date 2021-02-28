@@ -48,7 +48,7 @@ extension Controllers.Logger {
 				let urlRequest: URLRequest
 				
 				var defaultMessage: String {
-					"REQUEST – \(urlRequest.url!.absoluteString)"
+					"REQUEST – \(urlRequest.httpMethod ?? "Unknown method") \(urlRequest.url!.absoluteString)"
 				}
 			}
 			
@@ -75,8 +75,8 @@ extension Controllers.Logger {
 						defaultMessage = "PREPROCESSING ERROR – \(error)"
 					case .responseFailure(_, let urlRequest, let error):
 						defaultMessage = "RESPONSE – \(urlRequest.url!.absoluteString) – ERROR – \(error)"
-					case .postprocessingError(_, let urlResponse, let error):
-						defaultMessage = "RESPONSE – \(urlResponse.url!.absoluteString) – POSTPROCESSING ERROR – \(error)"
+					case .postprocessingError(let data, let urlResponse, let error):
+						defaultMessage = "RESPONSE – \(urlResponse.url!.absoluteString) – \(data.base64EncodedString()) – POSTPROCESSING ERROR – \(error)"
 					}
 				case .error(let error):
 					defaultMessage = "ERROR – " + error.localizedDescription
