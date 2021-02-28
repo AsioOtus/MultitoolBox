@@ -46,21 +46,21 @@ public class DefaultLogHandler: LogHandler {
 			)
 		}
 		
-		if let tags = logRecord.tags {
+		if let tags = logRecord.tags, !tags.isEmpty {
 			messageComponents.append("[\(loggerInfo.tags.union(tags).sorted(by: <).joined(separator: ", "))]")
 		}
 		
-		if let source = logRecord.source {
+		if let source = logRecord.source, !source.isEmpty {
 			messageComponents.append(([sourcePrefix] + loggerInfo.source + source).combine())
 		}
 		
 		messageComponents.append(logRecord.message)
 		
-		if let details = logRecord.details {
+		if let details = logRecord.details, !details.isEmpty {
 			messageComponents.append("\(loggerInfo.details.merging(details, uniquingKeysWith: { _, detail in detail }))")
 		}
 		
-		if let comment = logRecord.comment {
+		if let comment = logRecord.comment, !comment.isEmpty {
 			messageComponents.append("\(!comment.isEmpty ? comment : loggerInfo.comment)")
 		}
 		
