@@ -21,16 +21,16 @@ public struct LoggerInfo {
 	
 	public init (
 		parent: Self = .init(),
-		level: Setting<LoggingLevel> = .inherit,
-		source: Setting<[String]> = .inherit,
-		tags: Setting<Set<String>> = .inherit,
-		details: Setting<[String : Any]> = .inherit,
-		comment: Setting<String> = .inherit
+		level: Setting<LoggingLevel> = .copy,
+		source: Setting<[String]> = .copy,
+		tags: Setting<Set<String>> = .copy,
+		details: Setting<[String : Any]> = .copy,
+		comment: Setting<String> = .copy
 	) {
-		self._level = .init(level.inherited(from: parent.level))
-		self._source = .init(source.inherited(from: parent.source))
-		self._tags = .init(tags.inherited(from: parent.tags))
-		self._details = .init(details.inherited(from: parent.details))
-		self._comment = .init(comment.inherited(from: parent.comment))
+		self._level = .init(level.derive(from: parent.level))
+		self._source = .init(source.derive(from: parent.source))
+		self._tags = .init(tags.derive(from: parent.tags))
+		self._details = .init(details.derive(from: parent.details))
+		self._comment = .init(comment.derive(from: parent.comment))
 	}
 }

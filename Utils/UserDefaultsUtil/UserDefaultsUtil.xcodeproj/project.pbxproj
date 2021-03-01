@@ -8,6 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		3A0ADFC725CAA588001EEC70 /* UserDefaultsUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A0ADFC525CAA588001EEC70 /* UserDefaultsUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A3239EC25ED59F90039D0F5 /* Logger.Moderator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB9DCB2563135600939519 /* Logger.Moderator.swift */; };
+		3A3239ED25ED59F90039D0F5 /* Logger.Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701AF247C04D000100BEB /* Logger.Operation.swift */; };
+		3A3239EE25ED59F90039D0F5 /* Item.Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B8A245464AF007E7928 /* Item.Error.swift */; };
+		3A3239EF25ED59F90039D0F5 /* Logger.Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B52B2460A1C200056493 /* Logger.Record.swift */; };
+		3A3239F025ED59F90039D0F5 /* Logger.Info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701B1247C05C800100BEB /* Logger.Info.swift */; };
+		3A3239F125ED59F90039D0F5 /* DefaultableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B88245464AF007E7928 /* DefaultableItem.swift */; };
+		3A3239F225ED59F90039D0F5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B52724609D1200056493 /* Logger.swift */; };
+		3A3239F325ED59F90039D0F5 /* StandardLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701B3247C0C6300100BEB /* StandardLoggingProvider.swift */; };
+		3A3239F425ED59F90039D0F5 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A282D8925C9E91000C24C14 /* Setting.swift */; };
+		3A3239F525ED59F90039D0F5 /* UserDefaultsUtilDefaultValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701B5247EB4E300100BEB /* UserDefaultsUtilDefaultValueProvider.swift */; };
+		3A3239F625ED59F90039D0F5 /* UserDefaultsUtilLoggingProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B5292460A0CC00056493 /* UserDefaultsUtilLoggingProvider.swift */; };
+		3A3239F725ED59F90039D0F5 /* ParametricDefaultableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B52524609B9500056493 /* ParametricDefaultableItem.swift */; };
+		3A3239F825ED59F90039D0F5 /* UserDefaultsUtilDefaultableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19CEF225BD8B3000D097D7 /* UserDefaultsUtilDefaultableItem.swift */; };
+		3A3239F925ED59F90039D0F5 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B51E2460945100056493 /* Settings.swift */; };
+		3A3239FA25ED59F90039D0F5 /* StaticDefaultValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701B7247EC05500100BEB /* StaticDefaultValueProvider.swift */; };
+		3A3239FB25ED59F90039D0F5 /* UserDefaultsUtilError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFB9DC6256311B600939519 /* UserDefaultsUtilError.swift */; };
+		3A3239FC25ED59F90039D0F5 /* Logger.Commit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3701AB247C036D00100BEB /* Logger.Commit.swift */; };
+		3A3239FD25ED59F90039D0F5 /* Item.Coder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A634C7E255FEF5F00758139 /* Item.Coder.swift */; };
+		3A3239FE25ED59F90039D0F5 /* UserDefaultsUtilItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19CEEB25BD891200D097D7 /* UserDefaultsUtilItem.swift */; };
+		3A3239FF25ED59F90039D0F5 /* ParametricItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B5232460993A00056493 /* ParametricItem.swift */; };
+		3A323A0025ED59F90039D0F5 /* UserDefaultsUtilItemKeyPostfixProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD3B50B2460938000056493 /* UserDefaultsUtilItemKeyPostfixProvider.swift */; };
+		3A323A0125ED59F90039D0F5 /* DynamicDefaultValueProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A16FEC824F43A0F00CBA263 /* DynamicDefaultValueProvider.swift */; };
+		3A323A0225ED59F90039D0F5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B89245464AF007E7928 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -241,6 +264,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A3239F625ED59F90039D0F5 /* UserDefaultsUtilLoggingProvider.swift in Sources */,
+				3A3239ED25ED59F90039D0F5 /* Logger.Operation.swift in Sources */,
+				3A3239F725ED59F90039D0F5 /* ParametricDefaultableItem.swift in Sources */,
+				3A3239FD25ED59F90039D0F5 /* Item.Coder.swift in Sources */,
+				3A323A0025ED59F90039D0F5 /* UserDefaultsUtilItemKeyPostfixProvider.swift in Sources */,
+				3A3239F025ED59F90039D0F5 /* Logger.Info.swift in Sources */,
+				3A323A0225ED59F90039D0F5 /* Item.swift in Sources */,
+				3A3239FC25ED59F90039D0F5 /* Logger.Commit.swift in Sources */,
+				3A3239FF25ED59F90039D0F5 /* ParametricItem.swift in Sources */,
+				3A3239F925ED59F90039D0F5 /* Settings.swift in Sources */,
+				3A3239FE25ED59F90039D0F5 /* UserDefaultsUtilItem.swift in Sources */,
+				3A3239FB25ED59F90039D0F5 /* UserDefaultsUtilError.swift in Sources */,
+				3A3239F125ED59F90039D0F5 /* DefaultableItem.swift in Sources */,
+				3A3239F525ED59F90039D0F5 /* UserDefaultsUtilDefaultValueProvider.swift in Sources */,
+				3A3239F825ED59F90039D0F5 /* UserDefaultsUtilDefaultableItem.swift in Sources */,
+				3A323A0125ED59F90039D0F5 /* DynamicDefaultValueProvider.swift in Sources */,
+				3A3239F325ED59F90039D0F5 /* StandardLoggingProvider.swift in Sources */,
+				3A3239EC25ED59F90039D0F5 /* Logger.Moderator.swift in Sources */,
+				3A3239FA25ED59F90039D0F5 /* StaticDefaultValueProvider.swift in Sources */,
+				3A3239F225ED59F90039D0F5 /* Logger.swift in Sources */,
+				3A3239EE25ED59F90039D0F5 /* Item.Error.swift in Sources */,
+				3A3239EF25ED59F90039D0F5 /* Logger.Record.swift in Sources */,
+				3A3239F425ED59F90039D0F5 /* Setting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

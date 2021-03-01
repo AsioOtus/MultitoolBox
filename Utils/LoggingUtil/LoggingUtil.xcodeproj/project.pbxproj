@@ -153,7 +153,6 @@
 				3AA7599125CAFA080007F25D /* Helpers */,
 				3A59891825C48F3700373FFA /* Implementations */,
 				3A24821D25BEF65200D5CF41 /* Protocols */,
-				3A5BD53E25BC1E5600481A2B /* LoggingLevel.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -189,6 +188,7 @@
 			children = (
 				3AA759CB25CB4C790007F25D /* EnablingConfiguration.swift */,
 				3AA759BA25CB2C7E0007F25D /* LoggerInfo.swift */,
+				3A5BD53E25BC1E5600481A2B /* LoggingLevel.swift */,
 				3A7E5DBB25CC62E60030378B /* LogRecord.swift */,
 				3A3239CA25ED48060039D0F5 /* Moderator.swift */,
 				3AA759C225CB31960007F25D /* Setting.swift */,

@@ -12,7 +12,7 @@ public struct Settings {
 	
 	public let parent: (() -> Settings)?
 	
-	public let items: Setting<Items>.Inherited
+	public let items: Setting<Items>.Derived
 	@InheritedSetting public var logging: Logging
 	
 	public init (
@@ -26,12 +26,12 @@ public struct Settings {
 	
 	public init (
 		parent: @escaping @autoclosure () -> Settings = .global,
-		items: Setting<Items> = .inherit,
-		logging: Setting<Logging> = .inherit
+		items: Setting<Items> = .prototype,
+		logging: Setting<Logging> = .prototype
 	) {
 		self.parent = parent
-		self.items = items.inherited(from: parent().items.value)
-		self._logging = .init(logging.inherited(from: parent().logging))
+		self.items = items.derive(from: parent().items.value)
+		self._logging = .init(logging.derive(from: parent().logging))
 	}
 	
 	internal static let `default` = Settings()
@@ -50,16 +50,16 @@ extension Settings {
 		
 		public let parent: (() -> Items)?
 		
-		public let prefix: Setting<String?>.Inherited
+		public let prefix: Setting<String?>.Derived
 		
 		public init (prefix: String) {
 			self.parent = nil
 			self.prefix = .value(prefix)
 		}
 		
-		public init (parent: @escaping @autoclosure () -> Items = .global, prefix: Setting<String?> = .inherit) {
+		public init (parent: @escaping @autoclosure () -> Items = .global, prefix: Setting<String?> = .prototype) {
 			self.parent = parent
-			self.prefix = prefix.inherited(from: parent().prefix.value)
+			self.prefix = prefix.derive(from: parent().prefix.value)
 		}
 		
 		internal static let `default` = Items()
@@ -102,18 +102,18 @@ extension Settings {
 		
 		public init (
 			parent: @escaping @autoclosure () -> Logging = .global,
-			enable: Setting<Bool> = .inherit,
-			enableValuesLogging: Setting<Bool> = .inherit,
-			level: Setting<OSLogType> = .inherit,
-			loggingProvider: Setting<UserDefaultsUtilLoggingProvider?> = .inherit
+			enable: Setting<Bool> = .prototype,
+			enableValuesLogging: Setting<Bool> = .prototype,
+			level: Setting<OSLogType> = .prototype,
+			loggingProvider: Setting<UserDefaultsUtilLoggingProvider?> = .prototype
 		) {
 			self.parent = parent
 			
-			self._enable = .init(enable.inherited(from: parent().enable))
-			self._enableValuesLogging = .init(enableValuesLogging.inherited(from: parent().enableValuesLogging))
-			self._level = .init(level.inherited(from: parent().level))
+			self._enable = .init(enable.derive(from: parent().enable))
+			self._enableValuesLogging = .init(enableValuesLogging.derive(from: parent().enableValuesLogging))
+			self._level = .init(level.derive(from: parent().level))
 			
-			self._loggingProvider = .init(loggingProvider.inherited(from: parent().loggingProvider))
+			self._loggingProvider = .init(loggingProvider.derive(from: parent().loggingProvider))
 		}
 	}
 }
