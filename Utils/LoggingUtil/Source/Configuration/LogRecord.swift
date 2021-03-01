@@ -1,6 +1,6 @@
-struct LogRecord {
+struct LogRecord<Message> {
 	let level: LoggingLevel?
-	let message: String
+	let message: Message
 	let source: [String]?
 	let tags: Set<String>?
 	let details: [String: Any]?

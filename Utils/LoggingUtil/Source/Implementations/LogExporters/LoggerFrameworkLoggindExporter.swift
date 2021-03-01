@@ -1,12 +1,24 @@
 import os.log
 
+public extension LoggerFrameworkLogExporter {
+	struct Configuration {
+		public static let `default` = Self(logger: .init())
+		
+		public let logger: os.Logger
+	}
+}
+
 @available(iOS 14.0, macOS 11.0, *)
 public class LoggerFrameworkLogExporter: StringLogExporter {
-	public init () { }
+	public var configuration: Configuration
 	
-	private let logger = os.Logger()
+	public init (_ configuration: Configuration = .default) {
+		self.configuration = configuration
+	}
 	
-	public func log (_ level: LoggingLevel, _ message: String) {
+	public func log (_ level: LoggingLevel, _ message: String, _ configuration: Configuration? = nil) {
+		let logger = configuration?.logger ?? self.configuration.logger
+		
 		switch level {
 		case .trace:
 			logger.trace("\(message)")

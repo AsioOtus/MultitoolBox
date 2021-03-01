@@ -5,7 +5,7 @@ import Foundation
 public class OsLogLogExporter: StringLogExporter {
 	public init () { }
 	
-	public func log (_ level: LoggingLevel, _ message: String) {
+	public func log (_ level: LoggingLevel, _ message: String, _: Void? = nil) {
 		let osLogType = logLevelToOsLogType(level)
 		os_log(osLogType, "%@", message as NSString)
 	}

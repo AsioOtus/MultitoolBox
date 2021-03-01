@@ -1,42 +1,34 @@
-public class DefaultLogHandler: LogHandler {
+public class DefaultLogHandler<LogExporter: StringLogExporter>: LogHandler {
+	public typealias Message = String
+	public typealias Configuration = LogExporter.Configuration
+	
 	public var sourcePrefix: String
 	public var levelPadding: Bool
 	public var componentsSeparator: String
-	public var stringLogExporter: StringLogExporter
 	public var loggerInfo: LoggerInfo
 	public var enabling: EnablingConfiguration
+	public var stringLogExporter: LogExporter
+	public var logExporterConfiguration: Configuration?
 	
 	public init (
 		sourcePrefix: String,
 		levelPadding: Bool = false,
 		componentsSeparator: String = " | ",
-		stringLogExporter: StringLogExporter,
 		loggerInfo: LoggerInfo = .init(),
-		enabling: EnablingConfiguration = .init()
+		enabling: EnablingConfiguration = .init(),
+		stringLogExporter: LogExporter,
+		logExporterConfiguration: Configuration? = nil
 	) {
 		self.sourcePrefix = sourcePrefix
-		self.stringLogExporter = stringLogExporter
-		self.componentsSeparator = componentsSeparator
 		self.levelPadding = levelPadding
+		self.componentsSeparator = componentsSeparator
 		self.loggerInfo = loggerInfo
 		self.enabling = enabling
+		self.stringLogExporter = stringLogExporter
+		self.logExporterConfiguration = logExporterConfiguration
 	}
 	
-	private func moderate (logRecord: LogRecord) -> LogRecord {
-		.init(
-			level: enabling.level ? logRecord.level : nil,
-			message: logRecord.message,
-			source: enabling.source ? logRecord.source : nil,
-			tags: enabling.tags ? logRecord.tags : nil,
-			details: enabling.details ? logRecord.details : nil,
-			comment: enabling.comment ? logRecord.comment : nil,
-			file: enabling.codeInfo ? logRecord.file : nil,
-			function: enabling.codeInfo ? logRecord.function : nil,
-			line: enabling.codeInfo ? logRecord.line : nil
-		)
-	}
-	
-	private func message (from logRecord: LogRecord) -> String {
+	private func message (from logRecord: LogRecord<Message>) -> String {
 		var messageComponents = [String]()
 		
 		if let level = logRecord.level {
@@ -71,31 +63,36 @@ public class DefaultLogHandler: LogHandler {
 	
 	public func log (
 		level: LoggingLevel,
-		message: @autoclosure () -> String,
+		message: @autoclosure () -> Message,
 		source: @autoclosure () -> [String],
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
 		comment: @autoclosure () -> String,
-		file: String, function: String, line: UInt
+		file: String, function: String, line: UInt,
+		logHandlerConfiguration: Configuration?
 	) {
 		guard level >= loggerInfo.level else { return }
 		
-		let logRecord = moderate(logRecord:
-			.init(
-				level: level,
-				message: message(),
-				source: source(),
-				tags: tags(),
-				details: details(),
-				comment: comment(),
-				file: file,
-				function: function,
-				line: line
-			)
+		let logExporterConfiguration = logHandlerConfiguration ?? self.logExporterConfiguration
+		
+		let logRecord = Moderator.default.moderate(
+			logRecord:
+				.init(
+					level: level,
+					message: message(),
+					source: source(),
+					tags: tags(),
+					details: details(),
+					comment: comment(),
+					file: file,
+					function: function,
+					line: line
+				),
+			enabling: enabling
 		)
 		
 		let finalMessage = self.message(from: logRecord)
 		
-		stringLogExporter.log(level, finalMessage)
+		stringLogExporter.log(level, finalMessage, logExporterConfiguration)
 	}
 }

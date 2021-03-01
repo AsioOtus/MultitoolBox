@@ -1,5 +1,6 @@
 public protocol LogHandler {
 	associatedtype Message
+	associatedtype Configuration
 	
 	func log (
 		level: LoggingLevel,
@@ -8,6 +9,7 @@ public protocol LogHandler {
 		tags: @autoclosure () -> Set<String>,
 		details: @autoclosure () -> [String: Any],
 		comment: @autoclosure () -> String,
-		file: String, function: String, line: UInt
+		file: String, function: String, line: UInt,
+		logHandlerConfiguration: Configuration?
 	)
 }

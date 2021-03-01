@@ -16,6 +16,8 @@
 		3A0ADF7825CA91D1001EEC70 /* StringLogExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891425C48EF300373FFA /* StringLogExporter.swift */; };
 		3A0ADF7925CA91D1001EEC70 /* OsLogLoggingExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891B25C4911A00373FFA /* OsLogLoggingExporter.swift */; };
 		3A282DB225CA914800C24C14 /* LoggingUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A282DB025CA914800C24C14 /* LoggingUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A3239CB25ED48060039D0F5 /* Moderator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3239CA25ED48060039D0F5 /* Moderator.swift */; };
+		3A3239CC25ED48060039D0F5 /* Moderator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3239CA25ED48060039D0F5 /* Moderator.swift */; };
 		3A7E5DBC25CC62E60030378B /* LogRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E5DBB25CC62E60030378B /* LogRecord.swift */; };
 		3A7E5DBD25CC62E60030378B /* LogRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7E5DBB25CC62E60030378B /* LogRecord.swift */; };
 		3AA7599325CAFA110007F25D /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA7599225CAFA110007F25D /* Array.swift */; };
@@ -54,6 +56,7 @@
 		3A282DAE25CA914800C24C14 /* LoggingUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggingUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A282DB025CA914800C24C14 /* LoggingUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoggingUtil.h; sourceTree = "<group>"; };
 		3A282DB125CA914800C24C14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A3239CA25ED48060039D0F5 /* Moderator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moderator.swift; sourceTree = "<group>"; };
 		3A59891125C48EC300373FFA /* LoggerFrameworkLoggindExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerFrameworkLoggindExporter.swift; sourceTree = "<group>"; };
 		3A59891425C48EF300373FFA /* StringLogExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLogExporter.swift; sourceTree = "<group>"; };
 		3A59891B25C4911A00373FFA /* OsLogLoggingExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OsLogLoggingExporter.swift; sourceTree = "<group>"; };
@@ -109,7 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				3A24822625BEF6FC00D5CF41 /* Logger.swift */,
-				3A59891425C48EF300373FFA /* StringLogExporter.swift */,
 				3A24821E25BEF65F00D5CF41 /* LogHandler.swift */,
 			);
 			path = Protocols;
@@ -188,6 +190,7 @@
 				3AA759CB25CB4C790007F25D /* EnablingConfiguration.swift */,
 				3AA759BA25CB2C7E0007F25D /* LoggerInfo.swift */,
 				3A7E5DBB25CC62E60030378B /* LogRecord.swift */,
+				3A3239CA25ED48060039D0F5 /* Moderator.swift */,
 				3AA759C225CB31960007F25D /* Setting.swift */,
 			);
 			path = Configuration;
@@ -196,6 +199,7 @@
 		3AE0084125C8AC0700ED7A11 /* LogExporters */ = {
 			isa = PBXGroup;
 			children = (
+				3A59891425C48EF300373FFA /* StringLogExporter.swift */,
 				3A59891125C48EC300373FFA /* LoggerFrameworkLoggindExporter.swift */,
 				3A59891B25C4911A00373FFA /* OsLogLoggingExporter.swift */,
 			);
@@ -323,6 +327,7 @@
 				3A0ADF7225CA91D1001EEC70 /* DefaultLogHandler.swift in Sources */,
 				3A0ADF7325CA91D1001EEC70 /* DefaultLogger.swift in Sources */,
 				3A0ADF7525CA91D1001EEC70 /* Logger.swift in Sources */,
+				3A3239CB25ED48060039D0F5 /* Moderator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +346,7 @@
 				3AA759B725CB26EA0007F25D /* OsLogLoggingExporter.swift in Sources */,
 				3AA759B425CB26EA0007F25D /* LoggerFrameworkLoggindExporter.swift in Sources */,
 				3AA759D525CB53710007F25D /* EnablingConfiguration.swift in Sources */,
+				3A3239CC25ED48060039D0F5 /* Moderator.swift in Sources */,
 				3A7E5DBD25CC62E60030378B /* LogRecord.swift in Sources */,
 				3AA759B525CB26EA0007F25D /* StringLogExporter.swift in Sources */,
 				3AA759BE25CB2FD80007F25D /* LoggerInfo.swift in Sources */,
