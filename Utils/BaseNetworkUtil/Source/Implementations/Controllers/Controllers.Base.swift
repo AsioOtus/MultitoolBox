@@ -8,21 +8,21 @@ extension Controllers {
 		private let logger: Logger
 		
 		public init () {
-			self.logger = .init("Base", settings.controllers.loggingProvider)
+			self.logger = .init("Base", settings.controllers.logging.loggingProvider)
 		}
 		
 		public init (settings: Settings) {
 			self.settings = settings
-			self.logger = .init("Base", settings.controllers.loggingProvider)
+			self.logger = .init("Base", settings.controllers.logging.loggingProvider)
 		}
 		
 		init (source: String) {
-			self.logger = .init(source, settings.controllers.loggingProvider)
+			self.logger = .init(source, settings.controllers.logging.loggingProvider)
 		}
 		
 		init (settings: Settings, source: String) {
 			self.settings = settings
-			self.logger = .init(source, settings.controllers.loggingProvider)
+			self.logger = .init(source, settings.controllers.logging.loggingProvider)
 		}
 		
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)

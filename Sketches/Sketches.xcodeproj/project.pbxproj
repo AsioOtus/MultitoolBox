@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A1AA04F25A762F9005FEF1F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1AA04E25A762F9005FEF1F /* main.swift */; };
+		3A40A25425F00EE6002C0875 /* URLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A25225F00EB9002C0875 /* URLRequestStringConverter.swift */; };
 		3A51DA3025B1DB1A0066E836 /* CombineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A51DA2E25B1DB0D0066E836 /* CombineTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		3A1AA04C25A762F9005FEF1F /* SketchesTestground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SketchesTestground; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1AA04E25A762F9005FEF1F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3A40A25225F00EB9002C0875 /* URLRequestStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestStringConverter.swift; sourceTree = "<group>"; };
 		3A51DA2E25B1DB0D0066E836 /* CombineTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineTest.swift; sourceTree = "<group>"; };
 		3A5BD51625BB73E100481A2B /* LogMessageFormat */ = {isa = PBXFileReference; lastKnownFileType = text; path = LogMessageFormat; sourceTree = "<group>"; };
 		3A949B8C245464E6007E7928 /* ControllerLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerLog.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				3A949B8F245464E6007E7928 /* RequestsTest.swift */,
 				3A51DA2E25B1DB0D0066E836 /* CombineTest.swift */,
 				3A5BD51625BB73E100481A2B /* LogMessageFormat */,
+				3A40A25225F00EB9002C0875 /* URLRequestStringConverter.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1AA04F25A762F9005FEF1F /* main.swift in Sources */,
+				3A40A25425F00EE6002C0875 /* URLRequestStringConverter.swift in Sources */,
 				3A51DA3025B1DB1A0066E836 /* CombineTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

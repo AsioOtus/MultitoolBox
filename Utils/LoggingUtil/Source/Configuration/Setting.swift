@@ -40,7 +40,7 @@ extension Setting {
 
 
 @propertyWrapper
-public struct InheritedSetting<Value> {
+public struct DerivedSetting<Value> {
 	public var value: Setting<Value>.Derived
 	
 	public var wrappedValue: Value {

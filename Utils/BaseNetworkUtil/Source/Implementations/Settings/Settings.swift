@@ -3,15 +3,15 @@ public var globalSettings = Settings()
 
 
 public struct Settings {
-	public static var global: Settings { globalSettings }
+	public static var global: Self { globalSettings }
 	
 	public let parent: (() -> Settings)?
 	
-	@InheritedSetting public var controllers: Controllers
+	@DerivedSetting public var controllers: Controllers
 	
-	public init (parent: @escaping @autoclosure () -> Settings = .global, controllers: Setting<Controllers>) {
+	public init (parent: @escaping @autoclosure () -> Self = .global, controllers: Setting<Controllers>) {
 		self.parent = parent
-		self._controllers = .init(controllers.inherited(from: parent().controllers))
+		self._controllers = .init(controllers.derive(from: parent().controllers))
 	}
 	
 	public init (controllers: Controllers = .init()) {
@@ -24,18 +24,46 @@ public struct Settings {
 
 extension Settings {
 	public struct Controllers {
-		public static var global: Controllers { globalSettings.controllers }
+		public static var global: Self { globalSettings.controllers }
 		
-		public let parent: (() -> Controllers)?
+		public let parent: (() -> Self)?
 		
-		@InheritedSetting public var loggingProvider: BaseNetworkUtilControllersLoggingProvider
+		@DerivedSetting public var logging: Logging
 		
-		public init (parent: @escaping @autoclosure () -> Controllers = .global, loggingProvider: Setting<BaseNetworkUtilControllersLoggingProvider>) {
+		public init (
+			parent: @escaping @autoclosure () -> Self = .global,
+			logging: Setting<Logging> = .copy
+		) {
 			self.parent = parent
-			self._loggingProvider = .init(loggingProvider.inherited(from: parent().loggingProvider))
+			self._logging = .init(logging.derive(from: parent().logging))
 		}
 		
-		public init (loggingProvider: BaseNetworkUtilControllersLoggingProvider = StandardLoggingProvider()) {
+		public init (logging: Logging) {
+			self.parent = nil
+			self._logging = .init(.value(logging))
+		}
+	}
+}
+
+
+
+extension Settings.Controllers {
+	public struct Logging {
+		public static var global: Self { globalSettings.controllers.logging }
+		
+		public let parent: (() -> Self)?
+		
+		@DerivedSetting public var loggingProvider: BaseNetworkUtilControllersLoggingProvider
+		
+		public init (
+			parent: @escaping @autoclosure () -> Self = .global,
+			loggingProvider: Setting<BaseNetworkUtilControllersLoggingProvider> = .copy
+		) {
+			self.parent = parent
+			self._loggingProvider = .init(loggingProvider.derive(from: parent().loggingProvider))
+		}
+		
+		init (loggingProvider: BaseNetworkUtilControllersLoggingProvider = StandardLoggingProvider()) {
 			self.parent = nil
 			self._loggingProvider = .init(.value(loggingProvider))
 		}

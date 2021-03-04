@@ -1,34 +1,37 @@
 public enum Setting<Value> {
 	case value(Value)
-	case inherit
+	case prototype
+	case copy
 	
-	public func inherited (from parent: @escaping @autoclosure () -> Value) -> Inherited {
-		let inherited: Inherited
+	public func derive (from prototype: @escaping @autoclosure () -> Value) -> Derived {
+		let derived: Derived
 		
 		switch self {
 		case .value(let value):
-			inherited = .value(value)
-		case .inherit:
-			inherited = .parent(parent)
+			derived = .value(value)
+		case .prototype:
+			derived = .prototype(prototype)
+		case .copy:
+			derived = .value(prototype())
 		}
 		
-		return inherited
+		return derived
 	}
 }
 
 
 
 extension Setting {
-	public enum Inherited {
+	public enum Derived {
 		case value(Value)
-		case parent(() -> Value)
+		case prototype(() -> Value)
 		
 		public var value: Value {
 			switch self {
 			case .value(let value):
 				return value
-			case .parent(let parent):
-				return parent()
+			case .prototype(let prototype):
+				return prototype()
 			}
 		}
 	}
@@ -37,16 +40,16 @@ extension Setting {
 
 
 @propertyWrapper
-public struct InheritedSetting<Value> {
-	public var value: Setting<Value>.Inherited
+public struct DerivedSetting<Value> {
+	public var value: Setting<Value>.Derived
 	
 	public var wrappedValue: Value {
 		get {
 			switch value {
 			case .value(let value):
 				return value
-			case .parent(let parent):
-				return parent()
+			case .prototype(let prototype):
+				return prototype()
 			}
 		}
 		set {
@@ -54,12 +57,12 @@ public struct InheritedSetting<Value> {
 		}
 	}
 	
-	public var projectedValue: Setting<Value>.Inherited {
+	public var projectedValue: Setting<Value>.Derived {
 		get { value }
 		set { value = newValue }
 	}
 	
-	init (_ value: Setting<Value>.Inherited) {
+	init (_ value: Setting<Value>.Derived) {
 		self.value = value
 	}
 }
