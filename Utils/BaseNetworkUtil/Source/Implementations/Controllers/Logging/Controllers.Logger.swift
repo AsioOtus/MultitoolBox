@@ -2,6 +2,8 @@ import Foundation
 
 extension Controllers {
 	public struct Logger {
+        public static let module = "BaseNetworkUtil"
+        
 		private let loggingProvider: BaseNetworkUtilControllersLoggingProvider?
 		public let source: String
 		
@@ -10,16 +12,16 @@ extension Controllers {
 			self.loggingProvider = loggingProvider
 		}
 		
-		func log (_ urlSession: URLSession, _ urlRequest: URLRequest) {
-			loggingProvider?.baseNetworkUtilControllersLog(.init(.request(.init(urlSession: urlSession, urlRequest: urlRequest)), "BaseNetworkUtil", source))
-		}
+        func log <Request: BaseNetworkUtil.Request> (_ request: Request) {
+            loggingProvider?.baseNetworkUtilControllersLog(.init(.request(request), "BaseNetworkUtil", source))
+        }
+        
+        func log <Request: BaseNetworkUtil.Request> (_ response: Request.Response, _ requestType: Request.Type) {
+            loggingProvider?.baseNetworkUtilControllersLog(.init(Info<Request>.Category.response(response), "BaseNetworkUtil", source))
+        }
 		
-		func log (_ data: Data, _ urlResponse: URLResponse) {
-			loggingProvider?.baseNetworkUtilControllersLog(.init(.response(.init(data: data, urlResponse: urlResponse)), "BaseNetworkUtil", source))
-		}
-		
-		func log (_ error: BaseNetworkUtilError) {
-			loggingProvider?.baseNetworkUtilControllersLog(.init(.error(error), "BaseNetworkUtil", source))
+		func log <Request: BaseNetworkUtil.Request> (_ error: BaseNetworkUtilError, _ requestType: Request.Type) {
+            loggingProvider?.baseNetworkUtilControllersLog(.init(Info<Request>.Category.error(error), "BaseNetworkUtil", source))
 		}
 	}
 }
@@ -27,7 +29,7 @@ extension Controllers {
 
 
 extension Controllers.Logger {
-	public struct Info {
+	public struct Info<RequestType: BaseNetworkUtil.Request> {
 		public let category: Category
 		public let module: String
 		public let source: String
@@ -38,28 +40,10 @@ extension Controllers.Logger {
 			self.source = source
 		}
 		
-		public enum Category {
-			case request(Request)
-			case response(Response)
+        public enum Category {
+			case request(RequestType)
+            case response(RequestType.Response)
 			case error(BaseNetworkUtilError)
-			
-			public struct Request {
-				let urlSession: URLSession
-				let urlRequest: URLRequest
-				
-				var defaultMessage: String {
-					"REQUEST – \(urlRequest.httpMethod ?? "Unknown method") \(urlRequest.url!.absoluteString)"
-				}
-			}
-			
-			public struct Response {
-				let data: Data
-				let urlResponse: URLResponse
-				
-				var defaultMessage: String {
-					"RESPONSE – \(urlResponse.url!.absoluteString)"
-				}
-			}
 			
 			public var defaultMessage: String {
 				let defaultMessage: String

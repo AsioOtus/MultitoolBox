@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E6E563C25F1405E00171B57 /* LoggableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E563B25F1405E00171B57 /* LoggableRequest.swift */; };
+		1E6E563D25F1405E00171B57 /* LoggableRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E563B25F1405E00171B57 /* LoggableRequest.swift */; };
+		1E6E564125F1409400171B57 /* LoggableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E564025F1409400171B57 /* LoggableResponse.swift */; };
+		1E6E564225F1409400171B57 /* LoggableResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E564025F1409400171B57 /* LoggableResponse.swift */; };
 		3A7CF1CF25C7F87800C2411E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1CE25C7F87800C2411E /* Setting.swift */; };
 		3A7CF1D525C7F8A900C2411E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1D425C7F8A900C2411E /* Settings.swift */; };
 		3A7CF1DA25C7F94100C2411E /* Controllers.Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1D925C7F94100C2411E /* Controllers.Logger.swift */; };
@@ -50,6 +54,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E6E563B25F1405E00171B57 /* LoggableRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggableRequest.swift; sourceTree = "<group>"; };
+		1E6E564025F1409400171B57 /* LoggableResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggableResponse.swift; sourceTree = "<group>"; };
 		3A5BD57425BC336700481A2B /* BaseNetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetworkError.swift; sourceTree = "<group>"; };
 		3A5BD57525BC336800481A2B /* RequestDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestDelegate.swift; sourceTree = "<group>"; };
 		3A5BD57625BC336800481A2B /* Controllers.Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Controllers.Base.swift; sourceTree = "<group>"; };
@@ -134,6 +140,8 @@
 		3A5BD58B25BC341500481A2B /* RequestsProtocols */ = {
 			isa = PBXGroup;
 			children = (
+				1E6E563B25F1405E00171B57 /* LoggableRequest.swift */,
+				1E6E564025F1409400171B57 /* LoggableResponse.swift */,
 				3A5BD59425BC34F800481A2B /* ModelableRequest.swift */,
 				3A5BD59725BC350200481A2B /* ModelableResponse.swift */,
 				3A5BD57725BC336800481A2B /* Request.swift */,
@@ -309,9 +317,11 @@
 				3AE30F3225C5FF58009B22FB /* main.swift in Sources */,
 				3AE30F3E25C5FF78009B22FB /* Request.swift in Sources */,
 				3AA7598C25CAD4B00007F25D /* BaseNetworkUtilController.swift in Sources */,
+				1E6E564225F1409400171B57 /* LoggableResponse.swift in Sources */,
 				3AE30F3D25C5FF78009B22FB /* RequestDelegate.swift in Sources */,
 				3AE30F3A25C5FF78009B22FB /* Controllers.Base.swift in Sources */,
 				3AE30F3C25C5FF78009B22FB /* ModelableResponse.swift in Sources */,
+				1E6E563D25F1405E00171B57 /* LoggableRequest.swift in Sources */,
 				3AE30F3F25C5FF78009B22FB /* Controllers.Serial.swift in Sources */,
 				3AE30F3825C5FF78009B22FB /* Controllers.swift in Sources */,
 				3AE30F3B25C5FF78009B22FB /* ModelableRequest.swift in Sources */,
@@ -325,9 +335,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7CF1E925C7FB0100C2411E /* StandardLoggingProvider.swift in Sources */,
+				1E6E564125F1409400171B57 /* LoggableResponse.swift in Sources */,
 				3AE8178925C3204F00243202 /* Request.swift in Sources */,
 				3AE8178F25C3204F00243202 /* BaseNetworkUtilError.swift in Sources */,
 				3A7CF1D525C7F8A900C2411E /* Settings.swift in Sources */,
+				1E6E563C25F1405E00171B57 /* LoggableRequest.swift in Sources */,
 				3AE8178B25C3204F00243202 /* RequestDelegate.swift in Sources */,
 				3AE8178A25C3204F00243202 /* Controllers.Base.swift in Sources */,
 				3AE8178E25C3204F00243202 /* BaseNetworkError.swift in Sources */,
@@ -522,7 +534,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DEVELOPMENT_TEAM = M95F878N4X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -604,7 +616,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DEVELOPMENT_TEAM = M95F878N4X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";

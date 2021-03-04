@@ -1,3 +1,3 @@
 public protocol BaseNetworkUtilControllersLoggingProvider {
-	func baseNetworkUtilControllersLog (_ info: Controllers.Logger.Info)
+    func baseNetworkUtilControllersLog <Request: BaseNetworkUtil.Request> (_ info: Controllers.Logger.Info<Request>)
 }

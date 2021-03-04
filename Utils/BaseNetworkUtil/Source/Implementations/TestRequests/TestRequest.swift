@@ -13,22 +13,32 @@ public extension Test {
 
 
 public extension Test.Requests {
-	struct Example: TestRequest {
+    struct Example: TestRequest {
+        public let urlRequest: URLRequest
+        
 		public let value: String
+        
+        init (value: String) throws {
+            self.value = value
+            self.urlRequest = {
+                var components = URLComponents()
+                components.scheme = "https"
+                components.path = "postman-echo.com/get"
+                components.queryItems = [URLQueryItem(name: value, value: nil)]
+                return URLRequest(url: components.url!)
+            }()
+        }
 		
-		public func urlRequest () throws -> URLRequest {
-			var components = URLComponents()
-			components.scheme = "https"
-			components.path = "postman-echo.com/get"
-			components.queryItems = [URLQueryItem(name: value, value: nil)]
-			return URLRequest(url: components.url!)
-		}
-		
-		public struct Response: TestResponse {
+        public struct Response: TestResponse {
+            public let urlResponse: URLResponse
+            public let data: Data
+            
 			public let postman: Postman
 			
 			public init (_ urlResponse: URLResponse, _ data: Data) throws {
-				postman = try JSONDecoder().decode(Postman.self, from: data)
+                self.urlResponse = urlResponse
+                self.data = data
+                self.postman = try JSONDecoder().decode(Postman.self, from: data)
 			}
 			
 			public struct Postman: Decodable {
@@ -49,7 +59,7 @@ public extension Test.Requests.Example {
 		}
 		
 		public func request () throws -> Test.Requests.Example {
-			Test.Requests.Example(value: value)
+			try Test.Requests.Example(value: value)
 		}
 		
 		public func content (_ response: Test.Requests.Example.Response) throws -> String {

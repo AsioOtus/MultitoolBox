@@ -15,7 +15,7 @@ extension Controllers {
 		}
 		
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)
-		-> AnyPublisher<RequestDelegate.Content, BaseNetworkError>
+        -> AnyPublisher<RequestDelegate.Content, BaseNetworkError<RequestDelegate.Request>>
 		{
 			semaphore.wait()
 			
@@ -25,7 +25,7 @@ extension Controllers {
 					DispatchQueue.global().sync { _ = semaphore.signal() }
 					return content
 				}
-				.mapError { error -> BaseNetworkError in
+				.mapError { error -> BaseNetworkError<RequestDelegate.Request> in
 					DispatchQueue.global().sync { _ = semaphore.signal() }
 					return error
 				}

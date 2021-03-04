@@ -26,20 +26,19 @@ extension Controllers {
 		}
 		
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)
-		-> AnyPublisher<RequestDelegate.Content, BaseNetworkError>
+		-> AnyPublisher<RequestDelegate.Content, BaseNetworkError<RequestDelegate.Request>>
 		{
 			let requestPublisher = Just(requestDelegate)
 				.tryMap { try $0.request() }
-				.tryMap { (try $0.urlSession(), try $0.urlRequest()) }
 				.mapError { error in BaseNetworkError(error, or: .preprocessingFailure(error)) }
 				.handleEvents(
-					receiveOutput: { (urlSession, urlRequest) in logger.log(urlSession, urlRequest) }
+					receiveOutput: { request in logger.log(request) }
 				)
 				
-				.flatMap { (urlSession: URLSession, urlRequest: URLRequest) in
-					urlSession.dataTaskPublisher(for: urlRequest)
+				.flatMap { request in
+                    request.urlSession.dataTaskPublisher(for: request.urlRequest)
 						.map { data, urlResponse in (data, urlResponse) }
-						.mapError { error in BaseNetworkError(error, or: .responseFailure(urlSession, urlRequest, error)) }
+						.mapError { error in BaseNetworkError(error, or: .responseFailure(request, error)) }
 				}
 				
 				.tryMap { (data, urlResponse) in

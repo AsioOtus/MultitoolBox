@@ -1,9 +1,9 @@
 import Foundation
 
-public enum BaseNetworkError: BaseNetworkUtilError {
+public enum BaseNetworkError<Request: BaseNetworkUtil.Request>: BaseNetworkUtilError {
 	case preprocessingFailure(Error)
-	case responseFailure(URLSession, URLRequest, Error)
-	case postprocessingError(Data, URLResponse, Error)
+	case responseFailure(Request, Error)
+	case postprocessingError(URLResponse, Data, Error)
 	
 	init (_ error: Error, or networkError: Self) {
 		if let error = error as? Self {
