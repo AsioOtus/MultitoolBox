@@ -27,6 +27,7 @@ extension Controllers {
 		
 		public func send <RequestDelegate: BaseNetworkUtil.RequestDelegate> (_ requestDelegate: RequestDelegate)
 		-> AnyPublisher<RequestDelegate.Content, BaseNetworkError<RequestDelegate.Request>>
+		where RequestDelegate.Request: LoggableRequest, RequestDelegate.Request.Response: LoggableResponse
 		{
 			let requestPublisher = Just(requestDelegate)
 				.tryMap { try $0.request() }
@@ -45,26 +46,26 @@ extension Controllers {
 					do {
 						return (data, urlResponse, try RequestDelegate.Request.Response(urlResponse, data))
 					} catch {
-						throw BaseNetworkError(error, or: .postprocessingError(data, urlResponse, Error.responseCreationFailure(error)))
+						throw BaseNetworkError(error, or: BaseNetworkError<RequestDelegate.Request>.postprocessingError(urlResponse, data, Error<RequestDelegate.Request.Response>.responseCreationFailure(error)))
 					}
 				}
 				.tryMap { (data: Data, urlResponse: URLResponse, response: RequestDelegate.Request.Response) in
 					do {
-						return (data, urlResponse, try requestDelegate.content(response))
+						return (response, try requestDelegate.content(response))
 					} catch {
-						throw BaseNetworkError(error, or: .postprocessingError(data, urlResponse, Error.contentCreationFailure(error)))
+						throw BaseNetworkError(error, or: BaseNetworkError<RequestDelegate.Request>.postprocessingError(urlResponse, data, Error.contentCreationFailure(response, error)))
 					}
 				}
-				.mapError { $0 as! BaseNetworkError }
+				.mapError { $0 as! BaseNetworkError<RequestDelegate.Request> }
 				.handleEvents(
-					receiveOutput: { (data, urlResponse, content) in logger.log(data, urlResponse) },
+					receiveOutput: { (response: RequestDelegate.Request.Response, content: RequestDelegate.Content) in logger.log(response, RequestDelegate.Request.self) },
 					receiveCompletion: { completion in
 						if case .failure(let error) = completion {
-							logger.log(error)
+							logger.log(error, RequestDelegate.Request.self)
 						}
 					}
 				)
-				.map { (data: Data, urlResponse: URLResponse, content: RequestDelegate.Content) in content }
+				.map { (response: RequestDelegate.Request.Response, content: RequestDelegate.Content) in content }
 			
 			return requestPublisher.eraseToAnyPublisher()
 		}
@@ -74,8 +75,8 @@ extension Controllers {
 
 
 extension Controllers.Base {
-	enum Error: BaseNetworkUtilError {
+	enum Error<Response: BaseNetworkUtil.Response>: BaseNetworkUtilError {
 		case responseCreationFailure(Swift.Error)
-		case contentCreationFailure(Swift.Error)
+		case contentCreationFailure(Response, Swift.Error)
 	}
 }

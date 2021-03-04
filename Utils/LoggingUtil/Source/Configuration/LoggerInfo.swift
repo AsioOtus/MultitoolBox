@@ -1,9 +1,9 @@
 public struct LoggerInfo {
-	@InheritedSetting public var level: LoggingLevel
-	@InheritedSetting public var source: [String]
-	@InheritedSetting public var tags: Set<String>
-	@InheritedSetting public var details: [String: Any]
-	@InheritedSetting public var comment: String
+	@DerivedSetting public var level: LoggingLevel
+	@DerivedSetting public var source: [String]
+	@DerivedSetting public var tags: Set<String>
+	@DerivedSetting public var details: [String: Any]
+	@DerivedSetting public var comment: String
 	
 	public init (
 		level: LoggingLevel = .info,

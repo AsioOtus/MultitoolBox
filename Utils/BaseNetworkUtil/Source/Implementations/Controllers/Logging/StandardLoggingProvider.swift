@@ -7,14 +7,14 @@ public struct StandardLoggingProvider: BaseNetworkUtilControllersLoggingProvider
 		self.prefix = prefix
 	}
 	
-	public func baseNetworkUtilControllersLog (_ info: Controllers.Logger.Info) {
+	public func baseNetworkUtilControllersLog <Request: BaseNetworkUtil.Request> (_ info: Controllers.Logger.Info<Request>) {
 		
 		let prefix = self.prefix ?? ""
-		let preparedPrefix = !info.category.defaultMessage.isEmpty && !prefix.isEmpty
+		let preparedPrefix = !info.category.logMessage().isEmpty && !prefix.isEmpty
 			? "\(prefix)."
 			: ""
 		
-		let message = "\(preparedPrefix) – \(info.category.defaultMessage)"
+		let message = "\(preparedPrefix) – \(info.category.logMessage())"
 		
 		os_log("%{public}@", message)
 	}

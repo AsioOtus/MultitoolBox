@@ -12,16 +12,16 @@ extension Controllers {
 			self.loggingProvider = loggingProvider
 		}
 		
-        func log <Request: BaseNetworkUtil.Request> (_ request: Request) {
-            loggingProvider?.baseNetworkUtilControllersLog(.init(.request(request), "BaseNetworkUtil", source))
+        func log <Request: BaseNetworkUtil.LoggableRequest> (_ request: Request) where Request.Response: LoggableResponse {
+			loggingProvider?.baseNetworkUtilControllersLog(.init(.request(request), Self.module, source))
         }
         
-        func log <Request: BaseNetworkUtil.Request> (_ response: Request.Response, _ requestType: Request.Type) {
-            loggingProvider?.baseNetworkUtilControllersLog(.init(Info<Request>.Category.response(response), "BaseNetworkUtil", source))
+		func log <Request: BaseNetworkUtil.LoggableRequest> (_ response: Request.Response, _ requestType: Request.Type) where Request.Response: LoggableResponse {
+            loggingProvider?.baseNetworkUtilControllersLog(.init(Info<Request>.Category.response(response), Self.module, source))
         }
 		
-		func log <Request: BaseNetworkUtil.Request> (_ error: BaseNetworkUtilError, _ requestType: Request.Type) {
-            loggingProvider?.baseNetworkUtilControllersLog(.init(Info<Request>.Category.error(error), "BaseNetworkUtil", source))
+		func log <Request: BaseNetworkUtil.LoggableRequest> (_ error: BaseNetworkUtilError, _ requestType: Request.Type) where Request.Response: LoggableResponse {
+            loggingProvider?.baseNetworkUtilControllersLog(.init(Info<Request>.Category.error(error), Self.module, source))
 		}
 	}
 }
@@ -29,7 +29,7 @@ extension Controllers {
 
 
 extension Controllers.Logger {
-	public struct Info<RequestType: BaseNetworkUtil.Request> {
+	public struct Info<Request: BaseNetworkUtil.LoggableRequest> where Request.Response: LoggableResponse {
 		public let category: Category
 		public let module: String
 		public let source: String
@@ -41,32 +41,34 @@ extension Controllers.Logger {
 		}
 		
         public enum Category {
-			case request(RequestType)
-            case response(RequestType.Response)
+			case request(Request)
+            case response(Request.Response)
 			case error(BaseNetworkUtilError)
 			
-			public var defaultMessage: String {
-				let defaultMessage: String
+			public func logMessage () -> String {
+				let logMessage: String
 				
 				switch self {
 				case .request(let request):
-					defaultMessage = request.defaultMessage
+					logMessage = "REQUEST – \(request.logMessage())"
 				case .response(let response):
-					defaultMessage = response.defaultMessage
-				case .error(let error as BaseNetworkError):
+					logMessage = "RESPONSE – \(response.logMessage())"
+				case .error(let error as BaseNetworkError<Request>):
 					switch error {
 					case .preprocessingFailure(let error):
-						defaultMessage = "PREPROCESSING ERROR – \(error)"
-					case .responseFailure(_, let urlRequest, let error):
-						defaultMessage = "RESPONSE – \(urlRequest.url!.absoluteString) – ERROR – \(error)"
-					case .postprocessingError(let data, let urlResponse, let error):
-						defaultMessage = "RESPONSE – \(urlResponse.url!.absoluteString) – \(data.base64EncodedString()) – POSTPROCESSING ERROR – \(error)"
+						logMessage = "REQUEST – PREPROCESSING ERROR – \(error)"
+					case .responseFailure(let request, let error):
+						logMessage = "RESPONSE – Request: \(request.logMessage()) – ERROR – \(error)"
+					case .postprocessingError(let httpUrlResponse as HTTPURLResponse, let data, let error):
+						logMessage = "RESPONSE – \(DefaultHTTPURLResponseStringConverter.default.convert(httpUrlResponse, body: data)) – POSTPROCESSING ERROR – \(error)"
+					case .postprocessingError(let urlResponse, let data, let error):
+						logMessage = "RESPONSE – \(DefaultURLResponseStringConverter.default.convert(urlResponse, body: data)) – POSTPROCESSING ERROR – \(error)"
 					}
 				case .error(let error):
-					defaultMessage = "ERROR – " + error.localizedDescription
+					logMessage = "ERROR – " + error.localizedDescription
 				}
 				
-				return defaultMessage
+				return logMessage
 			}
 		}
 	}
