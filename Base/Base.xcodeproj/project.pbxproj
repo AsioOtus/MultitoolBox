@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2643E625F28695005CAEE7 /* DispatchArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2643E225F285B4005CAEE7 /* DispatchArray.swift */; };
 		1E6E562325F134FA00171B57 /* DictionaryStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E562225F134FA00171B57 /* DictionaryStringConverter.swift */; };
 		1E6E562825F1351600171B57 /* MultilineDictionaryStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E562725F1351600171B57 /* MultilineDictionaryStringConverter.swift */; };
 		1EC3356925F12D8200EE937D /* DataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3356825F12D8200EE937D /* DataStringConverter.swift */; };
@@ -29,6 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E2643E225F285B4005CAEE7 /* DispatchArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchArray.swift; sourceTree = "<group>"; };
+		1E2643EC25F28A66005CAEE7 /* SafeRandomAccessCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafeRandomAccessCollection.swift; sourceTree = "<group>"; };
+		1E2643EF25F28FF9005CAEE7 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
 		1E6E562225F134FA00171B57 /* DictionaryStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryStringConverter.swift; sourceTree = "<group>"; };
 		1E6E562725F1351600171B57 /* MultilineDictionaryStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineDictionaryStringConverter.swift; sourceTree = "<group>"; };
 		1EC3356825F12D8200EE937D /* DataStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStringConverter.swift; sourceTree = "<group>"; };
@@ -113,6 +117,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E2643E125F28590005CAEE7 /* Dispatch */ = {
+			isa = PBXGroup;
+			children = (
+				1E2643E225F285B4005CAEE7 /* DispatchArray.swift */,
+				3A85DAF825AF33B1006E76AF /* DispatchOnce.swift */,
+				3A85DAFB25AF33C6006E76AF /* DispatchSerial.swift */,
+				3A85DAF525AF3382006E76AF /* DispatchSingle.swift */,
+				3AE30F2025C5DE60009B22FB /* DispatchWait.swift */,
+			);
+			path = Dispatch;
+			sourceTree = "<group>";
+		};
+		1E2643F125F29099005CAEE7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B845B25C012550042A2DC /* Classes */,
+				3A1B844825C012020042A2DC /* Closures */,
+				3A1B845C25C012710042A2DC /* Declarations */,
+				3A1B845E25C012B10042A2DC /* Extensions */,
+				3AD4C9B825C4207600568CB7 /* Protocols */,
+				3A1B846125C013750042A2DC /* Structs */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1E2643F225F290B6005CAEE7 /* Specified */ = {
+			isa = PBXGroup;
+			children = (
+				1E2643E125F28590005CAEE7 /* Dispatch */,
+				1EC3358925F1343500EE937D /* StringConverters */,
+			);
+			path = Specified;
+			sourceTree = "<group>";
+		};
 		1E6E562625F1350B00171B57 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,13 +242,8 @@
 		3A1B845A25C0123F0042A2DC /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				3A1B845B25C012550042A2DC /* Classes */,
-				3A1B844825C012020042A2DC /* Closures */,
-				3A1B845C25C012710042A2DC /* Declarations */,
-				3A1B845E25C012B10042A2DC /* Extensions */,
-				3AD4C9B825C4207600568CB7 /* Protocols */,
-				1EC3358925F1343500EE937D /* StringConverters */,
-				3A1B846125C013750042A2DC /* Structs */,
+				1E2643F125F29099005CAEE7 /* Common */,
+				1E2643F225F290B6005CAEE7 /* Specified */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -218,10 +251,6 @@
 		3A1B845B25C012550042A2DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3A85DAF825AF33B1006E76AF /* DispatchOnce.swift */,
-				3A85DAFB25AF33C6006E76AF /* DispatchSerial.swift */,
-				3A85DAF525AF3382006E76AF /* DispatchSingle.swift */,
-				3AE30F2025C5DE60009B22FB /* DispatchWait.swift */,
 				3A949AFD2454629C007E7928 /* Unowned.swift */,
 				3A949AFF2454629C007E7928 /* Weak.swift */,
 			);
@@ -254,12 +283,13 @@
 		3A1B845E25C012B10042A2DC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1E2643EF25F28FF9005CAEE7 /* Collection.swift */,
 				3A949B0B2454629C007E7928 /* Data.swift */,
 				3A1B846525C015850042A2DC /* DispatchQueue.swift */,
 				3A949B0C2454629C007E7928 /* FixedWidthInteger.swift */,
 				3A949B0E2454629C007E7928 /* Numeric.swift */,
-				3A949B0D2454629C007E7928 /* String.swift */,
 				3A1B846925C015B50042A2DC /* OSStatus.swift */,
+				3A949B0D2454629C007E7928 /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -400,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				3A1B844325C011980042A2DC /* EmptyInitializable.swift */,
+				1E2643EC25F28A66005CAEE7 /* SafeRandomAccessCollection.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -506,6 +537,7 @@
 				1EC3358B25F1346400EE937D /* ShortHTTPURLResponseStringConverter.swift in Sources */,
 				3A40A28D25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift in Sources */,
 				1EC3358725F1342600EE937D /* DefaultHTTPURLResponseStringConverter.swift in Sources */,
+				1E2643E625F28695005CAEE7 /* DispatchArray.swift in Sources */,
 				1EC3356925F12D8200EE937D /* DataStringConverter.swift in Sources */,
 				1EC3357B25F1337F00EE937D /* JSONDataStringConverter.swift in Sources */,
 				1EC3357725F1337100EE937D /* Base64DataStringConverter.swift in Sources */,
@@ -547,7 +579,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DEVELOPMENT_TEAM = M95F878N4X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -603,7 +635,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DEVELOPMENT_TEAM = M95F878N4X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
