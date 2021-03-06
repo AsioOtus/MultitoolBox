@@ -29,11 +29,13 @@ extension Controllers {
 		-> AnyPublisher<RequestDelegate.Content, BaseNetworkError<RequestDelegate.Request>>
 		where RequestDelegate.Request: LoggableRequest, RequestDelegate.Request.Response: LoggableResponse
 		{
+			let requestID = UUID().uuidString
+			
 			let requestPublisher = Just(requestDelegate)
 				.tryMap { try $0.request() }
 				.mapError { error in BaseNetworkError(error, or: .preprocessingFailure(error)) }
 				.handleEvents(
-					receiveOutput: { request in logger.log(request) }
+					receiveOutput: { request in logger.log(request, requestID) }
 				)
 				
 				.flatMap { request in
@@ -58,10 +60,10 @@ extension Controllers {
 				}
 				.mapError { $0 as! BaseNetworkError<RequestDelegate.Request> }
 				.handleEvents(
-					receiveOutput: { (response: RequestDelegate.Request.Response, content: RequestDelegate.Content) in logger.log(response, RequestDelegate.Request.self) },
+					receiveOutput: { (response: RequestDelegate.Request.Response, content: RequestDelegate.Content) in logger.log(response, requestID, RequestDelegate.Request.self) },
 					receiveCompletion: { completion in
 						if case .failure(let error) = completion {
-							logger.log(error, RequestDelegate.Request.self)
+							logger.log(error, requestID, RequestDelegate.Request.self)
 						}
 					}
 				)

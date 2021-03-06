@@ -12,16 +12,16 @@ extension Controllers {
 			self.loggingProvider = loggingProvider
 		}
 		
-        func log <Request: BaseNetworkUtil.LoggableRequest> (_ request: Request) where Request.Response: LoggableResponse {
-			loggingProvider?.baseNetworkUtilControllersLog(.init(.request(request), Self.module, source))
+		func log <Request: BaseNetworkUtil.LoggableRequest> (_ request: Request, _ requestId: String) where Request.Response: LoggableResponse {
+			loggingProvider?.baseNetworkUtilControllersLog(.init(requestId, .request(request), Self.module, source))
         }
         
-		func log <Request: BaseNetworkUtil.LoggableRequest> (_ response: Request.Response, _ requestType: Request.Type) where Request.Response: LoggableResponse {
-            loggingProvider?.baseNetworkUtilControllersLog(.init(Info<Request>.Category.response(response), Self.module, source))
+		func log <Request: BaseNetworkUtil.LoggableRequest> (_ response: Request.Response, _ requestId: String, _ requestType: Request.Type) where Request.Response: LoggableResponse {
+            loggingProvider?.baseNetworkUtilControllersLog(.init(requestId, Info<Request>.Category.response(response), Self.module, source))
         }
 		
-		func log <Request: BaseNetworkUtil.LoggableRequest> (_ error: BaseNetworkUtilError, _ requestType: Request.Type) where Request.Response: LoggableResponse {
-            loggingProvider?.baseNetworkUtilControllersLog(.init(Info<Request>.Category.error(error), Self.module, source))
+		func log <Request: BaseNetworkUtil.LoggableRequest> (_ error: BaseNetworkUtilError, _ requestId: String, _ requestType: Request.Type) where Request.Response: LoggableResponse {
+            loggingProvider?.baseNetworkUtilControllersLog(.init(requestId, Info<Request>.Category.error(error), Self.module, source))
 		}
 	}
 }
@@ -30,11 +30,13 @@ extension Controllers {
 
 extension Controllers.Logger {
 	public struct Info<Request: BaseNetworkUtil.LoggableRequest> where Request.Response: LoggableResponse {
+		public let id: String
 		public let category: Category
 		public let module: String
 		public let source: String
 		
-		init (_ category: Category, _ module: String, _ source: String) {
+		init (_ id: String, _ category: Category, _ module: String, _ source: String) {
+			self.id = id
 			self.category = category
 			self.module = module
 			self.source = source
@@ -58,7 +60,7 @@ extension Controllers.Logger {
 					case .preprocessingFailure(let error):
 						logMessage = "REQUEST – PREPROCESSING ERROR – \(error)"
 					case .responseFailure(let request, let error):
-						logMessage = "RESPONSE – Request: \(request.logMessage()) – ERROR – \(error)"
+						logMessage = "RESPONSE – ERROR – \(error) – Request: \(request.logMessage())"
 					case .postprocessingError(let httpUrlResponse as HTTPURLResponse, let data, let error):
 						logMessage = "RESPONSE – \(DefaultHTTPURLResponseStringConverter.default.convert(httpUrlResponse, body: data)) – POSTPROCESSING ERROR – \(error)"
 					case .postprocessingError(let urlResponse, let data, let error):
