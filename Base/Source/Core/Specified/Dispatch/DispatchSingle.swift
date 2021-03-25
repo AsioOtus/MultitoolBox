@@ -1,11 +1,13 @@
 import Foundation
 
-class DispatchSingle {
+public class DispatchSingle {
 	private(set) var isFree = true
 	
-	let semaphore = DispatchSemaphore(value: 1)
+	private let semaphore = DispatchSemaphore(value: 1)
 	
-	func perform (_ action: @escaping () -> Void) {
+	public init () { }
+	
+	public func perform (_ action: @escaping () -> Void) {
 		semaphore.wait()
 		
 		guard isFree else {
@@ -21,7 +23,7 @@ class DispatchSingle {
 		isFree = true
 	}
 	
-	func perform (_ action: @escaping (_ completion: @escaping () -> Void) -> Void) {
+	public func perform (_ action: @escaping (_ completion: @escaping () -> Void) -> Void) {
 		semaphore.wait()
 		
 		guard isFree else {

@@ -1,21 +1,15 @@
 import Foundation
 
-class DispatchOnce {
-	private(set) var isPerformed = false
+public class DispatchOnce {
+	private let dispatchFirst = DispatchFirst()
 	
-	let semaphore = DispatchSemaphore(value: 1)
+	private let action: () -> Void
 	
-	func perform (_ action: @escaping () -> Void) {
-		semaphore.wait()
-		
-		guard !isPerformed else {
-			semaphore.signal()
-			return
-		}
-		
-		isPerformed = true
-		semaphore.signal()
-		
-		action()
+	public init (_ action: @escaping () -> Void) {
+		self.action = action
+	}
+	
+	public func perform () {
+		dispatchFirst.perform(action)
 	}
 }

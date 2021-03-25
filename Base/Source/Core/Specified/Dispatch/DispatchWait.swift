@@ -1,9 +1,10 @@
 import Foundation
 
 public class DispatchWait {
-	public let group = DispatchGroup()
+	private init () { }
 	
-	public func `for` (_ interval: DispatchTimeInterval) {
+	public static func `for` (_ interval: DispatchTimeInterval) {
+		let group = DispatchGroup()
 		group.enter()
 		_ = group.wait(timeout: DispatchTime.now().advanced(by: interval))
 	}

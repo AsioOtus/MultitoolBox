@@ -1,6 +1,8 @@
 import Foundation
 
-public class DispatchSerial {
+public class DispatchFirst {
+	private(set) var isPerformed = false
+	
 	private let semaphore = DispatchSemaphore(value: 1)
 	
 	public init () { }
@@ -8,16 +10,14 @@ public class DispatchSerial {
 	public func perform (_ action: () -> Void) {
 		semaphore.wait()
 		
-		action()
-		
-		semaphore.signal()
-	}
-	
-	public func perform (_ action: (_ completion: @escaping () -> Void) -> Void) {
-		semaphore.wait()
-		
-		action {
-			self.semaphore.signal()
+		guard !isPerformed else {
+			semaphore.signal()
+			return
 		}
+		
+		isPerformed = true
+		semaphore.signal()
+		
+		action()
 	}
 }
