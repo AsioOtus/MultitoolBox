@@ -1,3 +1,5 @@
+import Foundation
+
 struct DefaultURLRequestStringConverter: URLRequestStringConverter {
 	static let `default` = Self()
 	

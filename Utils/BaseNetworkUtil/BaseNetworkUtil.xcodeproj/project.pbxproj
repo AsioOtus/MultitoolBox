@@ -69,8 +69,6 @@
 		3AECB20425F1606800301A09 /* DefaultHTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB1E725F1606800301A09 /* DefaultHTTPURLResponseStringConverter.swift */; };
 		3AECB20525F1606800301A09 /* HTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB1E825F1606800301A09 /* HTTPURLResponseStringConverter.swift */; };
 		3AECB20625F1606800301A09 /* HTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB1E825F1606800301A09 /* HTTPURLResponseStringConverter.swift */; };
-		3AECB20A25F166CD00301A09 /* URLRequestInfoContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB20925F166CD00301A09 /* URLRequestInfoContainable.swift */; };
-		3AECB20B25F166CD00301A09 /* URLRequestInfoContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB20925F166CD00301A09 /* URLRequestInfoContainable.swift */; };
 		3AECB22325F1772000301A09 /* DefaultURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB22025F1772000301A09 /* DefaultURLResponseStringConverter.swift */; };
 		3AECB22425F1772000301A09 /* DefaultURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB22025F1772000301A09 /* DefaultURLResponseStringConverter.swift */; };
 		3AECB22525F1772000301A09 /* ShortURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB22125F1772000301A09 /* ShortURLResponseStringConverter.swift */; };
@@ -130,7 +128,6 @@
 		3AECB1E625F1606800301A09 /* ShortHTTPURLResponseStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortHTTPURLResponseStringConverter.swift; sourceTree = "<group>"; };
 		3AECB1E725F1606800301A09 /* DefaultHTTPURLResponseStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultHTTPURLResponseStringConverter.swift; sourceTree = "<group>"; };
 		3AECB1E825F1606800301A09 /* HTTPURLResponseStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseStringConverter.swift; sourceTree = "<group>"; };
-		3AECB20925F166CD00301A09 /* URLRequestInfoContainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestInfoContainable.swift; sourceTree = "<group>"; };
 		3AECB22025F1772000301A09 /* DefaultURLResponseStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultURLResponseStringConverter.swift; sourceTree = "<group>"; };
 		3AECB22125F1772000301A09 /* ShortURLResponseStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShortURLResponseStringConverter.swift; sourceTree = "<group>"; };
 		3AECB22225F1772000301A09 /* URLResponseStringConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLResponseStringConverter.swift; sourceTree = "<group>"; };
@@ -212,7 +209,6 @@
 				3A5BD59725BC350200481A2B /* ModelableResponse.swift */,
 				3A5BD57725BC336800481A2B /* Request.swift */,
 				3A5BD57525BC336800481A2B /* RequestDelegate.swift */,
-				3AECB20925F166CD00301A09 /* URLRequestInfoContainable.swift */,
 			);
 			path = RequestsProtocols;
 			sourceTree = "<group>";
@@ -491,7 +487,6 @@
 				3AECB1F225F1606800301A09 /* OptionalDataStringConverter.swift in Sources */,
 				3AECB22425F1772000301A09 /* DefaultURLResponseStringConverter.swift in Sources */,
 				3AECB1F825F1606800301A09 /* CompositeDataStringConverter.swift in Sources */,
-				3AECB20B25F166CD00301A09 /* URLRequestInfoContainable.swift in Sources */,
 				3AECB20225F1606800301A09 /* ShortHTTPURLResponseStringConverter.swift in Sources */,
 				3AECB1F425F1606800301A09 /* JSONDataStringConverter.swift in Sources */,
 				3AE30F3E25C5FF78009B22FB /* Request.swift in Sources */,
@@ -536,7 +531,6 @@
 				3AECB1EF25F1606800301A09 /* DataStringConverter.swift in Sources */,
 				3AECB22725F1772000301A09 /* URLResponseStringConverter.swift in Sources */,
 				3AECB1FB25F1606800301A09 /* RawDataStringConverter.swift in Sources */,
-				3AECB20A25F166CD00301A09 /* URLRequestInfoContainable.swift in Sources */,
 				3AE8178925C3204F00243202 /* Request.swift in Sources */,
 				3AE8178F25C3204F00243202 /* BaseNetworkUtilError.swift in Sources */,
 				3A7CF1D525C7F8A900C2411E /* Settings.swift in Sources */,

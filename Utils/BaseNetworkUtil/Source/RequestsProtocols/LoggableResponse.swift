@@ -1,3 +1,5 @@
+import Foundation
+
 public protocol LoggableResponse: Response {
 	var httpUrlResponseStringConverter: HTTPURLResponseStringConverter { get }
 	

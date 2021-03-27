@@ -1,3 +1,5 @@
+import Foundation
+
 protocol DataStringConverter: OptionalDataStringConverter {
     func convert (_ data: Data) -> String
 }
