@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		3A22A582260F519D00708E24 /* TypifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypifyView.swift; sourceTree = "<group>"; };
 		3A396E9925BDA1CD00B110C7 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		3A396E9D25BDA1CD00B110C7 /* OverlappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappingViewController.swift; sourceTree = "<group>"; };
+		3A4651AC260F65EB0031FAD9 /* XibCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibCreatable.swift; sourceTree = "<group>"; };
+		3A4651AD260F65F90031FAD9 /* StroyboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroyboardCreatable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -40,6 +43,9 @@
 			isa = PBXGroup;
 			children = (
 				3A396E9D25BDA1CD00B110C7 /* OverlappingViewController.swift */,
+				3A22A582260F519D00708E24 /* TypifyView.swift */,
+				3A4651AC260F65EB0031FAD9 /* XibCreatable.swift */,
+				3A4651AD260F65F90031FAD9 /* StroyboardCreatable.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
