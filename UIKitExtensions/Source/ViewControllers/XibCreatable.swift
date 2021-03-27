@@ -1,4 +1,7 @@
+import UIKit
+
 protocol XibCreatable: UIViewController { }
+
 extension XibCreatable {
 	static var xibName: String { String(describing: Self.self) }
 	

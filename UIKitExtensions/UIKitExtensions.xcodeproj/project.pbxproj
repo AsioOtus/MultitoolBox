@@ -6,19 +6,59 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3A465220260F9FDC0031FAD9 /* UIKitExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A46521E260F9FDC0031FAD9 /* UIKitExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A465224260F9FE20031FAD9 /* XibCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4651AC260F65EB0031FAD9 /* XibCreatable.swift */; };
+		3A465225260F9FE20031FAD9 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A396E9925BDA1CD00B110C7 /* UIStoryboard.swift */; };
+		3A465226260F9FE20031FAD9 /* TypifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A22A582260F519D00708E24 /* TypifyView.swift */; };
+		3A465228260F9FE20031FAD9 /* StroyboardCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4651AD260F65F90031FAD9 /* StroyboardCreatable.swift */; };
+		3A465230260FA0700031FAD9 /* OverlappingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A46522C260FA0700031FAD9 /* OverlappingViewController.swift */; };
+		3A465231260FA0700031FAD9 /* OverlappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A46522D260FA0700031FAD9 /* OverlappedViewController.swift */; };
+		3A465232260FA0700031FAD9 /* OverlapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A46522E260FA0700031FAD9 /* OverlapViewController.swift */; };
+		3A465233260FA0700031FAD9 /* TypifyOverlapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A46522F260FA0700031FAD9 /* TypifyOverlapViewController.swift */; };
+		3A465238260FA0CB0031FAD9 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A465235260FA0CA0031FAD9 /* Animation.swift */; };
+		3A465239260FA0CB0031FAD9 /* BackgroundTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A465236260FA0CB0031FAD9 /* BackgroundTask.swift */; };
+		3A46523A260FA0CB0031FAD9 /* Completion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A465237260FA0CB0031FAD9 /* Completion.swift */; };
+		3A46523E260FA1130031FAD9 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A46523D260FA1130031FAD9 /* UIViewController.swift */; };
+		3A465241260FA1210031FAD9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A465240260FA1210031FAD9 /* UIView.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		3A22A582260F519D00708E24 /* TypifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypifyView.swift; sourceTree = "<group>"; };
 		3A396E9925BDA1CD00B110C7 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
-		3A396E9D25BDA1CD00B110C7 /* OverlappingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappingViewController.swift; sourceTree = "<group>"; };
 		3A4651AC260F65EB0031FAD9 /* XibCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XibCreatable.swift; sourceTree = "<group>"; };
 		3A4651AD260F65F90031FAD9 /* StroyboardCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroyboardCreatable.swift; sourceTree = "<group>"; };
+		3A46521B260F9FDC0031FAD9 /* UIKitExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A46521E260F9FDC0031FAD9 /* UIKitExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIKitExtensions.h; sourceTree = "<group>"; };
+		3A46521F260F9FDC0031FAD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A46522C260FA0700031FAD9 /* OverlappingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlappingViewController.swift; sourceTree = "<group>"; };
+		3A46522D260FA0700031FAD9 /* OverlappedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlappedViewController.swift; sourceTree = "<group>"; };
+		3A46522E260FA0700031FAD9 /* OverlapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlapViewController.swift; sourceTree = "<group>"; };
+		3A46522F260FA0700031FAD9 /* TypifyOverlapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypifyOverlapViewController.swift; sourceTree = "<group>"; };
+		3A465235260FA0CA0031FAD9 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		3A465236260FA0CB0031FAD9 /* BackgroundTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundTask.swift; sourceTree = "<group>"; };
+		3A465237260FA0CB0031FAD9 /* Completion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Completion.swift; sourceTree = "<group>"; };
+		3A46523D260FA1130031FAD9 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		3A465240260FA1210031FAD9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A465218260F9FDC0031FAD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		3A396E7825BDA18500B110C7 = {
 			isa = PBXGroup;
 			children = (
 				3A396E9725BDA1CD00B110C7 /* Source */,
+				3A46521D260F9FDC0031FAD9 /* UIKitExtensions */,
+				3A46521C260F9FDC0031FAD9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -42,21 +82,91 @@
 		3A396E9C25BDA1CD00B110C7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3A396E9D25BDA1CD00B110C7 /* OverlappingViewController.swift */,
+				3A46522B260FA0700031FAD9 /* OverlapViewController */,
+				3A465235260FA0CA0031FAD9 /* Animation.swift */,
+				3A465236260FA0CB0031FAD9 /* BackgroundTask.swift */,
+				3A465237260FA0CB0031FAD9 /* Completion.swift */,
 				3A22A582260F519D00708E24 /* TypifyView.swift */,
 				3A4651AC260F65EB0031FAD9 /* XibCreatable.swift */,
 				3A4651AD260F65F90031FAD9 /* StroyboardCreatable.swift */,
+				3A46523D260FA1130031FAD9 /* UIViewController.swift */,
+				3A465240260FA1210031FAD9 /* UIView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		3A46521C260F9FDC0031FAD9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A46521B260F9FDC0031FAD9 /* UIKitExtensions.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A46521D260F9FDC0031FAD9 /* UIKitExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A46521E260F9FDC0031FAD9 /* UIKitExtensions.h */,
+				3A46521F260F9FDC0031FAD9 /* Info.plist */,
+			);
+			path = UIKitExtensions;
+			sourceTree = "<group>";
+		};
+		3A46522B260FA0700031FAD9 /* OverlapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3A46522C260FA0700031FAD9 /* OverlappingViewController.swift */,
+				3A46522D260FA0700031FAD9 /* OverlappedViewController.swift */,
+				3A46522E260FA0700031FAD9 /* OverlapViewController.swift */,
+				3A46522F260FA0700031FAD9 /* TypifyOverlapViewController.swift */,
+			);
+			path = OverlapViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		3A465216260F9FDC0031FAD9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A465220260F9FDC0031FAD9 /* UIKitExtensions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3A46521A260F9FDC0031FAD9 /* UIKitExtensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A465221260F9FDC0031FAD9 /* Build configuration list for PBXNativeTarget "UIKitExtensions" */;
+			buildPhases = (
+				3A465216260F9FDC0031FAD9 /* Headers */,
+				3A465217260F9FDC0031FAD9 /* Sources */,
+				3A465218260F9FDC0031FAD9 /* Frameworks */,
+				3A465219260F9FDC0031FAD9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UIKitExtensions;
+			productName = UIKitExtensions;
+			productReference = 3A46521B260F9FDC0031FAD9 /* UIKitExtensions.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3A396E7925BDA18500B110C7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					3A46521A260F9FDC0031FAD9 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
 			};
 			buildConfigurationList = 3A396E7C25BDA18500B110C7 /* Build configuration list for PBXProject "UIKitExtensions" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -67,12 +177,47 @@
 				Base,
 			);
 			mainGroup = 3A396E7825BDA18500B110C7;
+			productRefGroup = 3A46521C260F9FDC0031FAD9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				3A46521A260F9FDC0031FAD9 /* UIKitExtensions */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A465219260F9FDC0031FAD9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A465217260F9FDC0031FAD9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A465241260FA1210031FAD9 /* UIView.swift in Sources */,
+				3A465231260FA0700031FAD9 /* OverlappedViewController.swift in Sources */,
+				3A465228260F9FE20031FAD9 /* StroyboardCreatable.swift in Sources */,
+				3A46523E260FA1130031FAD9 /* UIViewController.swift in Sources */,
+				3A465225260F9FE20031FAD9 /* UIStoryboard.swift in Sources */,
+				3A465233260FA0700031FAD9 /* TypifyOverlapViewController.swift in Sources */,
+				3A465230260FA0700031FAD9 /* OverlappingViewController.swift in Sources */,
+				3A465226260F9FE20031FAD9 /* TypifyView.swift in Sources */,
+				3A465224260F9FE20031FAD9 /* XibCreatable.swift in Sources */,
+				3A465238260FA0CB0031FAD9 /* Animation.swift in Sources */,
+				3A465239260FA0CB0031FAD9 /* BackgroundTask.swift in Sources */,
+				3A46523A260FA0CB0031FAD9 /* Completion.swift in Sources */,
+				3A465232260FA0700031FAD9 /* OverlapViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
 		3A396E7D25BDA18500B110C7 /* Debug */ = {
@@ -87,6 +232,164 @@
 			};
 			name = Release;
 		};
+		3A465222260F9FDC0031FAD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = UIKitExtensions/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = AO.UIKitExtensions;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3A465223260F9FDC0031FAD9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 3HY2N64MXA;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = UIKitExtensions/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = AO.UIKitExtensions;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -95,6 +398,15 @@
 			buildConfigurations = (
 				3A396E7D25BDA18500B110C7 /* Debug */,
 				3A396E7E25BDA18500B110C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A465221260F9FDC0031FAD9 /* Build configuration list for PBXNativeTarget "UIKitExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A465222260F9FDC0031FAD9 /* Debug */,
+				3A465223260F9FDC0031FAD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

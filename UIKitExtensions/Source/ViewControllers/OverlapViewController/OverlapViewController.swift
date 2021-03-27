@@ -2,37 +2,6 @@ import UIKit
 
 
 
-extension UIView {
-	func pinToBounds (_ view: UIView) {
-		view.translatesAutoresizingMaskIntoConstraints = false
-		
-		NSLayoutConstraint.activate([
-			view.topAnchor.constraint(equalTo: topAnchor),
-			view.bottomAnchor.constraint(equalTo: bottomAnchor),
-			view.leadingAnchor.constraint(equalTo: leadingAnchor),
-			view.trailingAnchor.constraint(equalTo: trailingAnchor)
-		])
-	}
-}
-
-
-
-extension OverlappingViewController {
-	struct Animation {
-		let duration: Double
-		let options: UIView.AnimationOptions
-		let animation: () -> ()
-		
-		init (duration: Double = 1, options: UIView.AnimationOptions = .transitionCrossDissolve, animation: @escaping () -> () = { }) {
-			self.duration = duration
-			self.options = options
-			self.animation = animation
-		}
-	}
-}
-
-
-
 class OverlapViewController: UIViewController {
 	private(set) var _minOverlapSeconds: Double = 0
 	var minOverlapSeconds: Double? {
