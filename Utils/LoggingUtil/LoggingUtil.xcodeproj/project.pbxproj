@@ -30,8 +30,6 @@
 		3AA759B525CB26EA0007F25D /* StringLogExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891425C48EF300373FFA /* StringLogExporter.swift */; };
 		3AA759B625CB26EA0007F25D /* LogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A24821E25BEF65F00D5CF41 /* LogHandler.swift */; };
 		3AA759B725CB26EA0007F25D /* OsLogLoggingExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891B25C4911A00373FFA /* OsLogLoggingExporter.swift */; };
-		3AA759BB25CB2C7E0007F25D /* LoggerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA759BA25CB2C7E0007F25D /* LoggerInfo.swift */; };
-		3AA759BE25CB2FD80007F25D /* LoggerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA759BA25CB2C7E0007F25D /* LoggerInfo.swift */; };
 		3AA759CC25CB4C790007F25D /* EnhancedEnablingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA759CB25CB4C790007F25D /* EnhancedEnablingConfig.swift */; };
 		3AA759D525CB53710007F25D /* EnhancedEnablingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA759CB25CB4C790007F25D /* EnhancedEnablingConfig.swift */; };
 		3AB19EDC260E91A10060D339 /* EnhancedLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB19EDB260E91A10060D339 /* EnhancedLogger.swift */; };
@@ -71,7 +69,6 @@
 		3AA7599B25CB267F0007F25D /* LoggingUtilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoggingUtilTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AA7599D25CB267F0007F25D /* LoggingUtilTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingUtilTests.swift; sourceTree = "<group>"; };
 		3AA7599F25CB267F0007F25D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3AA759BA25CB2C7E0007F25D /* LoggerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerInfo.swift; sourceTree = "<group>"; };
 		3AA759CB25CB4C790007F25D /* EnhancedEnablingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedEnablingConfig.swift; sourceTree = "<group>"; };
 		3AB19EDB260E91A10060D339 /* EnhancedLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedLogger.swift; sourceTree = "<group>"; };
 		3AB19EE0260E925B0060D339 /* EnhancedLogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedLogHandler.swift; sourceTree = "<group>"; };
@@ -195,7 +192,6 @@
 		3AA759C125CB318D0007F25D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				3AB19F1D260EA0250060D339 /* Basic */,
 				3AB19F18260EA0100060D339 /* Enhanced */,
 				3A5BD53E25BC1E5600481A2B /* LoggingLevel.swift */,
 			);
@@ -210,14 +206,6 @@
 				3A7E5DBB25CC62E60030378B /* EnhancedLogRecord.swift */,
 			);
 			path = Enhanced;
-			sourceTree = "<group>";
-		};
-		3AB19F1D260EA0250060D339 /* Basic */ = {
-			isa = PBXGroup;
-			children = (
-				3AA759BA25CB2C7E0007F25D /* LoggerInfo.swift */,
-			);
-			path = Basic;
 			sourceTree = "<group>";
 		};
 		3AE0084125C8AC0700ED7A11 /* LogExporters */ = {
@@ -349,7 +337,6 @@
 				3AB19EDC260E91A10060D339 /* EnhancedLogger.swift in Sources */,
 				3AB19EE1260E925B0060D339 /* EnhancedLogHandler.swift in Sources */,
 				3AA759CC25CB4C790007F25D /* EnhancedEnablingConfig.swift in Sources */,
-				3AA759BB25CB2C7E0007F25D /* LoggerInfo.swift in Sources */,
 				3A0ADF7225CA91D1001EEC70 /* DefaultEnhancedLogHandler.swift in Sources */,
 				3A0ADF7325CA91D1001EEC70 /* DefaultEnhancedLogger.swift in Sources */,
 				3A0ADF7525CA91D1001EEC70 /* Logger.swift in Sources */,
@@ -377,7 +364,6 @@
 				3A3239CC25ED48060039D0F5 /* EnhancedModerator.swift in Sources */,
 				3A7E5DBD25CC62E60030378B /* EnhancedLogRecord.swift in Sources */,
 				3AA759B525CB26EA0007F25D /* StringLogExporter.swift in Sources */,
-				3AA759BE25CB2FD80007F25D /* LoggerInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

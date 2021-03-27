@@ -1,12 +1,15 @@
 struct DefaultLogger<LogHandlerType: LoggingUtil.LogHandler> {
 	public var logHandler: LogHandlerType
-	public var loggerInfo: LoggerInfo
+	public var level: LoggingLevel
+	public var source: [String]
 	
 	public init (
-		loggerInfo: LoggerInfo = .init(),
+		level: LoggingLevel = .info,
+		source: [String] = [],
 		logHandler: LogHandlerType
 	) {
-		self.loggerInfo = loggerInfo
+		self.level = level
+		self.source = source
 		self.logHandler = logHandler
 	}
 }
@@ -51,9 +54,9 @@ extension DefaultLogger: Logger {
 
 extension DefaultLogger: LogHandler {
 	func log (level: LoggingLevel, message: @autoclosure () -> LogHandlerType.Message, source: @autoclosure () -> [String]) {
-		guard level >= loggerInfo.level else { return }
+		guard level >= level else { return }
 		
-		let source = loggerInfo.source + source()
+		let source = self.source + source()
 		
 		logHandler.log(level: level, message: message(), source: source)
 	}
