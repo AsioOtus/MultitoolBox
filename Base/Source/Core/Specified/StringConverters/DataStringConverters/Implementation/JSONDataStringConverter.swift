@@ -1,3 +1,5 @@
+import Foundation
+
 struct JSONDataStringConverter: OptionalDataStringConverter {
     static let `default` = Self()
     

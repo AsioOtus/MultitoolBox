@@ -1,3 +1,5 @@
+import Foundation
+
 struct RawDataStringConverter: OptionalDataStringConverter {
     static let `default` = Self()
     

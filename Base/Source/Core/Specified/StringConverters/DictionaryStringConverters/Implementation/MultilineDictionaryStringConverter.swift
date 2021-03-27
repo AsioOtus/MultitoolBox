@@ -1,3 +1,5 @@
+import Foundation
+
 struct MultilineDictionaryStringConverter: DictionaryStringConverter {
     static let `default` = Self()
     

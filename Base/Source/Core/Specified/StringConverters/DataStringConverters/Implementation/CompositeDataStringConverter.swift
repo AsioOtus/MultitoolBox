@@ -1,3 +1,5 @@
+import Foundation
+
 struct CompositeDataStringConverter: DataStringConverter {
     static let `default` = Self(
         converters: [
