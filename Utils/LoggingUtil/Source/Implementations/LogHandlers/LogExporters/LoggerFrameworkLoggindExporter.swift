@@ -1,5 +1,6 @@
 import os.log
 
+@available(iOS 14.0, macOS 11.0, *)
 public extension LoggerFrameworkLogExporter {
 	struct Configuration {
 		public static let `default` = Self(logger: .init())
