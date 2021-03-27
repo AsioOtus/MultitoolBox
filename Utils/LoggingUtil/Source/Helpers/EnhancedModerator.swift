@@ -1,7 +1,7 @@
-struct Moderator {
+struct EnhancedModerator {
 	static let `default` = Self()
 	
-	func moderate <Message> (logRecord: LogRecord<Message>, enabling: EnablingConfiguration) -> LogRecord<Message> {
+	func moderate <Message> (logRecord: EnhancedLogRecord<Message>, enabling: EnhancedEnablingConfig) -> EnhancedLogRecord<Message> {
 		.init(
 			level: enabling.level ? logRecord.level : nil,
 			message: logRecord.message,

@@ -1,4 +1,4 @@
-public struct EnablingConfiguration {
+public struct EnhancedEnablingConfig {
 	public var level: Bool
 	public var source: Bool
 	public var tags: Bool

@@ -8,8 +8,6 @@ public enum LoggingLevel: String, Codable, CaseIterable {
 	case critical
 	case fault
 	
-	var description: String { "\(self)".uppercased() }
-	
 	public var order: Int {
 		let order: Int
 		

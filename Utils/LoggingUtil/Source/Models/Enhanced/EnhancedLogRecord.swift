@@ -1,4 +1,4 @@
-struct LogRecord<Message> {
+struct EnhancedLogRecord<Message> {
 	let level: LoggingLevel?
 	let message: Message
 	let source: [String]?

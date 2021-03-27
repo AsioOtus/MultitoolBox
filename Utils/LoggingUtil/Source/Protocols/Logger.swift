@@ -3,73 +3,41 @@ public protocol Logger {
 	
 	func trace (
 		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String,	line: UInt
+		source: @autoclosure () -> [String]
 	)
 	
 	func debug (
 		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String,	line: UInt
+		source: @autoclosure () -> [String]
 	)
 	
 	func info (
 		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String,	line: UInt
+		source: @autoclosure () -> [String]
 	)
 	
 	func notice (
 		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String,	line: UInt
+		source: @autoclosure () -> [String]
 	)
 	
 	func warning (
 		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String,	line: UInt
+		source: @autoclosure () -> [String]
 	)
 	
 	func fault (
 		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String,	line: UInt
+		source: @autoclosure () -> [String]
 	)
 	
 	func error (
 		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String,	line: UInt
+		source: @autoclosure () -> [String]
 	)
 	
 	func critical (
 		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String,	line: UInt
+		source: @autoclosure () -> [String]
 	)
 }
