@@ -8,7 +8,6 @@ public struct Settings {
 	public var controllers: Controllers
 	
 	public init (controllers: Controllers = .init()) {
-		self.parent = nil
 		self.controllers = controllers
 	}
 }
@@ -21,8 +20,8 @@ extension Settings {
 				
 		public var logging: Logging
 		
-		public init (logging: Logging) {
-			self.logging = .logging
+		public init (logging: Logging = .init()) {
+			self.logging = logging
 		}
 	}
 }
@@ -35,7 +34,7 @@ extension Settings.Controllers {
 				
 		public var loggingProvider: BaseNetworkUtilControllersLoggingProvider
 		
-		init (loggingProvider: BaseNetworkUtilControllersLoggingProvider = StandardLoggingProvider()) {
+		public init (loggingProvider: BaseNetworkUtilControllersLoggingProvider = StandardLoggingProvider()) {
 			self.loggingProvider = loggingProvider
 		}
 	}
