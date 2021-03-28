@@ -6,7 +6,7 @@ public protocol LoggableResponse: Response {
     func logMessage (httpUrlResponseStringConverter: HTTPURLResponseStringConverter?) -> String
 }
 
-extension LoggableResponse {
+public extension LoggableResponse {
 	var httpUrlResponseStringConverter: HTTPURLResponseStringConverter { DefaultHTTPURLResponseStringConverter.default }
 	
     func logMessage (httpUrlResponseStringConverter: HTTPURLResponseStringConverter? = nil) -> String {

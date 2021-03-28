@@ -4,7 +4,7 @@ public protocol LoggableRequest: Request {
     func logMessage (urlRequestStringConverter: URLRequestStringConverter?) -> String
 }
 
-extension LoggableRequest {
+public extension LoggableRequest {
 	var urlRequestStringConverter: URLRequestStringConverter { DefaultURLRequestStringConverter.default }
 	
 	func logMessage (urlRequestStringConverter: URLRequestStringConverter? = nil) -> String {
