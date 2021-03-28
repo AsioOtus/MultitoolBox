@@ -1,7 +1,5 @@
 public protocol ModelableResponse: Response {
-	associatedtype Model: ResponseModel
+	associatedtype Model: Decodable
 	
 	var model: Model { get }
 }
-
-public protocol ResponseModel: Decodable { }
