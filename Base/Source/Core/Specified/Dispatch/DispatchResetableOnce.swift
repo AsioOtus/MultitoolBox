@@ -1,4 +1,4 @@
-public class DispatchAction {
+public class DispatchResetableAction {
     private let dispatchResetableFirst = DispatchResetableFirst()
     
     private let action: () -> Void
@@ -11,5 +11,9 @@ public class DispatchAction {
     
     public func perform () {
         dispatchResetableFirst.perform(action)
+    }
+    
+    public func reset () {
+        dispatchResetableFirst.reset()
     }
 }
