@@ -1,5 +1,5 @@
 import Foundation
 
-protocol OptionalDataStringConverter {
+public protocol OptionalDataStringConverter {
     func convert (_ data: Data) -> String?
 }

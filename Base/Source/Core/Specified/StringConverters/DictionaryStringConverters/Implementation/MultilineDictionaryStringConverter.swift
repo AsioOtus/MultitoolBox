@@ -1,9 +1,9 @@
 import Foundation
 
-struct MultilineDictionaryStringConverter: DictionaryStringConverter {
-    static let `default` = Self()
+public struct MultilineDictionaryStringConverter: DictionaryStringConverter {
+	public static let `default` = Self()
     
-    func convert (_ dictionary: Dictionary<AnyHashable, Any>) -> String {
+	public func convert (_ dictionary: Dictionary<AnyHashable, Any>) -> String {
         dictionary.map{ "\($0.key): \($0.value)" }.joined(separator: "\n")
     }
 }

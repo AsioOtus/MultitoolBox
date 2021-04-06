@@ -1,12 +1,12 @@
 import Foundation
 
-struct DefaultURLRequestStringConverter: URLRequestStringConverter {
-	static let `default` = Self()
+public struct DefaultURLRequestStringConverter: URLRequestStringConverter {
+	public static let `default` = Self()
 	
-	let dataStringConverter: OptionalDataStringConverter
-	let dictionaryStringConverter: DictionaryStringConverter
+	public let dataStringConverter: OptionalDataStringConverter
+	public let dictionaryStringConverter: DictionaryStringConverter
 	
-	init (
+	public init (
 		dataStringConverter: OptionalDataStringConverter = CompositeOptionalDataStringConverter.default,
 		dictionaryStringConverter: DictionaryStringConverter = MultilineDictionaryStringConverter.default
 	) {
@@ -14,7 +14,7 @@ struct DefaultURLRequestStringConverter: URLRequestStringConverter {
 		self.dictionaryStringConverter = dictionaryStringConverter
 	}
 	
-	func convert (_ urlRequest: URLRequest) -> String {
+	public func convert (_ urlRequest: URLRequest) -> String {
 		var components = [String]()
 		
 		let firstLine = ShortURLRequestStringConverter().convert(urlRequest)

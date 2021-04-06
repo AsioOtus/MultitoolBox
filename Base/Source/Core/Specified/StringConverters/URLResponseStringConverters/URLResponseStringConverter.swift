@@ -1,5 +1,5 @@
 import Foundation
 
-protocol URLResponseStringConverter {
+public protocol URLResponseStringConverter {
 	func convert (_ urlResponse: URLResponse, body: Data?) -> String
 }

@@ -1,7 +1,7 @@
 import Foundation
 
-struct CompositeDataStringConverter: DataStringConverter {
-    static let `default` = Self(
+public struct CompositeDataStringConverter: DataStringConverter {
+	public static let `default` = Self(
         converters: [
             JSONDataStringConverter.default,
             RawDataStringConverter.default
@@ -9,10 +9,10 @@ struct CompositeDataStringConverter: DataStringConverter {
         lastResortConverter: Base64DataStringConverter.default
     )
     
-    let converters: [OptionalDataStringConverter]
-    let lastResortConverter: DataStringConverter
+	public let converters: [OptionalDataStringConverter]
+	public let lastResortConverter: DataStringConverter
     
-    func convert (_ data: Data) -> String {
+	public func convert (_ data: Data) -> String {
         for converter in converters {
             if let string = converter.convert(data) {
                 return string

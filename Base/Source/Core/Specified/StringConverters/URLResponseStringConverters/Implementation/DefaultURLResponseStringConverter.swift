@@ -1,12 +1,12 @@
 import Foundation
 
-struct DefaultURLResponseStringConverter: URLResponseStringConverter {
-	static let `default` = Self()
+public struct DefaultURLResponseStringConverter: URLResponseStringConverter {
+	public static let `default` = Self()
 	
-	let dataStringConverter: OptionalDataStringConverter
-	let dictionaryStringConverter: DictionaryStringConverter
+	public let dataStringConverter: OptionalDataStringConverter
+	public let dictionaryStringConverter: DictionaryStringConverter
 	
-	init (
+	public init (
 		dataStringConverter: OptionalDataStringConverter = CompositeOptionalDataStringConverter.default,
 		dictionaryStringConverter: DictionaryStringConverter = MultilineDictionaryStringConverter.default
 	) {
@@ -14,7 +14,7 @@ struct DefaultURLResponseStringConverter: URLResponseStringConverter {
 		self.dictionaryStringConverter = dictionaryStringConverter
 	}
 	
-	func convert (_ urlResponse: URLResponse, body: Data?) -> String {
+	public func convert (_ urlResponse: URLResponse, body: Data?) -> String {
 		var components = [String]()
 		
 		let firstLine = ShortURLResponseStringConverter().convert(urlResponse, body: body)

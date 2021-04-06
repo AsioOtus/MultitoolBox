@@ -1,7 +1,7 @@
 import Foundation
 
-struct CompositeOptionalDataStringConverter: OptionalDataStringConverter {
-    static let `default` = Self(
+public struct CompositeOptionalDataStringConverter: OptionalDataStringConverter {
+	public static let `default` = Self(
         converters: [
             JSONDataStringConverter.default,
             RawDataStringConverter.default,
@@ -11,7 +11,7 @@ struct CompositeOptionalDataStringConverter: OptionalDataStringConverter {
     
     let converters: [OptionalDataStringConverter]
     
-    func convert (_ data: Data) -> String? {
+	public func convert (_ data: Data) -> String? {
         for converter in converters {
             if let string = converter.convert(data) {
                 return string
