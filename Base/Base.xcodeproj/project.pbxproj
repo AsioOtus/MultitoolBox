@@ -20,6 +20,10 @@
 		1EC3358225F1340600EE937D /* HTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3358125F1340600EE937D /* HTTPURLResponseStringConverter.swift */; };
 		1EC3358725F1342600EE937D /* DefaultHTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3358625F1342600EE937D /* DefaultHTTPURLResponseStringConverter.swift */; };
 		1EC3358B25F1346400EE937D /* ShortHTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3358A25F1346400EE937D /* ShortHTTPURLResponseStringConverter.swift */; };
+		1ED4C5992613695B00CCE28D /* DispatchResetableFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4C5982613695B00CCE28D /* DispatchResetableFirst.swift */; };
+		1ED4C59A2613695B00CCE28D /* DispatchResetableFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4C5982613695B00CCE28D /* DispatchResetableFirst.swift */; };
+		1ED4C59F261369D900CCE28D /* DispatchResetableOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4C59E261369D900CCE28D /* DispatchResetableOnce.swift */; };
+		1ED4C5A0261369D900CCE28D /* DispatchResetableOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4C59E261369D900CCE28D /* DispatchResetableOnce.swift */; };
 		3A0ADF9D25CAA50C001EEC70 /* MultitoolBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A0ADF9B25CAA50C001EEC70 /* MultitoolBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A40A28D25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A28C25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift */; };
 		3A40A29225F15B71002C0875 /* URLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A29125F15B71002C0875 /* URLRequestStringConverter.swift */; };
@@ -83,6 +87,8 @@
 		1EC3358125F1340600EE937D /* HTTPURLResponseStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPURLResponseStringConverter.swift; sourceTree = "<group>"; };
 		1EC3358625F1342600EE937D /* DefaultHTTPURLResponseStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHTTPURLResponseStringConverter.swift; sourceTree = "<group>"; };
 		1EC3358A25F1346400EE937D /* ShortHTTPURLResponseStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortHTTPURLResponseStringConverter.swift; sourceTree = "<group>"; };
+		1ED4C5982613695B00CCE28D /* DispatchResetableFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchResetableFirst.swift; sourceTree = "<group>"; };
+		1ED4C59E261369D900CCE28D /* DispatchResetableOnce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchResetableOnce.swift; sourceTree = "<group>"; };
 		3A0ADF9925CAA50C001EEC70 /* MultitoolBase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MultitoolBase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A0ADF9B25CAA50C001EEC70 /* MultitoolBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultitoolBase.h; sourceTree = "<group>"; };
 		3A0ADF9C25CAA50C001EEC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,6 +188,8 @@
 				1E2643E225F285B4005CAEE7 /* DispatchArray.swift */,
 				3AFA3130260CDF0D0068177C /* DispatchFirst.swift */,
 				3A85DAF825AF33B1006E76AF /* DispatchOnce.swift */,
+				1ED4C5982613695B00CCE28D /* DispatchResetableFirst.swift */,
+				1ED4C59E261369D900CCE28D /* DispatchResetableOnce.swift */,
 				3A85DAFB25AF33C6006E76AF /* DispatchSerial.swift */,
 				3A85DAF525AF3382006E76AF /* DispatchSingle.swift */,
 				3AE30F2025C5DE60009B22FB /* DispatchWait.swift */,
@@ -689,11 +697,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EC3358225F1340600EE937D /* HTTPURLResponseStringConverter.swift in Sources */,
+				1ED4C59F261369D900CCE28D /* DispatchResetableOnce.swift in Sources */,
 				1EC3358B25F1346400EE937D /* ShortHTTPURLResponseStringConverter.swift in Sources */,
 				3A40A28D25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift in Sources */,
 				1EC3358725F1342600EE937D /* DefaultHTTPURLResponseStringConverter.swift in Sources */,
 				1E2643E625F28695005CAEE7 /* DispatchArray.swift in Sources */,
 				3AB19F22260EA4FC0060D339 /* Derived.swift in Sources */,
+				1ED4C5992613695B00CCE28D /* DispatchResetableFirst.swift in Sources */,
 				1EC3356925F12D8200EE937D /* DataStringConverter.swift in Sources */,
 				3A58BC44260CE1E400B6F073 /* DispatchSingle.swift in Sources */,
 				3A58BC45260CE1E400B6F073 /* DispatchSerial.swift in Sources */,
@@ -722,9 +732,11 @@
 			files = (
 				3AFA3123260CD8250068177C /* main.swift in Sources */,
 				3AFA312D260CD8370068177C /* DispatchSerial.swift in Sources */,
+				1ED4C59A2613695B00CCE28D /* DispatchResetableFirst.swift in Sources */,
 				3AFA3129260CD8370068177C /* DispatchSingle.swift in Sources */,
 				3AFA312B260CD8370068177C /* DispatchWait.swift in Sources */,
 				3AFA312C260CD8370068177C /* DispatchOnce.swift in Sources */,
+				1ED4C5A0261369D900CCE28D /* DispatchResetableOnce.swift in Sources */,
 				3AFA3131260CDF0D0068177C /* DispatchFirst.swift in Sources */,
 				3AB19F26260EA4FE0060D339 /* Derived.swift in Sources */,
 				3AFA312A260CD8370068177C /* DispatchArray.swift in Sources */,
