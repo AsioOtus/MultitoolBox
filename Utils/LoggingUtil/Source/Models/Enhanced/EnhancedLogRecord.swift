@@ -1,14 +1,14 @@
 public struct EnhancedLogRecord<Message: Codable>: Codable {
-	let level: LoggingLevel?
-	let message: Message
-	let source: [String]?
-	let tags: Set<String>?
-	let details: [String: String]?
-	let comment: String?
-	let file: String?
-	let function: String?
-	let line: UInt?
-	let labels: [String]?
+	public let level: LoggingLevel?
+	public let message: Message
+	public let source: [String]?
+	public let tags: Set<String>?
+	public let details: [String: String]?
+	public let comment: String?
+	public let file: String?
+	public let function: String?
+	public let line: UInt?
+	public let labels: [String]?
 	
 	internal init (
 		level: LoggingLevel? = nil,
