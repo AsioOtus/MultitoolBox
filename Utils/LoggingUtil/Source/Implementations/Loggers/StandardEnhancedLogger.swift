@@ -1,18 +1,14 @@
 public class StandardEnhancedLogger <LogHandlerType: EnhancedLogHandler> {
-	public var logHandler: LogHandlerType
 	public var loggerInfo: EnhancedLoggerInfo
-	public var logHandlerConfiguration: LogHandlerType.Configuration?
-	
+	public var logHandler: LogHandlerType
 	
 	
 	public init (
 		loggerInfo: EnhancedLoggerInfo = .init(),
-		logHandler: LogHandlerType,
-		logHandlerConfiguration: LogHandlerType.Configuration? = nil
+		logHandler: LogHandlerType
 	) {
-		self.logHandler = logHandler
 		self.loggerInfo = loggerInfo
-		self.logHandlerConfiguration = logHandlerConfiguration
+		self.logHandler = logHandler
 	}
 }
 	
@@ -20,52 +16,48 @@ public class StandardEnhancedLogger <LogHandlerType: EnhancedLogHandler> {
 	
 extension StandardEnhancedLogger: EnhancedLogger {
 	public func log (level: LoggingLevel, message: LogHandlerType.Message, source: [String] = []) {
-		guard level >= loggerInfo.level else { return }
+		let metaInfo = MetaInfo(timestamp: Date().timeIntervalSince1970, level: level)
 		
-		let configuration = logHandlerConfiguration ?? self.logHandlerConfiguration
-		
-		let logRecord = EnhancedLogRecord(
+		let logRecord = LogRecord(
+			timestamp: metaInfo.timestamp,
 			level: level,
 			message: message,
-			source: loggerInfo.source + source,
-			tags: loggerInfo.tags,
-			details: loggerInfo.details,
-			comment: loggerInfo.comment
+			source: source
 		)
 		
-		log(level: level, logRecord: logRecord, configuration: configuration)
+		log(metaInfo: metaInfo, logRecord: logRecord)
 	}
 	
 	public func trace (_ message: LogHandlerType.Message, source: [String] = []) {
-		self.log(level: .trace, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
+		log(level: .trace, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
 	public func debug (_ message: LogHandlerType.Message, source: [String] = []) {
-		self.log(level: .debug, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
+		log(level: .debug, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
 	public func info (_ message: LogHandlerType.Message, source: [String] = []) {
-		self.log(level: .info, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
+		log(level: .info, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
 	public func notice (_ message: LogHandlerType.Message, source: [String] = []) {
-		self.log(level: .notice, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
+		log(level: .notice, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
 	public func warning (_ message: LogHandlerType.Message, source: [String] = []) {
-		self.log(level: .warning, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
+		log(level: .warning, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
 	public func fault (_ message: LogHandlerType.Message, source: [String] = []) {
-		self.log(level: .fault, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
+		log(level: .fault, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
 	public func error (_ message: LogHandlerType.Message, source: [String] = []) {
-		self.log(level: .error, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
+		log(level: .error, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
 	public func critical (_ message: LogHandlerType.Message, source: [String] = []) {
-		self.log(level: .critical, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
+		log(level: .critical, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
 	public func log (
@@ -75,28 +67,24 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function, line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration? = nil,
-		labels: [String] = []
+		file: String = #file, function: String = #function, line: UInt = #line
 	) {
-		guard level >= loggerInfo.level else { return }
-		
-		let configuration = logHandlerConfiguration ?? self.logHandlerConfiguration
+		let metaInfo = EnhancedMetaInfo(timestamp: Date().timeIntervalSince1970, level: level, labels: [])
 		
 		let logRecord = EnhancedLogRecord(
+			timestamp: metaInfo.timestamp,
 			level: level,
 			message: message,
-			source: loggerInfo.source + source,
-			tags: loggerInfo.tags.union(tags),
-			details: loggerInfo.details.merging(details, uniquingKeysWith: { _, detail in detail }),
-			comment: !comment.isEmpty ? comment : loggerInfo.comment,
+			source: source,
+			tags: tags,
+			details: details,
+			comment: comment,
 			file: file,
 			function: function,
-			line: line,
-			labels: [loggerInfo.label] + labels
+			line: line
 		)
 		
-		logHandler.log(level: level, logRecord: logRecord, configuration: configuration)
+		log(metaInfo: metaInfo, logRecord: logRecord)
 	}
 	
 	public func trace (
@@ -105,10 +93,9 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function,	line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration?
+		file: String = #file, function: String = #function,	line: UInt = #line
 	) {
-		self.log(level: .trace, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		log(level: .trace, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 	
 	public func debug (
@@ -117,10 +104,9 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function,	line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration?
+		file: String = #file, function: String = #function,	line: UInt = #line
 	) {
-		self.log(level: .debug, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		log(level: .debug, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 	
 	public func info (
@@ -129,10 +115,9 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function,	line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration?
+		file: String = #file, function: String = #function,	line: UInt = #line
 	) {
-		self.log(level: .info, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		log(level: .info, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 	
 	public func notice (
@@ -141,10 +126,9 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function,	line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration?
+		file: String = #file, function: String = #function,	line: UInt = #line
 	) {
-		self.log(level: .notice, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		log(level: .notice, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 	
 	public func warning (
@@ -153,10 +137,9 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function,	line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration?
+		file: String = #file, function: String = #function,	line: UInt = #line
 	) {
-		self.log(level: .warning, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		log(level: .warning, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 	
 	public func fault (
@@ -165,10 +148,9 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function,	line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration?
+		file: String = #file, function: String = #function,	line: UInt = #line
 	) {
-		self.log(level: .fault, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		log(level: .fault, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 	
 	public func error (
@@ -177,10 +159,9 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function,	line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration?
+		file: String = #file, function: String = #function,	line: UInt = #line
 	) {
-		self.log(level: .error, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		log(level: .error, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 	
 	public func critical (
@@ -189,21 +170,33 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		file: String = #file, function: String = #function,	line: UInt = #line,
-		logHandlerConfiguration: LogHandlerType.Configuration?
+		file: String = #file, function: String = #function,	line: UInt = #line
 	) {
-		self.log(level: .critical, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
+		log(level: .critical, message: message, source: source, tags: tags, details: details, comment: comment, file: file, function: function, line: line)
 	}
 }
 
 
 
-extension StandardEnhancedLogger: EnhancedLogHandler {	
-	public func log (level: LoggingLevel, logRecord: LogRecord<LogHandlerType.Message>) {
-		logHandler.log(level: level, logRecord: logRecord)
+extension StandardEnhancedLogger: EnhancedLogHandler {
+	public func log (metaInfo: MetaInfo, logRecord: LogRecord<Message>) {
+		let metaInfo = EnhancedMetaInfo(timestamp: metaInfo.timestamp, level: metaInfo.level, labels: [])
+		
+		let logRecord = EnhancedLogRecord(
+			level: logRecord.level,
+			message: logRecord.message,
+			source: logRecord.source
+		)
+		
+		log(metaInfo: metaInfo, logRecord: logRecord)
 	}
 	
-	public func log (level: LoggingLevel, logRecord: EnhancedLogRecord<LogHandlerType.Message>, configuration: LogHandlerType.Configuration? = nil) {
-		logHandler.log(level: level, logRecord: logRecord, configuration: configuration)
+	public func log (metaInfo: EnhancedMetaInfo, logRecord: EnhancedLogRecord<Message>) {
+		guard metaInfo.level >= loggerInfo.level else { return }
+		
+		let metaInfo = EnhancedMetaInfo(timestamp: metaInfo.timestamp, level: metaInfo.level, labels: [loggerInfo.label] + metaInfo.labels)
+		let logRecord = EnhancedLogRecordCombiner.default.combine(logRecord, loggerInfo)
+		
+		logHandler.log(metaInfo: metaInfo, logRecord: logRecord)
 	}
 }

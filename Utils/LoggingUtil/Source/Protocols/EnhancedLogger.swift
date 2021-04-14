@@ -1,6 +1,5 @@
 public protocol EnhancedLogger: Logger {
 	associatedtype Message
-	associatedtype LogHandlerConfiguration
 	
 	func log (
 		level: LoggingLevel,
@@ -9,9 +8,7 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String, line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?,
-		labels: [String]
+		file: String, function: String, line: UInt
 	)
 	
 	func trace (
@@ -20,8 +17,7 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String,	line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?
+		file: String, function: String,	line: UInt
 	)
 	
 	func debug (
@@ -30,8 +26,7 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String,	line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?
+		file: String, function: String,	line: UInt
 	)
 	
 	func info (
@@ -40,8 +35,7 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String,	line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?
+		file: String, function: String,	line: UInt
 	)
 	
 	func notice (
@@ -50,8 +44,7 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String,	line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?
+		file: String, function: String,	line: UInt
 	)
 	
 	func warning (
@@ -60,8 +53,7 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String,	line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?
+		file: String, function: String,	line: UInt
 	)
 	
 	func fault (
@@ -70,8 +62,7 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String,	line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?
+		file: String, function: String,	line: UInt
 	)
 	
 	func error (
@@ -80,8 +71,7 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String,	line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?
+		file: String, function: String,	line: UInt
 	)
 	
 	func critical (
@@ -90,7 +80,6 @@ public protocol EnhancedLogger: Logger {
 		tags: Set<String>,
 		details: [String: String],
 		comment: String,
-		file: String, function: String,	line: UInt,
-		logHandlerConfiguration: LogHandlerConfiguration?
+		file: String, function: String,	line: UInt
 	)
 }

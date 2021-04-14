@@ -20,13 +20,16 @@ extension StandardLogger: Logger {
 	public func log (level: LoggingLevel, message: LogHandlerType.Message, source: [String] = []) {
 		guard level >= level else { return }
 		
+		let timestamp = Date().timeIntervalSince1970
+		
 		let logRecord = LogRecord(
+			timestamp: timestamp,
 			level: level,
 			message: message,
 			source: self.source + source
 		)
 		
-		log(level: level, logRecord: logRecord)
+		log(metaInfo: .init(timestamp: timestamp, level: level), logRecord: logRecord)
 	}
 	
 	public func trace (_ message: LogHandlerType.Message, source: [String] = []) {
@@ -65,7 +68,7 @@ extension StandardLogger: Logger {
 
 
 extension StandardLogger: LogHandler {
-	public func log (level: LoggingLevel, logRecord: LogRecord<LogHandlerType.Message>) {
-		logHandler.log(level: level, logRecord: logRecord)
+	public func log (metaInfo: MetaInfo, logRecord: LogRecord<LogHandlerType.Message>) {
+		logHandler.log(metaInfo: metaInfo, logRecord: logRecord)
 	}
 }

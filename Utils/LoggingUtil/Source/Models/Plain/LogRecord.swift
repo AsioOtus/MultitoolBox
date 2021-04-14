@@ -1,5 +1,6 @@
 public struct LogRecord<Message: Codable>: Codable {
-	let level: LoggingLevel?
-	let message: Message
-	let source: [String]?
+	public let timestamp: TimeInterval?
+	public let level: LoggingLevel?
+	public let message: Message
+	public let source: [String]?
 }

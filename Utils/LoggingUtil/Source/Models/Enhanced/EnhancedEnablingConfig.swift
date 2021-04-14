@@ -1,4 +1,5 @@
 public struct EnhancedEnablingConfig {
+	public var timestamp: Bool
 	public var level: Bool
 	public var source: Bool
 	public var tags: Bool
@@ -8,6 +9,7 @@ public struct EnhancedEnablingConfig {
 	public var labels: Bool
 	
 	public init (
+		timestamp: Bool = true,
 		level: Bool = true,
 		source: Bool = true,
 		tags: Bool = false,
@@ -16,6 +18,7 @@ public struct EnhancedEnablingConfig {
 		codeInfo: Bool = false,
 		labels: Bool = false
 	) {
+		self.timestamp = timestamp
 		self.level = level
 		self.source = source
 		self.tags = tags

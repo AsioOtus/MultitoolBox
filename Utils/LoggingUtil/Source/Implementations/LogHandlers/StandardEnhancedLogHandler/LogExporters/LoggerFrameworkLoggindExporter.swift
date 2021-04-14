@@ -2,7 +2,7 @@ import os.log
 
 @available(iOS 14.0, macOS 11.0, *)
 public extension LoggerFrameworkLogExporter {
-	struct Configuration {
+	struct Config {
 		public static let `default` = Self(logger: .init())
 		
 		public let logger: os.Logger
@@ -11,14 +11,14 @@ public extension LoggerFrameworkLogExporter {
 
 @available(iOS 14.0, macOS 11.0, *)
 public class LoggerFrameworkLogExporter: StringLogExporter {
-	public var configuration: Configuration
+	public var configuration: Config
 	
-	public init (_ configuration: Configuration = .default) {
+	public init (_ configuration: Config = .default) {
 		self.configuration = configuration
 	}
 	
-	public func log (_ level: LoggingLevel, _ message: String, _ configuration: Configuration? = nil) {
-		let logger = configuration?.logger ?? self.configuration.logger
+	public func log (_ level: LoggingLevel, _ message: String, _: Void? = nil) {
+		let logger = configuration.logger
 		
 		switch level {
 		case .trace:

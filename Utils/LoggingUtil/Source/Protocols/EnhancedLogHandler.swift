@@ -1,9 +1,6 @@
-public protocol EnhancedLogHandler: LogHandler {
-	associatedtype Configuration
-	
+public protocol EnhancedLogHandler: LogHandler {	
 	func log (
-		level: LoggingLevel,
-		logRecord: EnhancedLogRecord<Message>,
-		configuration: Configuration?
+		metaInfo: EnhancedMetaInfo,
+		logRecord: EnhancedLogRecord<Message>
 	)
 }

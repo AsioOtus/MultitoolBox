@@ -1,4 +1,5 @@
 public struct EnhancedLogRecord<Message: Codable>: Codable {
+	public let timestamp: TimeInterval?
 	public let level: LoggingLevel?
 	public let message: Message
 	public let source: [String]?
@@ -11,6 +12,7 @@ public struct EnhancedLogRecord<Message: Codable>: Codable {
 	public let labels: [String]?
 	
 	internal init (
+		timestamp: Double? = nil,
 		level: LoggingLevel? = nil,
 		message: Message,
 		source: [String]? = nil,
@@ -22,6 +24,7 @@ public struct EnhancedLogRecord<Message: Codable>: Codable {
 		line: UInt? = nil,
 		labels: [String]? = nil
 	) {
+		self.timestamp = timestamp
 		self.level = level
 		self.message = message
 		self.source = source
