@@ -5,7 +5,7 @@ struct EnhancedLogRecordCombiner {
 		let source = logRecord.source ?? []
 		let tags = logRecord.tags ?? []
 		let details = logRecord.details ?? [:]
-		let comment = logRecord.comment?.isEmpty == true ? nil : logRecord.comment!
+		let comment = logRecord.comment == nil ? nil : (logRecord.comment!.isEmpty == true ? nil : logRecord.comment)
 		let labels = logRecord.labels ?? []
 		
 		let logRecord = EnhancedLogRecord(

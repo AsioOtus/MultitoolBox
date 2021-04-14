@@ -34,6 +34,6 @@ public enum LoggingLevel: String, Codable, CaseIterable {
 	}
 	
 	public static func >= (lhs: LoggingLevel, rhs: LoggingLevel) -> Bool {
-		return lhs.order >= rhs.order
+		lhs.order >= rhs.order
 	}
 }
