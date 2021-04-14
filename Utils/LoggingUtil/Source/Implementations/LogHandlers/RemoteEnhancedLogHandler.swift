@@ -4,18 +4,15 @@ import Foundation
 
 public extension RemoteEnhancedLogHandler {
 	struct Configuration {
-		public var sourcePrefix: String
 		public var url: URL
 		public var urlSession: URLSession
 		public var enabling: EnhancedEnablingConfig
 		
 		public init (
-			sourcePrefix: String = "",
 			url: URL,
 			urlSession: URLSession = .shared,
 			enabling: EnhancedEnablingConfig = .init()
 		) {
-			self.sourcePrefix = sourcePrefix
 			self.url = url
 			self.urlSession = urlSession
 			self.enabling = enabling
@@ -93,7 +90,7 @@ extension RemoteEnhancedLogHandler: EnhancedLogHandler {
 		
 		let configuration = configuration ?? self.configuration
 		
-		let logRecord = EnhancedLogRecordCombiner.default.combine(logRecord, loggerInfo, configuration.sourcePrefix)
+		let logRecord = EnhancedLogRecordCombiner.default.combine(logRecord, loggerInfo, "")
 		
 		let moderatedLogRecord = EnhancedModerator.default.moderate(
 			logRecord: logRecord,
