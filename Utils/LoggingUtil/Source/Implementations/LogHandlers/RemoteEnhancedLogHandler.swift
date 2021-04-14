@@ -8,20 +8,17 @@ public extension RemoteEnhancedLogHandler {
 		public var url: URL
 		public var urlSession: URLSession
 		public var enabling: EnhancedEnablingConfig
-		public var logExporterConfiguration: LogExporter.Configuration?
 		
 		public init (
 			sourcePrefix: String = "",
 			url: URL,
 			urlSession: URLSession = .shared,
-			enabling: EnhancedEnablingConfig = .init(),
-			logExporterConfiguration: LogExporter.Configuration? = nil
+			enabling: EnhancedEnablingConfig = .init()
 		) {
 			self.sourcePrefix = sourcePrefix
 			self.url = url
 			self.urlSession = urlSession
 			self.enabling = enabling
-			self.logExporterConfiguration = logExporterConfiguration
 		}
 	}
 }
@@ -30,7 +27,7 @@ public extension RemoteEnhancedLogHandler {
 
 
 
-public class RemoteEnhancedLogHandler<LogExporter: StringLogExporter> {
+public class RemoteEnhancedLogHandler {
 	public typealias Message = String
 	
 	public var configuration: Configuration
