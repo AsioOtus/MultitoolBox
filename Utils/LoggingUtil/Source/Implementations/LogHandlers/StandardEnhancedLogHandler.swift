@@ -1,4 +1,4 @@
-public extension DefaultEnhancedLogHandler {
+public extension StandardEnhancedLogHandler {
 	struct Configuration {
 		public var sourcePrefix: String
 		public var levelPadding: Bool
@@ -24,7 +24,7 @@ public extension DefaultEnhancedLogHandler {
 
 
 
-public class DefaultEnhancedLogHandler<LogExporter: StringLogExporter> {
+public class StandardEnhancedLogHandler<LogExporter: StringLogExporter> {
 	public typealias Message = String
 	
 	public var configuration: Configuration
@@ -76,74 +76,44 @@ public class DefaultEnhancedLogHandler<LogExporter: StringLogExporter> {
 }
 
 
-extension DefaultEnhancedLogHandler: EnhancedLogHandler {
-	public func log (level: LoggingLevel, message: @autoclosure () -> String, source: @autoclosure () -> [String]) {
+extension StandardEnhancedLogHandler: EnhancedLogHandler {
+	public func log (level: LoggingLevel, logRecord: LogRecord<String>) {
 		guard level >= loggerInfo.level else { return }
 		
-		let source = loggerInfo.source + source()
-		let tags = loggerInfo.tags
-		let details = loggerInfo.details
-		let comment = loggerInfo.comment
-		let configuration = self.configuration
+		let source = logRecord.source ?? []
 		
-		let logRecord = EnhancedModerator.default.moderate(
-			logRecord:
-				.init(
-					level: level,
-					message: message(),
-					source: source,
-					tags: tags,
-					details: details,
-					comment: comment,
-					file: "",
-					function: "",
-					line: 0
-				),
+		let logRecord = EnhancedLogRecord(
+			level: logRecord.level,
+			message: logRecord.message,
+			source: [configuration.sourcePrefix] + loggerInfo.source + source,
+			tags: loggerInfo.tags,
+			details: loggerInfo.details,
+			comment: loggerInfo.comment,
+			labels: [loggerInfo.label]
+		)
+		
+		let moderatedLogRecord = EnhancedModerator.default.moderate(
+			logRecord: logRecord,
 			enabling: configuration.enabling
 		)
 		
-		let finalMessage = self.message(from: logRecord)
-		
+		let finalMessage = self.message(from: moderatedLogRecord)
 		stringLogExporter.log(level, finalMessage, configuration.logExporterConfiguration)
 	}
 	
-	public func log (
-		level: LoggingLevel,
-		message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String],
-		tags: @autoclosure () -> Set<String>,
-		details: @autoclosure () -> [String: Any],
-		comment: @autoclosure () -> String,
-		file: String, function: String, line: UInt,
-		logHandlerConfiguration: Configuration?,
-		labels: [String]
-	) {
+	public func log (level: LoggingLevel, logRecord: EnhancedLogRecord<String>, configuration: Configuration?) {
 		guard level >= loggerInfo.level else { return }
 		
-		let source = loggerInfo.source + source()
-		let tags = loggerInfo.tags.union(tags())
-		let details = loggerInfo.details.merging(details(), uniquingKeysWith: { _, detail in detail })
-		let comment = !comment().isEmpty ? comment() : loggerInfo.comment
-		let configuration = logHandlerConfiguration ?? self.configuration
+		let configuration = configuration ?? self.configuration
 		
-		let logRecord = EnhancedModerator.default.moderate(
-			logRecord:
-				.init(
-					level: level,
-					message: message(),
-					source: source,
-					tags: tags,
-					details: details,
-					comment: comment,
-					file: file,
-					function: function,
-					line: line
-				),
+		let logRecord = EnhancedLogRecordCombiner.default.combine(logRecord, loggerInfo, configuration.sourcePrefix)
+		
+		let moderatedLogRecord = EnhancedModerator.default.moderate(
+			logRecord: logRecord,
 			enabling: configuration.enabling
 		)
 		
-		let finalMessage = self.message(from: logRecord)
-		
+		let finalMessage = self.message(from: moderatedLogRecord)
 		stringLogExporter.log(level, finalMessage, configuration.logExporterConfiguration)
 	}
 }

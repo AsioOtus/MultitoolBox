@@ -1,43 +1,49 @@
 public protocol Logger {
 	associatedtype Message
 	
+	func log (
+		level: LoggingLevel,
+		message: Message,
+		source: [String]
+	)
+	
 	func trace (
-		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
+		_ message: Message,
+		source: [String]
 	)
 	
 	func debug (
-		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
+		_ message: Message,
+		source: [String]
 	)
 	
 	func info (
-		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
+		_ message: Message,
+		source: [String]
 	)
 	
 	func notice (
-		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
+		_ message: Message,
+		source: [String]
 	)
 	
 	func warning (
-		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
+		_ message: Message,
+		source: [String]
 	)
 	
 	func fault (
-		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
+		_ message: Message,
+		source: [String]
 	)
 	
 	func error (
-		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
+		_ message: Message,
+		source: [String]
 	)
 	
 	func critical (
-		_ message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
+		_ message: Message,
+		source: [String]
 	)
 }

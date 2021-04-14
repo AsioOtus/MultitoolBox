@@ -5,6 +5,7 @@ public struct EnhancedEnablingConfig {
 	public var details: Bool
 	public var comment: Bool
 	public var codeInfo: Bool
+	public var labels: Bool
 	
 	public init (
 		level: Bool = true,
@@ -12,7 +13,8 @@ public struct EnhancedEnablingConfig {
 		tags: Bool = false,
 		details: Bool = false,
 		comment: Bool =  false,
-		codeInfo: Bool = false
+		codeInfo: Bool = false,
+		labels: Bool = false
 	) {
 		self.level = level
 		self.source = source
@@ -20,5 +22,6 @@ public struct EnhancedEnablingConfig {
 		self.details = details
 		self.comment = comment
 		self.codeInfo = codeInfo
+		self.labels = labels
 	}
 }

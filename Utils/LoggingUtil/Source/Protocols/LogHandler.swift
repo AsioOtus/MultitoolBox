@@ -1,9 +1,5 @@
 public protocol LogHandler {
-	associatedtype Message
+	associatedtype Message: Codable
 	
-	func log (
-		level: LoggingLevel,
-		message: @autoclosure () -> Message,
-		source: @autoclosure () -> [String]
-	)
+	func log (level: LoggingLevel, logRecord: LogRecord<Message>)
 }
