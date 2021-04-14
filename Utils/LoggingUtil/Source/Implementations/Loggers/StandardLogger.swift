@@ -17,7 +17,7 @@ public struct StandardLogger<LogHandlerType: LoggingUtil.LogHandler> {
 
 
 extension StandardLogger: Logger {
-	public func log (level: LoggingLevel, message: LogHandlerType.Message, source: [String]) {
+	public func log (level: LoggingLevel, message: LogHandlerType.Message, source: [String] = []) {
 		guard level >= level else { return }
 		
 		let logRecord = LogRecord(
@@ -29,35 +29,35 @@ extension StandardLogger: Logger {
 		log(level: level, logRecord: logRecord)
 	}
 	
-	public func trace (_ message: LogHandlerType.Message, source: [String]) {
+	public func trace (_ message: LogHandlerType.Message, source: [String] = []) {
 		log(level: .trace, message: message, source: source)
 	}
 	
-	public func debug (_ message: LogHandlerType.Message, source: [String]) {
+	public func debug (_ message: LogHandlerType.Message, source: [String] = []) {
 		log(level: .trace, message: message, source: source)
 	}
 	
-	public func info (_ message: LogHandlerType.Message, source: [String]) {
+	public func info (_ message: LogHandlerType.Message, source: [String] = []) {
 		log(level: .trace, message: message, source: source)
 	}
 	
-	public func notice (_ message: LogHandlerType.Message, source: [String]) {
+	public func notice (_ message: LogHandlerType.Message, source: [String] = []) {
 		log(level: .trace, message: message, source: source)
 	}
 	
-	public func warning (_ message: LogHandlerType.Message, source: [String]) {
+	public func warning (_ message: LogHandlerType.Message, source: [String] = []) {
 		log(level: .trace, message: message, source: source)
 	}
 	
-	public func fault (_ message: LogHandlerType.Message, source: [String]) {
+	public func fault (_ message: LogHandlerType.Message, source: [String] = []) {
 		log(level: .trace, message: message, source: source)
 	}
 	
-	public func error (_ message: LogHandlerType.Message, source: [String]) {
+	public func error (_ message: LogHandlerType.Message, source: [String] = []) {
 		log(level: .trace, message: message, source: source)
 	}
 	
-	public func critical (_ message: LogHandlerType.Message, source: [String]) {
+	public func critical (_ message: LogHandlerType.Message, source: [String] = []) {
 		log(level: .trace, message: message, source: source)
 	}
 }

@@ -19,7 +19,7 @@ public class StandardEnhancedLogger <LogHandlerType: EnhancedLogHandler> {
 
 	
 extension StandardEnhancedLogger: EnhancedLogger {
-	public func log (level: LoggingLevel, message: LogHandlerType.Message, source: [String]) {
+	public func log (level: LoggingLevel, message: LogHandlerType.Message, source: [String] = []) {
 		guard level >= loggerInfo.level else { return }
 		
 		let configuration = logHandlerConfiguration ?? self.logHandlerConfiguration
@@ -36,35 +36,35 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		log(level: level, logRecord: logRecord, configuration: configuration)
 	}
 	
-	public func trace (_ message: LogHandlerType.Message, source: [String]) {
+	public func trace (_ message: LogHandlerType.Message, source: [String] = []) {
 		self.log(level: .trace, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
-	public func debug (_ message: LogHandlerType.Message, source: [String]) {
+	public func debug (_ message: LogHandlerType.Message, source: [String] = []) {
 		self.log(level: .debug, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
-	public func info (_ message: LogHandlerType.Message, source: [String]) {
+	public func info (_ message: LogHandlerType.Message, source: [String] = []) {
 		self.log(level: .info, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
-	public func notice (_ message: LogHandlerType.Message, source: [String]) {
+	public func notice (_ message: LogHandlerType.Message, source: [String] = []) {
 		self.log(level: .notice, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
-	public func warning (_ message: LogHandlerType.Message, source: [String]) {
+	public func warning (_ message: LogHandlerType.Message, source: [String] = []) {
 		self.log(level: .warning, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
-	public func fault (_ message: LogHandlerType.Message, source: [String]) {
+	public func fault (_ message: LogHandlerType.Message, source: [String] = []) {
 		self.log(level: .fault, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
-	public func error (_ message: LogHandlerType.Message, source: [String]) {
+	public func error (_ message: LogHandlerType.Message, source: [String] = []) {
 		self.log(level: .error, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
-	public func critical (_ message: LogHandlerType.Message, source: [String]) {
+	public func critical (_ message: LogHandlerType.Message, source: [String] = []) {
 		self.log(level: .critical, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
 	}
 	
