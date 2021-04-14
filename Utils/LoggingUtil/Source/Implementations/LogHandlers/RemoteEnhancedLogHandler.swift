@@ -35,16 +35,13 @@ public class RemoteEnhancedLogHandler<LogExporter: StringLogExporter> {
 	
 	public var configuration: Configuration
 	public var loggerInfo: EnhancedLoggerInfo
-	public var stringLogExporter: LogExporter
 	
 	public init (
 		configuration: Configuration,
-		loggerInfo: EnhancedLoggerInfo = .init(),
-		stringLogExporter: LogExporter
+		loggerInfo: EnhancedLoggerInfo = .init()
 	) {
 		self.configuration = configuration
 		self.loggerInfo = loggerInfo
-		self.stringLogExporter = stringLogExporter
 	}
 	
 	private func log (_ logRecord: EnhancedLogRecord<Message>, _ configuration: Configuration?) {
