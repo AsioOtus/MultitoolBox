@@ -1,3 +1,7 @@
+import Foundation
+
+
+
 public extension RemoteEnhancedLogHandler {
 	struct Configuration {
 		public var sourcePrefix: String
@@ -61,6 +65,7 @@ public class RemoteEnhancedLogHandler<LogExporter: StringLogExporter> {
 		}
 	}
 }
+
 
 
 
