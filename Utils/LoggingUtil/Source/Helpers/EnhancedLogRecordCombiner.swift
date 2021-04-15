@@ -11,12 +11,16 @@ struct EnhancedLogRecordCombiner {
 			)
 		
 		let logRecord = EnhancedLogRecord(
+			timestamp: logRecord.timestamp,
 			level: logRecord.level,
 			message: logRecord.message,
 			source: loggerInfo.source + (logRecord.source ?? []),
 			tags: loggerInfo.tags.union(logRecord.tags ?? []),
 			details: loggerInfo.details.merging(logRecord.details ?? [:], uniquingKeysWith: { _, detail in detail }),
 			comment: comment ?? loggerInfo.comment,
+			file: logRecord.file,
+			function: logRecord.function,
+			line: logRecord.line,
 			labels: [loggerInfo.label] + (logRecord.labels ?? [])
 		)
 		

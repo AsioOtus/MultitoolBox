@@ -1,15 +1,24 @@
 
 public extension MultilineFormatter {
 	struct Configuration {
+		public static let defaultDateFormatter: DateFormatter = {
+			let formatter = DateFormatter()
+			formatter.dateStyle = .short
+			return formatter
+		}()
+		
 		public var levelPadding: Bool
 		public var componentsSeparator: String
+		public var dateFormatter: DateFormatter
 		
 		public init (
 			levelPadding: Bool = true,
-			componentsSeparator: String = " | "
+			componentsSeparator: String = " | ",
+			dateFormatter: DateFormatter = defaultDateFormatter
 		) {
 			self.levelPadding = levelPadding
 			self.componentsSeparator = componentsSeparator
+			self.dateFormatter = dateFormatter
 		}
 	}
 }
@@ -23,6 +32,11 @@ public struct MultilineFormatter: StringLogRecordFormatted {
 	
 	public func format (logRecord: EnhancedLogRecord<String>) -> String {
 		var messageHeaderComponents = [String]()
+		
+		if let timestamp = logRecord.timestamp {
+			let formattedDate = configuration.dateFormatter.string(from: Date(timeIntervalSince1970: timestamp))
+			messageHeaderComponents.append(formattedDate)
+		}
 		
 		if let level = logRecord.level {
 			messageHeaderComponents.append(configuration.levelPadding

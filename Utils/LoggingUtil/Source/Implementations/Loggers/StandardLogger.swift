@@ -1,7 +1,7 @@
 public struct StandardLogger<LogHandlerType: LoggingUtil.LogHandler> {
-	public var logHandler: LogHandlerType
 	public var level: LoggingLevel
 	public var source: [String]
+	public var logHandler: LogHandlerType
 	
 	public init (
 		level: LoggingLevel = .info,
@@ -18,18 +18,16 @@ public struct StandardLogger<LogHandlerType: LoggingUtil.LogHandler> {
 
 extension StandardLogger: Logger {
 	public func log (level: LoggingLevel, message: LogHandlerType.Message, source: [String] = []) {
-		guard level >= level else { return }
-		
-		let timestamp = Date().timeIntervalSince1970
+		let metaInfo = MetaInfo(timestamp: Date().timeIntervalSince1970, level: level)
 		
 		let logRecord = LogRecord(
-			timestamp: timestamp,
+			timestamp: metaInfo.timestamp,
 			level: level,
 			message: message,
-			source: self.source + source
+			source: source
 		)
 		
-		log(metaInfo: .init(timestamp: timestamp, level: level), logRecord: logRecord)
+		log(metaInfo: metaInfo, logRecord: logRecord)
 	}
 	
 	public func trace (_ message: LogHandlerType.Message, source: [String] = []) {
@@ -69,6 +67,15 @@ extension StandardLogger: Logger {
 
 extension StandardLogger: LogHandler {
 	public func log (metaInfo: MetaInfo, logRecord: LogRecord<LogHandlerType.Message>) {
+		guard metaInfo.level >= level else { return }
+		
+		let logRecord = LogRecord(
+			timestamp: logRecord.timestamp,
+			level: logRecord.level,
+			message: logRecord.message,
+			source: source + (logRecord.source ?? [])
+		)
+		
 		logHandler.log(metaInfo: metaInfo, logRecord: logRecord)
 	}
 }
