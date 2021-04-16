@@ -179,18 +179,6 @@ extension StandardEnhancedLogger: EnhancedLogger {
 
 
 extension StandardEnhancedLogger: EnhancedLogHandler {
-	public func log (metaInfo: MetaInfo, logRecord: LogRecord<Message>) {
-		let metaInfo = EnhancedMetaInfo(timestamp: metaInfo.timestamp, level: metaInfo.level, labels: [])
-		
-		let logRecord = EnhancedLogRecord(
-			level: logRecord.level,
-			message: logRecord.message,
-			source: logRecord.source
-		)
-		
-		log(metaInfo: metaInfo, logRecord: logRecord)
-	}
-	
 	public func log (metaInfo: EnhancedMetaInfo, logRecord: EnhancedLogRecord<Message>) {
 		guard metaInfo.level >= loggerInfo.level else { return }
 		

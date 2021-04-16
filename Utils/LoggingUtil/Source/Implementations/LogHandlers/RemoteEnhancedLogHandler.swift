@@ -49,16 +49,6 @@ public class RemoteEnhancedLogHandler {
 
 
 extension RemoteEnhancedLogHandler: EnhancedLogHandler {
-	public func log (metaInfo: MetaInfo, logRecord: LogRecord<String>) {
-		let logRecord = EnhancedLogRecord(
-			level: logRecord.level,
-			message: logRecord.message,
-			source: logRecord.source
-		)
-		
-		log(metaInfo: .init(timestamp: metaInfo.timestamp, level: metaInfo.level, labels: []), logRecord: logRecord)
-	}
-	
 	public func log (metaInfo: EnhancedMetaInfo, logRecord: EnhancedLogRecord<String>) {
 		guard metaInfo.level >= loggerInfo.level else { return }
 				

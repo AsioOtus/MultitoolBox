@@ -11,6 +11,7 @@
 		3A04B22526278098006668EB /* EnhancedMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A04B22426278098006668EB /* EnhancedMetaInfo.swift */; };
 		3A04B228262780D4006668EB /* EnhancedMetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A04B22426278098006668EB /* EnhancedMetaInfo.swift */; };
 		3A04B230262780E9006668EB /* MetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A04B22F262780E9006668EB /* MetaInfo.swift */; };
+		3A04B23B26296725006668EB /* MultiplexLogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A04B23A26296725006668EB /* MultiplexLogHandler.swift */; };
 		3A0ADF7225CA91D1001EEC70 /* StandardEnhancedLogHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BD54125BC1E9600481A2B /* StandardEnhancedLogHandler.swift */; };
 		3A0ADF7325CA91D1001EEC70 /* StandardEnhancedLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BD53B25BC1E5000481A2B /* StandardEnhancedLogger.swift */; };
 		3A0ADF7425CA91D1001EEC70 /* LoggerFrameworkLoggindExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A59891125C48EC300373FFA /* LoggerFrameworkLoggindExporter.swift */; };
@@ -67,6 +68,7 @@
 		3A04B21C26277C87006668EB /* MultilineStringEnhancedLogRecordFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineStringEnhancedLogRecordFormatter.swift; sourceTree = "<group>"; };
 		3A04B22426278098006668EB /* EnhancedMetaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhancedMetaInfo.swift; sourceTree = "<group>"; };
 		3A04B22F262780E9006668EB /* MetaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfo.swift; sourceTree = "<group>"; };
+		3A04B23A26296725006668EB /* MultiplexLogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplexLogHandler.swift; sourceTree = "<group>"; };
 		3A24821E25BEF65F00D5CF41 /* LogHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogHandler.swift; sourceTree = "<group>"; };
 		3A24822625BEF6FC00D5CF41 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		3A282DAE25CA914800C24C14 /* LoggingUtil.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LoggingUtil.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				3AE5555E26277624006176BE /* StringEnhancedLogHandlers */,
+				3A04B23A26296725006668EB /* MultiplexLogHandler.swift */,
 				3A3BE7EA262640AF0039BA3F /* RemoteEnhancedLogHandler.swift */,
 			);
 			path = LogHandlers;
@@ -254,9 +257,9 @@
 		3AE0084125C8AC0700ED7A11 /* LogExporters */ = {
 			isa = PBXGroup;
 			children = (
-				3A59891425C48EF300373FFA /* StringLogExporter.swift */,
 				3A59891125C48EC300373FFA /* LoggerFrameworkLoggindExporter.swift */,
 				3A59891B25C4911A00373FFA /* OsLogLoggingExporter.swift */,
+				3A59891425C48EF300373FFA /* StringLogExporter.swift */,
 			);
 			path = LogExporters;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				3A0ADF7925CA91D1001EEC70 /* OsLogLoggingExporter.swift in Sources */,
 				3A04B22526278098006668EB /* EnhancedMetaInfo.swift in Sources */,
 				3A0ADF7625CA91D1001EEC70 /* LogHandler.swift in Sources */,
+				3A04B23B26296725006668EB /* MultiplexLogHandler.swift in Sources */,
 				3A04B230262780E9006668EB /* MetaInfo.swift in Sources */,
 				3AC021CA2626E566005B1235 /* SingleLineFormatter.swift in Sources */,
 				3AB19EDC260E91A10060D339 /* EnhancedLogger.swift in Sources */,
