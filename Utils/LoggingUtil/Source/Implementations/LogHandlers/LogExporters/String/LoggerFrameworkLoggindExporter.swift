@@ -10,17 +10,17 @@ public extension LoggerFrameworkLogExporter {
 }
 
 @available(iOS 14.0, macOS 11.0, *)
-public class LoggerFrameworkLogExporter: StringLogExporter {
+public class LoggerFrameworkLogExporter: LogExporter {
 	public var configuration: Config
 	
 	public init (_ configuration: Config = .default) {
 		self.configuration = configuration
 	}
 	
-	public func log (_ level: LoggingLevel, _ message: String, _: Void? = nil) {
-		let logger = configuration.logger
+	public func log (metaInfo: EnhancedMetaInfo, message: String, configuration: Void? = nil) {
+		let logger = self.configuration.logger
 		
-		switch level {
+		switch metaInfo.level {
 		case .trace:
 			logger.trace("\(message)")
 		case .debug:

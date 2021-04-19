@@ -2,11 +2,11 @@ import os.log
 import Foundation
 
 @available(iOS 12.0, *)
-public class OsLogLogExporter: StringLogExporter {
+public class OsLogLogExporter: LogExporter {	
 	public init () { }
 	
-	public func log (_ level: LoggingLevel, _ message: String, _: Void? = nil) {
-		let osLogType = logLevelToOsLogType(level)
+	public func log (metaInfo: EnhancedMetaInfo, message: String, configuration: Void? = nil) {
+		let osLogType = logLevelToOsLogType(metaInfo.level)
 		os_log(osLogType, "%@", message as NSString)
 	}
 	

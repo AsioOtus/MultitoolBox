@@ -1,11 +1,11 @@
 
 public extension MultilineFormatter {
 	struct Configuration {
-		public static let defaultDateFormatter: DateFormatter = {
+		public static var defaultDateFormatter: DateFormatter {
 			let formatter = DateFormatter()
 			formatter.dateStyle = .short
 			return formatter
-		}()
+		}
 		
 		public var levelPadding: Bool
 		public var componentsSeparator: String
@@ -23,14 +23,16 @@ public extension MultilineFormatter {
 	}
 }
 
-public struct MultilineFormatter: StringLogRecordFormatted {
+public struct MultilineFormatter <LogExporterType: LogExporter>: StringLogRecordAdapter where LogExporterType.Message == String {
+	public var logExporter: LogExporterType
 	public var configuration: Configuration
 	
-	public init (configuration: Configuration = .init()) {
+	public init (logExporter: LogExporterType, configuration: Configuration = .init()) {
+		self.logExporter = logExporter
 		self.configuration = configuration
 	}
 	
-	public func format (logRecord: EnhancedLogRecord<String>) -> String {
+	public func adapt (metaInfo: EnhancedMetaInfo, logRecord: EnhancedLogRecord<String>) {
 		var messageHeaderComponents = [String]()
 		
 		if let timestamp = logRecord.timestamp {
@@ -40,8 +42,8 @@ public struct MultilineFormatter: StringLogRecordFormatted {
 		
 		if let level = logRecord.level {
 			messageHeaderComponents.append(configuration.levelPadding
-										? level.logDescription.padding(toLength: LoggingLevel.critical.logDescription.count, withPad: " ", startingAt: 0)
-										: level.logDescription
+				? level.logDescription.padding(toLength: LoggingLevel.critical.logDescription.count, withPad: " ", startingAt: 0)
+				: level.logDescription
 			)
 		}
 		
@@ -72,7 +74,7 @@ public struct MultilineFormatter: StringLogRecordFormatted {
 		
 		let finalMessage = messageComponents.combine(with: "\n")
 		
-		return finalMessage
+		logExporter.log(metaInfo: metaInfo, message: finalMessage, configuration: nil)
 	}
 }
 

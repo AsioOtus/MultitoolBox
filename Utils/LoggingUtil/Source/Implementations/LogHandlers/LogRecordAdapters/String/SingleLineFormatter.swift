@@ -13,20 +13,22 @@ public extension SingleLineFormatter {
 	}
 }
 
-public struct SingleLineFormatter: StringLogRecordFormatted {
+public struct SingleLineFormatter <LogExporterType: LogExporter>: StringLogRecordAdapter where LogExporterType.Message == String {
+	public var logExporter: LogExporterType
 	public var configuration: Configuration
 	
-	public init (configuration: Configuration = .init()) {
+	public init (logExporter: LogExporterType, configuration: Configuration = .init()) {
+		self.logExporter = logExporter
 		self.configuration = configuration
 	}
 	
-	public func format (logRecord: EnhancedLogRecord<String>) -> String {
+	public func adapt (metaInfo: EnhancedMetaInfo, logRecord: EnhancedLogRecord<String>) {
 		var messageComponents = [String]()
 		
 		if let level = logRecord.level {
 			messageComponents.append(configuration.levelPadding
-										? level.logDescription.padding(toLength: LoggingLevel.critical.logDescription.count, withPad: " ", startingAt: 0)
-										: level.logDescription
+				? level.logDescription.padding(toLength: LoggingLevel.critical.logDescription.count, withPad: " ", startingAt: 0)
+				: level.logDescription
 			)
 		}
 		
@@ -50,7 +52,7 @@ public struct SingleLineFormatter: StringLogRecordFormatted {
 		
 		let finalMessage = messageComponents.combine(with: configuration.componentsSeparator)
 		
-		return finalMessage
+		logExporter.log(metaInfo: metaInfo, message: finalMessage, configuration: nil)
 	}
 }
 

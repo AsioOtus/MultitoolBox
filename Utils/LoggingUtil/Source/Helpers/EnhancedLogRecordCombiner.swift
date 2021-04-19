@@ -2,13 +2,9 @@ struct EnhancedLogRecordCombiner {
 	static let `default` = Self()
 	
 	func combine <Message> (_ logRecord: EnhancedLogRecord<Message>, _ loggerInfo: EnhancedLoggerInfo) -> EnhancedLogRecord<Message> {
-		let comment = logRecord.comment == nil
+		let comment = logRecord.comment == nil || logRecord.comment?.isEmpty == true
 			? nil
-			: (
-				logRecord.comment!.isEmpty == true
-					? nil
-					: logRecord.comment
-			)
+			: logRecord.comment
 		
 		let logRecord = EnhancedLogRecord(
 			timestamp: logRecord.timestamp,

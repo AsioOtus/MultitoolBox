@@ -1,16 +1,14 @@
-public class MultiplexLogHandler<InnerLogHandler: EnhancedLogHandler> {
-	public typealias Message = InnerLogHandler.Message
-	
-	public var logHandlers: [InnerLogHandler]
+public class MultiplexLogExportersLogHandler {
+	public var logRecordAdapters: [StringLogRecordAdapter]
 	public var loggerInfo: EnhancedLoggerInfo
 	public var enabling: EnhancedEnablingConfig
 	
 	public init (
-		logHandlers: [InnerLogHandler],
+		logRecordAdapters: [StringLogRecordAdapter],
 		loggerInfo: EnhancedLoggerInfo = .init(),
 		enabling: EnhancedEnablingConfig = .init()
 	) {
-		self.logHandlers = logHandlers
+		self.logRecordAdapters = logRecordAdapters
 		self.loggerInfo = loggerInfo
 		self.enabling = enabling
 	}
@@ -18,7 +16,9 @@ public class MultiplexLogHandler<InnerLogHandler: EnhancedLogHandler> {
 
 
 
-extension MultiplexLogHandler: EnhancedLogHandler {
+extension MultiplexLogExportersLogHandler: EnhancedLogHandler {
+	public typealias Message = String
+	
 	public func log (metaInfo: EnhancedMetaInfo, logRecord: EnhancedLogRecord<Message>) {
 		guard metaInfo.level >= loggerInfo.level else { return }
 		
@@ -26,8 +26,8 @@ extension MultiplexLogHandler: EnhancedLogHandler {
 		let logRecord = EnhancedLogRecordCombiner.default.combine(logRecord, loggerInfo)
 		let moderatedLogRecord = EnhancedModerator.default.moderate(logRecord: logRecord, enabling: enabling)
 		
-		for logHandler in logHandlers {
-			logHandler.log(metaInfo: metaInfo, logRecord: moderatedLogRecord)
+		for logAdapter in logRecordAdapters {
+			logAdapter.adapt(metaInfo: metaInfo, logRecord: moderatedLogRecord)
 		}
 	}
 }
