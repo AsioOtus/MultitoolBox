@@ -3,7 +3,7 @@ extension Validation {
 		case and([Self])
 		case or([Self])
 		case sequence([Self])
-		case failure(Failure)
+		case failure(Failure?)
 		case success
 		
 		var isValid: Bool {
@@ -28,25 +28,25 @@ extension Validation {
 }
 
 enum Validation<Value, Failure> {
-	case rule((Value) -> Bool, Failure)
+	case rule((Value) -> Bool, Failure? = nil)
 	
-	case or([Validation])
-	case and([Validation])
-	case sequence([Validation])
+	case or([Self])
+	case and([Self])
+	case sequence([Self])
 	
-	indirect case not(Validation, Failure)
-	indirect case `if`((Value) -> Bool, Validation)
+	indirect case not(Self, Failure? = nil)
+	indirect case `if`((Value) -> Bool, Self)
 	
 	case success
-	case failure(Failure)
+	case failure(Failure? = nil)
 	case empty
 	
 	func validate (_ value: Value) -> Result<Failure> {
 		let validationResult: Result<Failure>
 		
 		switch self {
-		case .rule(let rule, let localization):
-			validationResult = rule(value) ? .success : .failure(localization)
+		case .rule(let rule, let failure):
+			validationResult = rule(value) ? .success : .failure(failure)
 			
 			
 			

@@ -35,6 +35,7 @@
 		3A58BC45260CE1E400B6F073 /* DispatchSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAFB25AF33C6006E76AF /* DispatchSerial.swift */; };
 		3AB19F22260EA4FC0060D339 /* Derived.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1CB25C7688500C2411E /* Derived.swift */; };
 		3AB19F26260EA4FE0060D339 /* Derived.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7CF1CB25C7688500C2411E /* Derived.swift */; };
+		3ABB3C5C262DB29400C4F1F2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAE725AF0196006E76AF /* Validation.swift */; };
 		3AECB21525F1763100301A09 /* URLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21425F1763100301A09 /* URLResponseStringConverter.swift */; };
 		3AECB21825F1765900301A09 /* ShortURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21725F1765900301A09 /* ShortURLResponseStringConverter.swift */; };
 		3AECB21B25F176C100301A09 /* DefaultURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21A25F176C100301A09 /* DefaultURLResponseStringConverter.swift */; };
@@ -732,6 +733,7 @@
 			files = (
 				3AFA3123260CD8250068177C /* main.swift in Sources */,
 				3AFA312D260CD8370068177C /* DispatchSerial.swift in Sources */,
+				3ABB3C5C262DB29400C4F1F2 /* Validation.swift in Sources */,
 				1ED4C59A2613695B00CCE28D /* DispatchResetableFirst.swift in Sources */,
 				3AFA3129260CD8370068177C /* DispatchSingle.swift in Sources */,
 				3AFA312B260CD8370068177C /* DispatchWait.swift in Sources */,
