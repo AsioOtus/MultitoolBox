@@ -7,13 +7,6 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		3A396EB625BDA29100B110C7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A949BDC245467AE007E7928;
-			remoteInfo = "KeychainUtil-macOS";
-		};
 		3A396EB825BDA29100B110C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */;
@@ -21,40 +14,47 @@
 			remoteGlobalIDString = 3A211E51257E38060017229F;
 			remoteInfo = KeychainUtilTestground;
 		};
-		3A5BD56225BC334A00481A2B /* PBXContainerItemProxy */ = {
+		3AB7DF91264836AB00286E09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3AE8178025C31FFF00243202;
+			remoteInfo = BaseNetworkUtil;
+		};
+		3AB7DF93264836AB00286E09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3AE30F2F25C5FF58009B22FB;
+			remoteInfo = BaseNetworkUtilTestground;
+		};
+		3AB7DF97264836AB00286E09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A0ADFAB25CAA52A001EEC70;
+			remoteInfo = KeychainUtil;
+		};
+		3AB7DF9B264836AB00286E09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3A5BD53125BC1E4000481A2B;
-			remoteInfo = "LoggingUtil-macOS";
+			remoteGlobalIDString = 3A282DAE25CA914800C24C14;
+			remoteInfo = LoggingUtil;
 		};
-		3A81C33025627F590048D103 /* PBXContainerItemProxy */ = {
+		3AB7DF9D264836AB00286E09 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3AA7599B25CB267F0007F25D;
+			remoteInfo = LoggingUtilTests;
+		};
+		3AB7DFA0264836AB00286E09 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3A949BEA245467D1007E7928;
-			remoteInfo = "UserDefaultsUtil-macOS";
-		};
-		3A81C33225627F590048D103 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3AFBE50F2507D0A2000C089B;
-			remoteInfo = UserDefaultsUtil_macOSTests;
-		};
-		3AE8177425C31F7A00243202 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A0DB1BB25C3182600C5824B;
-			remoteInfo = "BaseNetworkUtil-macOS";
-		};
-		3AE8177625C31F7A00243202 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A0DB1C825C3183C00C5824B;
-			remoteInfo = "BaseNetworkUtil-iOS";
+			remoteGlobalIDString = 3A0ADFC325CAA588001EEC70;
+			remoteInfo = UserDefaultsUtil;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -62,6 +62,7 @@
 		3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainUtil.xcodeproj; path = KeychainUtil/KeychainUtil.xcodeproj; sourceTree = "<group>"; };
 		3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = LoggingUtil.xcodeproj; path = LoggingUtil/LoggingUtil.xcodeproj; sourceTree = "<group>"; };
 		3A79D0772508CFB5000E8137 /* UserDefaultsUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UserDefaultsUtil.xcodeproj; path = UserDefaultsUtil/UserDefaultsUtil.xcodeproj; sourceTree = "<group>"; };
+		3AB7DF8E264836AA00286E09 /* NetworkFlowUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = NetworkFlowUtil; sourceTree = "<group>"; };
 		3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BaseNetworkUtil.xcodeproj; path = BaseNetworkUtil/BaseNetworkUtil.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,8 +70,8 @@
 		3A396EB225BDA29100B110C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A396EB725BDA29100B110C7 /* KeychainUtil.framework */,
 				3A396EB925BDA29100B110C7 /* KeychainUtilTestground */,
+				3AB7DF98264836AB00286E09 /* KeychainUtil.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,7 +79,8 @@
 		3A5BD52525BC1E1500481A2B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A5BD56325BC334A00481A2B /* LoggingUtil_macOS.framework */,
+				3AB7DF9C264836AB00286E09 /* LoggingUtil.framework */,
+				3AB7DF9E264836AB00286E09 /* LoggingUtilTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,8 +88,7 @@
 		3A81C32B25627F590048D103 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A81C33125627F590048D103 /* UserDefaultsUtil_macOS.framework */,
-				3A81C33325627F590048D103 /* UserDefaultsUtil_macOSTests.xctest */,
+				3AB7DFA1264836AB00286E09 /* UserDefaultsUtil.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +96,7 @@
 		3A949AD024546211007E7928 = {
 			isa = PBXGroup;
 			children = (
+				3AB7DF8E264836AA00286E09 /* NetworkFlowUtil */,
 				3AE8176F25C31F7A00243202 /* BaseNetworkUtil.xcodeproj */,
 				3A396EB125BDA29100B110C7 /* KeychainUtil.xcodeproj */,
 				3A5BD52425BC1E1500481A2B /* LoggingUtil.xcodeproj */,
@@ -105,8 +107,8 @@
 		3AE8177025C31F7A00243202 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3AE8177525C31F7A00243202 /* BaseNetworkUtil_macOS.framework */,
-				3AE8177725C31F7A00243202 /* BaseNetworkUtil_iOS.framework */,
+				3AB7DF92264836AB00286E09 /* BaseNetworkUtil.framework */,
+				3AB7DF94264836AB00286E09 /* BaseNetworkUtilTestground */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,13 +156,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3A396EB725BDA29100B110C7 /* KeychainUtil.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = KeychainUtil.framework;
-			remoteRef = 3A396EB625BDA29100B110C7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		3A396EB925BDA29100B110C7 /* KeychainUtilTestground */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -168,39 +163,46 @@
 			remoteRef = 3A396EB825BDA29100B110C7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3A5BD56325BC334A00481A2B /* LoggingUtil_macOS.framework */ = {
+		3AB7DF92264836AB00286E09 /* BaseNetworkUtil.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = LoggingUtil_macOS.framework;
-			remoteRef = 3A5BD56225BC334A00481A2B /* PBXContainerItemProxy */;
+			path = BaseNetworkUtil.framework;
+			remoteRef = 3AB7DF91264836AB00286E09 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3A81C33125627F590048D103 /* UserDefaultsUtil_macOS.framework */ = {
+		3AB7DF94264836AB00286E09 /* BaseNetworkUtilTestground */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BaseNetworkUtilTestground;
+			remoteRef = 3AB7DF93264836AB00286E09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AB7DF98264836AB00286E09 /* KeychainUtil.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = UserDefaultsUtil_macOS.framework;
-			remoteRef = 3A81C33025627F590048D103 /* PBXContainerItemProxy */;
+			path = KeychainUtil.framework;
+			remoteRef = 3AB7DF97264836AB00286E09 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3A81C33325627F590048D103 /* UserDefaultsUtil_macOSTests.xctest */ = {
+		3AB7DF9C264836AB00286E09 /* LoggingUtil.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = LoggingUtil.framework;
+			remoteRef = 3AB7DF9B264836AB00286E09 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AB7DF9E264836AB00286E09 /* LoggingUtilTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = UserDefaultsUtil_macOSTests.xctest;
-			remoteRef = 3A81C33225627F590048D103 /* PBXContainerItemProxy */;
+			path = LoggingUtilTests.xctest;
+			remoteRef = 3AB7DF9D264836AB00286E09 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3AE8177525C31F7A00243202 /* BaseNetworkUtil_macOS.framework */ = {
+		3AB7DFA1264836AB00286E09 /* UserDefaultsUtil.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
-			path = BaseNetworkUtil_macOS.framework;
-			remoteRef = 3AE8177425C31F7A00243202 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3AE8177725C31F7A00243202 /* BaseNetworkUtil_iOS.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = BaseNetworkUtil_iOS.framework;
-			remoteRef = 3AE8177625C31F7A00243202 /* PBXContainerItemProxy */;
+			path = UserDefaultsUtil.framework;
+			remoteRef = 3AB7DFA0264836AB00286E09 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
