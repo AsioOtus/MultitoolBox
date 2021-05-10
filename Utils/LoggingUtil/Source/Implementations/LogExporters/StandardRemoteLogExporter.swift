@@ -5,19 +5,27 @@ extension StandardRemoteLogExporter {
 	}
 }
 
-public class StandardRemoteLogExporter<Message: Codable>: LogExporter {
+public class StandardRemoteLogExporter<Message: Codable>: EnhancedLogExporter {
+	public typealias Message = EnhancedLogRecord<Message>
+	public typealias Configuration = Void
+	
 	public var url: URL
 	public var urlSession: URLSession
+	public var isDisabled: Bool
 	
 	public init (
 		url: URL,
-		urlSession: URLSession = .shared
+		urlSession: URLSession = .shared,
+		isDisabled: Bool = false
 	) {
 		self.url = url
 		self.urlSession = urlSession
+		self.isDisabled = isDisabled
 	}
 	
 	public func log (metaInfo: EnhancedMetaInfo, message: EnhancedLogRecord<Message>, configuration: Void? = nil) {
+		guard !isDisabled else { return }
+		
 		do {
 			let transportModel = TransportModel(metaInfo: metaInfo, logRecord: message)
 			

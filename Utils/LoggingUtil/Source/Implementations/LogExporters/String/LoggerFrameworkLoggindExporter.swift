@@ -10,14 +10,21 @@ public extension LoggerFrameworkLogExporter {
 }
 
 @available(iOS 14.0, macOS 11.0, *)
-public class LoggerFrameworkLogExporter: LogExporter {
+public class LoggerFrameworkLogExporter: EnhancedLogExporter {
+	public typealias Message = String
+	public typealias Configuration = Void
+	
+	public var isDisabled: Bool
 	public var configuration: Config
 	
-	public init (_ configuration: Config = .default) {
+	public init (_ configuration: Config = .default, isDisabled: Bool = false) {
 		self.configuration = configuration
+		self.isDisabled = isDisabled
 	}
 	
 	public func log (metaInfo: EnhancedMetaInfo, message: String, configuration: Void? = nil) {
+		guard !isDisabled else { return }
+		
 		let logger = self.configuration.logger
 		
 		switch metaInfo.level {

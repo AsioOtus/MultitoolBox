@@ -1,5 +1,4 @@
-
-public extension MultilineFormatter {
+public extension MultilineStringLogExporterAdapter {
 	struct Configuration {
 		public static var defaultDateFormatter: DateFormatter {
 			let formatter = DateFormatter()
@@ -23,7 +22,7 @@ public extension MultilineFormatter {
 	}
 }
 
-public struct MultilineFormatter <LogExporterType: LogExporter>: StringLogRecordAdapter where LogExporterType.Message == String {
+public struct MultilineStringLogExporterAdapter <LogExporterType: EnhancedLogExporter>: StringEnhancedLogExporterAdapter where LogExporterType.Message == String {
 	public var logExporter: LogExporterType
 	public var configuration: Configuration
 	

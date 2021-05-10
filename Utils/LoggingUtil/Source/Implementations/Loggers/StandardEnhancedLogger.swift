@@ -28,38 +28,6 @@ extension StandardEnhancedLogger: EnhancedLogger {
 		log(metaInfo: metaInfo, logRecord: logRecord)
 	}
 	
-	public func trace (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .trace, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
-	}
-	
-	public func debug (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .debug, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
-	}
-	
-	public func info (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .info, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
-	}
-	
-	public func notice (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .notice, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
-	}
-	
-	public func warning (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .warning, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
-	}
-	
-	public func fault (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .fault, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
-	}
-	
-	public func error (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .error, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
-	}
-	
-	public func critical (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .critical, message: message, source: source, tags: [], details: [:], comment: "", file: "", function: "", line: 0)
-	}
-	
 	public func log (
 		level: LoggingLevel,
 		message: LogHandlerType.Message,

@@ -1,10 +1,10 @@
 public class MultiplexLogExportersLogHandler {
-	public var logRecordAdapters: [StringLogRecordAdapter]
+	public var logRecordAdapters: [StringEnhancedLogExporterAdapter]
 	public var loggerInfo: EnhancedLoggerInfo
 	public var enabling: EnhancedEnablingConfig
 	
 	public init (
-		logRecordAdapters: [StringLogRecordAdapter],
+		logRecordAdapters: [StringEnhancedLogExporterAdapter],
 		loggerInfo: EnhancedLoggerInfo = .init(),
 		enabling: EnhancedEnablingConfig = .init()
 	) {
@@ -24,7 +24,7 @@ extension MultiplexLogExportersLogHandler: EnhancedLogHandler {
 		
 		let metaInfo = EnhancedMetaInfo(timestamp: metaInfo.timestamp, level: metaInfo.level, labels: [loggerInfo.label] + metaInfo.labels)
 		let logRecord = EnhancedLogRecordCombiner.default.combine(logRecord, loggerInfo)
-		let moderatedLogRecord = EnhancedModerator.default.moderate(logRecord: logRecord, enabling: enabling)
+		let moderatedLogRecord = EnhancedLogRecordModerator.default.moderate(logRecord: logRecord, enabling: enabling)
 		
 		for logAdapter in logRecordAdapters {
 			logAdapter.adapt(metaInfo: metaInfo, logRecord: moderatedLogRecord)

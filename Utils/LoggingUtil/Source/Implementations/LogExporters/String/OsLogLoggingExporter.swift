@@ -2,10 +2,19 @@ import os.log
 import Foundation
 
 @available(iOS 12.0, *)
-public class OsLogLogExporter: LogExporter {	
-	public init () { }
+public class OsLogLogExporter: EnhancedLogExporter {
+	public typealias Message = String
+	public typealias Configuration = Void
+	
+	public var isDisabled: Bool
+	
+	public init (isDisabled: Bool = false) {
+		self.isDisabled = isDisabled
+	}
 	
 	public func log (metaInfo: EnhancedMetaInfo, message: String, configuration: Void? = nil) {
+		guard !isDisabled else { return }
+		
 		let osLogType = logLevelToOsLogType(metaInfo.level)
 		os_log(osLogType, "%@", message as NSString)
 	}

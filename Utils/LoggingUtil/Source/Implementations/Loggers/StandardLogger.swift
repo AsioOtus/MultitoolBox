@@ -4,7 +4,7 @@ public struct StandardLogger<LogHandlerType: LoggingUtil.LogHandler> {
 	public var logHandler: LogHandlerType
 	
 	public init (
-		level: LoggingLevel = .info,
+		level: LoggingLevel = .trace,
 		source: [String] = [],
 		logHandler: LogHandlerType
 	) {
@@ -35,31 +35,31 @@ extension StandardLogger: Logger {
 	}
 	
 	public func debug (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .trace, message: message, source: source)
+		log(level: .debug, message: message, source: source)
 	}
 	
 	public func info (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .trace, message: message, source: source)
+		log(level: .info, message: message, source: source)
 	}
 	
 	public func notice (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .trace, message: message, source: source)
+		log(level: .notice, message: message, source: source)
 	}
 	
 	public func warning (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .trace, message: message, source: source)
+		log(level: .warning, message: message, source: source)
 	}
 	
 	public func fault (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .trace, message: message, source: source)
+		log(level: .fault, message: message, source: source)
 	}
 	
 	public func error (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .trace, message: message, source: source)
+		log(level: .error, message: message, source: source)
 	}
 	
 	public func critical (_ message: LogHandlerType.Message, source: [String] = []) {
-		log(level: .trace, message: message, source: source)
+		log(level: .critical, message: message, source: source)
 	}
 }
 

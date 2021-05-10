@@ -1,4 +1,4 @@
-struct EnhancedModerator {
+struct EnhancedLogRecordModerator {
 	static let `default` = Self()
 	
 	func moderate <Message> (logRecord: EnhancedLogRecord<Message>, enabling: EnhancedEnablingConfig) -> EnhancedLogRecord<Message> {

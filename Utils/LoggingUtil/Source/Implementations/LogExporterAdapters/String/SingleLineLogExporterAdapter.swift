@@ -1,4 +1,4 @@
-public extension SingleLineFormatter {
+public extension SingleLineLogExporterAdapter {
 	struct Configuration {
 		public var levelPadding: Bool
 		public var componentsSeparator: String
@@ -13,7 +13,7 @@ public extension SingleLineFormatter {
 	}
 }
 
-public struct SingleLineFormatter <LogExporterType: LogExporter>: StringLogRecordAdapter where LogExporterType.Message == String {
+public struct SingleLineLogExporterAdapter <LogExporterType: EnhancedLogExporter>: StringEnhancedLogExporterAdapter where LogExporterType.Message == String {
 	public var logExporter: LogExporterType
 	public var configuration: Configuration
 	

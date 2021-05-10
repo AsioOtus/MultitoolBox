@@ -7,12 +7,12 @@ public struct EnhancedLoggerInfo {
 	public var label: String
 	
 	public init (
-		level: LoggingLevel = .info,
+		level: LoggingLevel = .trace,
 		source: [String] = [],
 		tags: Set<String> = [],
 		details: [String: String] = [:],
 		comment: String = "",
-		label: String = "\(#file) – \(#line)"
+		label: String = "\(#file):\(#line)"
 	) {
 		self.level = level
 		self.source = source
