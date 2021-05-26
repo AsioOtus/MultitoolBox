@@ -2,24 +2,24 @@ public class StandardLogHandler {
 	public typealias Message = String
 	public typealias Details = StandardLogRecordDetails
 	
-	public let label: String
 	public var isEnabled: Bool
 	public var level: LogLevel
-	public var logExporterAdapter: StringLogExporterAdapter
 	public var details: Details?
+	public var logExporterAdapter: StringLogExporterAdapter
+	public let label: String
 	
 	public init (
 		isEnabled: Bool = true,
-		level: LogLevel,
-		logExporterAdapter: StringLogExporterAdapter,
+		level: LogLevel = .trace,
 		details: Details? = nil,
+		logExporterAdapter: StringLogExporterAdapter,
 		label: String = "\(StandardLogHandler.self):\(#file):\(#line)"
 	) {
-		self.label = label
 		self.isEnabled = isEnabled
 		self.level = level
-		self.logExporterAdapter = logExporterAdapter
 		self.details = details
+		self.logExporterAdapter = logExporterAdapter
+		self.label = label
 	}
 }
 

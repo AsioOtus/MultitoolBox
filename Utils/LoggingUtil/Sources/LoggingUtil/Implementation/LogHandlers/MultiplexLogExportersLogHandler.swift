@@ -2,24 +2,24 @@ public class MultiplexLogExportersLogHandler {
 	public typealias Message = String
 	public typealias Details = StandardLogRecordDetails
 	
-	public let label: String
 	public var isEnabled: Bool
 	public var level: LogLevel
-	public var logExporterAdapters: [StringLogExporterAdapter]
 	public var details: Details?
+	public var logExporterAdapters: [StringLogExporterAdapter]
+	public let label: String
 	
 	public init (
 		isEnabled: Bool = true,
 		level: LogLevel,
-		logExporterAdapters: [StringLogExporterAdapter],
 		details: Details? = nil,
+		logExporterAdapters: [StringLogExporterAdapter],
 		label: String = "\(MultiplexLogExportersLogHandler.self):\(#file):\(#line)"
 	) {
-		self.label = label
 		self.isEnabled = isEnabled
 		self.level = level
-		self.logExporterAdapters = logExporterAdapters
 		self.details = details
+		self.logExporterAdapters = logExporterAdapters
+		self.label = label
 	}
 }
 
