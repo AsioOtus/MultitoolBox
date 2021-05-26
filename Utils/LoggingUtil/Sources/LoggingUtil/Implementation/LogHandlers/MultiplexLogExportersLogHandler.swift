@@ -13,7 +13,7 @@ public class MultiplexLogExportersLogHandler {
 		level: LogLevel,
 		logExporterAdapters: [StringLogExporterAdapter],
 		details: Details? = nil,
-		label: String = "\(StandardEnhancedLogHandler.self):\(#file):\(#line)"
+		label: String = "\(MultiplexLogExportersLogHandler.self):\(#file):\(#line)"
 	) {
 		self.label = label
 		self.isEnabled = isEnabled

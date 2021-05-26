@@ -1,4 +1,4 @@
-public class StandardEnhancedLogHandler {
+public class StandardLogHandler {
 	public typealias Message = String
 	public typealias Details = StandardLogRecordDetails
 	
@@ -13,7 +13,7 @@ public class StandardEnhancedLogHandler {
 		level: LogLevel,
 		logExporterAdapter: StringLogExporterAdapter,
 		details: Details? = nil,
-		label: String = "\(StandardEnhancedLogHandler.self):\(#file):\(#line)"
+		label: String = "\(StandardLogHandler.self):\(#file):\(#line)"
 	) {
 		self.label = label
 		self.isEnabled = isEnabled
@@ -25,7 +25,7 @@ public class StandardEnhancedLogHandler {
 
 
 
-extension StandardEnhancedLogHandler: LogHandler {
+extension StandardLogHandler: LogHandler {
 	public func log (logRecord: LogRecord<Message, Details>) {
 		guard isEnabled, logRecord.metaInfo.level >= level else { return }
 		
