@@ -1,8 +1,9 @@
 extension Validation {
 	enum Result<Failure> {
-		case and([Self])
 		case or([Self])
-		case sequence([Self])
+		case any([Self])
+		case and([Self])
+		case all([Self])
 		case failure(Failure?)
 		case success
 		
@@ -10,11 +11,13 @@ extension Validation {
 			let isValid: Bool
 			
 			switch self {
-			case .and(let validationResults):
-				isValid = validationResults.allSatisfy{ $0.isValid }
 			case .or(let validationResults):
 				isValid = validationResults.contains{ $0.isValid }
-			case .sequence(let validationResults):
+			case .any(let validationResults):
+				isValid = validationResults.contains{ $0.isValid }
+			case .and(let validationResults):
+				isValid = validationResults.allSatisfy{ $0.isValid }
+			case .all(let validationResults):
 				isValid = validationResults.allSatisfy{ $0.isValid }
 			case .failure:
 				isValid = false
@@ -24,74 +27,98 @@ extension Validation {
 			
 			return isValid
 		}
+		
+		var failures: Self {
+			let result: Self
+			
+			switch self {
+			case .or(let validationResults):
+				result = validationResults.contains{ $0.isValid }
+					? .success
+					: .or(validationResults.map{ $0.failures }.filter{ !$0.isValid })
+				
+			case .any(let validationResults):
+				result = validationResults.contains{ $0.isValid }
+					? .success
+					: .any(validationResults.map{ $0.failures }.filter{ !$0.isValid })
+				
+			case .and(let validationResults):
+				result = .and(validationResults.map{ $0.failures }.filter{ !$0.isValid })
+				
+			case .all(let validationResults):
+				let validationResult = validationResults.map{ $0.failures }.first{ !$0.isValid } ?? .success
+				result = .all([validationResult].filter{ !$0.isValid })
+				
+			case .failure(let failure):
+				result = .failure(failure)
+				
+			case .success:
+				result = .success
+			}
+			
+			return result
+		}
 	}
 }
 
 enum Validation<Value, Failure> {
 	case rule((Value) -> Bool, Failure? = nil)
+	case inner((Value) -> Result<Failure>)
 	
 	case or([Self])
+	case any([Self])
 	case and([Self])
-	case sequence([Self])
+	case all([Self])
 	
 	indirect case not(Self, Failure? = nil)
 	indirect case `if`((Value) -> Bool, Self)
 	
 	case success
 	case failure(Failure? = nil)
-	case empty
 	
 	func validate (_ value: Value) -> Result<Failure> {
 		let validationResult: Result<Failure>
 		
 		switch self {
-		case .rule(let rule, let failure):
-			validationResult = rule(value) ? .success : .failure(failure)
+		case .rule(let condition, let failure):
+			validationResult = condition(value) ? .success : .failure(failure)
+			
+		case .inner(let rule):
+			validationResult = rule(value)
 			
 			
 			
 		case .or(let validations):
-			var validationResults = [Result<Failure>]()
+			var validationResults = [Validation<Value, Failure>.Result<Failure>]()
 			
 			for validation in validations {
 				let validationResult = validation.validate(value)
-				
-				if validationResult.isValid {
-					validationResults = []
-					break
-				}
-				
 				validationResults.append(validationResult)
+				
+				guard !validationResult.isValid else { break }
 			}
 			
-			validationResult = validationResults.isEmpty ? .success : .or(validationResults)
+			validationResult = .or(validationResults)
+			
+		case .any(let validations):
+			let validationResults = validations.map{ $0.validate(value) }
+			validationResult = .any(validationResults)
 			
 		case .and(let validations):
-			var validationResults = [Result<Failure>]()
+			var validationResults = [Validation<Value, Failure>.Result<Failure>]()
 			
 			for validation in validations {
 				let validationResult = validation.validate(value)
+				validationResults.append(validationResult)
 				
-				if !validationResult.isValid {
-					validationResults.append(validationResult)
-				}
+				guard validationResult.isValid else { break }
 			}
 			
-			validationResult = validationResults.isEmpty ? .success : .and(validationResults)
+			validationResult = .and(validationResults)
 			
-		case .sequence(let validations):
-			var validationResults = [Result<Failure>]()
-			
-			for validation in validations {
-				let validationResult = validation.validate(value)
-				
-				if !validationResult.isValid {
-					validationResults.append(validationResult)
-					break
-				}
-			}
-			
-			validationResult = validationResults.isEmpty ? .success : .sequence(validationResults)
+		case .all(let validations):
+			let validationResults = validations.map{ $0.validate(value) }
+			validationResult = .all(validationResults)
 			
 			
 			
@@ -108,14 +135,13 @@ enum Validation<Value, Failure> {
 			
 		case .failure(let failure):
 			validationResult = .failure(failure)
-			
-		case .empty:
-			validationResult = .success
 		}
 		
 		return validationResult
 	}
 }
+
+
 
 
 
@@ -137,7 +163,7 @@ let passwordValidation: Validation<String, String> =
 	.and([
 		.isLongerOrEqualThan(8, ""),
 		.if({ _ in true },
-			.sequence([
+			.and([
 				.failure("")
 			])
 		),
@@ -161,5 +187,6 @@ let a: Validation<String, String> =
 		.or([
 			.success,
 			.failure("")
-		])
+		]),
+		.inner{ Validation<String, String>.isNotEmpty("").validate($0) }
 	])

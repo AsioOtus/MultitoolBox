@@ -1,0 +1,1 @@
+protocol Error: Swift.Error { }

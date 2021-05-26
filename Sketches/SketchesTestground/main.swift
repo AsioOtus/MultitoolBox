@@ -1,55 +1,23 @@
-import Foundation
-
-
-
-
-
-
-
-
-
-func json (_ data: Data) -> String? {
-	let jsonSerializationOptions: JSONSerialization.WritingOptions
-		
-	if #available(iOS 13.0, *) {
-		jsonSerializationOptions = [.prettyPrinted, .withoutEscapingSlashes]
-	} else {
-		jsonSerializationOptions = [.prettyPrinted, .fragmentsAllowed]
-	}
+func compare (_ cardA: Durak.Card, _ cardB: Durak.Card, trumpSuit: PlainCard.Suit) {
+	print(cardA)
+	print(cardB)
+	print(trumpSuit)
 	
-	guard let object = try? JSONSerialization.jsonObject(with: data, options: []),
-		  let data = try? JSONSerialization.data(withJSONObject: object, options: jsonSerializationOptions),
-		  let prettyPrintedString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { return nil }
+	let comparator = Durak.Comparator()
+	let comparisonResult = comparator.compare(cardA, cardB, trumpSuit: trumpSuit)
 	
-	return prettyPrintedString as String
+	
+	
+	print(comparisonResult)
+	print()
 }
 
-
-
-struct Test: Codable {
-	let a: Int
-	let b: String
+for _ in 0..<10 {
+	let cardA = Durak.Card.random
+	let cardB = Durak.Card.random
+	let trumpSuit = PlainCard.Suit.random
+	
+	compare(cardA, cardB, trumpSuit:  trumpSuit)
 }
 
-let t = Test(a: 10, b: "qwe")
-
-let aaaa = try JSONEncoder().encode(t)
-
-
-print(t)
-print(aaaa.base64EncodedString())
-print(String(data: aaaa, encoding: .utf8)!)
-print(json(aaaa)!)
-
-print(["A": "B", "C": "D"])
-
-
-var urlRequest = URLRequest(url: URL(string: "https://rus.delfi.com/article/100?lang=ru")!)
-urlRequest.httpMethod = "POST"
-urlRequest.addValue("Connection", forHTTPHeaderField: "keep-alive")
-urlRequest.httpBody = aaaa
-
-let rtr = DefaultURLRequestConverter().convert(urlRequest)
-
-print(rtr)
-print(urlRequest.description)
+compare(PlainCard(suit: .hearts, rank: .four).durakCard, .random, trumpSuit: .random)
