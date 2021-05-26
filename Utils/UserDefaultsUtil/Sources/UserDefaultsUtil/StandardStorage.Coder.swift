@@ -29,7 +29,7 @@ extension StandardStorage {
 
 
 extension StandardStorage.Coder {
-	public enum Error: UDUtil.Error {
+	public enum Error: UserDefaultsUtil.Error {
 		case jsonDataDecodingFailed(String)
 		case jsonStringEncodingFailed(String)
 		
