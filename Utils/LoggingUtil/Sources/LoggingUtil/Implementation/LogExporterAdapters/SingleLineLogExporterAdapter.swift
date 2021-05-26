@@ -23,7 +23,7 @@ public struct SingleLineLogExporterAdapter <LogExporterType: LogExporter>: Strin
 	public var logExporter: LogExporterType
 	public var configuration: Configuration
 	
-	public init (logExporter: LogExporterType, configuration: Configuration = .init()) {
+	public init (_ logExporter: LogExporterType, configuration: Configuration = .init()) {
 		self.logExporter = logExporter
 		self.configuration = configuration
 	}

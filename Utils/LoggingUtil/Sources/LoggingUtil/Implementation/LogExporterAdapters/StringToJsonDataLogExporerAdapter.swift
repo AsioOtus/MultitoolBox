@@ -2,7 +2,12 @@ import Foundation
 
 struct StringToJsonDataLogExporerAdapter  <LogExporterType: LogExporter>: StringLogExporterAdapter where LogExporterType.Message == Data {
 	public var logExporter: LogExporterType
-	public var jsonEncoder = JSONEncoder()
+	public var jsonEncoder: JSONEncoder
+	
+	public init (_ logExporter: LogExporterType, jsonEncoder: JSONEncoder = JSONEncoder()) {
+		self.logExporter = logExporter
+		self.jsonEncoder = jsonEncoder
+	}
 	
 	func adapt (logRecord: LogRecord<String, StandardLogRecordDetails>) {
 		do {
