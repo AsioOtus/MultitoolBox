@@ -14,6 +14,9 @@ let package = Package(
         .library(
             name: "BaseNetworkUtil",
             targets: ["BaseNetworkUtil"]),
+		.library(
+			name: "BaseNetworkUtil2",
+			targets: ["BaseNetworkUtil"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
