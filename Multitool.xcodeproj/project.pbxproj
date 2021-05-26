@@ -71,6 +71,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A1B846425C013DA0042A2DC /* Package-t.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Package-t.swift"; sourceTree = "<group>"; };
 		3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExtensions.xcodeproj; path = UIKitExtensions/UIKitExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A396EA025BDA25900B110C7 /* Utils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Utils.xcodeproj; path = Utils/Utils.xcodeproj; sourceTree = "<group>"; };
 		3A949AB9245461CA007E7928 /* Base.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Base.xcodeproj; path = Base/Base.xcodeproj; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		3A949A5F24545EF0007E7928 = {
 			isa = PBXGroup;
 			children = (
+				3A1B846425C013DA0042A2DC /* Package-t.swift */,
 				3A949AB9245461CA007E7928 /* Base.xcodeproj */,
 				3A949ACD245461E5007E7928 /* Errors.xcodeproj */,
 				3A396EA025BDA25900B110C7 /* Utils.xcodeproj */,
