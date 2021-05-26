@@ -31,7 +31,7 @@ let package = Package(
 		.target(
 			name: "BaseNetworkUtil",
 			dependencies: [],
-			path: "Utils/BaseNetworkUtil/Source"
+			path: "Utils/BaseNetworkUtil/Sources"
 		),
 		.target(
 			name: "KeychainUtil",
@@ -41,12 +41,12 @@ let package = Package(
 		.target(
 			name: "LoggingUtil",
 			dependencies: [],
-			path: "Utils/LoggingUtil/Source"
+			path: "Utils/LoggingUtil/Sources"
 		),
 		.target(
 			name: "UserDefaultsUtil",
 			dependencies: [],
-			path: "Utils/UserDefaultsUtil/Source"
+			path: "Utils/UserDefaultsUtil/Sources"
 		),
 		.target(
 			name: "UIKitExtensions",
