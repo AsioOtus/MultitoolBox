@@ -25,7 +25,7 @@ public struct LogRecord<Value: Codable> {
 	let info: Info
 	let details: Details
 	
-	func converted (_ converter: LogRecordStringConverter = SingleLineLogRecordStringConverter()) -> String {
+	public func converted (_ converter: LogRecordStringConverter = SingleLineLogRecordStringConverter()) -> String {
 		converter.convert(self)
 	}
 }

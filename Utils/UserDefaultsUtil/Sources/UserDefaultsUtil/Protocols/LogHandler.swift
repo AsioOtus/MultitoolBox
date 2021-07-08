@@ -1,3 +1,3 @@
 public protocol LogHandler {
-	func log <Value> (_: LogRecord<Value>)
+	func log <Value> (_ logRecord: LogRecord<Value>)
 }
