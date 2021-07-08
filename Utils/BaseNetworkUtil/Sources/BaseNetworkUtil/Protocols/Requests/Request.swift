@@ -11,4 +11,6 @@ public protocol Request: CustomStringConvertible {
 
 public extension Request {
 	var urlSession: URLSession { .shared }
+	
+	var description: String { urlRequest.description }
 }

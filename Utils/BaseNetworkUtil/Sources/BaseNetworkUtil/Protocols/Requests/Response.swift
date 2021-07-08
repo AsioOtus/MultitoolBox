@@ -8,3 +8,9 @@ public protocol Response: CustomStringConvertible {
 	
 	init (_ urlResponse: URLResponse, _ data: Data) throws
 }
+
+
+
+extension Response {
+	var description: String { urlResponse.description }
+}
