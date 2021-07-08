@@ -7,20 +7,7 @@ open class DefaultableItem <Value: Codable>: Item<Value> {
 	
 	public init (
 		_ key: String,
-		defaultValue: Value,
-		storage: Storage = StandardStorage.default,
-		logHandler: LogHandler? = nil,
-		queue: DispatchQueue? = nil,
-		label: String = "\(DefaultableItem.self) – \(#file):\(#line)"
-	) {
-		self.defaultValue = { defaultValue }
-		
-		super.init(key, storage: storage, logHandler: logHandler, queue: queue, label: label)
-	}
-	
-	public init (
-		_ key: String,
-		defaultValue: @escaping () -> Value,
+		defaultValue: @autoclosure @escaping () -> Value,
 		storage: Storage = StandardStorage.default,
 		logHandler: LogHandler? = nil,
 		queue: DispatchQueue? = nil,
