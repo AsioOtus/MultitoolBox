@@ -6,6 +6,6 @@ public struct ColumnConsoleArrayStringConverter: ArrayStringConverter {
 	public func convert <T> (_ array: Array<T>) -> String {
 		
 		let valueMaxLength = array.map{ String(describing: $0).count }.max()
-		array.map{ String(describing: $0) }.joined(separator: "\n")
+		return array.map{ String(describing: $0) }.joined(separator: "\n")
 	}
 }
