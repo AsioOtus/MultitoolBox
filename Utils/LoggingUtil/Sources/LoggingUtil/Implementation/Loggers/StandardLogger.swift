@@ -28,7 +28,7 @@ public struct StandardLogger <LogHandlerType: LogHandler> {
 
 
 extension StandardLogger: Logger {
-	public func log (level: LogLevel, message: Message, details: Details?) {
+	public func log (level: LogLevel, message: Message, details: Details? = nil) {
 		let metaInfo = MetaInfo(timestamp: Date().timeIntervalSince1970, level: level, labels: [])
 		let logRecord = LogRecord(metaInfo: metaInfo, message: message, details: details)
 		
