@@ -11,6 +11,6 @@ public protocol Response: CustomStringConvertible {
 
 
 
-extension Response {
+public extension Response {
 	var description: String { urlResponse.description }
 }
