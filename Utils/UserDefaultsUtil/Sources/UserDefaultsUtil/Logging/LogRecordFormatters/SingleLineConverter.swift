@@ -1,4 +1,6 @@
 public struct SingleLineLogRecordStringConverter: LogRecordStringConverter {
+	public init () { }
+	
 	public func convert <Value> (_ record: LogRecord<Value>) -> String {
 		var messageComponents = [String]()
 		
