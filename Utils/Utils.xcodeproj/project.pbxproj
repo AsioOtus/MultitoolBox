@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		3A02F77C265EEDE8007432F9 /* KeychainUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainUtil.xcodeproj; path = KeychainUtil/KeychainUtil.xcodeproj; sourceTree = "<group>"; };
-		3A02F7FA265EEE64007432F9 /* BaseNetworkUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BaseNetworkUtil; sourceTree = "<group>"; };
-		3A02F7FB265EEE86007432F9 /* LoggingUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LoggingUtil; sourceTree = "<group>"; };
-		3A02F7FC265EEE86007432F9 /* UserDefaultsUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UserDefaultsUtil; sourceTree = "<group>"; };
+		3A0435D42695E67400F440B7 /* LoggingUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LoggingUtil; sourceTree = "<group>"; };
+		3A0435D52695E67400F440B7 /* BaseNetworkUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BaseNetworkUtil; sourceTree = "<group>"; };
+		3A0435D62695E67400F440B7 /* UserDefaultsUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UserDefaultsUtil; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -43,9 +43,9 @@
 		3A949AD024546211007E7928 = {
 			isa = PBXGroup;
 			children = (
-				3A02F7FA265EEE64007432F9 /* BaseNetworkUtil */,
-				3A02F7FB265EEE86007432F9 /* LoggingUtil */,
-				3A02F7FC265EEE86007432F9 /* UserDefaultsUtil */,
+				3A0435D52695E67400F440B7 /* BaseNetworkUtil */,
+				3A0435D42695E67400F440B7 /* LoggingUtil */,
+				3A0435D62695E67400F440B7 /* UserDefaultsUtil */,
 				3A02F77C265EEDE8007432F9 /* KeychainUtil.xcodeproj */,
 			);
 			sourceTree = "<group>";
