@@ -1,7 +1,7 @@
 extension LogRecord {
 	public struct Info {
 		let key: String
-		let itemLabel: String
+		let itemLabel: String?
 		let storageLabel: String
 		let storageKeyPrefix: String?
 	}

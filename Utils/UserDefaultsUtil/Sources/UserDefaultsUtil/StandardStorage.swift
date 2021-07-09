@@ -8,17 +8,20 @@ public class StandardStorage: Storage {
 	public let keyPrefix: String?
 	public let userDefaults: UserDefaults
 	public let logHandler: LogHandler?
+	public let enableStorageLogging: Bool
 	public let label: String
 	
 	public init (
 		keyPrefix: String?,
 		userDefaults: UserDefaults = .standard,
 		logHandler: LogHandler? = nil,
+		enableStorageLogging: Bool = false,
 		label: String = "\(Storage.self) – \(#file):\(#line)"
 	) {
 		self.keyPrefix = keyPrefix
 		self.userDefaults = userDefaults
 		self.logHandler = logHandler
+		self.enableStorageLogging = enableStorageLogging
 		self.label = label
 	}
 	
@@ -30,29 +33,74 @@ public class StandardStorage: Storage {
 extension StandardStorage {
 	@discardableResult
 	public func save <Value: Codable> (_ key: String, _ value: Value) throws -> Value? {
-		let prefixedKey = prefixKey(key)
+		var details = LogRecord<Value>.Details(operation: "save")
+		details.newValue = value
+		defer {
+			if enableStorageLogging {
+				logHandler?.log(LogRecord<Value>(info: .init(key: key, itemLabel: nil, storageLabel: label, storageKeyPrefix: keyPrefix), details: details))
+			}
+		}
 		
-		let oldValue = try? load(key, Value.self)
-		let valueJsonString = try Coder.encode(value)
-		userDefaults.set(valueJsonString, forKey: prefixedKey)
-		
-		return oldValue
+		do {
+			let prefixedKey = prefixKey(key)
+			
+			let oldValue = try? load(key, Value.self)
+			
+			details.oldValue = oldValue
+			details.existance = oldValue != nil
+			
+			let valueJsonString = try Coder.encode(value)
+			userDefaults.set(valueJsonString, forKey: prefixedKey)
+			
+			return oldValue
+		} catch {
+			details.error = StandardStorage.Error(.unexpectedError(error))
+			
+			throw error
+		}
 	}
 	
 	public func load <Value: Codable> (_ key: String, _ type: Value.Type) throws -> Value? {
-		let prefixedKey = prefixKey(key)
+		var details = LogRecord<Value>.Details(operation: "load")
+		defer {
+			if enableStorageLogging {
+				logHandler?.log(LogRecord<Value>(info: .init(key: key, itemLabel: nil, storageLabel: label, storageKeyPrefix: keyPrefix), details: details))
+			}
+		}
 		
-		guard let valueJsonString = userDefaults.string(forKey: prefixedKey) else { return nil }
-		let value = try Coder.decode(valueJsonString, type)
-		
-		return value
+		do {
+			let prefixedKey = prefixKey(key)
+			
+			guard let valueJsonString = userDefaults.string(forKey: prefixedKey) else { return nil }
+			let value = try Coder.decode(valueJsonString, type)
+			
+			details.oldValue = value
+			details.existance = true
+			
+			return value
+		} catch {
+			details.existance = false
+			details.error = StandardStorage.Error(.unexpectedError(error))
+			
+			throw error
+		}
 	}
 	
 	public func delete <Value: Codable> (_ key: String, _ type: Value.Type) -> Value? {
+		var details = LogRecord<Value>.Details(operation: "delete")
+		defer {
+			if enableStorageLogging {
+				logHandler?.log(LogRecord<Value>(info: .init(key: key, itemLabel: nil, storageLabel: label, storageKeyPrefix: keyPrefix), details: details))
+			}
+		}
+		
 		let prefixedKey = prefixKey(key)
 		
 		let oldValue = try? load(key, type)
 		userDefaults.removeObject(forKey: prefixedKey)
+		
+		details.oldValue = oldValue
+		details.existance = oldValue != nil
 		
 		return oldValue
 	}
