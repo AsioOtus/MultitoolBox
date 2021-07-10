@@ -37,9 +37,7 @@ public struct DefaultURLRequestStringConverter: URLRequestStringConverter {
 		components.append("")
 		
 		if let body = urlRequest.httpBody {
-			let bodyString = dataStringConverter.convert(body)
-			
-			if !bodyString.isEmpty {
+			if let bodyString = dataStringConverter.convert(body), !bodyString.isEmpty {
 				components.append(bodyString)
 			} else {
 				components.append("[Body representation is empty]")
