@@ -4,7 +4,9 @@ extension Controller {
 	public struct Logger: ControllerWatcher {
 		public var logHandler: ControllerLogHandler
 		
-		public init () { }
+		public init (logHandler: ControllerLogHandler) {
+			self.logHandler = logHandler
+		}
 		
 		public func onUrlRequest (_ urlSession: URLSession, _ urlRequest: URLRequest, _ requestInfo: Controller.RequestInfo) {
 			logHandler.log(.init(requestInfo: requestInfo, category: .request(urlSession, urlRequest)))
