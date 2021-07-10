@@ -1,8 +1,12 @@
 public struct StandardRequestInfoStringConverter: RequestInfoStringConverter {
-	public init () { }
+	public let componentSeparator: String
+	
+	public init (componentSeparator: String = "\n") {
+		self.componentSeparator = componentSeparator
+	}
 	
 	public func convert (_ requestInfo: NetworkController.RequestInfo) -> String {
-		let message = "\(requestInfo.controllerLabel) – \(requestInfo.source.combine(with: "."))\nREQUEST UUID – \(requestInfo.requestUuid.uuidString)"
+		let message = "\(requestInfo.controllerLabel)\(componentSeparator)\(requestInfo.source.combine(with: "."))\(componentSeparator)REQUEST UUID – \(requestInfo.requestUuid.uuidString)"
 		return message
 	}
 }

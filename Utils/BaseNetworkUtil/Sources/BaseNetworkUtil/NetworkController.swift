@@ -14,7 +14,7 @@ public struct NetworkController: NetworkControllerProtocol {
 		source: [String] = [],
 		label: String = "\(Info.moduleName).\(NetworkController.self) – \(#file):\(#line) – \(UUID().uuidString)"
 	) {
-		self.source = source + [Info.moduleName, "Controller"]
+		self.source = source + [Info.moduleName, String(describing: NetworkController.self)]
 		self.delegate = delegate
 		self.watchers = watchers
 		self.label = label
