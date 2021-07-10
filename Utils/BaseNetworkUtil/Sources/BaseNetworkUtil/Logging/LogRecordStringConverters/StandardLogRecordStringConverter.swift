@@ -22,7 +22,7 @@ public struct StandardLogRecordStringConverter: LogRecordStringConverter {
 		let requestInfoMessage = requestInfoConverter(record.requestInfo)
 		let categoryMessage = convert(record.category)
 		
-		let messsage = "\(requestInfoMessage)\n\(categoryMessage)"
+		let messsage = "\(requestInfoMessage)\n\(categoryMessage)\n"
 		return messsage
 	}
 	
