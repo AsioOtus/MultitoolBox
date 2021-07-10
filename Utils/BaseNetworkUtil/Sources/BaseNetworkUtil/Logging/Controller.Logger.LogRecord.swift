@@ -18,3 +18,10 @@ extension Controller.Logger {
 		public let category: Category
 	}
 }
+
+
+public extension Controller.Logger.LogRecord {
+	func convert (_ converter: LogRecordStringConverter) -> String {
+		converter.convert(self)
+	}
+}

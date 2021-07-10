@@ -2,16 +2,17 @@ import Foundation
 import Combine
 
 public struct Controller: ControllerProtocol {
-	public let source = ["NetworkFlowUtil", "Controller"]
+	public let source: [String]
 	public let label: String
 	
 	public var delegate: ControllerDelegate?
 	public var watchers: [ControllerWatcher]
 	
-	public init (delegate: ControllerDelegate? = nil, watchers: [ControllerWatcher] = [], file: String = #file, line: Int = #line) {
+	public init (delegate: ControllerDelegate? = nil, watchers: [ControllerWatcher] = [], source: [String] = [], file: String = #file, line: Int = #line) {
+		self.source = source + ["NetworkFlowUtil", "Controller"]
 		self.delegate = delegate
 		self.watchers = watchers
-		self.label = "\(file):\(line)"
+		self.label = "\(Controller.self) – \(file):\(line)"
 	}
 	
 	public func send <RequestDelegateType: RequestDelegate> (_ requestDelegate: RequestDelegateType) -> AnyPublisher<RequestDelegateType.ContentType, Controller.Error> {
