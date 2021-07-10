@@ -7,22 +7,22 @@ public protocol RequestDelegate {
 	associatedtype ResponseType: Response
 	associatedtype ContentType
 	
-	func request (_ requestInfo: Controller.RequestInfo) throws -> RequestType
+	func request (_ requestInfo: NetworkController.RequestInfo) throws -> RequestType
 	
-	func urlSession (_ request: RequestType, _ requestInfo: Controller.RequestInfo) throws -> URLSession
-	func urlRequest (_ request: RequestType, _ requestInfo: Controller.RequestInfo) throws -> URLRequest
+	func urlSession (_ request: RequestType, _ requestInfo: NetworkController.RequestInfo) throws -> URLSession
+	func urlRequest (_ request: RequestType, _ requestInfo: NetworkController.RequestInfo) throws -> URLRequest
 	
-	func response (_ data: Data, _ urlResponse: URLResponse, _ requestInfo: Controller.RequestInfo) throws -> ResponseType
-	func content (_ response: ResponseType, _ requestInfo: Controller.RequestInfo) throws -> ContentType
+	func response (_ data: Data, _ urlResponse: URLResponse, _ requestInfo: NetworkController.RequestInfo) throws -> ResponseType
+	func content (_ response: ResponseType, _ requestInfo: NetworkController.RequestInfo) throws -> ContentType
 	
-	func error (_ error: Controller.Error, _ requestInfo: Controller.RequestInfo)
+	func error (_ error: NetworkController.Error, _ requestInfo: NetworkController.RequestInfo)
 }
 
 
 
 public extension RequestDelegate {
-	func urlSession (_ request: RequestType, _ requestInfo: Controller.RequestInfo) -> URLSession { request.urlSession }
-	func urlRequest (_ request: RequestType, _ requestInfo: Controller.RequestInfo) -> URLRequest { request.urlRequest }
-	func response (_ data: Data, _ urlResponse: URLResponse, _ requestInfo: Controller.RequestInfo) throws -> ResponseType { try ResponseType(urlResponse, data) }
-	func error (_ error: Controller.Error, _ requestInfo: Controller.RequestInfo) { }
+	func urlSession (_ request: RequestType, _ requestInfo: NetworkController.RequestInfo) -> URLSession { request.urlSession }
+	func urlRequest (_ request: RequestType, _ requestInfo: NetworkController.RequestInfo) -> URLRequest { request.urlRequest }
+	func response (_ data: Data, _ urlResponse: URLResponse, _ requestInfo: NetworkController.RequestInfo) throws -> ResponseType { try ResponseType(urlResponse, data) }
+	func error (_ error: NetworkController.Error, _ requestInfo: NetworkController.RequestInfo) { }
 }

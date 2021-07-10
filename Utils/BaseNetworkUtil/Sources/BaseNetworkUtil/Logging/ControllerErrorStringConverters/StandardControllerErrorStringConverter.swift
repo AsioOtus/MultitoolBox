@@ -12,7 +12,7 @@ public struct StandardControllerErrorStringConverter: ControllerErrorStringConve
 		self.urlErrorConverter = urlErrorConverter
 	}
 	
-	public func convert (_ error: Controller.Error) -> String {
+	public func convert (_ error: NetworkController.Error) -> String {
 		let message: String
 		
 		switch error {

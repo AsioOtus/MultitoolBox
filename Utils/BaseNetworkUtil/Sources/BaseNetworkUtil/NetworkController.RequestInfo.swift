@@ -1,6 +1,6 @@
 import Foundation
 
-extension Controller {
+extension NetworkController {
 	public struct RequestInfo {
 		public let source: [String]
 		public let controllerLabel: String

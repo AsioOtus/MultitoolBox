@@ -1,7 +1,7 @@
 public struct StandardRequestInfoStringConverter: RequestInfoStringConverter {
 	public init () { }
 	
-	public func convert (_ requestInfo: Controller.RequestInfo) -> String {
+	public func convert (_ requestInfo: NetworkController.RequestInfo) -> String {
 		let message = "\(requestInfo.controllerLabel) – \(requestInfo.source.combine(with: "."))\nREQUEST UUID – \(requestInfo.requestUuid.uuidString)"
 		return message
 	}

@@ -1,30 +1,30 @@
 import Foundation
 import Combine
 
-public struct Controller: ControllerProtocol {
+public struct NetworkController: NetworkControllerProtocol {
 	public let source: [String]
 	public let label: String
 	
-	public var delegate: ControllerDelegate?
-	public var watchers: [ControllerWatcher]
+	public var delegate: NetworkControllerDelegate?
+	public var watchers: [NetworkControllerWatcher]
 	
 	public init (
-		delegate: ControllerDelegate? = nil,
-		watchers: [ControllerWatcher] = [],
+		delegate: NetworkControllerDelegate? = nil,
+		watchers: [NetworkControllerWatcher] = [],
 		source: [String] = [],
-		label: String = "\(Info.moduleName).\(Controller.self) – \(#file):\(#line) – \(UUID().uuidString)"
+		label: String = "\(Info.moduleName).\(NetworkController.self) – \(#file):\(#line) – \(UUID().uuidString)"
 	) {
-		self.source = source + ["NetworkFlowUtil", "Controller"]
+		self.source = source + [Info.moduleName, "Controller"]
 		self.delegate = delegate
 		self.watchers = watchers
 		self.label = label
 	}
 	
-	public func send <RequestDelegateType: RequestDelegate> (_ requestDelegate: RequestDelegateType) -> AnyPublisher<RequestDelegateType.ContentType, Controller.Error> {
+	public func send <RequestDelegateType: RequestDelegate> (_ requestDelegate: RequestDelegateType) -> AnyPublisher<RequestDelegateType.ContentType, NetworkController.Error> {
 		_send(requestDelegate)
 	}
 	
-	func _send <RequestDelegateType: RequestDelegate> (_ requestDelegate: RequestDelegateType, source: [String] = []) -> AnyPublisher<RequestDelegateType.ContentType, Controller.Error> {
+	func _send <RequestDelegateType: RequestDelegate> (_ requestDelegate: RequestDelegateType, source: [String] = []) -> AnyPublisher<RequestDelegateType.ContentType, NetworkController.Error> {
 		let requestInfo = RequestInfo(source: self.source + source, controllerLabel: label, requestUuid: UUID())
 		
 		let requestPublisher = Just(requestDelegate)
@@ -54,7 +54,7 @@ public struct Controller: ControllerProtocol {
 			
 			
 			
-			.flatMap { (urlSession: URLSession, urlRequest: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), Controller.Error> in
+			.flatMap { (urlSession: URLSession, urlRequest: URLRequest) -> AnyPublisher<(data: Data, response: URLResponse), NetworkController.Error> in
 				return urlSession.dataTaskPublisher(for: urlRequest)
 					.mapError {	Error(.networkFailure(urlSession, urlRequest, $0)) }
 					.eraseToAnyPublisher()

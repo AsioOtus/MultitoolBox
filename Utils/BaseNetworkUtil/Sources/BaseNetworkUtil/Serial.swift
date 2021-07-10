@@ -1,15 +1,15 @@
 import Foundation
 import Combine
 
-public struct Serial: ControllerProtocol {
-	public let controller: Controller
+public struct Serial: NetworkControllerProtocol {
+	public let controller: NetworkController
 	private let semaphore = DispatchSemaphore(value: 1)
 	
-	public init (_ controller: Controller) {
+	public init (_ controller: NetworkController) {
 		self.controller = controller
 	}
 	
-	public func send <RequestDelegateType: RequestDelegate> (_ requestDelegate: RequestDelegateType) -> AnyPublisher<RequestDelegateType.ContentType, Controller.Error> {
+	public func send <RequestDelegateType: RequestDelegate> (_ requestDelegate: RequestDelegateType) -> AnyPublisher<RequestDelegateType.ContentType, NetworkController.Error> {
 		semaphore.wait()
 		
 		let requestPublisher = controller

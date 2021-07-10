@@ -2,25 +2,25 @@ import Foundation
 
 
 
-extension Controller.Logger.LogRecord {
+extension NetworkController.Logger.LogRecord {
 	public enum Category {
 		case request(URLSession, URLRequest)
 		case response(Data, URLResponse)
-		case error(Controller.Error)
+		case error(NetworkController.Error)
 	}
 }
 
 
 
-extension Controller.Logger {
+extension NetworkController.Logger {
 	public struct LogRecord {
-		public let requestInfo: Controller.RequestInfo
+		public let requestInfo: NetworkController.RequestInfo
 		public let category: Category
 	}
 }
 
 
-public extension Controller.Logger.LogRecord {
+public extension NetworkController.Logger.LogRecord {
 	func convert (_ converter: LogRecordStringConverter) -> String {
 		converter.convert(self)
 	}

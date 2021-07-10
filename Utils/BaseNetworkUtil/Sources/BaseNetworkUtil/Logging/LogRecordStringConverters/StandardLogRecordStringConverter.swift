@@ -1,16 +1,16 @@
 import Foundation
 
 public struct StandardLogRecordStringConverter: LogRecordStringConverter {
-	public var requestInfoConverter: (Controller.RequestInfo) -> String
+	public var requestInfoConverter: (NetworkController.RequestInfo) -> String
 	public var urlRequestConverter: (URLRequest) -> String
 	public var urlResponseConverter: (URLResponse, Data) -> String
-	public var controllerErrorConverter: (Controller.Error) -> String
+	public var controllerErrorConverter: (NetworkController.Error) -> String
 	
 	public init (
-		requestInfoConverter: @escaping (Controller.RequestInfo) -> String,
+		requestInfoConverter: @escaping (NetworkController.RequestInfo) -> String,
 		urlRequestConverter: @escaping (URLRequest) -> String,
 		urlResponseConverter: @escaping (URLResponse, Data) -> String,
-		controllerErrorConverter: @escaping (Controller.Error) -> String
+		controllerErrorConverter: @escaping (NetworkController.Error) -> String
 	) {
 		self.requestInfoConverter = requestInfoConverter
 		self.urlRequestConverter = urlRequestConverter
@@ -18,7 +18,7 @@ public struct StandardLogRecordStringConverter: LogRecordStringConverter {
 		self.controllerErrorConverter = controllerErrorConverter
 	}
 	
-	public func convert (_ record: Controller.Logger.LogRecord) -> String {
+	public func convert (_ record: NetworkController.Logger.LogRecord) -> String {
 		let requestInfoMessage = requestInfoConverter(record.requestInfo)
 		let categoryMessage = convert(record.category)
 		
@@ -26,7 +26,7 @@ public struct StandardLogRecordStringConverter: LogRecordStringConverter {
 		return messsage
 	}
 	
-	public func convert (_ category: Controller.Logger.LogRecord.Category) -> String {
+	public func convert (_ category: NetworkController.Logger.LogRecord.Category) -> String {
 		let message: String
 		
 		switch category {
