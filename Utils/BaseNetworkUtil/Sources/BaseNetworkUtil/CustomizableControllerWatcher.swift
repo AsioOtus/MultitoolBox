@@ -18,17 +18,17 @@ public struct CustomizableNetworkControllerWatcher: NetworkControllerWatcher {
 	
 	
 	public init (
-		onRequest: @escaping (Request, NetworkController.RequestInfo) -> Void,
-		onUrlRequest: @escaping (URLSession, URLRequest, NetworkController.RequestInfo) -> Void,
-		onUrlResponse: @escaping (Data, URLResponse, NetworkController.RequestInfo) -> Void,
-		onResponse: @escaping (Response, NetworkController.RequestInfo) -> Void,
-		onContent: @escaping (Any, NetworkController.RequestInfo) -> Void,
-		onUnmodifiedRequest: @escaping (Request, NetworkController.RequestInfo) -> Void,
-		onUnmodifiedUrlRequest: @escaping (URLSession, URLRequest, NetworkController.RequestInfo) -> Void,
-		onModifiedUrlResponse: @escaping (Data, URLResponse, NetworkController.RequestInfo) -> Void,
-		onModifiedResponse: @escaping (Response, NetworkController.RequestInfo) -> Void,
-		onModifiedContent: @escaping (Any, NetworkController.RequestInfo) -> Void,
-		onError: @escaping (NetworkController.Error, NetworkController.RequestInfo) -> Void
+		onRequest: @escaping (Request, NetworkController.RequestInfo) -> Void = { _, _ in },
+		onUrlRequest: @escaping (URLSession, URLRequest, NetworkController.RequestInfo) -> Void = { _, _, _ in },
+		onUrlResponse: @escaping (Data, URLResponse, NetworkController.RequestInfo) -> Void = { _, _, _ in },
+		onResponse: @escaping (Response, NetworkController.RequestInfo) -> Void = { _, _ in },
+		onContent: @escaping (Any, NetworkController.RequestInfo) -> Void = { _, _ in },
+		onUnmodifiedRequest: @escaping (Request, NetworkController.RequestInfo) -> Void = { _, _ in },
+		onUnmodifiedUrlRequest: @escaping (URLSession, URLRequest, NetworkController.RequestInfo) -> Void = { _, _, _ in },
+		onModifiedUrlResponse: @escaping (Data, URLResponse, NetworkController.RequestInfo) -> Void = { _, _, _ in },
+		onModifiedResponse: @escaping (Response, NetworkController.RequestInfo) -> Void = { _, _ in },
+		onModifiedContent: @escaping (Any, NetworkController.RequestInfo) -> Void = { _, _ in },
+		onError: @escaping (NetworkController.Error, NetworkController.RequestInfo) -> Void = { _, _ in }
 	) {
 		self.onRequest = onRequest
 		self.onUrlRequest = onUrlRequest

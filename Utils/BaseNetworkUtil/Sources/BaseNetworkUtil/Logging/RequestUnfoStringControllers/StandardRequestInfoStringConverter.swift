@@ -6,7 +6,7 @@ public struct StandardRequestInfoStringConverter: RequestInfoStringConverter {
 	}
 	
 	public func convert (_ requestInfo: NetworkController.RequestInfo) -> String {
-		let message = "\(requestInfo.controllerLabel)\(componentSeparator)\(requestInfo.source.combine(with: "."))\(componentSeparator)REQUEST UUID – \(requestInfo.requestUuid.uuidString)"
+		let message = "\(requestInfo.controllerLabel)\(componentSeparator)REQUEST UUID – \(requestInfo.requestUuid.uuidString)"
 		return message
 	}
 }
