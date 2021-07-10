@@ -3,7 +3,7 @@ import Foundation
 public struct Base64DataStringConverter: DataStringConverter {
 	public static let `default` = Self()
     
-	public let options: Data.Base64EncodingOptions
+	public var options: Data.Base64EncodingOptions
     
 	public init (options: Data.Base64EncodingOptions = []) {
         self.options = options

@@ -9,7 +9,7 @@ public struct CompositeOptionalDataStringConverter: OptionalDataStringConverter 
         ]
     )
     
-    let converters: [OptionalDataStringConverter]
+    var converters: [OptionalDataStringConverter]
     
 	public func convert (_ data: Data) -> String? {
         for converter in converters {

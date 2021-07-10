@@ -9,8 +9,8 @@ public struct CompositeDataStringConverter: DataStringConverter {
         lastResortConverter: Base64DataStringConverter.default
     )
     
-	public let converters: [OptionalDataStringConverter]
-	public let lastResortConverter: DataStringConverter
+	public var converters: [OptionalDataStringConverter]
+	public var lastResortConverter: DataStringConverter
     
 	public func convert (_ data: Data) -> String {
         for converter in converters {

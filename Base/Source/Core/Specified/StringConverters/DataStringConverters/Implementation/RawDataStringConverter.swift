@@ -3,7 +3,7 @@ import Foundation
 public struct RawDataStringConverter: OptionalDataStringConverter {
 	public static let `default` = Self()
     
-	public let encoding: String.Encoding
+	public var encoding: String.Encoding
     
 	public init (encoding: String.Encoding = .utf8) {
         self.encoding = encoding
