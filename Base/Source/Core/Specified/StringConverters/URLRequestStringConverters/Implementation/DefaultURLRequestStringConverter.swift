@@ -20,18 +20,32 @@ public struct DefaultURLRequestStringConverter: URLRequestStringConverter {
 		let firstLine = ShortURLRequestStringConverter().convert(urlRequest)
 		components.append(firstLine)
 		
+		components.append("")
+		
 		if let headersDictionary = urlRequest.allHTTPHeaderFields {
 			let headers = dictionaryStringConverter.convert(headersDictionary)
 			
 			if !headers.isEmpty {
-				components.append("")
 				components.append(headers)
+			} else {
+				components.append("[Header representation is empty]")
 			}
+		} else {
+			components.append("[No headers]")
 		}
 		
-		if let body = urlRequest.httpBody, let bodyString = dataStringConverter.convert(body), !bodyString.isEmpty {
-			components.append("")
-			components.append(bodyString)
+		components.append("")
+		
+		if let body = urlRequest.httpBody {
+			let bodyString = dataStringConverter.convert(body)
+			
+			if !bodyString.isEmpty {
+				components.append(bodyString)
+			} else {
+				components.append("[Body representation is empty]")
+			}
+		} else {
+			components.append("[No body]")
 		}
 		
 		let string = components.joined(separator: "\n")

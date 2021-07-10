@@ -10,7 +10,7 @@ public class MultiplexLogExportersLogHandler {
 	
 	public init (
 		isEnabled: Bool = true,
-		level: LogLevel,
+		level: LogLevel = .trace,
 		details: Details? = nil,
 		logExporterAdapters: [StringLogExporterAdapter],
 		label: String = "\(MultiplexLogExportersLogHandler.self):\(#file):\(#line)"
