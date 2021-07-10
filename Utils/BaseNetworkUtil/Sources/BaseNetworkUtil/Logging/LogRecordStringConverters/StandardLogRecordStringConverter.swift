@@ -3,20 +3,17 @@ import Foundation
 public struct StandardLogRecordStringConverter: LogRecordStringConverter {
 	public var requestInfoConverter: (Controller.RequestInfo) -> String
 	public var urlRequestConverter: (URLRequest) -> String
-	public var dataConverter: (Data) -> String
-	public var urlResponseConverter: (URLResponse) -> String
+	public var urlResponseConverter: (URLResponse, Data) -> String
 	public var controllerErrorConverter: (Controller.Error) -> String
 	
 	public init (
 		requestInfoConverter: @escaping (Controller.RequestInfo) -> String,
 		urlRequestConverter: @escaping (URLRequest) -> String,
-		dataConverter: @escaping (Data) -> String,
-		urlResponseConverter: @escaping (URLResponse) -> String,
+		urlResponseConverter: @escaping (URLResponse, Data) -> String,
 		controllerErrorConverter: @escaping (Controller.Error) -> String
 	) {
 		self.requestInfoConverter = requestInfoConverter
 		self.urlRequestConverter = urlRequestConverter
-		self.dataConverter = dataConverter
 		self.urlResponseConverter = urlResponseConverter
 		self.controllerErrorConverter = controllerErrorConverter
 	}
@@ -36,7 +33,7 @@ public struct StandardLogRecordStringConverter: LogRecordStringConverter {
 		case .request(_, let urlRequest):
 			message = "REQUEST – \(urlRequestConverter(urlRequest))"
 		case .response(let data, let urlResponse):
-			message = "RESPONSE – \(urlResponseConverter(urlResponse)) – \(dataConverter(data))"
+			message = "RESPONSE – \(urlResponseConverter(urlResponse, data))"
 		case .error(let controllerError):
 			message = controllerErrorConverter(controllerError)
 		}
