@@ -17,7 +17,7 @@ public struct StandardControllerErrorStringConverter: ControllerErrorStringConve
 		
 		switch error {
 		case .preprocessingFailure(let error):
-			message = "PREPROCESSING ERROR – \(error.localizedDescription)"
+			message = "PREPROCESSING ERROR – \(error)"
 			
 		case .networkFailure(_, let urlRequest, let urlError):
 			let urlRequestMessage = urlRequestConverter(urlRequest)
@@ -25,7 +25,7 @@ public struct StandardControllerErrorStringConverter: ControllerErrorStringConve
 			message = "NETWORK ERROR – \(urlErrorMessage) | REQUEST – \(urlRequestMessage)"
 			
 		case .postprocessingFailure(let error):
-			message = "POSTPROCESSING ERROR – \(error.localizedDescription)"
+			message = "POSTPROCESSING ERROR – \(error)"
 		}
 		
 		return message

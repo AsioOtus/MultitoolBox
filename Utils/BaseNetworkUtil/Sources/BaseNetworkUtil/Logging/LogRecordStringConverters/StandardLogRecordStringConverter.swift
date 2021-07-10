@@ -4,17 +4,20 @@ public struct StandardLogRecordStringConverter: LogRecordStringConverter {
 	public var requestInfoConverter: (NetworkController.RequestInfo) -> String
 	public var urlRequestConverter: (URLRequest) -> String
 	public var urlResponseConverter: (URLResponse, Data) -> String
+	public var httpUrlResponseConverter: (HTTPURLResponse, Data) -> String
 	public var controllerErrorConverter: (NetworkController.Error) -> String
 	
 	public init (
 		requestInfoConverter: @escaping (NetworkController.RequestInfo) -> String,
 		urlRequestConverter: @escaping (URLRequest) -> String,
 		urlResponseConverter: @escaping (URLResponse, Data) -> String,
+		httpUrlResponseConverter: @escaping (HTTPURLResponse, Data) -> String,
 		controllerErrorConverter: @escaping (NetworkController.Error) -> String
 	) {
 		self.requestInfoConverter = requestInfoConverter
 		self.urlRequestConverter = urlRequestConverter
 		self.urlResponseConverter = urlResponseConverter
+		self.httpUrlResponseConverter = httpUrlResponseConverter
 		self.controllerErrorConverter = controllerErrorConverter
 	}
 	
@@ -32,6 +35,8 @@ public struct StandardLogRecordStringConverter: LogRecordStringConverter {
 		switch category {
 		case .request(_, let urlRequest):
 			message = "REQUEST – \(urlRequestConverter(urlRequest))"
+		case .response(let data, let httpUrlResponse as HTTPURLResponse):
+			message = "RESPONSE – \(httpUrlResponseConverter(httpUrlResponse, data))"
 		case .response(let data, let urlResponse):
 			message = "RESPONSE – \(urlResponseConverter(urlResponse, data))"
 		case .error(let controllerError):

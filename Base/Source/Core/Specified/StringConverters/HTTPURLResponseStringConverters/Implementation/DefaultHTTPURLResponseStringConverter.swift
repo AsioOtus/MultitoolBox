@@ -20,16 +20,31 @@ public struct DefaultHTTPURLResponseStringConverter: HTTPURLResponseStringConver
         let firstLine = ShortHTTPURLResponseStringConverter().convert(httpUrlResponse, body: body)
         components.append(firstLine)
         
-        let headers = dictionaryStringConverter.convert(httpUrlResponse.allHeaderFields)
-        if !headers.isEmpty {
-            components.append("")
-            components.append(headers)
-        }
-        
-        if let body = body, let bodyString = dataStringConverter.convert(body), !bodyString.isEmpty {
-            components.append("")
-            components.append(bodyString)
-        }
+		components.append("")
+		
+		if !httpUrlResponse.allHeaderFields.isEmpty {
+			let headers = dictionaryStringConverter.convert(httpUrlResponse.allHeaderFields)
+			
+			if !headers.isEmpty {
+				components.append(headers)
+			} else {
+				components.append("[Header representation is empty]")
+			}
+		} else {
+			components.append("[No headers]")
+		}
+		
+		components.append("")
+		
+		if let body = body {
+			if let bodyString = dataStringConverter.convert(body), !bodyString.isEmpty {
+				components.append(bodyString)
+			} else {
+				components.append("[Body representation is empty]")
+			}
+		} else {
+			components.append("[No body]")
+		}
         
         let string = components.joined(separator: "\n")
         return string

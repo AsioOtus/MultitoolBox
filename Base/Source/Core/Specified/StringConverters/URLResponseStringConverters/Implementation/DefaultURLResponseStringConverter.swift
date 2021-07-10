@@ -20,9 +20,16 @@ public struct DefaultURLResponseStringConverter: URLResponseStringConverter {
 		let firstLine = ShortURLResponseStringConverter().convert(urlResponse, body: body)
 		components.append(firstLine)
 		
-		if let body = body, let bodyString = dataStringConverter.convert(body), !bodyString.isEmpty {
-			components.append("")
-			components.append(bodyString)
+		components.append("")
+		
+		if let body = body {
+			if let bodyString = dataStringConverter.convert(body), !bodyString.isEmpty {
+				components.append(bodyString)
+			} else {
+				components.append("[Body representation is empty]")
+			}
+		} else {
+			components.append("[No body]")
 		}
 		
 		let string = components.joined(separator: "\n")
