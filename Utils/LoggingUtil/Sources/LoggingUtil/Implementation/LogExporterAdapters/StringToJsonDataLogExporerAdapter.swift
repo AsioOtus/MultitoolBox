@@ -1,6 +1,6 @@
 import Foundation
 
-struct StringToJsonDataLogExporerAdapter  <LogExporterType: LogExporter>: StringLogExporterAdapter where LogExporterType.Message == Data {
+struct StringToJsonDataLogExporerAdapter <LogExporterType: LogExporter>: StringLogExporterAdapter where LogExporterType.Message == Data {
 	public var logExporter: LogExporterType
 	public var jsonEncoder: JSONEncoder
 	

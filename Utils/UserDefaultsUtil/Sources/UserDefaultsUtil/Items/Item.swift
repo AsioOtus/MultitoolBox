@@ -15,7 +15,7 @@ open class Item <Value: Codable> {
 		storage: Storage = StandardStorage.default,
 		logHandler: LogHandler? = nil,
 		queue: DispatchQueue? = nil,
-		label: String = "\(Item.self) – \(#file):\(#line)"
+		label: String = "\(Info.moduleName).\(Item.self) – \(#file):\(#line) – \(UUID().uuidString)"
 	) {
 		self.key = key
 		self.label = label

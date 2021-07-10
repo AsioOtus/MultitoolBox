@@ -8,11 +8,16 @@ public struct Controller: ControllerProtocol {
 	public var delegate: ControllerDelegate?
 	public var watchers: [ControllerWatcher]
 	
-	public init (delegate: ControllerDelegate? = nil, watchers: [ControllerWatcher] = [], source: [String] = [], file: String = #file, line: Int = #line) {
+	public init (
+		delegate: ControllerDelegate? = nil,
+		watchers: [ControllerWatcher] = [],
+		source: [String] = [],
+		label: String = "\(Info.moduleName).\(Controller.self) – \(#file):\(#line) – \(UUID().uuidString)"
+	) {
 		self.source = source + ["NetworkFlowUtil", "Controller"]
 		self.delegate = delegate
 		self.watchers = watchers
-		self.label = "\(Controller.self) – \(file):\(line)"
+		self.label = label
 	}
 	
 	public func send <RequestDelegateType: RequestDelegate> (_ requestDelegate: RequestDelegateType) -> AnyPublisher<RequestDelegateType.ContentType, Controller.Error> {
