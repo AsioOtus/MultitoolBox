@@ -2,28 +2,20 @@ public class MultiplexLogExportersLogHandler {
 	public typealias Message = String
 	public typealias Details = StandardLogRecordDetails
 	
-	public var isEnabled: Bool
-	public var level: LogLevel
-	public var details: Details?
+	public var isEnabled = true
+	public var level = LogLevel.trace
+	public var details: Details? = nil
 	public var logExporterAdapters: [StringLogExporterAdapter]
 	public let label: String
 	
 	public init (
-		isEnabled: Bool = true,
-		level: LogLevel = .trace,
-		details: Details? = nil,
 		logExporterAdapters: [StringLogExporterAdapter],
 		label: String = "\(MultiplexLogExportersLogHandler.self):\(#file):\(#line)"
 	) {
-		self.isEnabled = isEnabled
-		self.level = level
-		self.details = details
 		self.logExporterAdapters = logExporterAdapters
 		self.label = label
 	}
 }
-
-
 
 extension MultiplexLogExportersLogHandler: LogHandler {
 	public func log (logRecord: LogRecord<Message, Details>) {
@@ -37,3 +29,19 @@ extension MultiplexLogExportersLogHandler: LogHandler {
 	}
 }
 
+extension MultiplexLogExportersLogHandler {
+	func isEnabled (_ isEnabled: Bool) -> Self {
+		self.isEnabled = isEnabled
+		return self
+	}
+	
+	func level (_ level: LogLevel) -> Self {
+		self.level = level
+		return self
+	}
+	
+	func details (_ details: Details) -> Self {
+		self.details = details
+		return self
+	}
+}

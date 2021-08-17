@@ -1,30 +1,16 @@
 import os.log
 
 @available(iOS 14.0, macOS 11.0, *)
-public extension LoggerFrameworkLogExporter {
-	struct Config {
-		public static let `default` = Self(logger: .init())
-		
-		public let logger: os.Logger
-	}
-}
-
-@available(iOS 14.0, macOS 11.0, *)
 public class LoggerFrameworkLogExporter: LogExporter {
 	public typealias Message = String
 	
-	public var isDisabled: Bool
-	public var configuration: Config
+	public var isEnabled = true
+	public var logger = os.Logger()
 	
-	public init (_ configuration: Config = .default, isDisabled: Bool = false) {
-		self.configuration = configuration
-		self.isDisabled = isDisabled
-	}
+	init () { }
 	
 	public func log (metaInfo: MetaInfo, message: String) {
-		guard !isDisabled else { return }
-		
-		let logger = self.configuration.logger
+		guard isEnabled else { return }
 		
 		switch metaInfo.level {
 		case .trace:
@@ -44,5 +30,13 @@ public class LoggerFrameworkLogExporter: LogExporter {
 		case .fault:
 			logger.fault("\(message)")
 		}
+	}
+}
+
+@available(iOS 14.0, macOS 11.0, *)
+extension LoggerFrameworkLogExporter {
+	func isEnabled (_ isEnabled: Bool) -> Self {
+		self.isEnabled = isEnabled
+		return self
 	}
 }

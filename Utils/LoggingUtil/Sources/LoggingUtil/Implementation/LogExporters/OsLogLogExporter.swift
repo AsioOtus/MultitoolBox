@@ -5,14 +5,12 @@ import Foundation
 public class OsLogLogExporter: LogExporter {
 	public typealias Message = String
 	
-	public var isDisabled: Bool
+	public var isEnabled = true
 	
-	public init (isDisabled: Bool = false) {
-		self.isDisabled = isDisabled
-	}
+	init () { }
 	
 	public func log (metaInfo: MetaInfo, message: String) {
-		guard !isDisabled else { return }
+		guard isEnabled else { return }
 		
 		let osLogType = logLevelToOsLogType(metaInfo.level)
 		os_log(osLogType, "%@", message as NSString)
@@ -41,5 +39,13 @@ public class OsLogLogExporter: LogExporter {
 		}
 		
 		return osLogType
+	}
+}
+
+@available(iOS 12.0, macOS 12.0, *)
+extension OsLogLogExporter {
+	func isEnabled (_ isEnabled: Bool) -> Self {
+		self.isEnabled = isEnabled
+		return self
 	}
 }

@@ -2,28 +2,20 @@ public class StandardLogHandler {
 	public typealias Message = String
 	public typealias Details = StandardLogRecordDetails
 	
-	public var isEnabled: Bool
-	public var level: LogLevel
-	public var details: Details?
+	public var isEnabled = true
+	public var level = LogLevel.trace
+	public var details: Details? = nil
 	public var logExporterAdapter: StringLogExporterAdapter
 	public let label: String
 	
 	public init (
-		isEnabled: Bool = true,
-		level: LogLevel = .trace,
-		details: Details? = nil,
 		logExporterAdapter: StringLogExporterAdapter,
 		label: String = "\(StandardLogHandler.self):\(#file):\(#line)"
 	) {
-		self.isEnabled = isEnabled
-		self.level = level
-		self.details = details
 		self.logExporterAdapter = logExporterAdapter
 		self.label = label
 	}
 }
-
-
 
 extension StandardLogHandler: LogHandler {
 	public func log (logRecord: LogRecord<Message, Details>) {
@@ -34,5 +26,22 @@ extension StandardLogHandler: LogHandler {
 		let logRecord = logRecord.replace(metaInfo, details)
 		
 		logExporterAdapter.adapt(logRecord: logRecord)
+	}
+}
+
+extension StandardLogHandler {
+	func isEnabled (_ isEnabled: Bool) -> Self {
+		self.isEnabled = isEnabled
+		return self
+	}
+	
+	func level (_ level: LogLevel) -> Self {
+		self.level = level
+		return self
+	}
+	
+	func details (_ details: Details) -> Self {
+		self.details = details
+		return self
 	}
 }

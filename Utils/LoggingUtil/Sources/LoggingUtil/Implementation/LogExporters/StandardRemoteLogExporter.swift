@@ -1,22 +1,16 @@
 import Foundation
 
 public class StandardRemoteLogExporter: LogExporter {
+	public var isEnabled = true
 	public var url: URL
-	public var urlSession: URLSession
-	public var isDisabled: Bool
+	public var urlSession = URLSession.shared
 	
-	public init (
-		url: URL,
-		urlSession: URLSession = .shared,
-		isDisabled: Bool = false
-	) {
+	public init (url: URL) {
 		self.url = url
-		self.urlSession = urlSession
-		self.isDisabled = isDisabled
 	}
 	
 	public func log (metaInfo: MetaInfo, message: Data) {
-		guard !isDisabled else { return }
+		guard isEnabled else { return }
 		
 		var urlRequest = URLRequest(url: url)
 		urlRequest.httpMethod = "POST"
@@ -27,5 +21,17 @@ public class StandardRemoteLogExporter: LogExporter {
 				print(error.localizedDescription)
 			}
 		}.resume()
+	}
+}
+
+extension StandardRemoteLogExporter {
+	func isEnabled (_ isEnabled: Bool) -> Self {
+		self.isEnabled = isEnabled
+		return self
+	}
+	
+	func urlSession (_ urlSession: URLSession) -> Self {
+		self.urlSession = urlSession
+		return self
 	}
 }

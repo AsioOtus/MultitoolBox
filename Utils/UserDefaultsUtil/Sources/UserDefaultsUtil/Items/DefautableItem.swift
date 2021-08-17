@@ -3,7 +3,7 @@ import Foundation
 
 
 open class DefaultableItem <Value: Codable>: Item<Value> {
-	public var defaultValue: () -> Value
+	public let defaultValue: () -> Value
 	
 	public init (
 		_ key: String,

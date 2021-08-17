@@ -3,7 +3,7 @@ import Foundation
 
 
 open class ParametrizableDefaultableItem <Value: Codable, KeyPostfixProviderType: KeyPostfixProvider>: ParametrizableItem<Value, KeyPostfixProviderType> {
-	public var defaultValue: () -> Value
+	public let defaultValue: () -> Value
 	
 	public init (
 		_ key: String,

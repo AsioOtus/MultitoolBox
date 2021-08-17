@@ -4,28 +4,17 @@ public struct StandardLogger <LogHandlerType: LogHandler> {
 	public typealias Message = LogHandlerType.Message
 	public typealias Details = LogHandlerType.Details
 	
-	public var isEnabled: Bool
-	public var level: LogLevel
+	public var isEnabled = true
+	public var level = LogLevel.trace
+	public var details: Details? = nil
 	public var logHandler: LogHandlerType
-	public var details: Details?
 	public let label: String
 	
-	public init (
-		isEnabled: Bool = true,
-		level: LogLevel = .trace,
-		logHandler: LogHandlerType,
-		details: Details? = nil,
-		label: String = "\(Self.self):\(#file):\(#line)"
-	) {
-		self.isEnabled = isEnabled
-		self.level = level
+	public init (logHandler: LogHandlerType, label: String = "\(Self.self):\(#file):\(#line)") {
 		self.logHandler = logHandler
-		self.details = details
 		self.label = label
 	}
 }
-
-
 
 extension StandardLogger: Logger {
 	public func log (level: LogLevel, message: Message, details: Details? = nil) {
@@ -45,5 +34,22 @@ extension StandardLogger: LogHandler {
 		let logRecord = logRecord.replace(metaInfo, details)
 		
 		logHandler.log(logRecord: logRecord)
+	}
+}
+
+extension StandardLogger {
+	mutating func isEnabled (_ isEnabled: Bool) -> Self {
+		self.isEnabled = isEnabled
+		return self
+	}
+	
+	mutating func level (_ level: LogLevel) -> Self {
+		self.level = level
+		return self
+	}
+	
+	mutating func details (_ details: Details) -> Self {
+		self.details = details
+		return self
 	}
 }
