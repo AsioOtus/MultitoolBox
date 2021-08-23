@@ -1,34 +1,39 @@
 import Foundation
 
-
-
 public class StandardStorage: Storage {
 	public static let `default` = StandardStorage(keyPrefix: nil)
 	
 	public let keyPrefix: String?
 	public let userDefaults: UserDefaults
-	public let logHandler: LogHandler?
-	public let enableStorageLogging: Bool
 	public let label: String
+	
+	public var logHandler: LogHandler? = nil
+	public var enableStorageLogging: Bool = true
 	
 	public init (
 		keyPrefix: String?,
 		userDefaults: UserDefaults = .standard,
-		logHandler: LogHandler? = nil,
-		enableStorageLogging: Bool = false,
 		label: String = "\(Storage.self) – \(#file):\(#line)"
 	) {
 		self.keyPrefix = keyPrefix
 		self.userDefaults = userDefaults
-		self.logHandler = logHandler
-		self.enableStorageLogging = enableStorageLogging
 		self.label = label
 	}
 	
 	public func prefixKey (_ key: String) -> String { KeyBuilder.build(prefix: keyPrefix, key: key) }
 }
 
-
+extension StandardStorage {
+	func logHandler (_ logHandler: LogHandler) -> StandardStorage {
+		self.logHandler = logHandler
+		return self
+	}
+	
+	func enableStorageLogging (_ enableStorageLogging: Bool) -> StandardStorage {
+		self.enableStorageLogging = enableStorageLogging
+		return self
+	}
+}
 
 extension StandardStorage {
 	@discardableResult
