@@ -57,7 +57,7 @@ public struct MultilineStringLogExporterAdapter <LogExporterType: LogExporter>: 
 		}
 		
 		if let tags = logRecordDetails?.tags, !tags.isEmpty {
-			messageHeaderComponents.append("[\(tags.sorted(by: <).joined(separator: ", "))]")
+			messageHeaderComponents.append("[\(tags.joined(separator: ", "))]")
 		}
 		
 		if let source = logRecordDetails?.source, !source.isEmpty {

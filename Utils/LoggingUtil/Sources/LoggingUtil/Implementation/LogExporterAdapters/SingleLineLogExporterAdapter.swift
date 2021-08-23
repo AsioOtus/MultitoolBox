@@ -41,7 +41,7 @@ public struct SingleLineLogExporterAdapter <LogExporterType: LogExporter>: Strin
 		}
 		
 		if let tags = logRecordDetails?.tags, !tags.isEmpty {
-			messageComponents.append("[\(tags.sorted(by: <).joined(separator: ", "))]")
+			messageComponents.append("[\(tags.joined(separator: ", "))]")
 		}
 		
 		if let source = logRecordDetails?.source, !source.isEmpty {
