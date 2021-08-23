@@ -24,12 +24,12 @@ public class StandardStorage: Storage {
 }
 
 extension StandardStorage {
-	func logHandler (_ logHandler: LogHandler) -> StandardStorage {
+	public func logHandler (_ logHandler: LogHandler) -> StandardStorage {
 		self.logHandler = logHandler
 		return self
 	}
 	
-	func enableStorageLogging (_ enableStorageLogging: Bool) -> StandardStorage {
+	public func enableStorageLogging (_ enableStorageLogging: Bool) -> StandardStorage {
 		self.enableStorageLogging = enableStorageLogging
 		return self
 	}

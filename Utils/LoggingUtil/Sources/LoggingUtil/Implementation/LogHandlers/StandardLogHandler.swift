@@ -30,17 +30,17 @@ extension StandardLogHandler: LogHandler {
 }
 
 extension StandardLogHandler {
-	func isEnabled (_ isEnabled: Bool) -> Self {
+	public func isEnabled (_ isEnabled: Bool) -> Self {
 		self.isEnabled = isEnabled
 		return self
 	}
 	
-	func level (_ level: LogLevel) -> Self {
+	public func level (_ level: LogLevel) -> Self {
 		self.level = level
 		return self
 	}
 	
-	func details (_ details: Details) -> Self {
+	public func details (_ details: Details) -> Self {
 		self.details = details
 		return self
 	}

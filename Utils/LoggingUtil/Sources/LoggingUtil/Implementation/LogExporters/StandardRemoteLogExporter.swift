@@ -25,12 +25,12 @@ public class StandardRemoteLogExporter: LogExporter {
 }
 
 extension StandardRemoteLogExporter {
-	func isEnabled (_ isEnabled: Bool) -> Self {
+	public func isEnabled (_ isEnabled: Bool) -> Self {
 		self.isEnabled = isEnabled
 		return self
 	}
 	
-	func urlSession (_ urlSession: URLSession) -> Self {
+	public func urlSession (_ urlSession: URLSession) -> Self {
 		self.urlSession = urlSession
 		return self
 	}

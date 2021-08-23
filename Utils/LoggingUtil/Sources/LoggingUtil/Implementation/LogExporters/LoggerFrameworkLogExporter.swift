@@ -35,7 +35,7 @@ public class LoggerFrameworkLogExporter: LogExporter {
 
 @available(iOS 14.0, macOS 11.0, *)
 extension LoggerFrameworkLogExporter {
-	func isEnabled (_ isEnabled: Bool) -> Self {
+	public func isEnabled (_ isEnabled: Bool) -> Self {
 		self.isEnabled = isEnabled
 		return self
 	}

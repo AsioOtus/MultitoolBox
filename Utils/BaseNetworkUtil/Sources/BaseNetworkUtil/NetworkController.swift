@@ -106,17 +106,17 @@ extension NetworkController {
 }
 
 extension NetworkController {
-	func delegate (_ delegate: NetworkControllerDelegate) -> NetworkController {
+	public func delegate (_ delegate: NetworkControllerDelegate) -> NetworkController {
 		self.delegate = delegate
 		return self
 	}
 	
-	func watcher (_ watcher: NetworkControllerWatcher) -> NetworkController {
+	public func watcher (_ watcher: NetworkControllerWatcher) -> NetworkController {
 		self.watchers.append(watcher)
 		return self
 	}
 	
-	func watchers (_ watchers: [NetworkControllerWatcher]) -> NetworkController {
+	public func watchers (_ watchers: [NetworkControllerWatcher]) -> NetworkController {
 		self.watchers = watchers
 		return self
 	}

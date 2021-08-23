@@ -1,6 +1,6 @@
 import Foundation
 
-struct StringToJsonDataLogExporerAdapter <LogExporterType: LogExporter>: StringLogExporterAdapter where LogExporterType.Message == Data {
+public struct StringToJsonDataLogExporerAdapter <LogExporterType: LogExporter>: StringLogExporterAdapter where LogExporterType.Message == Data {
 	public var logExporter: LogExporterType
 	public var jsonEncoder: JSONEncoder
 	
@@ -9,7 +9,7 @@ struct StringToJsonDataLogExporerAdapter <LogExporterType: LogExporter>: StringL
 		self.jsonEncoder = jsonEncoder
 	}
 	
-	func adapt (logRecord: LogRecord<String, StandardLogRecordDetails>) {
+	public func adapt (logRecord: LogRecord<String, StandardLogRecordDetails>) {
 		do {
 			let logRecordData = try jsonEncoder.encode(logRecord)
 			logExporter.log(metaInfo: logRecord.metaInfo, message: logRecordData)

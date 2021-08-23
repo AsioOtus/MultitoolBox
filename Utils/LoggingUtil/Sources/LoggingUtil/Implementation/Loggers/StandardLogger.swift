@@ -38,17 +38,17 @@ extension StandardLogger: LogHandler {
 }
 
 extension StandardLogger {
-	mutating func isEnabled (_ isEnabled: Bool) -> Self {
+	public mutating func isEnabled (_ isEnabled: Bool) -> Self {
 		self.isEnabled = isEnabled
 		return self
 	}
 	
-	mutating func level (_ level: LogLevel) -> Self {
+	public mutating func level (_ level: LogLevel) -> Self {
 		self.level = level
 		return self
 	}
 	
-	mutating func details (_ details: Details) -> Self {
+	public mutating func details (_ details: Details) -> Self {
 		self.details = details
 		return self
 	}
