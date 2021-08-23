@@ -8,7 +8,7 @@ extension NetworkController.Logger.LogRecord {
 		case response(Data, URLResponse)
 		case error(NetworkController.Error)
 		
-		var name: String {
+		public var name: String {
 			switch self {
 			case .request(_, _):
 				return "request"
