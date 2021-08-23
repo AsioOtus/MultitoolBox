@@ -7,7 +7,7 @@ public class OsLogLogExporter: LogExporter {
 	
 	public var isEnabled = true
 	
-	init () { }
+	public init () { }
 	
 	public func log (metaInfo: MetaInfo, message: String) {
 		guard isEnabled else { return }
