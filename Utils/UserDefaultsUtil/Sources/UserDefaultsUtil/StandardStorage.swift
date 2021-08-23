@@ -8,7 +8,7 @@ public class StandardStorage: Storage {
 	public let label: String
 	
 	public var logHandler: LogHandler? = nil
-	public var enableStorageLogging: Bool = true
+	public var enableStorageLogging: Bool = false
 	
 	public init (
 		keyPrefix: String?,

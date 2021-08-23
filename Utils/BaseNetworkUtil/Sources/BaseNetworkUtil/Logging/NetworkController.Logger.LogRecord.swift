@@ -7,6 +7,17 @@ extension NetworkController.Logger.LogRecord {
 		case request(URLSession, URLRequest)
 		case response(Data, URLResponse)
 		case error(NetworkController.Error)
+		
+		var name: String {
+			switch self {
+			case .request(_, _):
+				return "request"
+			case .response(_, _):
+				return "response"
+			case .error(_):
+				return "error"
+			}
+		}
 	}
 }
 
