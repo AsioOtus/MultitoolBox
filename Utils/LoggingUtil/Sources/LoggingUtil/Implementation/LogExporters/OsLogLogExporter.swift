@@ -44,6 +44,7 @@ public class OsLogLogExporter: LogExporter {
 
 @available(iOS 12.0, macOS 12.0, *)
 extension OsLogLogExporter {
+	@discardableResult
 	public func isEnabled (_ isEnabled: Bool) -> Self {
 		self.isEnabled = isEnabled
 		return self

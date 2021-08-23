@@ -24,11 +24,13 @@ public class StandardStorage: Storage {
 }
 
 extension StandardStorage {
+	@discardableResult
 	public func logHandler (_ logHandler: LogHandler) -> StandardStorage {
 		self.logHandler = logHandler
 		return self
 	}
 	
+	@discardableResult
 	public func enableStorageLogging (_ enableStorageLogging: Bool) -> StandardStorage {
 		self.enableStorageLogging = enableStorageLogging
 		return self

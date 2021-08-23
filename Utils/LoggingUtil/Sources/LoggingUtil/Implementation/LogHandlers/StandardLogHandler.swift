@@ -22,7 +22,7 @@ extension StandardLogHandler: LogHandler {
 		guard isEnabled, logRecord.metaInfo.level >= level else { return }
 		
 		let metaInfo = logRecord.metaInfo.add(label: label)
-		let details = logRecord.details?.combined(with: self.details)
+		let details = logRecord.details?.combined(with: self.details) ?? self.details
 		let logRecord = logRecord.replace(metaInfo, details)
 		
 		logExporterAdapter.adapt(logRecord: logRecord)
@@ -30,16 +30,19 @@ extension StandardLogHandler: LogHandler {
 }
 
 extension StandardLogHandler {
+	@discardableResult
 	public func isEnabled (_ isEnabled: Bool) -> Self {
 		self.isEnabled = isEnabled
 		return self
 	}
 	
+	@discardableResult
 	public func level (_ level: LogLevel) -> Self {
 		self.level = level
 		return self
 	}
 	
+	@discardableResult
 	public func details (_ details: Details) -> Self {
 		self.details = details
 		return self

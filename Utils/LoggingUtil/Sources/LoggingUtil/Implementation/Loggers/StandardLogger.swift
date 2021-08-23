@@ -30,7 +30,7 @@ extension StandardLogger: LogHandler {
 		guard isEnabled, logRecord.metaInfo.level >= level else { return }
 		
 		let metaInfo = logRecord.metaInfo.add(label: label)
-		let details = logRecord.details?.combined(with: self.details)
+		let details = logRecord.details?.combined(with: self.details) ?? self.details
 		let logRecord = logRecord.replace(metaInfo, details)
 		
 		logHandler.log(logRecord: logRecord)
@@ -38,18 +38,21 @@ extension StandardLogger: LogHandler {
 }
 
 extension StandardLogger {
+	@discardableResult
 	public func isEnabled (_ isEnabled: Bool) -> Self {
 		var selfCopy = self
 		selfCopy.isEnabled = isEnabled
 		return selfCopy
 	}
 	
+	@discardableResult
 	public func level (_ level: LogLevel) -> Self {
 		var selfCopy = self
 		selfCopy.level = level
 		return selfCopy
 	}
 	
+	@discardableResult
 	public func details (_ details: Details) -> Self {
 		var selfCopy = self
 		selfCopy.details = details

@@ -106,16 +106,19 @@ extension NetworkController {
 }
 
 extension NetworkController {
+	@discardableResult
 	public func delegate (_ delegate: NetworkControllerDelegate) -> NetworkController {
 		self.delegate = delegate
 		return self
 	}
 	
+	@discardableResult
 	public func watcher (_ watcher: NetworkControllerWatcher) -> NetworkController {
 		self.watchers.append(watcher)
 		return self
 	}
 	
+	@discardableResult
 	public func watchers (_ watchers: [NetworkControllerWatcher]) -> NetworkController {
 		self.watchers = watchers
 		return self
