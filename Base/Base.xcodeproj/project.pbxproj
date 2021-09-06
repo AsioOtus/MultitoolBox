@@ -25,6 +25,7 @@
 		1ED4C59F261369D900CCE28D /* DispatchResetableOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4C59E261369D900CCE28D /* DispatchResetableOnce.swift */; };
 		1ED4C5A0261369D900CCE28D /* DispatchResetableOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED4C59E261369D900CCE28D /* DispatchResetableOnce.swift */; };
 		3A0ADF9D25CAA50C001EEC70 /* MultitoolBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A0ADF9B25CAA50C001EEC70 /* MultitoolBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A24CB8526C443860086E778 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B846525C015850042A2DC /* DispatchQueue.swift */; };
 		3A40A28D25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A28C25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift */; };
 		3A40A29225F15B71002C0875 /* URLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A29125F15B71002C0875 /* URLRequestStringConverter.swift */; };
 		3A40A29625F15BF4002C0875 /* ShortURLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A29525F15BF4002C0875 /* ShortURLRequestStringConverter.swift */; };
@@ -33,8 +34,11 @@
 		3A58BC43260CE1E400B6F073 /* DispatchWait.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE30F2025C5DE60009B22FB /* DispatchWait.swift */; };
 		3A58BC44260CE1E400B6F073 /* DispatchSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAF525AF3382006E76AF /* DispatchSingle.swift */; };
 		3A58BC45260CE1E400B6F073 /* DispatchSerial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAFB25AF33C6006E76AF /* DispatchSerial.swift */; };
+		3A65AFE82697B203007F80E6 /* DigitDataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65AFE72697B203007F80E6 /* DigitDataStringConverter.swift */; };
+		3A65AFF22697B348007F80E6 /* DigitDataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A65AFE72697B203007F80E6 /* DigitDataStringConverter.swift */; };
+		3A65AFF62697B375007F80E6 /* DataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3356825F12D8200EE937D /* DataStringConverter.swift */; };
+		3A65AFFA2697B37B007F80E6 /* OptionalDataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3356B25F12D9700EE937D /* OptionalDataStringConverter.swift */; };
 		3A7E12EF265CF490007E4F85 /* ColumnConsoleArrayStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B3C63265CF3DC00BE3C3D /* ColumnConsoleArrayStringConverter.swift */; };
-		3A7E12F9265D2E7E007E4F85 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0B2454629C007E7928 /* Data.swift */; };
 		3A8B3C57265CF38B00BE3C3D /* ArrayStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B3C56265CF38B00BE3C3D /* ArrayStringConverter.swift */; };
 		3A8B3C5E265CF3A700BE3C3D /* ArrayStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B3C56265CF38B00BE3C3D /* ArrayStringConverter.swift */; };
 		3A8B3C64265CF3DC00BE3C3D /* ColumnConsoleArrayStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8B3C63265CF3DC00BE3C3D /* ColumnConsoleArrayStringConverter.swift */; };
@@ -57,6 +61,22 @@
 		3AFA3131260CDF0D0068177C /* DispatchFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA3130260CDF0D0068177C /* DispatchFirst.swift */; };
 		3AFA313D260CE0920068177C /* DispatchFirstTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFA313C260CE0920068177C /* DispatchFirstTests.swift */; };
 		3AFA313F260CE0920068177C /* MultitoolBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0ADF9925CAA50C001EEC70 /* MultitoolBase.framework */; };
+		3AFAB88C269A09E50029B5EE /* URLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A29125F15B71002C0875 /* URLRequestStringConverter.swift */; };
+		3AFAB88D269A09E50029B5EE /* DefaultURLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A28C25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift */; };
+		3AFAB88E269A09E50029B5EE /* ShortURLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A29525F15BF4002C0875 /* ShortURLRequestStringConverter.swift */; };
+		3AFAB892269A09F00029B5EE /* DictionaryStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E562225F134FA00171B57 /* DictionaryStringConverter.swift */; };
+		3AFAB893269A09F00029B5EE /* MultilineDictionaryStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6E562725F1351600171B57 /* MultilineDictionaryStringConverter.swift */; };
+		3AFAB897269A09FA0029B5EE /* HTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3358125F1340600EE937D /* HTTPURLResponseStringConverter.swift */; };
+		3AFAB898269A09FA0029B5EE /* DefaultHTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3358625F1342600EE937D /* DefaultHTTPURLResponseStringConverter.swift */; };
+		3AFAB899269A09FA0029B5EE /* ShortHTTPURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3358A25F1346400EE937D /* ShortHTTPURLResponseStringConverter.swift */; };
+		3AFAB89D269A09FF0029B5EE /* Base64DataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3357625F1337100EE937D /* Base64DataStringConverter.swift */; };
+		3AFAB89E269A09FF0029B5EE /* CompositeOptionalDataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3357125F12DC100EE937D /* CompositeOptionalDataStringConverter.swift */; };
+		3AFAB89F269A09FF0029B5EE /* CompositeDataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3356E25F12DAF00EE937D /* CompositeDataStringConverter.swift */; };
+		3AFAB8A0269A09FF0029B5EE /* JSONDataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3357A25F1337F00EE937D /* JSONDataStringConverter.swift */; };
+		3AFAB8A1269A09FF0029B5EE /* RawDataStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3357D25F1339100EE937D /* RawDataStringConverter.swift */; };
+		3AFAB8A5269A0A080029B5EE /* ShortURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21725F1765900301A09 /* ShortURLResponseStringConverter.swift */; };
+		3AFAB8A6269A0A080029B5EE /* DefaultURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21A25F176C100301A09 /* DefaultURLResponseStringConverter.swift */; };
+		3AFAB8A7269A0A080029B5EE /* URLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21425F1763100301A09 /* URLResponseStringConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +136,7 @@
 		3A51DA1A25B1D7CB0066E836 /* LocalizationObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationObject.swift; sourceTree = "<group>"; };
 		3A51DA1E25B1D8110066E836 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		3A51DA2825B1D8990066E836 /* LocalizableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableObject.swift; sourceTree = "<group>"; };
+		3A65AFE72697B203007F80E6 /* DigitDataStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitDataStringConverter.swift; sourceTree = "<group>"; };
 		3A7CF1CB25C7688500C2411E /* Derived.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Derived.swift; sourceTree = "<group>"; };
 		3A85DAE725AF0196006E76AF /* Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		3A85DAF525AF3382006E76AF /* DispatchSingle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchSingle.swift; sourceTree = "<group>"; };
@@ -256,6 +277,7 @@
 				1EC3357625F1337100EE937D /* Base64DataStringConverter.swift */,
 				1EC3356E25F12DAF00EE937D /* CompositeDataStringConverter.swift */,
 				1EC3357125F12DC100EE937D /* CompositeOptionalDataStringConverter.swift */,
+				3A65AFE72697B203007F80E6 /* DigitDataStringConverter.swift */,
 				1EC3357A25F1337F00EE937D /* JSONDataStringConverter.swift */,
 				1EC3357D25F1339100EE937D /* RawDataStringConverter.swift */,
 			);
@@ -735,6 +757,7 @@
 				1ED4C59F261369D900CCE28D /* DispatchResetableOnce.swift in Sources */,
 				1EC3358B25F1346400EE937D /* ShortHTTPURLResponseStringConverter.swift in Sources */,
 				3A40A28D25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift in Sources */,
+				3A65AFE82697B203007F80E6 /* DigitDataStringConverter.swift in Sources */,
 				1EC3358725F1342600EE937D /* DefaultHTTPURLResponseStringConverter.swift in Sources */,
 				1E2643E625F28695005CAEE7 /* DispatchArray.swift in Sources */,
 				3AB19F22260EA4FC0060D339 /* Derived.swift in Sources */,
@@ -768,19 +791,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFAB89F269A09FF0029B5EE /* CompositeDataStringConverter.swift in Sources */,
+				3AFAB8A5269A0A080029B5EE /* ShortURLResponseStringConverter.swift in Sources */,
+				3AFAB89D269A09FF0029B5EE /* Base64DataStringConverter.swift in Sources */,
+				3AFAB8A1269A09FF0029B5EE /* RawDataStringConverter.swift in Sources */,
+				3AFAB8A7269A0A080029B5EE /* URLResponseStringConverter.swift in Sources */,
+				3AFAB897269A09FA0029B5EE /* HTTPURLResponseStringConverter.swift in Sources */,
 				3AFA3123260CD8250068177C /* main.swift in Sources */,
-				3A7E12F9265D2E7E007E4F85 /* Data.swift in Sources */,
+				3A65AFFA2697B37B007F80E6 /* OptionalDataStringConverter.swift in Sources */,
+				3AFAB899269A09FA0029B5EE /* ShortHTTPURLResponseStringConverter.swift in Sources */,
+				3A24CB8526C443860086E778 /* DispatchQueue.swift in Sources */,
+				3AFAB88E269A09E50029B5EE /* ShortURLRequestStringConverter.swift in Sources */,
 				3AFA312D260CD8370068177C /* DispatchSerial.swift in Sources */,
+				3A65AFF22697B348007F80E6 /* DigitDataStringConverter.swift in Sources */,
+				3AFAB88D269A09E50029B5EE /* DefaultURLRequestStringConverter.swift in Sources */,
 				3ABB3C5C262DB29400C4F1F2 /* Validation.swift in Sources */,
+				3AFAB893269A09F00029B5EE /* MultilineDictionaryStringConverter.swift in Sources */,
+				3AFAB8A0269A09FF0029B5EE /* JSONDataStringConverter.swift in Sources */,
 				1ED4C59A2613695B00CCE28D /* DispatchResetableFirst.swift in Sources */,
 				3AB6D9DE2637688700EBEE2A /* Parsing.swift in Sources */,
 				3AFA3129260CD8370068177C /* DispatchSingle.swift in Sources */,
+				3AFAB89E269A09FF0029B5EE /* CompositeOptionalDataStringConverter.swift in Sources */,
+				3A65AFF62697B375007F80E6 /* DataStringConverter.swift in Sources */,
 				3A7E12EF265CF490007E4F85 /* ColumnConsoleArrayStringConverter.swift in Sources */,
 				3AFA312B260CD8370068177C /* DispatchWait.swift in Sources */,
+				3AFAB8A6269A0A080029B5EE /* DefaultURLResponseStringConverter.swift in Sources */,
 				3A8B3C5E265CF3A700BE3C3D /* ArrayStringConverter.swift in Sources */,
 				3AFA312C260CD8370068177C /* DispatchOnce.swift in Sources */,
 				1ED4C5A0261369D900CCE28D /* DispatchResetableOnce.swift in Sources */,
+				3AFAB88C269A09E50029B5EE /* URLRequestStringConverter.swift in Sources */,
+				3AFAB898269A09FA0029B5EE /* DefaultHTTPURLResponseStringConverter.swift in Sources */,
 				3AFA3131260CDF0D0068177C /* DispatchFirst.swift in Sources */,
+				3AFAB892269A09F00029B5EE /* DictionaryStringConverter.swift in Sources */,
 				3AB19F26260EA4FE0060D339 /* Derived.swift in Sources */,
 				3AFA312A260CD8370068177C /* DispatchArray.swift in Sources */,
 			);
