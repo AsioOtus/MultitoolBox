@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3A949B28245462BD007E7928 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B27245462BD007E7928 /* main.swift */; };
+		3AF003F126E5636B00D515B1 /* BaseNetworkUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF003F026E5636B00D515B1 /* BaseNetworkUtil */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +33,20 @@
 			remoteGlobalIDString = 3A0ADF9925CAA50C001EEC70;
 			remoteInfo = MultitoolBase;
 		};
+		3A143C8B26CBF8D6004AF872 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A143C7B26CBF812004AF872;
+			remoteInfo = ModalViewTestApp;
+		};
+		3A24CC8B26C507990086E778 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A24CB6D26C4372B0086E778;
+			remoteInfo = TestPageViewApp;
+		};
 		3A5BD54C25BC1FB700481A2B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A949AB9245461CA007E7928 /* Base.xcodeproj */;
@@ -45,6 +60,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3A1AA04C25A762F9005FEF1F;
 			remoteInfo = SketchesTestground;
+		};
+		3AF003FA26E5636C00D515B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A0F928726D42DC7005CE215;
+			remoteInfo = PublishedTestApp;
+		};
+		3AF003FC26E5636C00D515B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3AF003D026DFF63200D515B1;
+			remoteInfo = DynamicViewEqualWIdth;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -73,6 +102,7 @@
 /* Begin PBXFileReference section */
 		3A1B846425C013DA0042A2DC /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExtensions.xcodeproj; path = UIKitExtensions/UIKitExtensions.xcodeproj; sourceTree = "<group>"; };
+		3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExtensions.xcodeproj; path = SwiftUIExtensions/SwiftUIExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A396EA025BDA25900B110C7 /* Utils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Utils.xcodeproj; path = Utils/Utils.xcodeproj; sourceTree = "<group>"; };
 		3A949AB9245461CA007E7928 /* Base.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Base.xcodeproj; path = Base/Base.xcodeproj; sourceTree = "<group>"; };
 		3A949ACD245461E5007E7928 /* Errors.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Errors.xcodeproj; path = Errors/Errors.xcodeproj; sourceTree = "<group>"; };
@@ -86,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF003F126E5636B00D515B1 /* BaseNetworkUtil in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +127,13 @@
 			isa = PBXGroup;
 			children = (
 				3A02F805265EF138007432F9 /* UIKitExtensions.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A24CC8426C507980086E778 /* Products */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +153,7 @@
 				3A949ACD245461E5007E7928 /* Errors.xcodeproj */,
 				3A396EA025BDA25900B110C7 /* Utils.xcodeproj */,
 				3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */,
+				3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */,
 				3A949AE12454621D007E7928 /* Sketches.xcodeproj */,
 				3A949B26245462BD007E7928 /* Testground */,
 				3A949B25245462BD007E7928 /* Products */,
@@ -143,6 +182,10 @@
 			isa = PBXGroup;
 			children = (
 				3A5BD55225BC1FB700481A2B /* SketchesTestground */,
+				3A24CC8C26C507990086E778 /* TestPageViewApp.app */,
+				3A143C8C26CBF8D6004AF872 /* ModalViewTestApp.app */,
+				3AF003FB26E5636C00D515B1 /* PublishedTestApp.app */,
+				3AF003FD26E5636C00D515B1 /* DynamicViewEqualWIdth.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -187,6 +230,9 @@
 			dependencies = (
 			);
 			name = Testground;
+			packageProductDependencies = (
+				3AF003F026E5636B00D515B1 /* BaseNetworkUtil */,
+			);
 			productName = Testground;
 			productReference = 3A949B24245462BD007E7928 /* Testground */;
 			productType = "com.apple.product-type.tool";
@@ -197,7 +243,7 @@
 		3A949A6024545EF0007E7928 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1200;
 				TargetAttributes = {
 					3A949B23245462BD007E7928 = {
@@ -228,6 +274,10 @@
 				{
 					ProductGroup = 3A949AE22454621D007E7928 /* Products */;
 					ProjectRef = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
+				},
+				{
+					ProductGroup = 3A24CC8426C507980086E778 /* Products */;
+					ProjectRef = 3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A1B847F25C01A7A0042A2DC /* Products */;
@@ -267,6 +317,20 @@
 			remoteRef = 3A0ADFD425CAA5C3001EEC70 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		3A143C8C26CBF8D6004AF872 /* ModalViewTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ModalViewTestApp.app;
+			remoteRef = 3A143C8B26CBF8D6004AF872 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A24CC8C26C507990086E778 /* TestPageViewApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestPageViewApp.app;
+			remoteRef = 3A24CC8B26C507990086E778 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		3A5BD54D25BC1FB700481A2B /* MultitoolBaseTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
@@ -279,6 +343,20 @@
 			fileType = "compiled.mach-o.executable";
 			path = SketchesTestground;
 			remoteRef = 3A5BD55125BC1FB700481A2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AF003FB26E5636C00D515B1 /* PublishedTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = PublishedTestApp.app;
+			remoteRef = 3AF003FA26E5636C00D515B1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3AF003FD26E5636C00D515B1 /* DynamicViewEqualWIdth.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DynamicViewEqualWIdth.app;
+			remoteRef = 3AF003FC26E5636C00D515B1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -508,6 +586,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AF003F026E5636B00D515B1 /* BaseNetworkUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = BaseNetworkUtil;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A949A6024545EF0007E7928 /* Project object */;
 }

@@ -42,20 +42,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3AE8177F25C31FFF00243202"
-               BuildableName = "BaseNetworkUtil.framework"
-               BlueprintName = "BaseNetworkUtil"
-               ReferencedContainer = "container:Utils/BaseNetworkUtil/BaseNetworkUtil.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A0ADFAA25CAA52A001EEC70"
                BuildableName = "KeychainUtil.framework"
                BlueprintName = "KeychainUtil"
@@ -70,24 +56,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A282DAD25CA914800C24C14"
-               BuildableName = "LoggingUtil.framework"
-               BlueprintName = "LoggingUtil"
-               ReferencedContainer = "container:Utils/LoggingUtil/LoggingUtil.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A0ADFC225CAA588001EEC70"
-               BuildableName = "UserDefaultsUtil.framework"
-               BlueprintName = "UserDefaultsUtil"
-               ReferencedContainer = "container:Utils/UserDefaultsUtil/UserDefaultsUtil.xcodeproj">
+               BlueprintIdentifier = "BaseNetworkUtil"
+               BuildableName = "BaseNetworkUtil"
+               BlueprintName = "BaseNetworkUtil"
+               ReferencedContainer = "container:Utils/BaseNetworkUtil">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
