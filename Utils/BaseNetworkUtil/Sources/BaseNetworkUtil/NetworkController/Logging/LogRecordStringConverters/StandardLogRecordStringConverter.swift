@@ -21,15 +21,15 @@ public struct StandardLogRecordStringConverter: LogRecordStringConverter {
 		self.controllerErrorConverter = controllerErrorConverter
 	}
 	
-	public func convert (_ record: NetworkController.Logger.LogRecord) -> String {
+	public func convert (_ record: NetworkController.Logger.LogRecord<NetworkController.Logger.BaseDetails>) -> String {
 		let requestInfoMessage = requestInfoConverter(record.requestInfo)
-		let categoryMessage = convert(record.category)
+		let categoryMessage = convert(record.details)
 		
 		let messsage = "\(requestInfoMessage)\n\(categoryMessage)\n"
 		return messsage
 	}
 	
-	public func convert (_ category: NetworkController.Logger.LogRecord.Category) -> String {
+	public func convert (_ category: NetworkController.Logger.BaseDetails) -> String {
 		let message: String
 		
 		switch category {

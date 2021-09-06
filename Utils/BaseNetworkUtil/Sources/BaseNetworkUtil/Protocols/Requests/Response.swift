@@ -6,7 +6,7 @@ public protocol Response: CustomStringConvertible {
 	var data: Data { get }
 	var urlResponse: URLResponse { get }
 	
-	init (_ urlResponse: URLResponse, _ data: Data) throws
+	init (_ data: Data, _ urlResponse: URLResponse) throws
 }
 
 

@@ -23,6 +23,6 @@ public protocol RequestDelegate {
 public extension RequestDelegate {
 	func urlSession (_ request: RequestType, _ requestInfo: NetworkController.RequestInfo) -> URLSession { request.urlSession }
 	func urlRequest (_ request: RequestType, _ requestInfo: NetworkController.RequestInfo) -> URLRequest { request.urlRequest }
-	func response (_ data: Data, _ urlResponse: URLResponse, _ requestInfo: NetworkController.RequestInfo) throws -> ResponseType { try ResponseType(urlResponse, data) }
+	func response (_ data: Data, _ urlResponse: URLResponse, _ requestInfo: NetworkController.RequestInfo) throws -> ResponseType { try ResponseType(data, urlResponse) }
 	func error (_ error: NetworkController.Error, _ requestInfo: NetworkController.RequestInfo) { }
 }
