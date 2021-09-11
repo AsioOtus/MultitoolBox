@@ -10,18 +10,12 @@ let package = Package(
 	],
 	products: [
 		.library(name: "Multitool", type: .dynamic, targets: ["Multitool"]),
-		.library(name: "KeychainUtil", type: .dynamic, targets: ["KeychainUtil"]),
 	],
 	targets: [
 		.target(
 			name: "Multitool",
 			dependencies: [],
 			path: "Base/Source/Core"
-		),
-		.target(
-			name: "KeychainUtil",
-			dependencies: [],
-			path: "Utils/KeychainUtil/Source"
 		),
 		.target(
 			name: "UIKitExtensions",

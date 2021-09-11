@@ -49,6 +49,8 @@
 		3AB6D9DA26373AC500EBEE2A /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6D9D926373AC500EBEE2A /* Parsing.swift */; };
 		3AB6D9DE2637688700EBEE2A /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB6D9D926373AC500EBEE2A /* Parsing.swift */; };
 		3ABB3C5C262DB29400C4F1F2 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A85DAE725AF0196006E76AF /* Validation.swift */; };
+		3AC4CA4F26ECE92500A153CC /* ProcessingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4CA4E26ECE92500A153CC /* ProcessingState.swift */; };
+		3AC4CA5026ECEA1500A153CC /* ProcessingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC4CA4E26ECE92500A153CC /* ProcessingState.swift */; };
 		3AECB21525F1763100301A09 /* URLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21425F1763100301A09 /* URLResponseStringConverter.swift */; };
 		3AECB21825F1765900301A09 /* ShortURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21725F1765900301A09 /* ShortURLResponseStringConverter.swift */; };
 		3AECB21B25F176C100301A09 /* DefaultURLResponseStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AECB21A25F176C100301A09 /* DefaultURLResponseStringConverter.swift */; };
@@ -179,6 +181,7 @@
 		3A9A2A4F2508D653000ABDC2 /* MTTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTTimer.swift; sourceTree = "<group>"; };
 		3AAAD1C7264EB0E000D6039D /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
 		3AB6D9D926373AC500EBEE2A /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		3AC4CA4E26ECE92500A153CC /* ProcessingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingState.swift; sourceTree = "<group>"; };
 		3AE30F2025C5DE60009B22FB /* DispatchWait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchWait.swift; sourceTree = "<group>"; };
 		3AECB21425F1763100301A09 /* URLResponseStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseStringConverter.swift; sourceTree = "<group>"; };
 		3AECB21725F1765900301A09 /* ShortURLResponseStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortURLResponseStringConverter.swift; sourceTree = "<group>"; };
@@ -222,6 +225,7 @@
 			children = (
 				3AFA3130260CDF0D0068177C /* DispatchFirst.swift */,
 				3A85DAF825AF33B1006E76AF /* DispatchOnce.swift */,
+				3A1B846525C015850042A2DC /* DispatchQueue.swift */,
 				1ED4C5982613695B00CCE28D /* DispatchResetableFirst.swift */,
 				1ED4C59E261369D900CCE28D /* DispatchResetableOnce.swift */,
 				3A85DAFB25AF33C6006E76AF /* DispatchSerial.swift */,
@@ -234,6 +238,7 @@
 		1E2643F125F29099005CAEE7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3AC4CA4D26ECE91D00A153CC /* Enums */,
 				3A1B845B25C012550042A2DC /* Classes */,
 				3A1B844825C012020042A2DC /* Closures */,
 				3A1B845C25C012710042A2DC /* Declarations */,
@@ -389,7 +394,6 @@
 			children = (
 				1E2643EF25F28FF9005CAEE7 /* Collection.swift */,
 				3A949B0B2454629C007E7928 /* Data.swift */,
-				3A1B846525C015850042A2DC /* DispatchQueue.swift */,
 				3A949B0C2454629C007E7928 /* FixedWidthInteger.swift */,
 				3A949B0E2454629C007E7928 /* Numeric.swift */,
 				3A1B846925C015B50042A2DC /* OSStatus.swift */,
@@ -576,6 +580,14 @@
 				3A949B1F2454629C007E7928 /* RandomableElementConforming.swift */,
 			);
 			path = ProtocolsConforming;
+			sourceTree = "<group>";
+		};
+		3AC4CA4D26ECE91D00A153CC /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				3AC4CA4E26ECE92500A153CC /* ProcessingState.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		3AD4C9B825C4207600568CB7 /* Protocols */ = {
@@ -765,6 +777,7 @@
 				1EC3356925F12D8200EE937D /* DataStringConverter.swift in Sources */,
 				3A58BC44260CE1E400B6F073 /* DispatchSingle.swift in Sources */,
 				3A58BC45260CE1E400B6F073 /* DispatchSerial.swift in Sources */,
+				3AC4CA4F26ECE92500A153CC /* ProcessingState.swift in Sources */,
 				1EC3357B25F1337F00EE937D /* JSONDataStringConverter.swift in Sources */,
 				1EC3357725F1337100EE937D /* Base64DataStringConverter.swift in Sources */,
 				3AAAD1CC264EC15000D6039D /* Validation.swift in Sources */,
@@ -806,6 +819,7 @@
 				3A65AFF22697B348007F80E6 /* DigitDataStringConverter.swift in Sources */,
 				3AFAB88D269A09E50029B5EE /* DefaultURLRequestStringConverter.swift in Sources */,
 				3ABB3C5C262DB29400C4F1F2 /* Validation.swift in Sources */,
+				3AC4CA5026ECEA1500A153CC /* ProcessingState.swift in Sources */,
 				3AFAB893269A09F00029B5EE /* MultilineDictionaryStringConverter.swift in Sources */,
 				3AFAB8A0269A09FF0029B5EE /* JSONDataStringConverter.swift in Sources */,
 				1ED4C59A2613695B00CCE28D /* DispatchResetableFirst.swift in Sources */,
