@@ -362,6 +362,7 @@
 		3A1B845B25C012550042A2DC /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3A6B3DC726F3A2F7001B4646 /* Echo.swift */,
 				3A949AFD2454629C007E7928 /* Unowned.swift */,
 				3A949AFF2454629C007E7928 /* Weak.swift */,
 			);
@@ -511,7 +512,6 @@
 				3A949AFA2454629C007E7928 /* Kit.swift */,
 				3A9A2A4F2508D653000ABDC2 /* MTTimer.swift */,
 				3A949AFC2454629C007E7928 /* Seal.swift */,
-				3A6B3DC726F3A2F7001B4646 /* Echo.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
