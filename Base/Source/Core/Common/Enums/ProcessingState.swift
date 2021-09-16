@@ -1,12 +1,12 @@
 public enum ProcessingState <Initial, Processing, Completed> {
-	case inital(Initial)
+	case initial(Initial)
 	case processing(Processing)
 	case completed(Completed)
 	case failed(Error)
 	
 	public var stateName: String {
 		switch self {
-		case .inital:
+		case .initial:
 			return "inital"
 			
 		case .processing:
