@@ -19,7 +19,7 @@ class ParsingTests: XCTestCase {
 		let scheme = "rsctl://"
 		let parsing = Parsing<ParsingContainer<String, QRCodeValueParsingModel>, String>
 			.and([
-				.rule({ ($0.original.starts(with: scheme), nil) }, "Invalid scheme"),
+				.rule({ ($0.original.starts(with: scheme), $0) }, "Invalid scheme"),
 				.rule({
 					var container = $0
 					container.current.removeFirst(scheme.count)
@@ -43,7 +43,7 @@ class ParsingTests: XCTestCase {
 					
 					return (isEnoughComponents, container)
 				}, "Not enough components"),
-				.rule({ ($0.current.count >= 88, nil) }, "Too small ticket signature length"),
+				.rule({ ($0.current.count >= 88, $0) }, "Too small ticket signature length"),
 				.rule({
 					var container = $0
 					let ticketSignature = container.current[...container.current.index(container.current.startIndex, offsetBy: 88)]
@@ -51,7 +51,7 @@ class ParsingTests: XCTestCase {
 					container.result.ticketSignature = String(ticketSignature)
 					return (true, container)
 				}),
-				.rule({ ($0.current.count >= 6, nil) }, "Too small vehicle number length"),
+				.rule({ ($0.current.count >= 6, $0) }, "Too small vehicle number length"),
 				.rule({
 					var container = $0
 					container.current.removeFirst()
@@ -60,7 +60,7 @@ class ParsingTests: XCTestCase {
 					container.result.vehicleNr = String(ticketSignature)
 					return (true, container)
 				}),
-				.rule({ ($0.current.count >= 88, nil) }, "Too small user signature length"),
+				.rule({ ($0.current.count >= 88, $0) }, "Too small user signature length"),
 				.rule({
 					var container = $0
 					container.current.removeFirst()

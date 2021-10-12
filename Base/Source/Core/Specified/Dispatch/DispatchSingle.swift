@@ -10,7 +10,7 @@ public class DispatchSingle {
 	public func perform (_ action: @escaping () -> Void) {
 		semaphore.wait()
 		
-		guard isFree else {
+		if !isFree {
 			semaphore.signal()
 			return
 		}
@@ -26,7 +26,7 @@ public class DispatchSingle {
 	public func perform (_ action: @escaping (_ completion: @escaping () -> Void) -> Void) {
 		semaphore.wait()
 		
-		guard isFree else {
+		if !isFree {
 			semaphore.signal()
 			return
 		}

@@ -1,11 +1,10 @@
 import XCTest
 import MultitoolBase
-import Foundation
 
 class DispatchFirstTests: XCTestCase {
 	func testDefaultCase () {
-		let dispatchFirst = DispatchFirst()
 		var counter = 0
+		let dispatchFirst = DispatchFirst()
 		
 		DispatchQueue.concurrentPerform(iterations: 100) { i in
 			dispatchFirst.perform {
