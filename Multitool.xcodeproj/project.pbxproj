@@ -12,40 +12,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A02F800265EF138007432F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A949AB9245461CA007E7928 /* Base.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3AFA3120260CD8250068177C;
-			remoteInfo = MultitoolBaseTestground;
-		};
 		3A02F804265EF138007432F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3A46521B260F9FDC0031FAD9;
 			remoteInfo = UIKitExtensions;
-		};
-		3A0ADFD425CAA5C3001EEC70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A949AB9245461CA007E7928 /* Base.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A0ADF9925CAA50C001EEC70;
-			remoteInfo = MultitoolBase;
-		};
-		3A4012702716EC1B007FD51C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A40119727162F25007FD51C;
-			remoteInfo = Processing;
-		};
-		3A5BD54C25BC1FB700481A2B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A949AB9245461CA007E7928 /* Base.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A85DB0225AF363D006E76AF;
-			remoteInfo = MultitoolBaseTests;
 		};
 		3A5BD55125BC1FB700481A2B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -79,14 +51,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A1B846425C013DA0042A2DC /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExtensions.xcodeproj; path = UIKitExtensions/UIKitExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExtensions.xcodeproj; path = SwiftUIExtensions/SwiftUIExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A396EA025BDA25900B110C7 /* Utils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Utils.xcodeproj; path = Utils/Utils.xcodeproj; sourceTree = "<group>"; };
-		3A949AB9245461CA007E7928 /* Base.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Base.xcodeproj; path = Base/Base.xcodeproj; sourceTree = "<group>"; };
 		3A949AE12454621D007E7928 /* Sketches.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sketches.xcodeproj; path = Sketches/Sketches.xcodeproj; sourceTree = "<group>"; };
 		3A949B24245462BD007E7928 /* Testground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Testground; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A949B27245462BD007E7928 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3ABE68252716EFE20009EBE1 /* Core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Core; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +97,7 @@
 		3A949A5F24545EF0007E7928 = {
 			isa = PBXGroup;
 			children = (
-				3A1B846425C013DA0042A2DC /* Package.swift */,
-				3A949AB9245461CA007E7928 /* Base.xcodeproj */,
+				3ABE68252716EFE20009EBE1 /* Core */,
 				3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */,
 				3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */,
 				3A949AE12454621D007E7928 /* Sketches.xcodeproj */,
@@ -138,21 +108,10 @@
 			);
 			sourceTree = "<group>";
 		};
-		3A949ABA245461CA007E7928 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A0ADFD525CAA5C3001EEC70 /* MultitoolBase.framework */,
-				3A02F801265EF138007432F9 /* MultitoolBaseTestground */,
-				3A5BD54D25BC1FB700481A2B /* MultitoolBaseTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3A949AE22454621D007E7928 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				3A5BD55225BC1FB700481A2B /* SketchesTestground */,
-				3A4012712716EC1B007FD51C /* Processing */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -231,10 +190,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3A949ABA245461CA007E7928 /* Products */;
-					ProjectRef = 3A949AB9245461CA007E7928 /* Base.xcodeproj */;
-				},
-				{
 					ProductGroup = 3A949AE22454621D007E7928 /* Products */;
 					ProjectRef = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
 				},
@@ -259,39 +214,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3A02F801265EF138007432F9 /* MultitoolBaseTestground */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = MultitoolBaseTestground;
-			remoteRef = 3A02F800265EF138007432F9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		3A02F805265EF138007432F9 /* UIKitExtensions.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = UIKitExtensions.framework;
 			remoteRef = 3A02F804265EF138007432F9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A0ADFD525CAA5C3001EEC70 /* MultitoolBase.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = MultitoolBase.framework;
-			remoteRef = 3A0ADFD425CAA5C3001EEC70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A4012712716EC1B007FD51C /* Processing */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = Processing;
-			remoteRef = 3A4012702716EC1B007FD51C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A5BD54D25BC1FB700481A2B /* MultitoolBaseTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = MultitoolBaseTests.xctest;
-			remoteRef = 3A5BD54C25BC1FB700481A2B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3A5BD55225BC1FB700481A2B /* SketchesTestground */ = {

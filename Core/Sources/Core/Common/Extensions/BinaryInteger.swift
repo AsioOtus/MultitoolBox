@@ -1,3 +1,5 @@
+import Foundation
+
 public extension BinaryInteger {
 	var binRadix: String {
 		String(self, radix: 2)
