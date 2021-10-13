@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Sketches.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3A0ADF9825CAA50C001EEC70"
+               BuildableName = "MultitoolBase.framework"
+               BlueprintName = "MultitoolBase"
+               ReferencedContainer = "container:../Base/Base.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
