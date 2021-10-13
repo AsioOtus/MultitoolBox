@@ -12,13 +12,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A02F804265EF138007432F9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A46521B260F9FDC0031FAD9;
-			remoteInfo = UIKitExtensions;
-		};
 		3A5BD55125BC1FB700481A2B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
@@ -51,8 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExtensions.xcodeproj; path = UIKitExtensions/UIKitExtensions.xcodeproj; sourceTree = "<group>"; };
-		3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExtensions.xcodeproj; path = SwiftUIExtensions/SwiftUIExtensions.xcodeproj; sourceTree = "<group>"; };
+		3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExtensions.xcodeproj; path = ../UIKitExtensions/UIKitExtensions.xcodeproj; sourceTree = "<group>"; };
+		3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExtensions.xcodeproj; path = ../SwiftUIExtensions/SwiftUIExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A396EA025BDA25900B110C7 /* Utils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Utils.xcodeproj; path = Utils/Utils.xcodeproj; sourceTree = "<group>"; };
 		3A949AE12454621D007E7928 /* Sketches.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sketches.xcodeproj; path = Sketches/Sketches.xcodeproj; sourceTree = "<group>"; };
 		3A949B24245462BD007E7928 /* Testground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Testground; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,21 +65,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A1B847F25C01A7A0042A2DC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A02F805265EF138007432F9 /* UIKitExtensions.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3A24CC8426C507980086E778 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3A396EA125BDA25900B110C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,10 +76,9 @@
 			isa = PBXGroup;
 			children = (
 				3ABE68492716F6E40009EBE1 /* Multitool */,
-				3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */,
-				3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */,
 				3A949AE12454621D007E7928 /* Sketches.xcodeproj */,
 				3A396EA025BDA25900B110C7 /* Utils.xcodeproj */,
+				3ABE684F2716FBF30009EBE1 /* FrameworkExtensions */,
 				3A949B26245462BD007E7928 /* Testground */,
 				3A949B25245462BD007E7928 /* Products */,
 				3A949BF3245467E0007E7928 /* Frameworks */,
@@ -137,6 +114,15 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3ABE684F2716FBF30009EBE1 /* FrameworkExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */,
+				3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */,
+			);
+			path = FrameworkExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,14 +180,6 @@
 					ProjectRef = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
 				},
 				{
-					ProductGroup = 3A24CC8426C507980086E778 /* Products */;
-					ProjectRef = 3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */;
-				},
-				{
-					ProductGroup = 3A1B847F25C01A7A0042A2DC /* Products */;
-					ProjectRef = 3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */;
-				},
-				{
 					ProductGroup = 3A396EA125BDA25900B110C7 /* Products */;
 					ProjectRef = 3A396EA025BDA25900B110C7 /* Utils.xcodeproj */;
 				},
@@ -214,13 +192,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3A02F805265EF138007432F9 /* UIKitExtensions.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = UIKitExtensions.framework;
-			remoteRef = 3A02F804265EF138007432F9 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		3A5BD55225BC1FB700481A2B /* SketchesTestground */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
