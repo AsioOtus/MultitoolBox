@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		3A24CC9126C5081D0086E778 /* EndlessPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndlessPagerView.swift; sourceTree = "<group>"; };
+		3AA93CF526E8B1D100F23EBE /* EqualDynamicWidthModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualDynamicWidthModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -30,6 +31,7 @@
 			isa = PBXGroup;
 			children = (
 				3A24CC9126C5081D0086E778 /* EndlessPagerView.swift */,
+				3AA93CF526E8B1D100F23EBE /* EqualDynamicWidthModifier.swift */,
 			);
 			path = Samples;
 			sourceTree = "<group>";
