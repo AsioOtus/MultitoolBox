@@ -177,7 +177,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A949A6324545EF0007E7928 /* Build configuration list for PBXProject "Multitool" */;
+			buildConfigurationList = 3A949A6324545EF0007E7928 /* Build configuration list for PBXProject "MultitoolBox" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -436,7 +436,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A949A6324545EF0007E7928 /* Build configuration list for PBXProject "Multitool" */ = {
+		3A949A6324545EF0007E7928 /* Build configuration list for PBXProject "MultitoolBox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A949A6424545EF0007E7928 /* Debug */,
