@@ -29,7 +29,15 @@
 		3A40119F271641CC007FD51C /* AndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40119E271641CC007FD51C /* AndTests.swift */; };
 		3A4011A127164306007FD51C /* EveryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4011A027164306007FD51C /* EveryTests.swift */; };
 		3A4011A32716456B007FD51C /* WhateverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4011A22716456B007FD51C /* WhateverTests.swift */; };
-		3A4011A527164EF7007FD51C /* LaunchCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4011A427164EF7007FD51C /* LaunchCounter.swift */; };
+		3A4011AF271652DA007FD51C /* RangeReplacableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4011AE271652B1007FD51C /* RangeReplacableCollection.swift */; };
+		3A4011B0271652E0007FD51C /* LaunchCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4011A427164EF7007FD51C /* LaunchCounter.swift */; };
+		3A4011B227165413007FD51C /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4011B127165413007FD51C /* Side.swift */; };
+		3A4011B327165413007FD51C /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4011B127165413007FD51C /* Side.swift */; };
+		3A4011B427165711007FD51C /* RangeReplacableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4011AE271652B1007FD51C /* RangeReplacableCollection.swift */; };
+		3A4011B527165A28007FD51C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0B2454629C007E7928 /* Data.swift */; };
+		3A4011B627165A29007FD51C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0B2454629C007E7928 /* Data.swift */; };
+		3A4011B727165A3C007FD51C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0D2454629C007E7928 /* String.swift */; };
+		3A4011B827165A3D007FD51C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B0D2454629C007E7928 /* String.swift */; };
 		3A40A28D25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A28C25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift */; };
 		3A40A29225F15B71002C0875 /* URLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A29125F15B71002C0875 /* URLRequestStringConverter.swift */; };
 		3A40A29625F15BF4002C0875 /* ShortURLRequestStringConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A40A29525F15BF4002C0875 /* ShortURLRequestStringConverter.swift */; };
@@ -184,6 +192,9 @@
 		3A4011A027164306007FD51C /* EveryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EveryTests.swift; sourceTree = "<group>"; };
 		3A4011A22716456B007FD51C /* WhateverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhateverTests.swift; sourceTree = "<group>"; };
 		3A4011A427164EF7007FD51C /* LaunchCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchCounter.swift; sourceTree = "<group>"; };
+		3A4011AD27165151007FD51C /* BinaryInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryInteger.swift; sourceTree = "<group>"; };
+		3A4011AE271652B1007FD51C /* RangeReplacableCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeReplacableCollection.swift; sourceTree = "<group>"; };
+		3A4011B127165413007FD51C /* Side.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
 		3A40A28C25F15B5A002C0875 /* DefaultURLRequestStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultURLRequestStringConverter.swift; sourceTree = "<group>"; };
 		3A40A29125F15B71002C0875 /* URLRequestStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestStringConverter.swift; sourceTree = "<group>"; };
 		3A40A29525F15BF4002C0875 /* ShortURLRequestStringConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortURLRequestStringConverter.swift; sourceTree = "<group>"; };
@@ -471,11 +482,13 @@
 		3A1B845E25C012B10042A2DC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				3A4011AD27165151007FD51C /* BinaryInteger.swift */,
 				1E2643EF25F28FF9005CAEE7 /* Collection.swift */,
 				3A949B0B2454629C007E7928 /* Data.swift */,
 				3A949B0C2454629C007E7928 /* FixedWidthInteger.swift */,
 				3A949B0E2454629C007E7928 /* Numeric.swift */,
 				3A1B846925C015B50042A2DC /* OSStatus.swift */,
+				3A4011AE271652B1007FD51C /* RangeReplacableCollection.swift */,
 				3A949B0D2454629C007E7928 /* String.swift */,
 			);
 			path = Extensions;
@@ -658,6 +671,7 @@
 				3A949B042454629C007E7928 /* KeyCode.swift */,
 				3AB6D9D926373AC500EBEE2A /* Parsing.swift */,
 				3A949B032454629C007E7928 /* Result.swift */,
+				3A4011B127165413007FD51C /* Side.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -924,6 +938,7 @@
 				3A6B3EE226F755D2001B4646 /* AnyMultipleResult.swift in Sources */,
 				1EC3356C25F12D9700EE937D /* OptionalDataStringConverter.swift in Sources */,
 				3A6B3EFA26F755D2001B4646 /* Modifier.swift in Sources */,
+				3A4011B0271652E0007FD51C /* LaunchCounter.swift in Sources */,
 				3A6B3F0026F755D2001B4646 /* Whatever.swift in Sources */,
 				3A6B3EF826F755D2001B4646 /* Last.swift in Sources */,
 				3A6B3EEE26F755D2001B4646 /* Processing.swift in Sources */,
@@ -936,13 +951,17 @@
 				3A8B3C64265CF3DC00BE3C3D /* ColumnConsoleArrayStringConverter.swift in Sources */,
 				3A6B3EF426F755D2001B4646 /* Validation.swift in Sources */,
 				3A6B3EDE26F755D2001B4646 /* ProcessorProtocol.swift in Sources */,
+				3A4011AF271652DA007FD51C /* RangeReplacableCollection.swift in Sources */,
 				3A40A29625F15BF4002C0875 /* ShortURLRequestStringConverter.swift in Sources */,
 				1EC3356F25F12DAF00EE937D /* CompositeDataStringConverter.swift in Sources */,
 				1EC3357225F12DC100EE937D /* CompositeOptionalDataStringConverter.swift in Sources */,
 				3A58BC3E260CE1DE00B6F073 /* DispatchFirst.swift in Sources */,
+				3A4011B227165413007FD51C /* Side.swift in Sources */,
+				3A4011B727165A3C007FD51C /* String.swift in Sources */,
 				3A6B3EF626F755D2001B4646 /* Not.swift in Sources */,
 				3A6B3EF226F755D2001B4646 /* ValueProcessor.swift in Sources */,
 				3A6B3EE426F755D2001B4646 /* ProcessingResult.swift in Sources */,
+				3A4011B627165A29007FD51C /* Data.swift in Sources */,
 				1E6E562325F134FA00171B57 /* DictionaryStringConverter.swift in Sources */,
 				3A8962B426FB3F640036BE08 /* Collection.swift in Sources */,
 				3AECB21B25F176C100301A09 /* DefaultURLResponseStringConverter.swift in Sources */,
@@ -1002,15 +1021,19 @@
 				3AFA312B260CD8370068177C /* DispatchWait.swift in Sources */,
 				3AFAB8A6269A0A080029B5EE /* DefaultURLResponseStringConverter.swift in Sources */,
 				3A6B3EE526F755D2001B4646 /* ProcessingResult.swift in Sources */,
+				3A4011B827165A3D007FD51C /* String.swift in Sources */,
 				3A8B3C5E265CF3A700BE3C3D /* ArrayStringConverter.swift in Sources */,
+				3A4011B327165413007FD51C /* Side.swift in Sources */,
 				3A6B3EEF26F755D2001B4646 /* Processing.swift in Sources */,
 				3AFA312C260CD8370068177C /* DispatchOnce.swift in Sources */,
 				1ED4C5A0261369D900CCE28D /* DispatchResetableOnce.swift in Sources */,
 				3AFAB88C269A09E50029B5EE /* URLRequestStringConverter.swift in Sources */,
+				3A4011B527165A28007FD51C /* Data.swift in Sources */,
 				3A8962B526FB3F650036BE08 /* Collection.swift in Sources */,
 				3A6B3EDD26F755D2001B4646 /* AnyProcessor.swift in Sources */,
 				3A6B3F0326F755D2001B4646 /* Every.swift in Sources */,
 				3AFAB898269A09FA0029B5EE /* DefaultHTTPURLResponseStringConverter.swift in Sources */,
+				3A4011B427165711007FD51C /* RangeReplacableCollection.swift in Sources */,
 				3AFA3131260CDF0D0068177C /* DispatchFirst.swift in Sources */,
 				3A6B3EF326F755D2001B4646 /* ValueProcessor.swift in Sources */,
 				3AFAB892269A09F00029B5EE /* DictionaryStringConverter.swift in Sources */,
@@ -1031,7 +1054,6 @@
 				3A4011A127164306007FD51C /* EveryTests.swift in Sources */,
 				3A6B3DD226F60A51001B4646 /* DispatchResetableFirstTests.swift in Sources */,
 				3A4011A32716456B007FD51C /* WhateverTests.swift in Sources */,
-				3A4011A527164EF7007FD51C /* LaunchCounter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

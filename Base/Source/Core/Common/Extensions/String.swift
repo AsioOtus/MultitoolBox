@@ -32,73 +32,6 @@ public extension String {
 
 
 public extension String {
-	static let defaultPaddingCharacter: Character = " "
-	
-	func padded (atStartTo length: Int, character: Character = String.defaultPaddingCharacter) -> String {
-		let paddedString = createPadString(length, character) + self
-		return paddedString
-	}
-	
-	func padded (atEndTo length: Int, character: Character = String.defaultPaddingCharacter) -> String {
-		let paddedString = self + createPadString(length, character)
-		return paddedString
-	}
-	
-	private func createPadString (_ length: Int, _ character: Character) -> String {
-		let padStringLength = length - count
-		return padStringLength > 0 ? String(repeating: character, count: padStringLength) : ""
-	}
-}
-
-
-
-public extension String {
-	static let defaultPaddingFillString: String = " "
-
-	func padded (atStartTo length: Int, with fillString: String = String.defaultPaddingFillString, cutPadFrom paddingCutSide: Side = .start) -> String {
-		return createPadString(length, fillString, paddingCutSide) + self
-	}
-
-	func padded (atEndTo length: Int, with fillString: String = String.defaultPaddingFillString, cutPadFrom paddingCutSide: Side = .end) -> String {
-		return self + createPadString(length, fillString, paddingCutSide)
-	}
-
-	private func createPadString (_ length: Int, _ fillString: String, _ paddingCutSide: Side) -> String {
-		var resultPadString = ""
-
-		guard count < length else { return resultPadString }
-
-		let padLength = length - count
-		let padString = createPadString(length, fillString)
-
-		resultPadString = paddingCutSide == .start
-			? String(padString.suffix(padLength))
-			: String(padString.prefix(padLength))
-
-		return resultPadString
-	}
-
-	private func createPadString (_ length: Int, _ fillString: String) -> String {
-		var padString = ""
-
-		guard count < length else { return padString }
-
-		let padLength = length - count
-		padString = fillString
-
-		if padLength > fillString.count {
-			while padString.count < padLength {
-				padString.append(fillString)
-			}
-		}
-
-		return padString
-	}
-}
-
-
-
-public extension String {
 	static let defaultGroupSeparator = " "
 
 	func grouped (fromStartBy groupSize: Int, with separator: String = defaultGroupSeparator) -> String {
@@ -147,22 +80,6 @@ public extension String {
 
 
 public extension String {
-	var removedFirst: String {
-		guard self.count > 0 else { return self }
-		
-		var resultString = self
-		resultString.removeFirst()
-		return resultString
-	}
-	
-	var removedLast: String {
-		guard self.count > 0 else { return self }
-		
-		var resultString = self
-		resultString.removeLast()
-		return resultString
-	}
-
 	var reversed: String {
 		return String(self.reversed())
 	}
