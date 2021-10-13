@@ -48,20 +48,6 @@
                ReferencedContainer = "container:Utils/KeychainUtil/KeychainUtil.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BaseNetworkUtil"
-               BuildableName = "BaseNetworkUtil"
-               BlueprintName = "BaseNetworkUtil"
-               ReferencedContainer = "container:Utils/BaseNetworkUtil">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

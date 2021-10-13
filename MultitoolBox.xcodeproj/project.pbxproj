@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3A949B28245462BD007E7928 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A949B27245462BD007E7928 /* main.swift */; };
-		3AF003F126E5636B00D515B1 /* BaseNetworkUtil in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF003F026E5636B00D515B1 /* BaseNetworkUtil */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -18,6 +17,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 3A1AA04C25A762F9005FEF1F;
 			remoteInfo = SketchesTestground;
+		};
+		3ABE685C271703D80009EBE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A46521B260F9FDC0031FAD9;
+			remoteInfo = UIKitExtensions;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -58,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AF003F126E5636B00D515B1 /* BaseNetworkUtil in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +130,21 @@
 			path = FrameworkExtensions;
 			sourceTree = "<group>";
 		};
+		3ABE6858271703D80009EBE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3ABE685D271703D80009EBE1 /* UIKitExtensions.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3ABE685E271703D80009EBE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,7 +163,6 @@
 			);
 			name = Testground;
 			packageProductDependencies = (
-				3AF003F026E5636B00D515B1 /* BaseNetworkUtil */,
 			);
 			productName = Testground;
 			productReference = 3A949B24245462BD007E7928 /* Testground */;
@@ -180,6 +199,14 @@
 					ProjectRef = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
 				},
 				{
+					ProductGroup = 3ABE685E271703D80009EBE1 /* Products */;
+					ProjectRef = 3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */;
+				},
+				{
+					ProductGroup = 3ABE6858271703D80009EBE1 /* Products */;
+					ProjectRef = 3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */;
+				},
+				{
 					ProductGroup = 3A396EA125BDA25900B110C7 /* Products */;
 					ProjectRef = 3A396EA025BDA25900B110C7 /* Utils.xcodeproj */;
 				},
@@ -197,6 +224,13 @@
 			fileType = "compiled.mach-o.executable";
 			path = SketchesTestground;
 			remoteRef = 3A5BD55125BC1FB700481A2B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3ABE685D271703D80009EBE1 /* UIKitExtensions.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = UIKitExtensions.framework;
+			remoteRef = 3ABE685C271703D80009EBE1 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -426,13 +460,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3AF003F026E5636B00D515B1 /* BaseNetworkUtil */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = BaseNetworkUtil;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A949A6024545EF0007E7928 /* Project object */;
 }
