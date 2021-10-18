@@ -18,12 +18,33 @@
 			remoteGlobalIDString = 3A1AA04C25A762F9005FEF1F;
 			remoteInfo = SketchesTestground;
 		};
-		3ABE685C271703D80009EBE1 /* PBXContainerItemProxy */ = {
+		3A7A7828271E0243009123F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */;
+			containerPortal = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A0D041827188E4100D9474A;
+			remoteInfo = ExponentialGrowth;
+		};
+		3A7A782A271E0243009123F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A0D042D2718E0D000D9474A;
+			remoteInfo = ValueProcessing;
+		};
+		3A7A7860271E02B8009123F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7A785C271E02B8009123F7 /* UIKitExtensions.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 3A46521B260F9FDC0031FAD9;
 			remoteInfo = UIKitExtensions;
+		};
+		3A7A787A271E0512009123F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A7A7822271E0242009123F7 /* CombineExtensions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A7A7866271E032C009123F7;
+			remoteInfo = CombineExtensionsTestground;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -50,9 +71,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExtensions.xcodeproj; path = ../UIKitExtensions/UIKitExtensions.xcodeproj; sourceTree = "<group>"; };
-		3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExtensions.xcodeproj; path = ../SwiftUIExtensions/SwiftUIExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A396EA025BDA25900B110C7 /* Utils.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Utils.xcodeproj; path = Utils/Utils.xcodeproj; sourceTree = "<group>"; };
+		3A7A7822271E0242009123F7 /* CombineExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CombineExtensions.xcodeproj; path = CombineExtensions/CombineExtensions.xcodeproj; sourceTree = "<group>"; };
+		3A7A7859271E02AF009123F7 /* SwiftUIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExtensions.xcodeproj; path = SwiftUIExtensions/SwiftUIExtensions.xcodeproj; sourceTree = "<group>"; };
+		3A7A785C271E02B8009123F7 /* UIKitExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExtensions.xcodeproj; path = UIKitExtensions/UIKitExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A949AE12454621D007E7928 /* Sketches.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sketches.xcodeproj; path = Sketches/Sketches.xcodeproj; sourceTree = "<group>"; };
 		3A949B24245462BD007E7928 /* Testground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Testground; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A949B27245462BD007E7928 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -77,6 +99,29 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		3A7A7823271E0242009123F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A787B271E0512009123F7 /* CombineExtensionsTestground */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A7A785A271E02AF009123F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A7A785D271E02B8009123F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A7A7861271E02B8009123F7 /* UIKitExtensions.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		3A949A5F24545EF0007E7928 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +139,8 @@
 			isa = PBXGroup;
 			children = (
 				3A5BD55225BC1FB700481A2B /* SketchesTestground */,
+				3A7A7829271E0243009123F7 /* ExponentialGrowth */,
+				3A7A782B271E0243009123F7 /* ValueProcessing */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,25 +171,11 @@
 		3ABE684F2716FBF30009EBE1 /* FrameworkExtensions */ = {
 			isa = PBXGroup;
 			children = (
-				3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */,
-				3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */,
+				3A7A7822271E0242009123F7 /* CombineExtensions.xcodeproj */,
+				3A7A7859271E02AF009123F7 /* SwiftUIExtensions.xcodeproj */,
+				3A7A785C271E02B8009123F7 /* UIKitExtensions.xcodeproj */,
 			);
 			path = FrameworkExtensions;
-			sourceTree = "<group>";
-		};
-		3ABE6858271703D80009EBE1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3ABE685D271703D80009EBE1 /* UIKitExtensions.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3ABE685E271703D80009EBE1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,16 +228,20 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 3A7A7823271E0242009123F7 /* Products */;
+					ProjectRef = 3A7A7822271E0242009123F7 /* CombineExtensions.xcodeproj */;
+				},
+				{
 					ProductGroup = 3A949AE22454621D007E7928 /* Products */;
 					ProjectRef = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
 				},
 				{
-					ProductGroup = 3ABE685E271703D80009EBE1 /* Products */;
-					ProjectRef = 3A24CC8326C507980086E778 /* SwiftUIExtensions.xcodeproj */;
+					ProductGroup = 3A7A785A271E02AF009123F7 /* Products */;
+					ProjectRef = 3A7A7859271E02AF009123F7 /* SwiftUIExtensions.xcodeproj */;
 				},
 				{
-					ProductGroup = 3ABE6858271703D80009EBE1 /* Products */;
-					ProjectRef = 3A1B846D25C016780042A2DC /* UIKitExtensions.xcodeproj */;
+					ProductGroup = 3A7A785D271E02B8009123F7 /* Products */;
+					ProjectRef = 3A7A785C271E02B8009123F7 /* UIKitExtensions.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A396EA125BDA25900B110C7 /* Products */;
@@ -226,11 +263,32 @@
 			remoteRef = 3A5BD55125BC1FB700481A2B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		3ABE685D271703D80009EBE1 /* UIKitExtensions.framework */ = {
+		3A7A7829271E0243009123F7 /* ExponentialGrowth */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ExponentialGrowth;
+			remoteRef = 3A7A7828271E0243009123F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A7A782B271E0243009123F7 /* ValueProcessing */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ValueProcessing;
+			remoteRef = 3A7A782A271E0243009123F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A7A7861271E02B8009123F7 /* UIKitExtensions.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = UIKitExtensions.framework;
-			remoteRef = 3ABE685C271703D80009EBE1 /* PBXContainerItemProxy */;
+			remoteRef = 3A7A7860271E02B8009123F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A7A787B271E0512009123F7 /* CombineExtensionsTestground */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = CombineExtensionsTestground;
+			remoteRef = 3A7A787A271E0512009123F7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
