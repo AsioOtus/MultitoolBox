@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 
 public enum Progressions {
 	public static func constant (_ constant: Double) -> (Double) -> Double {
