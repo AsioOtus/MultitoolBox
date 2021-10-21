@@ -32,20 +32,6 @@
 			remoteGlobalIDString = 3A0D042D2718E0D000D9474A;
 			remoteInfo = ValueProcessing;
 		};
-		3A7A7860271E02B8009123F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A7A785C271E02B8009123F7 /* UIKitExtensions.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A46521B260F9FDC0031FAD9;
-			remoteInfo = UIKitExtensions;
-		};
-		3A7A787A271E0512009123F7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A7A7822271E0242009123F7 /* CombineExtensions.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A7A7866271E032C009123F7;
-			remoteInfo = CombineExtensionsTestground;
-		};
 		3A7A797C271E11B1009123F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A7A7977271E11B1009123F7 /* KeychainUtil.xcodeproj */;
@@ -88,9 +74,7 @@
 		3A496958271E126E00CF7CAE /* LoggingUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LoggingUtil; sourceTree = "<group>"; };
 		3A496959271E127700CF7CAE /* BaseNetworkUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BaseNetworkUtil; sourceTree = "<group>"; };
 		3A49695A271E127F00CF7CAE /* UserDefaultsUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UserDefaultsUtil; sourceTree = "<group>"; };
-		3A7A7822271E0242009123F7 /* CombineExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CombineExtensions.xcodeproj; path = CombineExtensions/CombineExtensions.xcodeproj; sourceTree = "<group>"; };
-		3A7A7859271E02AF009123F7 /* SwiftUIExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftUIExtensions.xcodeproj; path = SwiftUIExtensions/SwiftUIExtensions.xcodeproj; sourceTree = "<group>"; };
-		3A7A785C271E02B8009123F7 /* UIKitExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UIKitExtensions.xcodeproj; path = UIKitExtensions/UIKitExtensions.xcodeproj; sourceTree = "<group>"; };
+		3A76ABCA2721BC9300CA16C1 /* AFExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFExtensions.xcodeproj; path = AFExtensions/AFExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A7A7977271E11B1009123F7 /* KeychainUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainUtil.xcodeproj; path = KeychainUtil/KeychainUtil.xcodeproj; sourceTree = "<group>"; };
 		3A949AE12454621D007E7928 /* Sketches.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sketches.xcodeproj; path = Sketches/Sketches.xcodeproj; sourceTree = "<group>"; };
 		3A949B24245462BD007E7928 /* Testground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Testground; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,25 +93,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A7A7823271E0242009123F7 /* Products */ = {
+		3A76ABCB2721BC9300CA16C1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A7A787B271E0512009123F7 /* CombineExtensionsTestground */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3A7A785A271E02AF009123F7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3A7A785D271E02B8009123F7 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A7A7861271E02B8009123F7 /* UIKitExtensions.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,9 +124,9 @@
 			isa = PBXGroup;
 			children = (
 				3ABE68492716F6E40009EBE1 /* Multitool */,
+				3A76ABCA2721BC9300CA16C1 /* AFExtensions.xcodeproj */,
 				3A949AE12454621D007E7928 /* Sketches.xcodeproj */,
 				3A7A7880271E113C009123F7 /* Utils */,
-				3ABE684F2716FBF30009EBE1 /* FrameworkExtensions */,
 				3A949B26245462BD007E7928 /* Testground */,
 				3A949B25245462BD007E7928 /* Products */,
 				3A949BF3245467E0007E7928 /* Frameworks */,
@@ -196,16 +164,6 @@
 			children = (
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3ABE684F2716FBF30009EBE1 /* FrameworkExtensions */ = {
-			isa = PBXGroup;
-			children = (
-				3A7A7822271E0242009123F7 /* CombineExtensions.xcodeproj */,
-				3A7A7859271E02AF009123F7 /* SwiftUIExtensions.xcodeproj */,
-				3A7A785C271E02B8009123F7 /* UIKitExtensions.xcodeproj */,
-			);
-			path = FrameworkExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,8 +216,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3A7A7823271E0242009123F7 /* Products */;
-					ProjectRef = 3A7A7822271E0242009123F7 /* CombineExtensions.xcodeproj */;
+					ProductGroup = 3A76ABCB2721BC9300CA16C1 /* Products */;
+					ProjectRef = 3A76ABCA2721BC9300CA16C1 /* AFExtensions.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A7A7978271E11B1009123F7 /* Products */;
@@ -268,14 +226,6 @@
 				{
 					ProductGroup = 3A949AE22454621D007E7928 /* Products */;
 					ProjectRef = 3A949AE12454621D007E7928 /* Sketches.xcodeproj */;
-				},
-				{
-					ProductGroup = 3A7A785A271E02AF009123F7 /* Products */;
-					ProjectRef = 3A7A7859271E02AF009123F7 /* SwiftUIExtensions.xcodeproj */;
-				},
-				{
-					ProductGroup = 3A7A785D271E02B8009123F7 /* Products */;
-					ProjectRef = 3A7A785C271E02B8009123F7 /* UIKitExtensions.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -305,20 +255,6 @@
 			fileType = "compiled.mach-o.executable";
 			path = ValueProcessing;
 			remoteRef = 3A7A782A271E0243009123F7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A7A7861271E02B8009123F7 /* UIKitExtensions.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = UIKitExtensions.framework;
-			remoteRef = 3A7A7860271E02B8009123F7 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A7A787B271E0512009123F7 /* CombineExtensionsTestground */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = CombineExtensionsTestground;
-			remoteRef = 3A7A787A271E0512009123F7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3A7A797D271E11B1009123F7 /* KeychainUtilTestground */ = {

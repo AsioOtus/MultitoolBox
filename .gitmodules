@@ -10,3 +10,6 @@
 [submodule "Multitool"]
 	path = Multitool
 	url = https://github.com/AsioOtus/Multitool.git
+[submodule "AFExtensions"]
+	path = AFExtensions
+	url = https://github.com/AsioOtus/AFExtensions.git
