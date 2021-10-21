@@ -13,3 +13,9 @@
 [submodule "AFExtensions"]
 	path = AFExtensions
 	url = https://github.com/AsioOtus/AFExtensions.git
+[submodule "SketchesBox/Sketches"]
+	path = SketchesBox/Sketches
+	url = https://github.com/AsioOtus/Sketches.git
+[submodule "SketchesBox/TestApps"]
+	path = SketchesBox/TestApps
+	url = https://github.com/AsioOtus/TestApps.git
