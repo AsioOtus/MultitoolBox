@@ -1,0 +1,138 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		3A21BAF527221357007E3438 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A21BAEF27221357007E3438 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A1AA04C25A762F9005FEF1F;
+			remoteInfo = SketchesTestground;
+		};
+		3A21BAF727221357007E3438 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A21BAEF27221357007E3438 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A0D041827188E4100D9474A;
+			remoteInfo = ExponentialGrowth;
+		};
+		3A21BAF927221357007E3438 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A21BAEF27221357007E3438 /* Sketches.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A0D042D2718E0D000D9474A;
+			remoteInfo = ValueProcessing;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3A21BAEF27221357007E3438 /* Sketches.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sketches.xcodeproj; path = Sketches/Sketches.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		3A21BAD42722131B007E3438 = {
+			isa = PBXGroup;
+			children = (
+				3A21BAEF27221357007E3438 /* Sketches.xcodeproj */,
+			);
+			sourceTree = "<group>";
+		};
+		3A21BAF027221357007E3438 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A21BAF627221357007E3438 /* SketchesTestground */,
+				3A21BAF827221357007E3438 /* ExponentialGrowth */,
+				3A21BAFA27221357007E3438 /* ValueProcessing */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXProject section */
+		3A21BAD52722131B007E3438 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1300;
+			};
+			buildConfigurationList = 3A21BAD82722131B007E3438 /* Build configuration list for PBXProject "SketchesBox" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A21BAD42722131B007E3438;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 3A21BAF027221357007E3438 /* Products */;
+					ProjectRef = 3A21BAEF27221357007E3438 /* Sketches.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		3A21BAF627221357007E3438 /* SketchesTestground */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = SketchesTestground;
+			remoteRef = 3A21BAF527221357007E3438 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A21BAF827221357007E3438 /* ExponentialGrowth */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ExponentialGrowth;
+			remoteRef = 3A21BAF727221357007E3438 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		3A21BAFA27221357007E3438 /* ValueProcessing */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ValueProcessing;
+			remoteRef = 3A21BAF927221357007E3438 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin XCBuildConfiguration section */
+		3A21BAD92722131B007E3438 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		3A21BADA2722131B007E3438 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A21BAD82722131B007E3438 /* Build configuration list for PBXProject "SketchesBox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A21BAD92722131B007E3438 /* Debug */,
+				3A21BADA2722131B007E3438 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A21BAD52722131B007E3438 /* Project object */;
+}
