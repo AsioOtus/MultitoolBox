@@ -32,12 +32,14 @@
 
 /* Begin PBXFileReference section */
 		3A21BAEF27221357007E3438 /* Sketches.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Sketches.xcodeproj; path = Sketches/Sketches.xcodeproj; sourceTree = "<group>"; };
+		3A21BB00272219AB007E3438 /* TestApps.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TestApps.xcodeproj; path = TestApps/TestApps.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		3A21BAD42722131B007E3438 = {
 			isa = PBXGroup;
 			children = (
+				3A21BB00272219AB007E3438 /* TestApps.xcodeproj */,
 				3A21BAEF27221357007E3438 /* Sketches.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -48,6 +50,13 @@
 				3A21BAF627221357007E3438 /* SketchesTestground */,
 				3A21BAF827221357007E3438 /* ExponentialGrowth */,
 				3A21BAFA27221357007E3438 /* ValueProcessing */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A21BB01272219AB007E3438 /* Products */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +84,10 @@
 				{
 					ProductGroup = 3A21BAF027221357007E3438 /* Products */;
 					ProjectRef = 3A21BAEF27221357007E3438 /* Sketches.xcodeproj */;
+				},
+				{
+					ProductGroup = 3A21BB01272219AB007E3438 /* Products */;
+					ProjectRef = 3A21BB00272219AB007E3438 /* TestApps.xcodeproj */;
 				},
 			);
 			projectRoot = "";
