@@ -5,7 +5,7 @@
 	path = Utils/LoggingUtil
 	url = https://github.com/AsioOtus/LoggingUtil.git
 [submodule "Utils/UserDefaultsUtil"]
-	path = Utils/UserDefaultsUtil
+	path = Utils/StorageUtil
 	url = https://github.com/AsioOtus/UserDefaultsUtil.git
 [submodule "Multitool"]
 	path = Multitool
