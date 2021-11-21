@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Nivelir",
+        "repositoryURL": "https://github.com/hhru/Nivelir",
+        "state": {
+          "branch": null,
+          "revision": "ac50bf4b8ed28b1082d9df1335363e1656cc348d",
+          "version": "1.1.1"
+        }
+      },
+      {
+        "package": "SwiftUIKitView",
+        "repositoryURL": "https://github.com/AvdLee/SwiftUIKitView",
+        "state": {
+          "branch": null,
+          "revision": "296bf2ccb97efed44dea76622f4a10359ce22f6a",
+          "version": "1.0.3"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

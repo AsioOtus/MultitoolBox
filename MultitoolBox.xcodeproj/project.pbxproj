@@ -48,10 +48,10 @@
 /* Begin PBXFileReference section */
 		3A21BADB2722131B007E3438 /* SketchesBox.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SketchesBox.xcodeproj; path = SketchesBox/SketchesBox.xcodeproj; sourceTree = "<group>"; };
 		3A496958271E126E00CF7CAE /* LoggingUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LoggingUtil; sourceTree = "<group>"; };
-		3A496959271E127700CF7CAE /* BaseNetworkUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BaseNetworkUtil; sourceTree = "<group>"; };
-		3A49695A271E127F00CF7CAE /* UserDefaultsUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = UserDefaultsUtil; sourceTree = "<group>"; };
 		3A76ABCA2721BC9300CA16C1 /* AFExtensions.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AFExtensions.xcodeproj; path = AFExtensions/AFExtensions.xcodeproj; sourceTree = "<group>"; };
 		3A7A7977271E11B1009123F7 /* KeychainUtil.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainUtil.xcodeproj; path = KeychainUtil/KeychainUtil.xcodeproj; sourceTree = "<group>"; };
+		3A908547274AF8DB00AA77D0 /* StorageUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = StorageUtil; sourceTree = "<group>"; };
+		3A908548274AF8E300AA77D0 /* NetworkingUtil */ = {isa = PBXFileReference; lastKnownFileType = folder; path = NetworkingUtil; sourceTree = "<group>"; };
 		3A949B24245462BD007E7928 /* Testground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Testground; sourceTree = BUILT_PRODUCTS_DIR; };
 		3ABE68492716F6E40009EBE1 /* Multitool */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Multitool; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,9 +84,9 @@
 		3A7A7880271E113C009123F7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				3A496959271E127700CF7CAE /* BaseNetworkUtil */,
+				3A908548274AF8E300AA77D0 /* NetworkingUtil */,
+				3A908547274AF8DB00AA77D0 /* StorageUtil */,
 				3A496958271E126E00CF7CAE /* LoggingUtil */,
-				3A49695A271E127F00CF7CAE /* UserDefaultsUtil */,
 				3A7A7977271E11B1009123F7 /* KeychainUtil.xcodeproj */,
 			);
 			path = Utils;
