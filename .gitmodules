@@ -1,5 +1,5 @@
 [submodule "Utils/BaseNetworkUtil"]
-	path = Utils/NetworkingUtil
+	path = Utils/NetworkUtil/NetworkingUtil
 	url = https://github.com/AsioOtus/BaseNetworkUtil.git
 [submodule "Utils/LoggingUtil"]
 	path = Utils/LoggingUtil
