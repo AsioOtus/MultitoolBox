@@ -19,3 +19,6 @@
 [submodule "SketchesBox/TestApps"]
 	path = SketchesBox/TestApps
 	url = https://github.com/AsioOtus/TestApps.git
+[submodule "MultitoolExtended"]
+	path = MultitoolExtended
+	url = https://github.com/AsioOtus/MultitoolExtended.git
