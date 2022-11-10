@@ -22,3 +22,6 @@
 [submodule "MultitoolExtended"]
 	path = MultitoolExtended
 	url = https://github.com/AsioOtus/MultitoolExtended.git
+[submodule "Utils/DIUtil"]
+	path = Utils/DIUtil
+	url = https://github.com/AsioOtus/DIUtil.git
