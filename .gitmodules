@@ -25,3 +25,6 @@
 [submodule "Utils/DIUtil"]
 	path = Utils/DIUtil
 	url = https://github.com/AsioOtus/DIUtil.git
+[submodule "Utils/RoutingUtil"]
+	path = Utils/RoutingUtil
+	url = https://github.com/AsioOtus/RoutingUtil.git
