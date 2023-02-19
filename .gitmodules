@@ -11,7 +11,7 @@
 	path = Multitool
 	url = https://github.com/AsioOtus/Multitool.git
 [submodule "AFExtensions"]
-	path = AFExtensions
+	path = FExtensions
 	url = https://github.com/AsioOtus/AFExtensions.git
 [submodule "SketchesBox/Sketches"]
 	path = SketchesBox/Sketches
